@@ -537,23 +537,17 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .cat-sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 .csb-group{margin-bottom:12px}
 .csb-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--txt3);margin-bottom:4px;padding-bottom:4px;border-bottom:1px solid var(--border)}
-.csb-btn{display:flex;align-items:center;gap:8px;width:100%;text-align:left;padding:7px 10px;border-radius:8px;font-size:13px;color:var(--txt2);cursor:pointer;transition:.2s;background:transparent;border:none;font-family:var(--ff-b);margin-bottom:2px}
-.csb-btn:hover{background:rgba(201,169,110,.06);color:var(--txt)}
-.csb-btn.active{background:rgba(201,169,110,.1);color:var(--gold)}
-.csb-btn .csb-icon{font-size:16px;flex-shrink:0}
-.csb-img-icon{width:100%;height:34px;object-fit:contain;object-position:center;flex-shrink:0;border-radius:6px;transition:.3s}
-.csb-btn:has(.csb-img-icon){padding:4px 6px;font-size:0;color:transparent;gap:0;background:transparent}
-.csb-btn:has(.csb-img-icon):hover{background:transparent}
-.csb-btn:has(.csb-img-icon).active{background:transparent}
-.csb-btn:hover .csb-img-icon{filter:brightness(1.15) drop-shadow(0 0 4px rgba(201,169,110,.4))}
-.csb-btn.active .csb-img-icon{filter:brightness(1.2) drop-shadow(0 0 6px rgba(201,169,110,.5))}
-.csb-brand-row{display:flex;align-items:center;gap:9px;padding:6px 10px;border-radius:8px;cursor:pointer;transition:.2s;margin-bottom:1px}
-.csb-brand-row:hover{background:rgba(201,169,110,.06)}
-.csb-brand-row.active{background:rgba(201,169,110,.1)}
-.csb-brand-logo{width:54px;height:28px;object-fit:contain;filter:brightness(0) invert(1);opacity:.55;flex-shrink:0}
-.csb-brand-logo.err{display:none}
-.csb-brand-name{font-size:12px;color:var(--txt2);transition:.2s}
-.csb-brand-row:hover .csb-brand-name,.csb-brand-row.active .csb-brand-name{color:var(--gold)}
+.csb-btn{display:flex;align-items:center;justify-content:space-between;width:100%;text-align:left;padding:7px 12px;border-radius:0;font-size:13px;color:var(--txt2);cursor:pointer;transition:.2s;background:transparent;border:none;border-left:2px solid transparent;font-family:var(--ff-b);margin-bottom:1px}
+.csb-btn:hover{color:var(--txt);border-left-color:rgba(201,169,110,.4)}
+.csb-btn.active{color:var(--gold);font-weight:600;border-left-color:var(--gold)}
+.csb-brand-row{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;border-radius:0;cursor:pointer;transition:.2s;margin-bottom:1px;font-size:13px;color:var(--txt2);border-left:2px solid transparent}
+.csb-brand-row:hover{color:var(--txt);border-left-color:rgba(201,169,110,.4)}
+.csb-brand-row.active{color:var(--gold);font-weight:600;border-left-color:var(--gold)}
+.csb-brand-count{font-size:11px;color:var(--txt3);margin-left:auto}
+.csb-brand-row.active .csb-brand-count{color:rgba(201,169,110,.6)}
+.csb-search-brand{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-size:12px;color:var(--txt);outline:none;font-family:var(--ff-b);margin-bottom:6px;transition:.2s;box-sizing:border-box}
+.csb-search-brand:focus{border-color:rgba(201,169,110,.5)}
+.csb-search-brand::placeholder{color:var(--txt3)}
 .csb-reset{width:100%;padding:8px;border:1px solid var(--border);border-radius:8px;font-size:11px;color:var(--txt3);cursor:pointer;transition:.3s;text-align:center;background:transparent;font-family:var(--ff-b);margin-top:8px}
 .csb-reset:hover{border-color:var(--gold);color:var(--gold)}
 .csb-active-tag{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.2);font-size:11px;color:var(--gold);margin-bottom:4px;cursor:pointer}
@@ -591,34 +585,9 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 @keyframes glowPulse{0%,100%{box-shadow:0 0 0 0 rgba(201,169,110,0),inset 0 0 0 rgba(201,169,110,0)}50%{box-shadow:0 0 12px rgba(201,169,110,.3),inset 0 0 6px rgba(201,169,110,.08)}}
 @keyframes borderFlow{0%{border-color:rgba(201,169,110,.15)}50%{border-color:rgba(201,169,110,.5)}100%{border-color:rgba(201,169,110,.15)}}
 
-/* Sidebar filter buttons animated */
-.csb-btn{position:relative;overflow:hidden}
-.csb-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(201,169,110,.12) 50%,transparent 100%);background-size:200% auto;opacity:0;transition:.3s;pointer-events:none}
-.csb-btn:hover::after{opacity:1;animation:shimmer 1.4s linear infinite}
-.csb-btn.active{background:linear-gradient(-45deg,rgba(201,169,110,.14),rgba(194,112,128,.08),rgba(90,122,148,.06),rgba(201,169,110,.14));background-size:400% 400%;animation:gradFlow 4s ease infinite,glowPulse 2.5s ease infinite;border:1px solid rgba(201,169,110,.3)}
-
-/* Sidebar brand rows animated */
-.csb-brand-row{position:relative;overflow:hidden}
-.csb-brand-row::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(201,169,110,.1),transparent);background-size:200% auto;opacity:0;pointer-events:none;transition:.3s}
-.csb-brand-row:hover::after{opacity:1;animation:shimmer 1.2s linear infinite}
-.csb-brand-row.active{animation:glowPulse 2s ease infinite;border:1px solid rgba(201,169,110,.2);border-radius:8px}
-
-/* Mega menu brand pills animated */
-.mega-brand-pill{position:relative;overflow:hidden;transition:.3s;display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:6px 10px}
-.mega-brand-pill::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(201,169,110,.15),transparent);background-size:200% auto;opacity:0;pointer-events:none}
-.mega-brand-pill:hover{animation:borderFlow 1.5s ease infinite}
-.mega-brand-pill:hover::before{opacity:1;animation:shimmer 1s linear infinite}
-.mega-brand-logo-pill{height:20px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1);opacity:.65;display:block;transition:.3s}
-.mega-brand-pill:hover .mega-brand-logo-pill{opacity:1;filter:brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(2deg)}
-.mega-family-link{display:flex;align-items:center;gap:8px}
-.mega-family-img{width:22px;height:22px;object-fit:contain;border-radius:3px;flex-shrink:0;transition:.3s}
-.mega-col-famille a:hover .mega-family-img{transform:scale(1.18);filter:drop-shadow(0 0 5px rgba(201,169,110,.5))}
-
-/* Mega menu family links animated */
-.mega-col-famille a{position:relative;overflow:hidden}
-.mega-col-famille a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.3s}
-.mega-col-famille a:hover::after{width:100%}
-.mega-col-famille a:hover{background:linear-gradient(90deg,rgba(201,169,110,.05),transparent);animation:glowPulse 1.5s ease}
+/* Mega menu clean text links */
+.mega-col a{display:block;padding:6px 0;font-size:13px;color:var(--txt2);transition:.15s;border-bottom:1px solid transparent}
+.mega-col a:hover{color:var(--gold);padding-left:4px}
 
 /* Filter buttons (page filters kept for compat) */
 .fbtn{position:relative;overflow:hidden}
@@ -818,87 +787,70 @@ footer li a:hover{color:var(--gold)}
 <li><a onclick="go('home')" id="nav-home" class="active">Accueil</a></li>
 <li>
 <a onclick="go('femme')" id="nav-femme">Parfum Femme</a>
-<div class="mega" style="min-width:680px;gap:28px">
-<div class="mega-col mega-col-famille" style="min-width:170px">
-<h5>Par Famille</h5>
-<a class="mega-family-link" onclick="go('femme');setTimeout(()=>sbFilterF('floral','famille',document.getElementById('sbF-floral')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20floral.jpg" alt="">Floral</a>
-<a class="mega-family-link" onclick="go('femme');setTimeout(()=>sbFilterF('oriental','famille',document.getElementById('sbF-oriental')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20oriental.jpg" alt="">Oriental</a>
-<a class="mega-family-link" onclick="go('femme');setTimeout(()=>sbFilterF('gourmand','famille',document.getElementById('sbF-gourmand')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20gourmand.jpg" alt="">Gourmand</a>
-<a class="mega-family-link" onclick="go('femme');setTimeout(()=>sbFilterF('fruité','famille',document.getElementById('sbF-fruité')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20fruit%C3%A9.jpg" alt="">Fruité</a>
-<a class="mega-family-link" onclick="go('femme');setTimeout(()=>sbFilterF('frais','famille',document.getElementById('sbF-frais')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20frais.jpg" alt="">Frais</a>
-<a class="mega-family-link" onclick="go('femme');setTimeout(()=>sbFilterF('musqué','famille',document.getElementById('sbF-musqué')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20musqu%C3%A9.jpg" alt="">Musqué</a>
-<a onclick="go('femme')" style="margin-top:4px;color:var(--gold);font-size:11px">Voir tout → 50 parfums</a>
+<div class="mega" style="min-width:580px;gap:32px">
+<div class="mega-col">
+<h5>PAR FAMILLE</h5>
+<a onclick="go('femme');setTimeout(()=>sbFilterF('floral','famille',document.getElementById('sbF-floral')),600)">Floral</a>
+<a onclick="go('femme');setTimeout(()=>sbFilterF('oriental','famille',document.getElementById('sbF-oriental')),600)">Oriental</a>
+<a onclick="go('femme');setTimeout(()=>sbFilterF('gourmand','famille',document.getElementById('sbF-gourmand')),600)">Gourmand</a>
+<a onclick="go('femme');setTimeout(()=>sbFilterF('fruité','famille',document.getElementById('sbF-fruité')),600)">Fruité</a>
+<a onclick="go('femme');setTimeout(()=>sbFilterF('frais','famille',document.getElementById('sbF-frais')),600)">Frais</a>
+<a onclick="go('femme');setTimeout(()=>sbFilterF('musqué','famille',document.getElementById('sbF-musqué')),600)">Musqué</a>
+<a onclick="go('femme');setTimeout(()=>sbFilterF('boisé','famille',document.getElementById('sbF-boisé')),600)">Boisé</a>
+<a onclick="go('femme')" style="color:var(--gold);margin-top:6px;font-size:11px;font-weight:600">Voir tout → 50 parfums</a>
 </div>
-<div class="mega-col mega-col-marques" style="min-width:200px">
-<h5>Nos Marques</h5>
-<div class="mega-brands">
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Chanel'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/chanel-logo-png_seeklogo-29026.png" alt="Chanel">Chanel</span>
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Dior'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/dior-logo-png_seeklogo-41696.png" alt="Dior">Dior</span>
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','YSL'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/yves-saint-laurent-original-logo-png_seeklogo-155537.png" alt="YSL">YSL</span>
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Lancôme'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/lancome-paris-logo-png_seeklogo-195564.png" alt="Lancôme">Lancôme</span>
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Prada'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/prada-logo-png_seeklogo-111420.png" alt="Prada">Prada</span>
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','MFK'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/maison-francis-kurkdjian-logo-png_seeklogo-625488.png" alt="MFK">MFK</span>
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Guerlain'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/guerlain-logo-png_seeklogo-64086.png" alt="Guerlain">Guerlain</span>
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Hermès'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/hermes-logo-png_seeklogo-321332.png" alt="Hermès">Hermès</span>
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Givenchy'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/givenchy-logo-png_seeklogo-337500.png" alt="Givenchy">Givenchy</span>
-<span class="mega-brand-pill" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Mugler'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/thierry-mugler-logo-png_seeklogo-319217.png" alt="Mugler">Mugler</span>
+<div class="mega-col">
+<h5>PAR MARQUE</h5>
+<a onclick="go('femme');setTimeout(()=>filterByBrand('allF','Chanel'),600)">Chanel</a>
+<a onclick="go('femme');setTimeout(()=>filterByBrand('allF','Dior'),600)">Dior</a>
+<a onclick="go('femme');setTimeout(()=>filterByBrand('allF','YSL'),600)">YSL</a>
+<a onclick="go('femme');setTimeout(()=>filterByBrand('allF','Lancôme'),600)">Lancôme</a>
+<a onclick="go('femme');setTimeout(()=>filterByBrand('allF','Guerlain'),600)">Guerlain</a>
+<a onclick="go('femme');setTimeout(()=>filterByBrand('allF','Giorgio Armani'),600)">Giorgio Armani</a>
+<a onclick="go('femme');setTimeout(()=>filterByBrand('allF','Givenchy'),600)">Givenchy</a>
+<a onclick="go('femme');setTimeout(()=>filterByBrand('allF','Mugler'),600)">Mugler</a>
 </div>
-</div>
-<div class="mega-img-col">
-<div class="mega-img-banner" onclick="go('femme')" style="background:linear-gradient(135deg,#1a0a1e,#2d1535);height:220px">
-<div class="mega-img-banner-bg" style="font-size:60px;opacity:.08">🌸</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
-<svg width="60" height="110" viewBox="0 0 80 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.5">
-<rect x="35" y="2" width="10" height="8" rx="2" fill="rgba(194,112,128,.8)"/><rect x="28" y="10" width="24" height="12" rx="3" fill="rgba(194,112,128,.5)"/><path d="M18 32 Q18 44 16 48 L64 48 Q62 44 62 32 Z" fill="rgba(194,112,128,.2)"/><rect x="14" y="48" width="52" height="76" rx="6" fill="rgba(194,112,128,.12)" stroke="rgba(194,112,128,.4)" stroke-width="1"/>
-</svg>
-</div>
-<div class="mega-img-banner-txt">
-<span>Collection</span><strong>Parfums Femme</strong><em>50 fragrances · 100 DH</em>
-</div>
-</div>
+<div class="mega-col">
+<h5>NOS OFFRES</h5>
+<a onclick="go('potm')">Parfum du Mois −20%</a>
+<a onclick="go('pack-couple')">Pack Couple — 180 DH</a>
+<a onclick="go('pack-decouverte')">Pack Découverte — 450 DH</a>
+<a onclick="go('pack-collection')">Pack Collection — 800 DH</a>
+<a onclick="go('livraison-gratuite')">Livraison gratuite dès 3</a>
 </div>
 </div>
 </li>
 <li>
 <a onclick="go('homme')" id="nav-homme">Parfum Homme</a>
-<div class="mega" style="min-width:680px;gap:28px">
-<div class="mega-col mega-col-famille" style="min-width:170px">
-<h5>Par Famille</h5>
-<a class="mega-family-link" onclick="go('homme');setTimeout(()=>sbFilterH('boisé','famille',document.getElementById('sbH-boisé')),600)"><span style="font-size:18px;margin-right:2px">🌲</span>Boisé</a>
-<a class="mega-family-link" onclick="go('homme');setTimeout(()=>sbFilterH('oriental','famille',document.getElementById('sbH-oriental')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20oriental.jpg" alt="">Oriental</a>
-<a class="mega-family-link" onclick="go('homme');setTimeout(()=>sbFilterH('frais','famille',document.getElementById('sbH-frais')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20frais.jpg" alt="">Frais</a>
-<a class="mega-family-link" onclick="go('homme');setTimeout(()=>sbFilterH('épicé','famille',document.getElementById('sbH-épicé')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/bouton%20epic%C3%A9.jpg" alt="">Épicé</a>
-<a class="mega-family-link" onclick="go('homme');setTimeout(()=>sbFilterH('gourmand','famille',document.getElementById('sbH-gourmand')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20gourmand.jpg" alt="">Gourmand</a>
-<a class="mega-family-link" onclick="go('homme');setTimeout(()=>sbFilterH('cuiré','famille',document.getElementById('sbH-cuiré')),600)"><img class="mega-family-img" src="dossier%20parfum/Bouton/Bouton%20cuir%C3%A9.jpg" alt="">Cuiré</a>
-<a onclick="go('homme')" style="margin-top:4px;color:var(--gold);font-size:11px">Voir tout → 50 parfums</a>
+<div class="mega" style="min-width:580px;gap:32px">
+<div class="mega-col">
+<h5>PAR FAMILLE</h5>
+<a onclick="go('homme');setTimeout(()=>sbFilterH('boisé','famille',document.getElementById('sbH-boisé')),600)">Boisé</a>
+<a onclick="go('homme');setTimeout(()=>sbFilterH('oriental','famille',document.getElementById('sbH-oriental')),600)">Oriental</a>
+<a onclick="go('homme');setTimeout(()=>sbFilterH('frais','famille',document.getElementById('sbH-frais')),600)">Frais</a>
+<a onclick="go('homme');setTimeout(()=>sbFilterH('épicé','famille',document.getElementById('sbH-épicé')),600)">Épicé</a>
+<a onclick="go('homme');setTimeout(()=>sbFilterH('gourmand','famille',document.getElementById('sbH-gourmand')),600)">Gourmand</a>
+<a onclick="go('homme');setTimeout(()=>sbFilterH('cuiré','famille',document.getElementById('sbH-cuiré')),600)">Cuiré</a>
+<a onclick="go('homme')" style="color:var(--gold);margin-top:6px;font-size:11px;font-weight:600">Voir tout → 50 parfums</a>
 </div>
-<div class="mega-col mega-col-marques" style="min-width:200px">
-<h5>Nos Marques</h5>
-<div class="mega-brands">
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Dior'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/dior-logo-png_seeklogo-41696.png" alt="Dior">Dior</span>
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Chanel'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/chanel-logo-png_seeklogo-29026.png" alt="Chanel">Chanel</span>
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Paco Rabanne'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/paco-rabanne-logo-png_seeklogo-105259.png" alt="Paco Rabanne">Paco Rabanne</span>
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Tom Ford'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/tom-ford-logo-png_seeklogo-188943.png" alt="Tom Ford">Tom Ford</span>
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Creed'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/creed-1760-logo-png_seeklogo-290764.png" alt="Creed">Creed</span>
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Parfums de Marly'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/parfums-de-marly-logo-png_seeklogo-297710.png" alt="Parfums de Marly">Parfums de Marly</span>
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Giorgio Armani'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/giorgio-armani-logo-png_seeklogo-168420.png" alt="Armani">Armani</span>
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Hugo Boss'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/hugo-boss-logo-png_seeklogo-68622.png" alt="Hugo Boss">Hugo Boss</span>
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Versace'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/versace-logo-png_seeklogo-148374.png" alt="Versace">Versace</span>
-<span class="mega-brand-pill" onclick="go('homme');setTimeout(()=>filterByBrand('allH','YSL'),600)"><img class="mega-brand-logo-pill" src="dossier%20parfum/logo/yves-saint-laurent-original-logo-png_seeklogo-155537.png" alt="YSL">YSL</span>
+<div class="mega-col">
+<h5>PAR MARQUE</h5>
+<a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Dior'),600)">Dior</a>
+<a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Chanel'),600)">Chanel</a>
+<a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Paco Rabanne'),600)">Paco Rabanne</a>
+<a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Giorgio Armani'),600)">Giorgio Armani</a>
+<a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Hugo Boss'),600)">Hugo Boss</a>
+<a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Parfums de Marly'),600)">Parfums de Marly</a>
+<a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Tom Ford'),600)">Tom Ford</a>
+<a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Creed'),600)">Creed</a>
 </div>
-</div>
-<div class="mega-img-col">
-<div class="mega-img-banner" onclick="go('homme')" style="background:linear-gradient(135deg,#070d1a,#0d1f35);height:220px">
-<div class="mega-img-banner-bg" style="font-size:60px;opacity:.08">🌲</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
-<svg width="60" height="110" viewBox="0 0 80 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.5">
-<rect x="35" y="2" width="10" height="8" rx="2" fill="rgba(90,122,148,.9)"/><rect x="28" y="10" width="24" height="12" rx="3" fill="rgba(90,122,148,.6)"/><path d="M18 32 Q18 44 16 48 L64 48 Q62 44 62 32 Z" fill="rgba(90,122,148,.2)"/><rect x="14" y="48" width="52" height="76" rx="6" fill="rgba(90,122,148,.12)" stroke="rgba(90,122,148,.4)" stroke-width="1"/>
-</svg>
-</div>
-<div class="mega-img-banner-txt">
-<span>Collection</span><strong>Parfums Homme</strong><em>50 fragrances · 100 DH</em>
-</div>
-</div>
+<div class="mega-col">
+<h5>NOS OFFRES</h5>
+<a onclick="go('potm')">Parfum du Mois −20%</a>
+<a onclick="go('pack-couple')">Pack Couple — 180 DH</a>
+<a onclick="go('pack-decouverte')">Pack Découverte — 450 DH</a>
+<a onclick="go('pack-collection')">Pack Collection — 800 DH</a>
+<a onclick="go('livraison-gratuite')">Livraison gratuite dès 3</a>
 </div>
 </div>
 </li>
@@ -1376,31 +1328,32 @@ footer li a:hover{color:var(--gold)}
 </div>
 <div id="activeTagsF" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px"></div>
 <div class="csb-group">
-<div class="csb-title">Par Famille</div>
-<button class="csb-btn active" id="sbF-all" onclick="sbFilterF('all','famille',this)"><span class="csb-icon">✦</span>Tous</button>
-<button class="csb-btn" id="sbF-floral" onclick="sbFilterF('floral','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20floral.jpg" alt="">Floral</button>
-<button class="csb-btn" id="sbF-oriental" onclick="sbFilterF('oriental','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20oriental.jpg" alt="">Oriental</button>
-<button class="csb-btn" id="sbF-gourmand" onclick="sbFilterF('gourmand','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20gourmand.jpg" alt="">Gourmand</button>
-<button class="csb-btn" id="sbF-fruité" onclick="sbFilterF('fruité','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20fruit%C3%A9.jpg" alt="">Fruité</button>
-<button class="csb-btn" id="sbF-frais" onclick="sbFilterF('frais','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20frais.jpg" alt="">Frais</button>
-<button class="csb-btn" id="sbF-musqué" onclick="sbFilterF('musqué','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20musqu%C3%A9.jpg" alt="">Musqué</button>
-<button class="csb-btn" id="sbF-boisé" onclick="sbFilterF('boisé','famille',this)"><span class="csb-icon">🌲</span>Boisé</button>
-<button class="csb-btn" id="sbF-épicé" onclick="sbFilterF('épicé','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/bouton%20epic%C3%A9.jpg" alt="">Épicé</button>
-<button class="csb-btn" id="sbF-cuiré" onclick="sbFilterF('cuiré','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20cuir%C3%A9.jpg" alt="">Cuiré</button>
-<button class="csb-btn" id="sbF-aquatique" onclick="sbFilterF('aquatique','famille',this)"><span class="csb-icon">🌊</span>Aquatique</button>
+<div class="csb-title">Famille</div>
+<button class="csb-btn active" id="sbF-all" onclick="sbFilterF('all','famille',this)">Tous</button>
+<button class="csb-btn" id="sbF-floral" onclick="sbFilterF('floral','famille',this)">Floral</button>
+<button class="csb-btn" id="sbF-oriental" onclick="sbFilterF('oriental','famille',this)">Oriental</button>
+<button class="csb-btn" id="sbF-gourmand" onclick="sbFilterF('gourmand','famille',this)">Gourmand</button>
+<button class="csb-btn" id="sbF-fruité" onclick="sbFilterF('fruité','famille',this)">Fruité</button>
+<button class="csb-btn" id="sbF-frais" onclick="sbFilterF('frais','famille',this)">Frais</button>
+<button class="csb-btn" id="sbF-musqué" onclick="sbFilterF('musqué','famille',this)">Musqué</button>
+<button class="csb-btn" id="sbF-boisé" onclick="sbFilterF('boisé','famille',this)">Boisé</button>
+<button class="csb-btn" id="sbF-épicé" onclick="sbFilterF('épicé','famille',this)">Épicé</button>
+<button class="csb-btn" id="sbF-cuiré" onclick="sbFilterF('cuiré','famille',this)">Cuiré</button>
+<button class="csb-btn" id="sbF-aquatique" onclick="sbFilterF('aquatique','famille',this)">Aquatique</button>
 </div>
 <div class="csb-group">
-<div class="csb-title">Par Occasion</div>
-<button class="csb-btn" onclick="sbFilterF('quotidien','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20quotidien.jpg" alt="">Quotidien</button>
-<button class="csb-btn" onclick="sbFilterF('bureau','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/bouton%20bureau.jpg" alt="">Bureau</button>
-<button class="csb-btn" onclick="sbFilterF('soirée','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20soir%C3%A9e.jpg" alt="">Soirée</button>
-<button class="csb-btn" onclick="sbFilterF('mariage','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20mariage.jpg" alt="">Mariage</button>
-<button class="csb-btn" onclick="sbFilterF('été','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20%C3%A9t%C3%A9.jpg" alt="">Été</button>
-<button class="csb-btn" onclick="sbFilterF('hiver','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20hiver.jpg" alt="">Hiver</button>
-<button class="csb-btn" onclick="sbFilterF('cadeau','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20cadeaux.jpg" alt="">Cadeau</button>
+<div class="csb-title">Occasion</div>
+<button class="csb-btn" onclick="sbFilterF('quotidien','occasion',this)">Quotidien</button>
+<button class="csb-btn" onclick="sbFilterF('bureau','occasion',this)">Bureau</button>
+<button class="csb-btn" onclick="sbFilterF('soirée','occasion',this)">Soirée</button>
+<button class="csb-btn" onclick="sbFilterF('mariage','occasion',this)">Mariage</button>
+<button class="csb-btn" onclick="sbFilterF('été','occasion',this)">Été</button>
+<button class="csb-btn" onclick="sbFilterF('hiver','occasion',this)">Hiver</button>
+<button class="csb-btn" onclick="sbFilterF('cadeau','occasion',this)">Cadeau</button>
 </div>
 <div class="csb-group">
-<div class="csb-title">Par Marque</div>
+<div class="csb-title">Marque</div>
+<input type="text" class="csb-search-brand" placeholder="Rechercher une marque..." oninput="filterSidebarBrand(this.value,'F')">
 <div id="sbBrandsF"></div>
 </div>
 </aside>
@@ -1452,31 +1405,32 @@ footer li a:hover{color:var(--gold)}
 </div>
 <div id="activeTagsH" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px"></div>
 <div class="csb-group">
-<div class="csb-title">Par Famille</div>
-<button class="csb-btn active" id="sbH-all" onclick="sbFilterH('all','famille',this)"><span class="csb-icon">✦</span>Tous</button>
-<button class="csb-btn" id="sbH-boisé" onclick="sbFilterH('boisé','famille',this)"><span class="csb-icon">🌲</span>Boisé</button>
-<button class="csb-btn" id="sbH-oriental" onclick="sbFilterH('oriental','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20oriental.jpg" alt="">Oriental</button>
-<button class="csb-btn" id="sbH-frais" onclick="sbFilterH('frais','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20frais.jpg" alt="">Frais</button>
-<button class="csb-btn" id="sbH-épicé" onclick="sbFilterH('épicé','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/bouton%20epic%C3%A9.jpg" alt="">Épicé</button>
-<button class="csb-btn" id="sbH-gourmand" onclick="sbFilterH('gourmand','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20gourmand.jpg" alt="">Gourmand</button>
-<button class="csb-btn" id="sbH-cuiré" onclick="sbFilterH('cuiré','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20cuir%C3%A9.jpg" alt="">Cuiré</button>
-<button class="csb-btn" id="sbH-floral" onclick="sbFilterH('floral','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20floral.jpg" alt="">Floral</button>
-<button class="csb-btn" id="sbH-fruité" onclick="sbFilterH('fruité','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20fruit%C3%A9.jpg" alt="">Fruité</button>
-<button class="csb-btn" id="sbH-musqué" onclick="sbFilterH('musqué','famille',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20musqu%C3%A9.jpg" alt="">Musqué</button>
-<button class="csb-btn" id="sbH-aquatique" onclick="sbFilterH('aquatique','famille',this)"><span class="csb-icon">🌊</span>Aquatique</button>
+<div class="csb-title">Famille</div>
+<button class="csb-btn active" id="sbH-all" onclick="sbFilterH('all','famille',this)">Tous</button>
+<button class="csb-btn" id="sbH-boisé" onclick="sbFilterH('boisé','famille',this)">Boisé</button>
+<button class="csb-btn" id="sbH-oriental" onclick="sbFilterH('oriental','famille',this)">Oriental</button>
+<button class="csb-btn" id="sbH-frais" onclick="sbFilterH('frais','famille',this)">Frais</button>
+<button class="csb-btn" id="sbH-épicé" onclick="sbFilterH('épicé','famille',this)">Épicé</button>
+<button class="csb-btn" id="sbH-gourmand" onclick="sbFilterH('gourmand','famille',this)">Gourmand</button>
+<button class="csb-btn" id="sbH-cuiré" onclick="sbFilterH('cuiré','famille',this)">Cuiré</button>
+<button class="csb-btn" id="sbH-floral" onclick="sbFilterH('floral','famille',this)">Floral</button>
+<button class="csb-btn" id="sbH-fruité" onclick="sbFilterH('fruité','famille',this)">Fruité</button>
+<button class="csb-btn" id="sbH-musqué" onclick="sbFilterH('musqué','famille',this)">Musqué</button>
+<button class="csb-btn" id="sbH-aquatique" onclick="sbFilterH('aquatique','famille',this)">Aquatique</button>
 </div>
 <div class="csb-group">
-<div class="csb-title">Par Occasion</div>
-<button class="csb-btn" onclick="sbFilterH('quotidien','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20quotidien.jpg" alt="">Quotidien</button>
-<button class="csb-btn" onclick="sbFilterH('bureau','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/bouton%20bureau.jpg" alt="">Bureau</button>
-<button class="csb-btn" onclick="sbFilterH('soirée','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20soir%C3%A9e.jpg" alt="">Soirée</button>
-<button class="csb-btn" onclick="sbFilterH('hiver','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20hiver.jpg" alt="">Hiver</button>
-<button class="csb-btn" onclick="sbFilterH('mariage','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20mariage.jpg" alt="">Mariage</button>
-<button class="csb-btn" onclick="sbFilterH('été','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20%C3%A9t%C3%A9.jpg" alt="">Été</button>
-<button class="csb-btn" onclick="sbFilterH('cadeau','occasion',this)"><img class="csb-img-icon" src="dossier%20parfum/Bouton/Bouton%20cadeaux.jpg" alt="">Cadeau</button>
+<div class="csb-title">Occasion</div>
+<button class="csb-btn" onclick="sbFilterH('quotidien','occasion',this)">Quotidien</button>
+<button class="csb-btn" onclick="sbFilterH('bureau','occasion',this)">Bureau</button>
+<button class="csb-btn" onclick="sbFilterH('soirée','occasion',this)">Soirée</button>
+<button class="csb-btn" onclick="sbFilterH('hiver','occasion',this)">Hiver</button>
+<button class="csb-btn" onclick="sbFilterH('mariage','occasion',this)">Mariage</button>
+<button class="csb-btn" onclick="sbFilterH('été','occasion',this)">Été</button>
+<button class="csb-btn" onclick="sbFilterH('cadeau','occasion',this)">Cadeau</button>
 </div>
 <div class="csb-group">
-<div class="csb-title">Par Marque</div>
+<div class="csb-title">Marque</div>
+<input type="text" class="csb-search-brand" placeholder="Rechercher une marque..." oninput="filterSidebarBrand(this.value,'H')">
 <div id="sbBrandsH"></div>
 </div>
 </aside>
@@ -3093,24 +3047,23 @@ let sbFamilleF='all',sbOccF=null,sbBrandF=null;
 let sbFamilleH='all',sbOccH=null,sbBrandH=null;
 
 function initSidebars(){
-  // FEMME brands
+  // Compter parfums par marque
+  const countF={},countH={};
+  FE.forEach(p=>{countF[p.brand]=(countF[p.brand]||0)+1});
+  HE.forEach(p=>{countH[p.brand]=(countH[p.brand]||0)+1});
+  // Marques uniques avec count > 0
+  const brandsF=[...new Set(FE.map(p=>p.brand))].sort();
+  const brandsH=[...new Set(HE.map(p=>p.brand))].sort();
   const bfEl=document.getElementById('sbBrandsF');
-  if(bfEl)bfEl.innerHTML=BRANDS_F.map(b=>{
-    const src=LOGO_LOCAL[b.n]||`https://logo.clearbit.com/${b.d}`;
-    return`<div class="csb-brand-row" id="sbBF-${b.n}" onclick="sbFilterF('${b.n}','brand',this)">
-    <img class="csb-brand-logo" src="${src}" alt="${b.n}" onerror="this.classList.add('err');this.nextElementSibling.style.fontWeight='600'">
-    <span class="csb-brand-name">${b.n}</span>
-  </div>`;
-  }).join('');
-  // HOMME brands
+  if(bfEl)bfEl.innerHTML=brandsF.map(n=>`<div class="csb-brand-row" id="sbBF-${n}" onclick="sbFilterF('${n}','brand',this)"><span>${n}</span><span class="csb-brand-count">${countF[n]||''}</span></div>`).join('');
   const bhEl=document.getElementById('sbBrandsH');
-  if(bhEl)bhEl.innerHTML=BRANDS_H.map(b=>{
-    const src=LOGO_LOCAL[b.n]||`https://logo.clearbit.com/${b.d}`;
-    return`<div class="csb-brand-row" id="sbBH-${b.n}" onclick="sbFilterH('${b.n}','brand',this)">
-    <img class="csb-brand-logo" src="${src}" alt="${b.n}" onerror="this.classList.add('err');this.nextElementSibling.style.fontWeight='600'">
-    <span class="csb-brand-name">${b.n}</span>
-  </div>`;
-  }).join('');
+  if(bhEl)bhEl.innerHTML=brandsH.map(n=>`<div class="csb-brand-row" id="sbBH-${n}" onclick="sbFilterH('${n}','brand',this)"><span>${n}</span><span class="csb-brand-count">${countH[n]||''}</span></div>`).join('');
+}
+function filterSidebarBrand(val,gender){
+  const q=val.toLowerCase();
+  document.querySelectorAll(gender==='F'?'#sbBrandsF .csb-brand-row':'#sbBrandsH .csb-brand-row').forEach(row=>{
+    row.style.display=row.querySelector('span').textContent.toLowerCase().includes(q)?'':'none';
+  });
 }
 
 function sbFilterF(val,type,el){
