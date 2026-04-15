@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Parfum33ml.ma | Parfums 33ml au Maroc à 100 DH | Livraison partout au Maroc</title>
-<meta name="description" content="Parfum33ml.ma – Achetez vos parfums 33ml au Maroc à 100 DH seulement. +100 parfums homme et femme inspirés de Sauvage, Black Opium, Baccarat Rouge 540, Bleu de Chanel. Livraison 24-48h Casablanca, Rabat, Marrakech. Paiement à la livraison.">
+<meta name="description" content="Parfum33ml.ma – Achetez vos parfums 33ml au Maroc à 100 DH seulement. +100 parfums homme et femme inspirés de Sauvage, Black Opium, Baccarat Rouge 540, Bleu de Chanel. Livraison 24-48h Casablanca, Rabat, Marrakech.">
 <meta name="keywords" content="parfum 33ml Maroc, parfum pas cher Maroc, parfum homme Maroc, parfum femme Maroc, parfum 100 dh, acheter parfum en ligne Maroc, parfum Casablanca, parfum Marrakech, parfum Rabat, parfum Tanger, Black Opium Maroc, Sauvage Dior Maroc, Baccarat Rouge 540 Maroc, Bleu de Chanel Maroc, parfum de poche Maroc">
 <meta property="og:title" content="Parfum33ml.ma | +100 Parfums 33ml à 100 DH">
 <meta property="og:description" content="+100 parfums homme et femme en format 33ml à 100 DH. Livraison rapide partout au Maroc.">
@@ -13,7 +13,7 @@
 <link rel="canonical" href="https://parfum33ml.ma">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Parfum33ml.ma","url":"https://parfum33ml.ma","potentialAction":{"@type":"SearchAction","target":"https://parfum33ml.ma/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Parfum33ml.ma","url":"https://parfum33ml.ma","logo":"https://parfum33ml.ma/logo.png","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":["French","Arabic"]},"address":{"@type":"PostalAddress","addressCountry":"MA","addressLocality":"Casablanca"},"sameAs":["https://www.instagram.com/parfum33ml.ma","https://www.facebook.com/parfum33ml.ma","https://www.tiktok.com/@parfum33ml.ma"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quelle est la tenue de vos parfums 33ml ?","acceptedAnswer":{"@type":"Answer","text":"Nos parfums offrent une tenue de 6 à 8 heures sur la peau."}},{"@type":"Question","name":"Comment se passe la livraison au Maroc ?","acceptedAnswer":{"@type":"Answer","text":"Livraison en 24 à 48h partout au Maroc. Paiement à la livraison. Gratuite dès 3 flacons."}},{"@type":"Question","name":"Puis-je payer à la livraison ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le paiement à la livraison est disponible partout au Maroc."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quelle est la tenue de vos parfums 33ml ?","acceptedAnswer":{"@type":"Answer","text":"Nos parfums offrent une tenue de 6 à 8 heures sur la peau."}},{"@type":"Question","name":"Comment se passe la livraison au Maroc ?","acceptedAnswer":{"@type":"Answer","text":"Livraison en 24 à 48h partout au Maroc. Gratuite dès 3 flacons."}},{"@type":"Question","name":"Comment régler ma commande ?","acceptedAnswer":{"@type":"Answer","text":"Nous acceptons le règlement par Cash, Virement bancaire, CashPlus, Wafacash et Barid Cash."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -434,7 +434,11 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .prod-seo p{font-size:14px;color:var(--txt2);line-height:1.8;margin-bottom:12px}
 .related{margin-top:44px}
 .related h3{font-family:var(--ff-d);font-size:22px;font-weight:600;margin-bottom:18px}
-.related .grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.related-scroll{display:flex;gap:16px;overflow-x:auto;padding-bottom:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.related-scroll::-webkit-scrollbar{height:4px}
+.related-scroll::-webkit-scrollbar-track{background:var(--bg2);border-radius:2px}
+.related-scroll::-webkit-scrollbar-thumb{background:var(--gold-d);border-radius:2px}
+.related-scroll .card{min-width:170px;max-width:170px;scroll-snap-align:start;flex-shrink:0}
 
 /* ── COMPARE BAR ─────────────────────── */
 .compare-bar{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--gold);padding:14px 24px;z-index:1500;display:flex;align-items:center;justify-content:space-between;gap:14px;transform:translateY(100%);transition:.4s cubic-bezier(.4,0,.2,1)}
@@ -773,7 +777,6 @@ footer li a:hover{color:var(--gold)}
 <div class="util-left">
 <a>📦 Livraison 24-48h partout au Maroc</a>
 <a>💵 Cash · Virement · CashPlus · Wafacash · Barid Cash</a>
-<a>💳 Paiement à la livraison ou en avance</a>
 </div>
 <div class="util-right">
 <div class="util-icon" onclick="openSearch()">🔍 Rechercher</div>
@@ -1086,7 +1089,7 @@ footer li a:hover{color:var(--gold)}
 
 <!-- PROCESS 3 ETAPES -->
 <section style="padding:80px 24px;background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--border)" class="reveal">
-<div class="section-header"><span class="tag">📦 Simple & Rapide</span><h2>Commandez en <em>3 étapes</em></h2><p>Livraison partout au Maroc sans inscription requise · Paiement à la livraison</p></div>
+<div class="section-header"><span class="tag">📦 Simple & Rapide</span><h2>Commandez en <em>3 étapes</em></h2><p>Livraison partout au Maroc sans inscription requise</p></div>
 <div class="steps-v2">
 <div class="step-v2 reveal" data-n="01">
 <div class="step-v2-num">1</div>
@@ -1314,9 +1317,8 @@ footer li a:hover{color:var(--gold)}
 <div class="section-header"><span class="tag">❓ FAQ</span><h2>Questions <em>Fréquentes</em></h2></div>
 <div class="faq">
 <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle est la tenue de vos parfums 33ml ?</div><div class="faq-a">Nos parfums offrent une tenue de 6 à 8 heures. Appliquez sur les points de pulsation pour une meilleure diffusion.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment se passe la livraison ?</div><div class="faq-a">Livraison en 24 à 48h partout au Maroc. Paiement à la livraison disponible. Gratuite dès 3 flacons.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment se passe la livraison ?</div><div class="faq-a">Livraison en 24 à 48h partout au Maroc. Gratuite dès 3 flacons commandés.</div></div>
 <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Vos parfums sont-ils des originaux ?</div><div class="faq-a">Ce sont des fragrances inspirées des grandes marques, formulées avec des matières premières de qualité à 100 DH le flacon 33ml.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Puis-je payer à la livraison ?</div><div class="faq-a">Oui ! Paiement à la livraison (COD) disponible partout au Maroc.</div></div>
 <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Vous livrez dans quelle ville ?</div><div class="faq-a">Toutes les villes : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir, Oujda, Meknès, Kénitra, Tétouan, Nador et plus.</div></div>
 <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment commander ?</div><div class="faq-a">Ajoutez vos parfums au panier puis cliquez "Commander via WhatsApp". Votre commande sera pré-remplie automatiquement !</div></div>
 <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Puis-je retourner un parfum ?</div><div class="faq-a">En cas de produit défectueux ou d'erreur de commande, contactez-nous via WhatsApp dans les 48h suivant la réception. Nous trouverons une solution pour vous.</div></div>
@@ -1328,7 +1330,7 @@ footer li a:hover{color:var(--gold)}
 <p>Le format 33ml est devenu le format préféré des Marocains et Marocaines pour accéder à des fragrances de luxe à un prix accessible. Chez Parfum33ml.ma, nous proposons plus de 100 parfums homme et femme en format pocket 33ml à un prix unique de 100 DH le flacon.</p>
 <h3>Des fragrances inspirées des plus grandes maisons de parfumerie</h3>
 <p>Notre collection inclut des fragrances inspirées de Dior, Chanel, YSL, Paco Rabanne, Giorgio Armani, Tom Ford, Maison Francis Kurkdjian, Parfums de Marly, et bien d'autres grandes marques mondiales.</p>
-<h3>Livraison rapide et paiement à la livraison partout au Maroc</h3>
+<h3>Livraison rapide partout au Maroc</h3>
 <p>Nous livrons dans toutes les villes du Maroc en 24 à 48 heures : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir, Oujda, Meknès, Kénitra, Tétouan, Nador, El Jadida, Safi, Béni Mellal, Settat, Khouribga et toutes les autres villes du Royaume.</p>
 </div>
 </div>
@@ -1406,7 +1408,7 @@ footer li a:hover{color:var(--gold)}
 <h3>Les familles olfactives féminines expliquées</h3>
 <p><strong>Floraux :</strong> Dominés par la rose, la pivoine, le jasmin ou l'iris. Idéaux pour la femme romantique et élégante. Exemples : Chanel N°5, J'adore, La Vie Est Belle. <strong>Orientaux :</strong> Riches en vanille, ambre, musc et bois précieux. Pour les soirées et l'hiver. Exemples : Black Opium, Alien, Good Girl. <strong>Gourmands :</strong> Sucrés et addictifs, avec des notes de chocolat, caramel ou café. <strong>Fruités :</strong> Pétillants et jeunes, parfaits pour le printemps et l'été. <strong>Musqués :</strong> Sensuels et discrets, pour une peau comme une seconde peau.</p>
 <h3>Pourquoi choisir le format 33ml ?</h3>
-<p>Le format 33ml est idéal pour les femmes marocaines qui aiment varier leurs parfums selon leur humeur, la saison ou l'occasion. À 100 DH seulement, vous pouvez vous constituer une véritable collection de fragrances luxueuses. Ce format se glisse facilement dans un sac à main, parfait pour les retouches en journée ou les déplacements. Parfum33ml.ma vous propose la livraison en 24 à 48h partout au Maroc, avec paiement à la livraison disponible dans toutes les villes : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir.</p>
+<p>Le format 33ml est idéal pour les femmes marocaines qui aiment varier leurs parfums selon leur humeur, la saison ou l'occasion. À 100 DH seulement, vous pouvez vous constituer une véritable collection de fragrances luxueuses. Ce format se glisse facilement dans un sac à main, parfait pour les retouches en journée ou les déplacements. Parfum33ml.ma vous propose la livraison en 24 à 48h partout au Maroc dans toutes les villes : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir.</p>
 </div>
 </div>
 
@@ -1483,7 +1485,7 @@ footer li a:hover{color:var(--gold)}
 <h3>Les familles olfactives masculines expliquées</h3>
 <p><strong>Boisés :</strong> Cèdre, santal, vétiver, oud. Fragrances viriles et élégantes, parfaites pour toutes occasions. Sauvage, Bleu de Chanel, Layton. <strong>Orientaux :</strong> Ambre, vanille, bois de santal, épices. Chaleureux et enveloppants pour les soirées et l'hiver marocain. <strong>Frais/Aquatiques :</strong> Notes marines, agrumes, fougères. Légers et dynamiques pour le quotidien et l'été. Acqua di Giò, Invictus. <strong>Épicés :</strong> Poivre, cardamome, cannelle. Caractère affirmé pour les hommes qui aiment se démarquer. <strong>Gourmands :</strong> Café, cacao, praline. Séducteurs et addictifs pour les soirées romantiques.</p>
 <h3>Livraison de parfums homme au Maroc — Toutes villes</h3>
-<p>Parfum33ml.ma livre vos parfums homme partout au Maroc en 24 à 48h : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir, Oujda, Meknès, Kénitra, Tétouan, Nador, El Jadida, Safi, Béni Mellal. Paiement à la livraison disponible. Livraison gratuite dès 3 flacons commandés.</p>
+<p>Parfum33ml.ma livre vos parfums homme partout au Maroc en 24 à 48h : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir, Oujda, Meknès, Kénitra, Tétouan, Nador, El Jadida, Safi, Béni Mellal. Livraison gratuite dès 3 flacons commandés.</p>
 </div>
 </div>
 
@@ -1865,7 +1867,7 @@ footer li a:hover{color:var(--gold)}
 <div class="footer-grid">
 <div class="footer-brand">
 <span class="logo" onclick="go('home')"><img src="dossier%20parfum/logo.jpg" alt="Parfum33ml.ma — L'Art du Parfum"></span>
-<p>+100 parfums 33ml à 100 DH. Livraison rapide et paiement à la livraison partout au Maroc.</p>
+<p>+100 parfums 33ml à 100 DH. Livraison rapide partout au Maroc.</p>
 <div class="social-links">
 <a href="https://www.instagram.com/parfum33ml.ma" target="_blank" class="social-link social-ig" title="Instagram">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -2524,7 +2526,7 @@ document.getElementById('page-product').classList.add('active');
 updateNavActive('');
 window.scrollTo({top:0});
 document.title=p.name+' '+p.brand+' 33ml | Parfum Maroc 100 DH';
-const rel=ALL.filter(x=>x.gender===p.gender&&x.id!==p.id).sort(()=>Math.random()-.5).slice(0,4);
+const rel=ALL.filter(x=>x.gender===p.gender&&x.id!==p.id).sort(()=>Math.random()-.5).slice(0,12);
 const topN=p.notes.slice(0,Math.ceil(p.notes.length/3));
 const midN=p.notes.slice(Math.ceil(p.notes.length/3),Math.ceil(p.notes.length*2/3));
 const baseN=p.notes.slice(Math.ceil(p.notes.length*2/3));
@@ -2544,11 +2546,6 @@ ${PROD_IMG[p.id]
   :bottleSVG(100,'rgba(201,169,110,.35)')}
 ${p.best?`<span class="badge b-best" style="top:auto;bottom:20px;left:20px;transform:none">⭐ Best-seller</span>`:''}
 ${p.stock?`<span class="badge b-low" style="top:auto;bottom:20px;right:20px;left:auto">⚡ Stock limité</span>`:''}
-</div>
-<div class="prod-thumbs">
-<div class="prod-thumb active">📸<br><small>Vue flacon</small></div>
-<div class="prod-thumb">✨<br><small>Détail</small></div>
-<div class="prod-thumb">🌿<br><small>Ingrédients</small></div>
 </div>
 </div>
 <div class="prod-info">
@@ -2591,31 +2588,24 @@ WhatsApp
 </div>
 <div class="prod-g">
 <div class="pg"><span class="pgic">🚚</span>Livraison 24-48h</div>
-<div class="pg"><span class="pgic">💵</span>Paiement à la livraison</div>
 <div class="pg"><span class="pgic">💬</span>Support WhatsApp 7j/7</div>
 <div class="pg"><span class="pgic">📦</span>Emballage soigné</div>
 </div>
-<div class="apply-guide">
-<h4>🌿 Guide d'application</h4>
-<div class="apply-points">
-<div class="apply-point"><div class="ap-icon">💪</div><div class="ap-text"><h5>Poignets</h5><p>Point de pulsation principal</p></div></div>
-<div class="apply-point"><div class="ap-icon">👂</div><div class="ap-text"><h5>Cou & nuque</h5><p>Pour le sillage</p></div></div>
-<div class="apply-point"><div class="ap-icon">💈</div><div class="ap-text"><h5>Creux du coude</h5><p>Diffusion naturelle</p></div></div>
-<div class="apply-point"><div class="ap-icon">🎽</div><div class="ap-text"><h5>Poitrine</h5><p>Longue durée</p></div></div>
 </div>
 </div>
-</div>
-</div>
-<div class="prod-seo">
+<div class="prod-seo" style="display:none" aria-hidden="true">
 <h2>Acheter ${p.name} de ${p.brand} en 33ml au Maroc — 100 DH</h2>
 <h3>Les notes olfactives de ${p.name}</h3>
 <p>${p.name} de ${p.brand} se compose de notes de ${p.notes.join(', ')}. Cette composition fait de ce parfum un choix idéal pour les amateurs de fragrances ${p.family}s au Maroc.</p>
 <h3>Pourquoi ${p.name} est-il populaire au Maroc ?</h3>
 <p>${p.name} fait partie des parfums les plus vendus au Maroc grâce à son sillage remarquable et sa tenue exceptionnelle. ${p.best?`C'est l'un de nos best-sellers, commandé chaque jour par nos clients.`:`Sa popularité ne cesse de croître auprès des amateurs de parfumerie.`} En format 33ml à 100 DH, c'est le compromis parfait entre qualité et prix accessible.</p>
 <h3>Commander ${p.name} partout au Maroc</h3>
-<p>Livraison en 24-48h à Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir et dans toutes les villes du Maroc. Paiement à la livraison disponible. Livraison gratuite dès 3 flacons.</p>
+<p>Livraison en 24-48h à Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir et dans toutes les villes du Maroc. Livraison gratuite dès 3 flacons.</p>
 </div>
-<div class="related"><h3>Vous aimerez aussi</h3><div class="grid">${rel.map(r=>cardHTML(r,r.gender)).join('')}</div></div>`;
+<div class="related">
+<h3>Vous aimerez aussi <span style="font-size:13px;color:var(--txt3);font-weight:400;font-family:var(--ff-b)">${rel.length} parfums sélectionnés</span></h3>
+<div class="related-scroll">${rel.map(r=>cardHTML(r,r.gender)).join('')}</div>
+</div>`;
 setTimeout(()=>{initReveal();initTilt();staggerCards()},100);
 });
 }
@@ -3269,7 +3259,7 @@ const ARTICLES={
 
 <div class="article-cta">
 <h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commandez votre parfum de mariage</h3>
-<p style="color:var(--txt2);font-size:14px;margin-bottom:16px">Tous ces parfums disponibles en 33ml à 100 DH · Livraison 24-48h partout au Maroc · Paiement à la livraison</p>
+<p style="color:var(--txt2);font-size:14px;margin-bottom:16px">Tous ces parfums disponibles en 33ml à 100 DH · Livraison 24-48h partout au Maroc</p>
 <button class="btn-p" onclick="go('femme')" style="font-size:12px;padding:12px 28px">Voir la collection Femme →</button>
 <button class="btn-o" onclick="go('pack-decouverte')" style="font-size:12px;padding:12px 28px;margin-left:8px">Pack 5 parfums — 450 DH</button>
 </div>`
@@ -3401,7 +3391,7 @@ const ARTICLES={
 <h2>FAQ — Parfums homme au Maroc</h2>
 <p><strong>Q : Quel parfum homme est le plus populaire au Maroc ?</strong><br>Sauvage de Dior, sans contestation possible, suivi de Bleu de Chanel et 1 Million de Paco Rabanne.</p>
 <p><strong>Q : Quel parfum homme choisir pour un mariage au Maroc ?</strong><br>Aventus (Creed) ou Layton (Parfums de Marly) pour les cérémonies — ils sont sophistiqués et mémorables sans être envahissants.</p>
-<p><strong>Q : Combien coûtent ces parfums en 33ml ?</strong><br>100 DH chacun chez Parfum33ml.ma, livraison 24-48h partout au Maroc, paiement à la livraison disponible.</p>
+<p><strong>Q : Combien coûtent ces parfums en 33ml ?</strong><br>100 DH chacun chez Parfum33ml.ma, livraison 24-48h partout au Maroc.</p>
 
 <div class="article-cta">
 <h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commandez le top 5 masculin</h3>
@@ -3713,8 +3703,8 @@ function renderMegaProducts(containerId, products, count){
     </div>`;
   }).join('');
 }
-renderMegaProducts('megaFemmeProducts', FE, 2);
-renderMegaProducts('megaHommeProducts', HE, 2);
+renderMegaProducts('megaFemmeProducts', FE, 4);
+renderMegaProducts('megaHommeProducts', HE, 4);
 </script>
 </body>
 </html>
