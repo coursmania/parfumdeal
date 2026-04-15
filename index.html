@@ -3209,6 +3209,7 @@ const ARTICLES={
   tag:'Guide Parfum Femme',
   title:'Top 10 parfums femme pour un <em>mariage marocain</em>',
   meta:'8 min · Parfum Femme · Mise à jour 2026',
+  img:'dossier%20parfum/baniere/baniere-blog-mariage.jpg',
   body:`
 <p>Le mariage marocain est une célébration unique au monde : une succession de cérémonies somptueuses qui s'étalent sur plusieurs jours — la <em>lîlat al-henna</em>, la cérémonie du thé, la nuit de noces, le lendemain de fête. Chaque moment mérite une fragrance à la hauteur. Choisir son parfum pour son mariage est une décision olfactive que vous ne regretterez jamais : c'est la mémoire invisible qui vous ramènera à cet instant magique des années après.</p>
 
@@ -3681,7 +3682,7 @@ function goArticle(id){
 <h1>${art.title}</h1>
 <div class="article-meta"><span>📖 ${art.meta}</span></div>
 </div>
-<div class="article-img-ph"></div>
+${art.img?`<div style="width:100%;height:340px;border-radius:16px;overflow:hidden;margin-bottom:32px;border:1px solid var(--border)"><img src="${art.img}" alt="${art.title.replace(/<[^>]+>/g,'')}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`:'<div class="article-img-ph"></div>'}
 <div class="article-body">${art.body}</div>
 </div>`;
     document.getElementById('page-article').classList.add('active');
