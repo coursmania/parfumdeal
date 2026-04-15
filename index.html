@@ -588,6 +588,14 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 /* Mega menu clean text links */
 .mega-col a{display:block;padding:6px 0;font-size:13px;color:var(--txt2);transition:.15s;border-bottom:1px solid transparent}
 .mega-col a:hover{color:var(--gold);padding-left:4px}
+/* Mega menu product previews */
+.mega-products{display:flex;gap:12px;border-left:1px solid var(--border);padding-left:24px;align-items:flex-start}
+.mega-prod-card{display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:.2s;width:90px;flex-shrink:0}
+.mega-prod-card:hover{transform:translateY(-3px)}
+.mega-prod-img{width:80px;height:90px;object-fit:contain;border-radius:8px;background:rgba(255,255,255,.03)}
+.mega-prod-label{font-size:10px;color:var(--txt3);text-align:center;margin-top:6px;line-height:1.3}
+.mega-prod-price{font-size:11px;color:var(--gold);font-weight:600;margin-top:3px}
+.mega-prod-badge{font-size:9px;background:var(--gold);color:#000;border-radius:4px;padding:1px 5px;margin-top:3px;font-weight:700}
 
 /* Filter buttons (page filters kept for compat) */
 .fbtn{position:relative;overflow:hidden}
@@ -819,6 +827,7 @@ footer li a:hover{color:var(--gold)}
 <a onclick="go('pack-collection')">Pack Collection — 800 DH</a>
 <a onclick="go('livraison-gratuite')">Livraison gratuite dès 3</a>
 </div>
+<div class="mega-products" id="megaFemmeProducts"></div>
 </div>
 </li>
 <li>
@@ -854,6 +863,7 @@ footer li a:hover{color:var(--gold)}
 <a onclick="go('pack-collection')">Pack Collection — 800 DH</a>
 <a onclick="go('livraison-gratuite')">Livraison gratuite dès 3</a>
 </div>
+<div class="mega-products" id="megaHommeProducts"></div>
 </div>
 </li>
 <li>
@@ -871,6 +881,14 @@ footer li a:hover{color:var(--gold)}
 <a onclick="go('potm')">Parfum du Mois −20%</a>
 <a onclick="go('livraison-gratuite')">Livraison gratuite dès 3 parfums</a>
 <a onclick="go('wishlist')">Ma Liste de Favoris</a>
+</div>
+<div class="mega-products">
+<div class="mega-prod-card" onclick="goProduct('f5')">
+<img class="mega-prod-img" src="dossier%20parfum/parfum/black%20opium%20600-800.jpg" alt="Black Opium YSL">
+<div class="mega-prod-label">Black Opium · YSL</div>
+<div class="mega-prod-price">80 DH</div>
+<div class="mega-prod-badge">OFFRE DU MOIS</div>
+</div>
 </div>
 </div>
 </li>
@@ -3678,6 +3696,25 @@ loadState();
 initSidebars();
 initReveal();
 setTimeout(()=>{initTilt();staggerCards()},200);
+
+// ── MEGA MENU PRODUITS ALÉATOIRES ─────────────────
+function renderMegaProducts(containerId, products, count){
+  const el=document.getElementById(containerId);
+  if(!el)return;
+  const shuffled=[...products].sort(()=>Math.random()-.5).slice(0,count);
+  el.innerHTML=shuffled.map(p=>{
+    const price=SPECIAL_PRICES[p.id]||100;
+    const badge=SPECIAL_PRICES[p.id]?'<div class="mega-prod-badge">−20%</div>':'';
+    return`<div class="mega-prod-card" onclick="goProduct('${p.id}')">
+      <img class="mega-prod-img" src="${PROD_IMG[p.id]||''}" alt="${p.name}">
+      <div class="mega-prod-label">${p.name}<br><span style="color:var(--txt3)">${p.brand}</span></div>
+      <div class="mega-prod-price">${price} DH</div>
+      ${badge}
+    </div>`;
+  }).join('');
+}
+renderMegaProducts('megaFemmeProducts', FE, 2);
+renderMegaProducts('megaHommeProducts', HE, 2);
 </script>
 </body>
 </html>
