@@ -2148,11 +2148,12 @@ animSmoke();
 
 // ══════════════ PARTICLES
 const pC=document.getElementById('particles');
-for(let i=0;i<25;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.bottom='-10px';p.style.animationDuration=(Math.random()*8+5)+'s';p.style.animationDelay=Math.random()*8+'s';p.style.width=p.style.height=(Math.random()*3+1)+'px';pC.appendChild(p)}
+if(pC){for(let i=0;i<25;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.bottom='-10px';p.style.animationDuration=(Math.random()*8+5)+'s';p.style.animationDelay=Math.random()*8+'s';p.style.width=p.style.height=(Math.random()*3+1)+'px';pC.appendChild(p)}}
 
 // ══════════════ CINEMATIC TITLE
 (function initTitle(){
 const el=document.getElementById('heroTitle');
+if(!el)return;
 const lines=['Votre Parfum','en format <em>33ml</em>'];
 let ci=0;
 lines.forEach((line,li)=>{
@@ -2390,6 +2391,7 @@ const BRANDS=[
 ];
 function initBrands(){
 const t=document.getElementById('brandsTrack');
+if(!t)return;
 const all=[...BRANDS,...BRANDS];
 t.innerHTML=all.map(b=>{
   const src=LOGO_LOCAL[b.n];
