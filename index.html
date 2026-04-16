@@ -3866,7 +3866,7 @@ function renderBsCarousel(trackId,products){
       +'<div class="bs-name">'+p.name+'</div>'
       +'<div class="bs-stars">'+stars+'</div>'
       +'<div class="bs-price">'+price+' DH</div>'
-      +'<button class="bs-add-btn" onclick="event.stopPropagation();addToCart(''+p.id+'',''+p.name.replace(/'/g,"\'")+' ',''+p.brand+'')">Commander</button>'
+      +'<button class="bs-add-btn" onclick="event.stopPropagation();addToCart(\''+p.id+'\',\''+p.name.replace(/'/g,'`')+'\',\''+p.brand+'\')">Commander</button>'
       +'</div></div>';
   }).join('');
 }
@@ -3888,10 +3888,6 @@ const budgetPicks=budgetIds.map(id=>ALL.find(p=>p.id===id)).filter(Boolean);
 renderBsCarousel('budgetTrack',budgetPicks);
 
 // ══════════════ INIT GRIDS
-renderGrid('homeFemme',FE.filter(p=>p.best).concat(FE.filter(p=>!p.best)).slice(0,8),'femme');
-document.getElementById('homeFemme').insertAdjacentHTML('beforeend',`<div class="ad-card anim-btn" onclick="go('femme')"><div class="ad-card-ph">[ IMAGE PUBLICITAIRE ]</div><div style="margin-top:14px;font-family:var(--ff-d);font-size:22px;color:var(--gold);font-weight:700">50 Parfums Femme</div><div style="margin-top:8px;font-size:13px;color:var(--txt2)">Voir toute la collection →</div></div>`);
-renderGrid('homeHomme',HE.filter(p=>p.best).concat(HE.filter(p=>!p.best)).slice(0,8),'homme');
-document.getElementById('homeHomme').insertAdjacentHTML('beforeend',`<div class="ad-card anim-btn" onclick="go('homme')"><div class="ad-card-ph">[ IMAGE PUBLICITAIRE ]</div><div style="margin-top:14px;font-family:var(--ff-d);font-size:22px;color:var(--gold);font-weight:700">50 Parfums Homme</div><div style="margin-top:8px;font-size:13px;color:var(--txt2)">Voir toute la collection →</div></div>`);
 renderGrid('allF',FE,'femme');
 renderGrid('allH',HE,'homme');
 
