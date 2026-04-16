@@ -792,6 +792,172 @@ footer li a:hover{color:var(--gold)}
 .blog-grid{grid-template-columns:repeat(2,1fr)}.steps-v2{grid-template-columns:1fr}.pis-item{flex:0 0 280px}.pis-img{height:220px}
 .footer-grid{grid-template-columns:1fr}
 }
+
+/* ── HOME GENERAL ─────────────────────────────── */
+.home-sec-header{display:flex;justify-content:space-between;align-items:baseline;max-width:1400px;margin:0 auto 28px;padding:0 24px}
+.home-sec-header h2{font-family:var(--ff-d);font-size:26px;font-weight:700;color:var(--txt)}
+.home-sec-header h2 em{font-style:normal;color:var(--gold)}
+.home-sec-header p{font-size:13px;color:var(--txt3);margin-top:4px}
+.home-sec-header.center{flex-direction:column;align-items:center;text-align:center;gap:6px}
+.see-all{font-size:12px;color:var(--gold);font-weight:600;cursor:pointer;white-space:nowrap;text-decoration:none}
+.see-all:hover{opacity:.8}
+.ph-img{background:linear-gradient(135deg,#141414,#1e1e1e);border:2px dashed rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(255,255,255,.2);font-family:monospace;width:100%;height:100%}
+
+/* ── HERO CAROUSEL ─────────────────────────────── */
+.hero-carousel{position:relative;width:100%;overflow:hidden;background:#0a0a0a}
+.hc-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.hc-slide{position:relative;min-width:100%;height:540px;overflow:hidden;display:flex;align-items:center}
+.hc-slide-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hc-slide-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.05) 100%)}
+.hc-slide-ph{position:absolute;inset:0}
+.hc-content{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:0 64px;width:100%}
+.hc-tag{display:inline-block;background:var(--gold);color:#000;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:16px}
+.hc-content h1{font-family:var(--ff-d);font-size:clamp(30px,4vw,52px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:14px}
+.hc-content h1 em{font-style:normal;color:var(--gold)}
+.hc-content p{font-size:14px;color:rgba(255,255,255,.65);margin-bottom:28px;max-width:380px}
+.hc-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;width:48px;height:48px;border-radius:50%;font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:.2s;backdrop-filter:blur(4px)}
+.hc-btn:hover{background:rgba(255,255,255,.18)}
+.hc-prev{left:20px}
+.hc-next{right:20px}
+.hc-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.hc-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:.3s}
+.hc-dot.active{background:var(--gold);width:24px;border-radius:4px}
+
+/* ── VEDETTES ────────────────────────────────── */
+.home-vedettes{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:100%;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.vedette-card{position:relative;overflow:hidden;cursor:pointer;display:flex;flex-direction:column}
+.vedette-img-wrap{height:300px;position:relative;overflow:hidden}
+.vedette-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.vedette-card:hover .vedette-img-wrap img{transform:scale(1.04)}
+.vedette-info{padding:24px 32px;background:var(--card);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.vedette-text .vedette-brand{font-size:10px;color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.vedette-text .vedette-name{font-family:var(--ff-d);font-size:22px;font-weight:700;color:var(--txt)}
+.vedette-text .vedette-sub{font-size:12px;color:var(--txt3);margin-top:3px}
+.vedette-cta{font-size:12px;font-weight:600;color:var(--gold);border:1px solid var(--gold);padding:8px 18px;border-radius:50px;white-space:nowrap;transition:.2s}
+.vedette-card:hover .vedette-cta{background:var(--gold);color:#000}
+
+/* ── COLLECTIONS TILES ──────────────────────── */
+.home-collections{padding:60px 0}
+.collections-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;max-width:1400px;margin:0 auto;padding:0 24px}
+.col-tile{cursor:pointer;border-radius:12px;overflow:hidden;position:relative;border:1px solid var(--border);transition:transform .25s,border-color .25s}
+.col-tile:hover{transform:translateY(-4px);border-color:var(--border-h)}
+.col-tile-img{height:200px;position:relative;overflow:hidden}
+.col-tile-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.col-tile:hover .col-tile-img img{transform:scale(1.06)}
+.col-tile-cap{padding:12px 14px 14px;background:var(--card)}
+.col-tile-label{font-size:13px;font-weight:700;color:var(--txt)}
+.col-tile-sub{font-size:11px;color:var(--txt3);margin-top:2px}
+
+/* ── BESTSELLER CAROUSEL ─────────────────────── */
+.home-bestsellers{padding:60px 0;border-top:1px solid var(--border)}
+.bs-carousel-wrap{position:relative;max-width:1400px;margin:0 auto;padding:0 24px}
+.bs-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.bs-track::-webkit-scrollbar{display:none}
+.bs-card{min-width:200px;flex-shrink:0;scroll-snap-align:start;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .25s,transform .25s}
+.bs-card:hover{border-color:var(--border-h);transform:translateY(-3px)}
+.bs-card-img{height:220px;background:var(--bg3);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.bs-card-img img{width:100%;height:100%;object-fit:contain}
+.bs-badge{position:absolute;top:8px;left:8px;background:var(--gold);color:#000;font-size:9px;padding:2px 7px;border-radius:4px;font-weight:700}
+.bs-card-body{padding:12px 14px 14px}
+.bs-brand{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px}
+.bs-name{font-size:13px;font-weight:600;color:var(--txt);line-height:1.3;margin-bottom:6px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.bs-stars{font-size:11px;color:var(--gold);margin-bottom:6px}
+.bs-price{font-size:16px;font-weight:700;color:var(--gold);font-family:var(--ff-d);margin-bottom:10px}
+.bs-add-btn{width:100%;padding:8px;font-size:11px;font-weight:600;background:transparent;border:1px solid var(--border-h);color:var(--txt);border-radius:8px;cursor:pointer;transition:.2s}
+.bs-add-btn:hover{background:var(--gold);color:#000;border-color:var(--gold)}
+.bs-btn{position:absolute;top:50%;transform:translateY(-60%);background:var(--card);border:1px solid var(--border);color:var(--txt);width:40px;height:40px;border-radius:50%;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;transition:.2s}
+.bs-btn:hover{border-color:var(--gold);color:var(--gold)}
+.bs-prev{left:0}
+.bs-next{right:0}
+
+/* ── CORNERS ────────────────────────────────── */
+.home-corners{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.corner-card{position:relative;overflow:hidden;cursor:pointer;height:340px}
+.corner-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.corner-card:hover .corner-card-img{transform:scale(1.05)}
+.corner-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.2) 60%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+.corner-label{font-family:var(--ff-d);font-size:22px;font-weight:700;color:#fff;margin-bottom:4px}
+.corner-sub{font-size:12px;color:rgba(255,255,255,.65);margin-bottom:14px}
+.corner-cta{display:inline-block;font-size:11px;font-weight:700;color:#000;background:var(--gold);padding:8px 18px;border-radius:50px;letter-spacing:.5px;transition:.2s;width:fit-content}
+.corner-card:hover .corner-cta{background:#fff}
+
+/* ── FAMILIES ───────────────────────────────── */
+.home-families{padding:60px 24px;background:var(--bg2);border-top:1px solid var(--border)}
+.families-grid{display:flex;justify-content:center;gap:16px;max-width:900px;margin:0 auto;flex-wrap:wrap}
+.fam-tile{display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;padding:20px 24px;border-radius:16px;border:1px solid var(--border);background:var(--card);min-width:120px;transition:.25s}
+.fam-tile:hover{border-color:var(--gold);transform:translateY(-3px)}
+.fam-icon{font-size:32px;line-height:1}
+.fam-label{font-size:13px;font-weight:600;color:var(--txt)}
+
+/* ── BUDGET ─────────────────────────────────── */
+.home-budget{padding:60px 0;border-top:1px solid var(--border)}
+.budget-banner-wrap{max-width:1400px;margin:0 auto 28px;padding:0 24px}
+.budget-banner{height:280px;border-radius:16px;overflow:hidden;position:relative;border:1px solid var(--border)}
+.budget-banner img{width:100%;height:100%;object-fit:cover}
+
+/* ── CRUSH (COUPS DE CŒUR) ──────────────────── */
+.home-crush{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-top:1px solid var(--border)}
+.crush-card{position:relative;overflow:hidden;cursor:pointer;height:420px}
+.crush-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.crush-card:hover .crush-card-img{transform:scale(1.04)}
+.crush-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.15) 70%)}
+.crush-content{position:absolute;bottom:32px;left:32px;z-index:2}
+.crush-brand{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.crush-name{font-family:var(--ff-d);font-size:26px;font-weight:700;color:#fff;margin-bottom:16px}
+.crush-cta{display:inline-block;font-size:11px;font-weight:700;color:#000;background:var(--gold);padding:9px 20px;border-radius:50px;transition:.2s}
+.crush-card:hover .crush-cta{background:#fff}
+
+/* ── MARQUES ─────────────────────────────────── */
+.home-brands-sec{padding:56px 24px;border-top:1px solid var(--border);background:var(--bg2)}
+.brands-logo-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px;max-width:1400px;margin:28px auto 0}
+.brand-logo-tile{height:80px;border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--card);cursor:pointer;transition:.2s;overflow:hidden}
+.brand-logo-tile:hover{border-color:var(--gold)}
+.brand-logo-tile img{width:100%;height:100%;object-fit:contain;padding:10px}
+.brand-logo-tile .ph-img{font-size:10px;color:rgba(255,255,255,.25);font-family:var(--ff-d);font-weight:600;letter-spacing:1px}
+
+/* ── AVANTAGES ──────────────────────────────── */
+.home-avantages{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.avantage-item{padding:28px 20px;text-align:center;border-right:1px solid var(--border)}
+.avantage-item:last-child{border-right:none}
+.av-icon{font-size:28px;margin-bottom:10px}
+.av-label{font-size:13px;font-weight:700;color:var(--txt);margin-bottom:4px}
+.av-sub{font-size:11px;color:var(--txt3);line-height:1.4}
+
+/* ── NEWSLETTER/WHATSAPP ────────────────────── */
+.home-newsletter{padding:72px 24px;background:linear-gradient(135deg,rgba(201,169,110,.06),rgba(37,211,102,.04));border-top:1px solid var(--border);text-align:center}
+.nl-icon{font-size:40px;margin-bottom:16px}
+.home-newsletter h2{font-family:var(--ff-d);font-size:28px;font-weight:700;color:var(--txt);margin-bottom:10px}
+.home-newsletter h2 em{font-style:normal;color:var(--gold)}
+.home-newsletter p{font-size:14px;color:var(--txt2);max-width:440px;margin:0 auto 24px;line-height:1.7}
+
+/* ── RESPONSIVE HOME ─────────────────────────── */
+@media(max-width:1024px){
+.collections-grid{grid-template-columns:repeat(3,1fr)}
+.brands-logo-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:768px){
+.hc-slide{height:380px}
+.hc-content{padding:0 32px}
+.home-vedettes{grid-template-columns:1fr}
+.collections-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+.home-corners{grid-template-columns:1fr}
+.corner-card{height:260px}
+.home-crush{grid-template-columns:1fr}
+.crush-card{height:300px}
+.home-avantages{grid-template-columns:repeat(2,1fr)}
+.avantage-item:nth-child(2){border-right:none}
+.avantage-item:last-child{grid-column:1/-1;border-right:none}
+.brands-logo-grid{grid-template-columns:repeat(4,1fr)}
+.families-grid{gap:10px}
+.fam-tile{min-width:90px;padding:16px 14px}
+}
+@media(max-width:480px){
+.hc-content h1{font-size:24px}
+.collections-grid{grid-template-columns:repeat(2,1fr)}
+.brands-logo-grid{grid-template-columns:repeat(3,1fr)}
+.home-avantages{grid-template-columns:1fr}
+.avantage-item{border-right:none;border-bottom:1px solid var(--border)}
+}
 </style>
 </head>
 <body>
@@ -983,377 +1149,287 @@ footer li a:hover{color:var(--gold)}
 <!-- ══════════════════════════════════════ HOME PAGE -->
 <div class="page active" id="page-home">
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-bg"></div>
-<div class="hero-orb o1"></div><div class="hero-orb o2"></div><div class="hero-orb o3"></div>
-<div class="particles" id="particles"></div>
-<div class="hero-c">
-<div class="sub">✦ Boutique en ligne de parfums au Maroc ✦</div>
-<h1 id="heroTitle"></h1>
-<p>+100 parfums homme et femme inspirés des plus grandes marques. Qualité premium à prix unique, livré partout au Maroc.</p>
-<div class="hero-price"><span class="amt">100 DH</span><span class="u">/ flacon 33ml</span></div>
-<div class="hero-btns">
-<a class="btn-p" onclick="go('femme')">🌸 Parfums Femme</a>
-<a class="btn-o" onclick="go('homme')">🧔 Parfums Homme</a>
+<!-- ── 1. HERO CAROUSEL ── -->
+<section class="hero-carousel" id="heroCarousel">
+<div class="hc-track" id="hcTrack">
+
+  <!-- Slide 1 : Femme -->
+  <div class="hc-slide">
+    <div class="hc-slide-ph"><div class="ph-img" style="height:540px">[ PHOTO AMBIANCE FEMME · 1920 × 544 px ]</div></div>
+    <div class="hc-slide-overlay"></div>
+    <div class="hc-content">
+      <div class="hc-tag">Collection Femme</div>
+      <h1>50 Parfums Femme<br><em>de Grandes Marques</em></h1>
+      <p>Chanel · Dior · YSL · Lancôme · Mugler · Armani</p>
+      <a class="btn-p" onclick="go('femme')" style="font-size:13px">Découvrir la collection →</a>
+    </div>
+  </div>
+
+  <!-- Slide 2 : Homme -->
+  <div class="hc-slide">
+    <div class="hc-slide-ph"><div class="ph-img" style="height:540px">[ PHOTO AMBIANCE HOMME · 1920 × 544 px ]</div></div>
+    <div class="hc-slide-overlay"></div>
+    <div class="hc-content">
+      <div class="hc-tag">Collection Homme</div>
+      <h1>50 Parfums Homme<br><em>100 DH le flacon</em></h1>
+      <p>Dior · Chanel · Armani · Paco Rabanne · Creed</p>
+      <a class="btn-p" onclick="go('homme')" style="font-size:13px">Découvrir la collection →</a>
+    </div>
+  </div>
+
+  <!-- Slide 3 : Offre du mois -->
+  <div class="hc-slide">
+    <div class="hc-slide-ph"><div class="ph-img" style="height:540px">[ PHOTO OFFRE DU MOIS BLACK OPIUM · 1920 × 544 px ]</div></div>
+    <div class="hc-slide-overlay"></div>
+    <div class="hc-content">
+      <div class="hc-tag">⚡ Offre Flash</div>
+      <h1>Black Opium · YSL<br><em>ce mois à 80 DH</em></h1>
+      <p>Au lieu de 100 DH · Offre limitée dans le temps</p>
+      <a class="btn-p" onclick="goProduct('f5')" style="font-size:13px">Commander à 80 DH →</a>
+    </div>
+  </div>
+
 </div>
-<div class="trust">
-<div><span class="tic">✦</span> Qualité Garantie</div>
-<div><span class="tic">✦</span> Cash · CashPlus · Virement · Barid Cash</div>
-<div><span class="tic">✦</span> Livraison 24-48h</div>
+<button class="hc-btn hc-prev" onclick="hcMove(-1)">&#8249;</button>
+<button class="hc-btn hc-next" onclick="hcMove(1)">&#8250;</button>
+<div class="hc-dots" id="hcDots"></div>
+</section>
+
+<!-- ── 2. PRODUITS VEDETTES ── -->
+<section class="home-vedettes">
+  <div class="vedette-card" onclick="goProduct('f5')">
+    <div class="vedette-img-wrap">
+      <div class="ph-img" style="height:300px">[ PHOTO BLACK OPIUM · 400 × 300 px ]</div>
+    </div>
+    <div class="vedette-info">
+      <div class="vedette-text">
+        <div class="vedette-brand">YSL</div>
+        <div class="vedette-name">Black Opium</div>
+        <div class="vedette-sub">Le best-seller absolu au Maroc</div>
+      </div>
+      <span class="vedette-cta">Découvrir →</span>
+    </div>
+  </div>
+  <div class="vedette-card" onclick="goProduct('h1')">
+    <div class="vedette-img-wrap">
+      <div class="ph-img" style="height:300px">[ PHOTO SAUVAGE DIOR · 400 × 300 px ]</div>
+    </div>
+    <div class="vedette-info">
+      <div class="vedette-text">
+        <div class="vedette-brand">Dior</div>
+        <div class="vedette-name">Sauvage</div>
+        <div class="vedette-sub">Le N°1 masculin au Maroc depuis 5 ans</div>
+      </div>
+      <span class="vedette-cta">Découvrir →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. NOS COLLECTIONS ── -->
+<section class="home-collections">
+<div class="home-sec-header">
+  <div><h2>Nos <em>Collections</em></h2></div>
+  <a class="see-all" onclick="go('femme')">Voir tout →</a>
 </div>
+<div class="collections-grid">
+  <div class="col-tile" onclick="go('femme')">
+    <div class="col-tile-img"><div class="ph-img">[ 250 × 200 px ]<br>Parfums Femme</div></div>
+    <div class="col-tile-cap"><div class="col-tile-label">Parfums Femme</div><div class="col-tile-sub">50 fragrances · 100 DH</div></div>
+  </div>
+  <div class="col-tile" onclick="go('homme')">
+    <div class="col-tile-img"><div class="ph-img">[ 250 × 200 px ]<br>Parfums Homme</div></div>
+    <div class="col-tile-cap"><div class="col-tile-label">Parfums Homme</div><div class="col-tile-sub">50 fragrances · 100 DH</div></div>
+  </div>
+  <div class="col-tile" onclick="go('femme');setTimeout(()=>sbFilterF('floral','famille',document.getElementById('sbF-floral')),600)">
+    <div class="col-tile-img"><div class="ph-img">[ 250 × 200 px ]<br>Collection Florale</div></div>
+    <div class="col-tile-cap"><div class="col-tile-label">Collection Florale</div><div class="col-tile-sub">Printemps · Été</div></div>
+  </div>
+  <div class="col-tile" onclick="go('homme');setTimeout(()=>sbFilterH('oriental','famille',document.getElementById('sbH-oriental')),600)">
+    <div class="col-tile-img"><div class="ph-img">[ 250 × 200 px ]<br>Orientaux Intenses</div></div>
+    <div class="col-tile-cap"><div class="col-tile-label">Orientaux Intenses</div><div class="col-tile-sub">Soirée · Hiver</div></div>
+  </div>
+  <div class="col-tile" onclick="go('home','packs-section')">
+    <div class="col-tile-img"><div class="ph-img">[ 250 × 200 px ]<br>Coffrets Cadeaux</div></div>
+    <div class="col-tile-cap"><div class="col-tile-label">Coffrets Cadeaux</div><div class="col-tile-sub">Dès 180 DH · Livr. offerte</div></div>
+  </div>
+  <div class="col-tile" onclick="goProduct('f5')">
+    <div class="col-tile-img"><div class="ph-img">[ 250 × 200 px ]<br>Offre du Mois</div></div>
+    <div class="col-tile-cap"><div class="col-tile-label">Offre du Mois</div><div class="col-tile-sub">Black Opium · 80 DH</div></div>
+  </div>
 </div>
 </section>
 
-<!-- BRANDS MARQUEE -->
-<div class="brands-strip">
-<div class="brands-track" id="brandsTrack"></div>
+<!-- ── 4. MEILLEURES VENTES ── -->
+<section class="home-bestsellers">
+<div class="home-sec-header">
+  <div><h2>Les <em>Meilleures Ventes</em></h2><p>Les parfums les plus commandés au Maroc</p></div>
+  <a class="see-all" onclick="go('femme')">Voir tous les parfums →</a>
 </div>
-
-<!-- FEATURES -->
-<div class="feats">
-<div class="ft reveal"><div class="ic">⏱️</div><h3>Tenue 6-8h</h3><p>Longue durée sur la peau</p></div>
-<div class="ft reveal"><div class="ic">✨</div><h3>Format 33ml</h3><p>Pocket & pratique</p></div>
-<div class="ft reveal"><div class="ic">🏆</div><h3>Grandes Marques</h3><p>Fragrances fidèles</p></div>
-<div class="ft reveal"><div class="ic">🏷️</div><h3>100 DH Unique</h3><p>Tous au même prix</p></div>
-</div>
-
-<!-- STATS BAND -->
-<div class="stats-band reveal">
-<div class="stats-inner">
-<div class="stat-item"><span class="stat-num" data-target="5000">0</span><span class="stat-lbl">Clients satisfaits</span></div>
-<div class="stat-item"><span class="stat-num" data-target="100">0</span><span class="stat-lbl">Fragrances disponibles</span></div>
-<div class="stat-item"><span class="stat-num" data-target="48">0</span><span class="stat-lbl">H délai max livraison</span></div>
-<div class="stat-item"><span class="stat-num" data-target="49">0</span><span class="stat-lbl">/ 5 satisfaction clients</span></div>
-</div>
-</div>
-
-<!-- PROMO IMAGES SCROLL -->
-<section class="promo-img-scroll" id="occasion-section">
-<div class="pis-header">
-<span class="pis-label">Nos Collections</span>
-<div class="pis-arrows"><button onclick="pisScroll(-1)">‹</button><button onclick="pisScroll(1)">›</button></div>
-</div>
-<div class="pis-track" id="pisTrack">
-<!-- Set 1 -->
-<div class="pis-item" onclick="go('femme')">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20parfum%20femme.jpg" alt="Parfums Femme"></div>
-<div class="pis-caption"><strong>Parfums Femme</strong><span>50 fragrances · 100 DH</span></div>
-</div>
-<div class="pis-item" onclick="go('homme')">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20parfum%20homme.jpg" alt="Parfums Homme"></div>
-<div class="pis-caption"><strong>Parfums Homme</strong><span>50 fragrances · 100 DH</span></div>
-</div>
-<div class="pis-item" onclick="go('home','packs-section')">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20coffret%20cadeaux.jpg" alt="Coffrets Cadeaux"></div>
-<div class="pis-caption"><strong>Coffrets Cadeaux</strong><span>Dès 180 DH · Livraison offerte</span></div>
-</div>
-<div class="pis-item" onclick="go('femme');setTimeout(()=>filterFamily('allF','floral',null),600)">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20collection%20florales.jpg" alt="Collection Florale"></div>
-<div class="pis-caption"><strong>Collection Florale</strong><span>Printemps · Été</span></div>
-</div>
-<div class="pis-item" onclick="go('homme');setTimeout(()=>filterFamily('allH','oriental',null),600)">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20orientaux%20intenses.jpg" alt="Orientaux Intenses"></div>
-<div class="pis-caption"><strong>Orientaux Intenses</strong><span>Soirée · Hiver</span></div>
-</div>
-<div class="pis-item" onclick="go('home','potm-section')">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20offre%20du%20mois.jpg" alt="Offre du Mois"></div>
-<div class="pis-caption"><strong>Offre du Mois</strong><span>-20% ce mois · Livraison offerte</span></div>
-</div>
-<!-- Set 2 — clone pour boucle infinie -->
-<div class="pis-item" onclick="go('femme')">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20parfum%20femme.jpg" alt="Parfums Femme"></div>
-<div class="pis-caption"><strong>Parfums Femme</strong><span>50 fragrances · 100 DH</span></div>
-</div>
-<div class="pis-item" onclick="go('homme')">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20parfum%20homme.jpg" alt="Parfums Homme"></div>
-<div class="pis-caption"><strong>Parfums Homme</strong><span>50 fragrances · 100 DH</span></div>
-</div>
-<div class="pis-item" onclick="go('home','packs-section')">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20coffret%20cadeaux.jpg" alt="Coffrets Cadeaux"></div>
-<div class="pis-caption"><strong>Coffrets Cadeaux</strong><span>Dès 180 DH · Livraison offerte</span></div>
-</div>
-<div class="pis-item" onclick="go('femme');setTimeout(()=>filterFamily('allF','floral',null),600)">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20collection%20florales.jpg" alt="Collection Florale"></div>
-<div class="pis-caption"><strong>Collection Florale</strong><span>Printemps · Été</span></div>
-</div>
-<div class="pis-item" onclick="go('homme');setTimeout(()=>filterFamily('allH','oriental',null),600)">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20orientaux%20intenses.jpg" alt="Orientaux Intenses"></div>
-<div class="pis-caption"><strong>Orientaux Intenses</strong><span>Soirée · Hiver</span></div>
-</div>
-<div class="pis-item" onclick="go('home','potm-section')">
-<div class="pis-img"><img src="dossier%20parfum/categorie%20offre%20du%20mois.jpg" alt="Offre du Mois"></div>
-<div class="pis-caption"><strong>Offre du Mois</strong><span>-20% ce mois · Livraison offerte</span></div>
-</div>
+<div class="bs-carousel-wrap">
+  <button class="bs-btn bs-prev" onclick="bsMove('bsTrack',-1)">&#8249;</button>
+  <div class="bs-track" id="bsTrack"></div>
+  <button class="bs-btn bs-next" onclick="bsMove('bsTrack',1)">&#8250;</button>
 </div>
 </section>
 
-<!-- PARFUM DU MOIS -->
-<section style="padding:60px 24px" class="reveal" id="potm-section">
-<div class="section-header"><span class="tag">🔥 Offre du Mois</span><h2>Le Parfum du <em>Mois</em></h2><p>Une offre exclusive limitée dans le temps</p></div>
-<div class="potm">
-<div class="potm-card">
-<div class="potm-visual" style="overflow:hidden;background:none">
-<span class="potm-badge">OFFRE FLASH</span>
-<img src="dossier%20parfum/parfum/black%20opium%20600-800.jpg" alt="Black Opium YSL" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top">
+<!-- ── 5. NOS CORNERS ── -->
+<section class="home-corners">
+  <div class="corner-card" onclick="go('femme')">
+    <div class="ph-img" style="position:absolute;inset:0">[ PHOTO AMBIANCE FEMME CORNER · 400 × 340 px ]</div>
+    <div class="corner-overlay">
+      <div class="corner-label">L'Univers Femme</div>
+      <div class="corner-sub">Floral · Oriental · Gourmand</div>
+      <span class="corner-cta">Découvrir</span>
+    </div>
+  </div>
+  <div class="corner-card" onclick="go('homme')">
+    <div class="ph-img" style="position:absolute;inset:0">[ PHOTO AMBIANCE HOMME CORNER · 400 × 340 px ]</div>
+    <div class="corner-overlay">
+      <div class="corner-label">L'Univers Homme</div>
+      <div class="corner-sub">Boisé · Frais · Oriental</div>
+      <span class="corner-cta">Découvrir</span>
+    </div>
+  </div>
+  <div class="corner-card" onclick="go('home','packs-section')">
+    <div class="ph-img" style="position:absolute;inset:0">[ PHOTO COFFRETS CADEAUX · 400 × 340 px ]</div>
+    <div class="corner-overlay">
+      <div class="corner-label">Coffrets Cadeaux</div>
+      <div class="corner-sub">Dès 180 DH · Livraison offerte</div>
+      <span class="corner-cta">Découvrir</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. FAMILLES OLFACTIVES ── -->
+<section class="home-families">
+<div class="home-sec-header center">
+  <h2>Nos <em>Familles Olfactives</em></h2>
+  <p>Trouvez le parfum qui vous correspond</p>
 </div>
-<div class="potm-info">
-<div class="pbrand">YSL</div>
-<h3>Black Opium</h3>
-<p class="potm-desc">Un gourmand rock et addictif. L'accord café-vanille le plus célèbre de la parfumerie. Le best-seller absolu au Maroc.</p>
-<div class="potm-prices"><span class="new-p">80 DH</span><span class="old-p">100 DH</span><span class="save">-20%</span></div>
-<div class="countdown">
-<div class="cd-box"><span class="cd-num" id="cdH">00</span><span class="cd-lbl">Heures</span></div>
-<div class="cd-box"><span class="cd-num" id="cdM">00</span><span class="cd-lbl">Min</span></div>
-<div class="cd-box"><span class="cd-num" id="cdS">00</span><span class="cd-lbl">Sec</span></div>
-</div>
-<div class="potm-cta">
-<button class="btn-p" onclick="go('potm')" style="font-size:12px;padding:12px 24px">Voir l'offre détaillée →</button>
-<button class="btn-o" onclick="addToCart('f5','Black Opium','YSL')" style="font-size:12px;padding:12px 24px">Ajouter au panier (80 DH)</button>
-</div>
-</div>
-</div>
+<div class="families-grid">
+  <div class="fam-tile" onclick="go('femme');setTimeout(()=>sbFilterF('floral','famille',document.getElementById('sbF-floral')),600)">
+    <div class="fam-icon">🌸</div><div class="fam-label">Floral</div>
+  </div>
+  <div class="fam-tile" onclick="go('femme');setTimeout(()=>sbFilterF('oriental','famille',document.getElementById('sbF-oriental')),600)">
+    <div class="fam-icon">✨</div><div class="fam-label">Oriental</div>
+  </div>
+  <div class="fam-tile" onclick="go('homme');setTimeout(()=>sbFilterH('boisé','famille',document.getElementById('sbH-boisé')),600)">
+    <div class="fam-icon">🌲</div><div class="fam-label">Boisé</div>
+  </div>
+  <div class="fam-tile" onclick="go('homme');setTimeout(()=>sbFilterH('frais','famille',document.getElementById('sbH-frais')),600)">
+    <div class="fam-icon">🌊</div><div class="fam-label">Frais</div>
+  </div>
+  <div class="fam-tile" onclick="go('femme');setTimeout(()=>sbFilterF('gourmand','famille',document.getElementById('sbF-gourmand')),600)">
+    <div class="fam-icon">🍫</div><div class="fam-label">Gourmand</div>
+  </div>
+  <div class="fam-tile" onclick="go('femme');setTimeout(()=>sbFilterF('musqué','famille',document.getElementById('sbF-musqué')),600)">
+    <div class="fam-icon">🌙</div><div class="fam-label">Musqué</div>
+  </div>
 </div>
 </section>
 
-<!-- PROCESS 3 ETAPES -->
-<section style="padding:80px 24px;background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--border)" class="reveal">
-<div class="section-header"><span class="tag">📦 Simple & Rapide</span><h2>Commandez en <em>3 étapes</em></h2><p>Livraison partout au Maroc sans inscription requise</p></div>
-<div class="steps-v2">
-<div class="step-v2 reveal" data-n="01">
-<div class="step-v2-num">1</div>
-<div class="step-v2-icon" style="background:linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.04))">🛍️</div>
-<h4>Choisissez vos parfums</h4>
-<p>Parcourez notre catalogue de +100 fragrances. Filtrez par famille olfactive, marque ou occasion. Utilisez le quiz pour trouver votre parfum idéal.</p>
-<ul class="step-v2-list">
-<li>+100 fragrances disponibles</li>
-<li>Quiz personnalisé inclus</li>
-<li>Favoris & liste de souhaits</li>
-<li>Comparer les fragrances</li>
-</ul>
+<!-- ── 7. 100 DH MAXI PARFUM ── -->
+<section class="home-budget">
+<div class="home-sec-header">
+  <div><h2>100 DH · <em>Maxi Parfum</em></h2><p>Le luxe olfactif à votre portée</p></div>
+  <a class="see-all" onclick="go('femme')">Voir toutes les offres →</a>
 </div>
-<div class="step-v2 reveal" data-n="02" style="background:linear-gradient(160deg,rgba(201,169,110,.04),var(--card));border-color:var(--border-h)">
-<div class="step-v2-num">2</div>
-<div class="step-v2-icon" style="background:linear-gradient(135deg,rgba(37,211,102,.1),rgba(37,211,102,.04))">💬</div>
-<h4>Confirmez via WhatsApp</h4>
-<p>Cliquez "Commander via WhatsApp". Votre commande est pré-remplie automatiquement. Il suffit d'ajouter votre adresse et votre numéro.</p>
-<ul class="step-v2-list">
-<li>Message pré-rempli automatique</li>
-<li>Réponse en quelques minutes</li>
-<li>Aucun compte requis</li>
-<li>Confirmation instantanée</li>
-</ul>
+<div class="budget-banner-wrap">
+  <div class="budget-banner"><div class="ph-img" style="height:280px">[ BANNIÈRE 100 DH MAXI PARFUM · 1400 × 280 px ]</div></div>
 </div>
-<div class="step-v2 reveal" data-n="03">
-<div class="step-v2-num">3</div>
-<div class="step-v2-icon" style="background:linear-gradient(135deg,rgba(90,158,111,.1),rgba(90,158,111,.04))">📦</div>
-<h4>Recevez et payez</h4>
-<p>Livraison en 24 à 48h partout au Maroc. Vous payez cash à la réception, aucun paiement en ligne requis.</p>
-<ul class="step-v2-list">
-<li>Livraison 24-48h partout au Maroc</li>
-<li>Paiement à la réception</li>
-<li>Livraison GRATUITE dès 3 flacons</li>
-<li>Emballage soigné & discret</li>
-</ul>
-</div>
-</div>
-<div style="text-align:center;margin-top:44px">
-<a class="btn-p" href="https://wa.me/212600000000" target="_blank" style="font-size:13px">💬 Commander via WhatsApp maintenant</a>
-<p style="margin-top:14px;font-size:12px;color:var(--txt3)">Disponible 7j/7 · Casablanca, Rabat, Marrakech, Tanger et toutes villes du Maroc</p>
+<div class="bs-carousel-wrap">
+  <button class="bs-btn bs-prev" onclick="bsMove('budgetTrack',-1)">&#8249;</button>
+  <div class="bs-track" id="budgetTrack"></div>
+  <button class="bs-btn bs-next" onclick="bsMove('budgetTrack',1)">&#8250;</button>
 </div>
 </section>
 
-<!-- COFFRETS -->
-<section style="padding:60px 24px" class="reveal" id="packs-section">
-<div class="section-header"><span class="tag">🎁 Coffrets</span><h2>Nos <em>Packs</em> Parfums</h2><p>Composez votre collection et économisez</p></div>
-<div class="packs-grid">
-<div class="pack-card reveal">
-<div class="pack-icon">💑</div><h4>Pack Couple</h4>
-<p class="pack-desc">1 parfum homme + 1 parfum femme au choix</p>
-<ul class="pack-contents"><li>1 parfum homme + 1 parfum femme</li><li>Emballage soigné cadeau</li><li>🚚 + 15 DH livraison</li></ul>
-<div class="pack-price-row"><span class="pp">180 DH</span><span class="pp-old">200 DH</span></div>
-<button class="btn-p" onclick="go('pack-couple')" style="width:100%;font-size:11px;padding:11px">Voir ce pack →</button>
+<!-- ── 8. COUPS DE CŒUR ── -->
+<section class="home-crush">
+  <div class="crush-card" onclick="goProduct('f41')">
+    <div class="ph-img" style="position:absolute;inset:0">[ PHOTO COUP DE CŒUR FEMME · 800 × 420 px ]</div>
+    <div class="crush-overlay"></div>
+    <div class="crush-content">
+      <div class="crush-brand">Chanel</div>
+      <div class="crush-name">Chance EDP</div>
+      <span class="crush-cta">Découvrir →</span>
+    </div>
+  </div>
+  <div class="crush-card" onclick="goProduct('h2')">
+    <div class="ph-img" style="position:absolute;inset:0">[ PHOTO COUP DE CŒUR HOMME · 800 × 420 px ]</div>
+    <div class="crush-overlay"></div>
+    <div class="crush-content">
+      <div class="crush-brand">Chanel</div>
+      <div class="crush-name">Bleu de Chanel</div>
+      <span class="crush-cta">Découvrir →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── 9. NOS MARQUES ── -->
+<section class="home-brands-sec">
+<div class="home-sec-header center">
+  <h2>Nos <em>Grandes Marques</em></h2>
+  <p>16 maisons de parfumerie mondiales · 100 DH le flacon 33ml</p>
 </div>
-<div class="pack-card pack-pop reveal">
-<div class="pack-icon">✨</div><h4>Pack Découverte</h4>
-<p class="pack-desc">5 parfums au choix parmi nos 100 fragrances</p>
-<ul class="pack-contents"><li>5 parfums 33ml au choix</li><li>Mixte homme/femme possible</li><li>-10% sur le total</li><li>Livraison GRATUITE</li></ul>
-<div class="pack-price-row"><span class="pp">450 DH</span><span class="pp-old">500 DH</span></div>
-<button class="btn-p" onclick="go('pack-decouverte')" style="width:100%;font-size:11px;padding:11px">Voir ce pack →</button>
-</div>
-<div class="pack-card reveal">
-<div class="pack-icon">💎</div><h4>Pack Collection</h4>
-<p class="pack-desc">10 parfums au choix — la collection ultime</p>
-<ul class="pack-contents"><li>10 parfums 33ml au choix</li><li>-20% sur le total</li><li>Coffret cadeau inclus</li><li>Livraison GRATUITE express</li></ul>
-<div class="pack-price-row"><span class="pp">800 DH</span><span class="pp-old">1000 DH</span></div>
-<button class="btn-p" onclick="go('pack-collection')" style="width:100%;font-size:11px;padding:11px">Voir ce pack →</button>
-</div>
+<div class="brands-logo-grid" id="brandsLogoGrid">
+  <div class="brand-logo-tile" onclick="go('homme')"><div class="ph-img" style="height:80px">Dior<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">Chanel<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">YSL<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">Lancôme<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">Mugler<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">Armani<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><div class="ph-img" style="height:80px">Paco Rabanne<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><div class="ph-img" style="height:80px">Creed<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">Versace<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><div class="ph-img" style="height:80px">Hermès<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">MFK<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">C. Herrera<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">Marc Jacobs<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">Gucci<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><div class="ph-img" style="height:80px">Valentino<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><div class="ph-img" style="height:80px">Pdm<br><span style="font-size:9px;opacity:.5">150×80</span></div></div>
 </div>
 </section>
 
-<!-- BEST-SELLERS FEMME -->
-<section style="padding:70px 24px" class="reveal">
-<div class="section-header"><span class="tag">🌸 Best-sellers Femme</span><h2>Les <em>Incontournables</em> Femme</h2><p>Les parfums féminins les plus demandés au Maroc</p></div>
-<div class="grid" id="homeFemme"></div>
-<div style="text-align:center;margin-top:32px"><a class="btn-o" onclick="go('femme')">Voir les 50 parfums femme →</a></div>
+<!-- ── 10. AVANTAGES ── -->
+<section class="home-avantages">
+  <div class="avantage-item">
+    <div class="av-icon">✨</div>
+    <div class="av-label">Qualité Premium</div>
+    <div class="av-sub">Matières premières sélectionnées · Tenue 6-8h</div>
+  </div>
+  <div class="avantage-item">
+    <div class="av-icon">🚚</div>
+    <div class="av-label">Livraison 24-48h</div>
+    <div class="av-sub">Partout au Maroc · Gratuite dès 3 flacons</div>
+  </div>
+  <div class="avantage-item">
+    <div class="av-icon">💬</div>
+    <div class="av-label">WhatsApp 7j/7</div>
+    <div class="av-sub">Commandez en quelques minutes · Réponse rapide</div>
+  </div>
+  <div class="avantage-item">
+    <div class="av-icon">💵</div>
+    <div class="av-label">Paiement à la réception</div>
+    <div class="av-sub">Cash · CashPlus · Barid Cash · Wafacash</div>
+  </div>
+  <div class="avantage-item">
+    <div class="av-icon">🎁</div>
+    <div class="av-label">Emballage soigné</div>
+    <div class="av-sub">Chaque flacon emballé avec soin · Idéal cadeau</div>
+  </div>
 </section>
 
-<!-- BEST-SELLERS HOMME -->
-<section style="padding:30px 24px 70px" class="reveal">
-<div class="section-header"><span class="tag">🧔 Best-sellers Homme</span><h2>Les <em>Incontournables</em> Homme</h2><p>Les parfums masculins préférés des Marocains</p></div>
-<div class="grid" id="homeHomme"></div>
-<div style="text-align:center;margin-top:32px"><a class="btn-o" onclick="go('homme')">Voir les 50 parfums homme →</a></div>
+<!-- ── 11. NEWSLETTER WHATSAPP ── -->
+<section class="home-newsletter">
+  <div class="nl-icon">💬</div>
+  <h2>Offres Exclusives sur <em>WhatsApp</em></h2>
+  <p>Rejoignez notre liste et recevez nos promotions et nouveautés en avant-première. Réponse garantie en quelques minutes.</p>
+  <a class="btn-p" href="https://wa.me/212600000000" target="_blank" style="font-size:13px;display:inline-block">Rejoindre sur WhatsApp →</a>
 </section>
 
-<!-- PROMO OFFRES -->
-<section style="padding:0 24px 70px" class="reveal">
-<div class="promo"><h3>Offres <em>Spéciales</em> 🎉</h3><p>Plus vous commandez, plus vous économisez !</p>
-<div class="promo-grid">
-<div class="promo-card"><div class="qty">1</div><div class="lbl">parfum</div><div class="pr">100 DH</div><div class="ship" style="color:var(--txt3)">+ 15 DH livraison</div></div>
-<div class="promo-card featured"><div class="qty">3</div><div class="lbl">parfums</div><div class="pr">300 DH</div><div class="ship">🎁 Livraison GRATUITE</div></div>
-<div class="promo-card"><div class="qty">5</div><div class="lbl">parfums</div><div class="pr">450 DH</div><div class="ship">🔥 -10% + Livr. GRATUITE</div></div>
-<div class="promo-card"><div class="qty">10</div><div class="lbl">parfums</div><div class="pr">800 DH</div><div class="ship">💎 -20% + Livr. GRATUITE</div></div>
-</div></div>
-</section>
-
-<!-- QUIZ -->
-<section style="padding:60px 24px" class="reveal" id="quiz-section">
-<div class="section-header"><h2>Quel parfum est fait <em>pour vous</em> ?</h2><p>Répondez à 4 questions et découvrez votre parfum idéal</p></div>
-<div class="quiz-wrap">
-<div class="quiz-box" id="quizBox">
-<div class="quiz-progress" id="quizProgress"></div>
-<div class="quiz-step active" data-step="0">
-<div class="quiz-q">Vous cherchez un parfum pour...</div>
-<div class="quiz-opts">
-<div class="quiz-opt" onclick="quizAnswer(0,'quotidien')">Le quotidien</div>
-<div class="quiz-opt" onclick="quizAnswer(0,'soirée')">Les soirées</div>
-<div class="quiz-opt" onclick="quizAnswer(0,'bureau')">Le bureau</div>
-<div class="quiz-opt" onclick="quizAnswer(0,'mariage')">Un mariage / événement</div>
-</div>
-</div>
-<div class="quiz-step" data-step="1">
-<div class="quiz-q">Quelle ambiance vous attire ?</div>
-<div class="quiz-opts">
-<div class="quiz-opt" onclick="quizAnswer(1,'frais')">Fraîcheur & légèreté</div>
-<div class="quiz-opt" onclick="quizAnswer(1,'sensuel')">Sensuel & envoûtant</div>
-<div class="quiz-opt" onclick="quizAnswer(1,'sucré')">Sucré & gourmand</div>
-<div class="quiz-opt" onclick="quizAnswer(1,'puissant')">Puissant & boisé</div>
-</div>
-</div>
-<div class="quiz-step" data-step="2">
-<div class="quiz-q">Pour qui est ce parfum ?</div>
-<div class="quiz-opts">
-<div class="quiz-opt" onclick="quizAnswer(2,'femme')">Pour elle</div>
-<div class="quiz-opt" onclick="quizAnswer(2,'homme')">Pour lui</div>
-</div>
-</div>
-<div class="quiz-step" data-step="3">
-<div class="quiz-q">Quelle saison préférez-vous ?</div>
-<div class="quiz-opts">
-<div class="quiz-opt" onclick="quizAnswer(3,'été')">Printemps / Été</div>
-<div class="quiz-opt" onclick="quizAnswer(3,'hiver')">Automne / Hiver</div>
-</div>
-</div>
-<div class="quiz-step" data-step="result">
-<div class="quiz-result">
-<h3>Vos parfums idéaux :</h3>
-<div class="grid" id="quizResults" style="grid-template-columns:repeat(auto-fill,minmax(170px,1fr))"></div>
-<div style="margin-top:24px"><button class="btn-o" onclick="resetQuiz()">Refaire le quiz</button></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- LIVE -->
-<div class="live-bar reveal" id="liveBar">
-<div class="live-item"><span class="live-dot"></span>Commandé il y a <strong id="liveTime">3 min</strong> à <strong id="liveCity">Casablanca</strong></div>
-<div class="live-item"><span class="live-dot"></span><strong id="liveCount">1 247</strong> flacons vendus ce mois</div>
-<div class="live-item"><span class="live-dot"></span><strong id="liveViewing">14</strong> personnes en ligne</div>
-</div>
-
-<!-- TESTIMONIALS -->
-<section style="padding:60px 24px" class="reveal">
-<div class="section-header"><span class="tag">⭐ Avis Clients</span><h2>Ils nous font <em>confiance</em></h2><p>+5000 clients satisfaits partout au Maroc</p></div>
-<div class="testi-grid">
-<div class="testi-card reveal">
-<div class="testi-top"><div class="testi-avatar">SA</div><div><div class="testi-name">Sarah A.</div><div class="testi-city">Casablanca</div></div></div>
-<div class="testi-stars">★★★★★</div>
-<div class="testi-text">"J'ai commandé Black Opium et Coco Mademoiselle. Reçu en 24h à Casa, la tenue est incroyable pour le prix ! Je recommande à 100%."</div>
-<div class="testi-wa">✓ Via WhatsApp</div>
-</div>
-<div class="testi-card reveal">
-<div class="testi-top"><div class="testi-avatar">MK</div><div><div class="testi-name">Mohammed K.</div><div class="testi-city">Marrakech</div></div></div>
-<div class="testi-stars">★★★★★</div>
-<div class="testi-text">"Le Sauvage et le Bleu de Chanel sont mes préférés. Qualité au top, ma femme m'a aussi commandé le pack couple. Service rapide et pro."</div>
-<div class="testi-wa">✓ Via WhatsApp</div>
-</div>
-<div class="testi-card reveal">
-<div class="testi-top"><div class="testi-avatar">FA</div><div><div class="testi-name">Fatima Z.</div><div class="testi-city">Rabat</div></div></div>
-<div class="testi-stars">★★★★★</div>
-<div class="testi-text">"Pack découverte commandé pour l'Aïd. 5 parfums différents, toute la famille est contente ! Le Baccarat Rouge 540 est mon coup de cœur."</div>
-<div class="testi-wa">✓ Via WhatsApp</div>
-</div>
-<div class="testi-card reveal">
-<div class="testi-top"><div class="testi-avatar">YB</div><div><div class="testi-name">Youssef B.</div><div class="testi-city">Tanger</div></div></div>
-<div class="testi-stars">★★★★★</div>
-<div class="testi-text">"3ème commande déjà ! Le Layton et le Tobacco Vanille tiennent toute la journée. Livraison rapide même à Tanger. Merci Parfum33ml !"</div>
-<div class="testi-wa">✓ Via WhatsApp</div>
-</div>
-</div>
-</section>
-
-<!-- BLOG -->
-<section style="padding:60px 24px" class="reveal" id="blog-section">
-<div class="section-header"><span class="tag">📖 Conseils</span><h2>Le <em>Guide</em> du Parfum</h2><p>Nos articles pour bien choisir et porter votre parfum</p></div>
-<div class="blog-grid">
-
-<div class="blog-card" onclick="goArticle('1')">
-<div class="blog-img" style="background:linear-gradient(135deg,#1a0a1e,#2d1535);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-mariage.jpg" alt="Parfums mariage marocain" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-<div class="blog-body"><div class="blog-tag">Guide</div><h4>Top 10 parfums femme pour un mariage marocain</h4><p>De Black Opium à Baccarat Rouge 540, les fragrances longue tenue pour vos cérémonies.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>5 min de lecture</span><span>·</span><span>Parfum Femme</span></div></div>
-</div>
-
-<div class="blog-card" onclick="goArticle('2')">
-<div class="blog-img" style="background:linear-gradient(135deg,#0a1018,#162030);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-ete.jpg" alt="Porter son parfum en été au Maroc" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-<div class="blog-body"><div class="blog-tag">Conseil</div><h4>Comment bien porter son parfum au Maroc en été ?</h4><p>Points d'application, conservation par chaleur, meilleures fragrances estivales pour le climat marocain.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>4 min de lecture</span><span>·</span><span>Conseils</span></div></div>
-</div>
-
-<div class="blog-card" onclick="goArticle('3')">
-<div class="blog-img" style="background:linear-gradient(135deg,#0d100a,#1a2010);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-top5-homme.jpg" alt="Top 5 parfums homme Maroc 2025" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-<div class="blog-body"><div class="blog-tag">Tendances</div><h4>Les 5 parfums homme les plus portés au Maroc en 2025</h4><p>Sauvage, Bleu de Chanel, Aventus, Layton, 1 Million — le classement complet avec analyse.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>6 min de lecture</span><span>·</span><span>Parfum Homme</span></div></div>
-</div>
-
-<div class="blog-card" onclick="goArticle('4')">
-<div class="blog-img" style="background:linear-gradient(135deg,#100a00,#1e1200);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-cadeau.jpg" alt="Quel parfum offrir en cadeau" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-<div class="blog-body"><div class="blog-tag">Cadeau</div><h4>Quel parfum offrir en cadeau au Maroc ? Notre guide complet</h4><p>Pour l'Aïd, un anniversaire ou un mariage — choisir sans se tromper selon le profil et le budget.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>5 min de lecture</span><span>·</span><span>Coffrets</span></div></div>
-</div>
-
-<div class="blog-card" onclick="goArticle('5')">
-<div class="blog-img" style="background:linear-gradient(135deg,#120810,#201020);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-floral.jpg" alt="Familles olfactives floral oriental boisé" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-<div class="blog-body"><div class="blog-tag">Olfactif</div><h4>Floral, oriental ou boisé : quelle famille olfactive vous correspond ?</h4><p>Identifiez votre profil olfactif avec ce guide complet des grandes familles de parfums.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>7 min de lecture</span><span>·</span><span>Guide Olfactif</span></div></div>
-</div>
-
-<div class="blog-card" onclick="goArticle('6')">
-<div class="blog-img" style="background:linear-gradient(135deg,#0a0e14,#10181e);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-33ml.jpg" alt="Acheter son parfum en 33ml" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-<div class="blog-body"><div class="blog-tag">Économies</div><h4>Acheter son parfum en 33ml : pourquoi c'est le format idéal au Maroc</h4><p>Prix, praticité, liberté de collection — le guide complet du format 33ml.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>4 min de lecture</span><span>·</span><span>Conseils</span></div></div>
-</div>
-
-</div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" style="padding:60px 24px" class="reveal">
-<div class="section-header"><span class="tag">❓ FAQ</span><h2>Questions <em>Fréquentes</em></h2></div>
-<div class="faq">
-<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle est la tenue de vos parfums 33ml ?</div><div class="faq-a">Nos parfums offrent une tenue de 6 à 8 heures. Appliquez sur les points de pulsation pour une meilleure diffusion.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment se passe la livraison ?</div><div class="faq-a">Livraison en 24 à 48h partout au Maroc. Gratuite dès 3 flacons commandés.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Vos parfums sont-ils des originaux ?</div><div class="faq-a">Ce sont des fragrances inspirées des grandes marques, formulées avec des matières premières de qualité à 100 DH le flacon 33ml.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Vous livrez dans quelle ville ?</div><div class="faq-a">Toutes les villes : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir, Oujda, Meknès, Kénitra, Tétouan, Nador et plus.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment commander ?</div><div class="faq-a">Ajoutez vos parfums au panier puis cliquez "Commander via WhatsApp". Votre commande sera pré-remplie automatiquement !</div></div>
-<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Puis-je retourner un parfum ?</div><div class="faq-a">En cas de produit défectueux ou d'erreur de commande, contactez-nous via WhatsApp dans les 48h suivant la réception. Nous trouverons une solution pour vous.</div></div>
-</div>
-</section>
-
+<!-- ── SEO ── -->
 <div class="seo-s reveal"><h2>Parfum 33ml au Maroc — Votre Boutique en Ligne N°1</h2>
 <h3>Pourquoi acheter un parfum 33ml au Maroc ?</h3>
 <p>Le format 33ml est devenu le format préféré des Marocains et Marocaines pour accéder à des fragrances de luxe à un prix accessible. Chez Parfum33ml.ma, nous proposons plus de 100 parfums homme et femme en format pocket 33ml à un prix unique de 100 DH le flacon.</p>
@@ -3750,6 +3826,66 @@ ${art.img?`<div style="width:100%;height:340px;border-radius:16px;overflow:hidde
     document.title=art.title.replace(/<[^>]+>/g,'')+' | Parfum33ml.ma';
   });
 }
+
+// ══════════════ HERO CAROUSEL
+(function(){
+  let idx=0;
+  const track=document.getElementById('hcTrack');
+  const dotsEl=document.getElementById('hcDots');
+  const slides=track?track.querySelectorAll('.hc-slide'):[];
+  if(!slides.length)return;
+  slides.forEach((_,i)=>{
+    const d=document.createElement('span');
+    d.className='hc-dot'+(i===0?' active':'');
+    d.onclick=()=>hcGo(i);
+    if(dotsEl)dotsEl.appendChild(d);
+  });
+  window.hcMove=function(dir){idx=(idx+dir+slides.length)%slides.length;hcGo(idx);};
+  window.hcGo=function(i){
+    idx=i;
+    if(track)track.style.transform='translateX(-'+(i*100)+'%)';
+    document.querySelectorAll('.hc-dot').forEach((d,j)=>d.classList.toggle('active',j===i));
+  };
+  setInterval(()=>hcMove(1),5000);
+})();
+
+// ══════════════ BESTSELLER CAROUSEL
+function renderBsCarousel(trackId,products){
+  const track=document.getElementById(trackId);
+  if(!track)return;
+  track.innerHTML=products.map(p=>{
+    const img=PROD_IMG[p.id];
+    const stars='★'.repeat(Math.round(parseFloat(p.rating)));
+    const price=SPECIAL_PRICES[p.id]||100;
+    return '<div class="bs-card" onclick="goProduct(''+p.id+'')">'
+      +'<div class="bs-card-img"'+(img?' style="background:#080808"':'')+'>'
+      +(img?'<img src="'+img+'" alt="'+p.name+'" loading="lazy">':'<div style="display:flex;align-items:center;justify-content:center;height:100%;opacity:.2">'+bottleSVG(50)+'</div>')
+      +(p.best?'<span class="bs-badge">⭐ Best</span>':'')
+      +'</div><div class="bs-card-body">'
+      +'<div class="bs-brand">'+p.brand+'</div>'
+      +'<div class="bs-name">'+p.name+'</div>'
+      +'<div class="bs-stars">'+stars+'</div>'
+      +'<div class="bs-price">'+price+' DH</div>'
+      +'<button class="bs-add-btn" onclick="event.stopPropagation();addToCart(''+p.id+'',''+p.name.replace(/'/g,"\'")+' ',''+p.brand+'')">Commander</button>'
+      +'</div></div>';
+  }).join('');
+}
+window.bsMove=function(trackId,dir){
+  const track=document.getElementById(trackId);
+  if(!track)return;
+  const card=track.querySelector('.bs-card');
+  const w=card?card.offsetWidth+16:220;
+  track.scrollBy({left:dir*w*3,behavior:'smooth'});
+};
+
+// Best sellers: top 12 toutes notes confondues
+const bsBest=[...ALL].sort((a,b)=>parseFloat(b.rating)-parseFloat(a.rating)).slice(0,12);
+renderBsCarousel('bsTrack',bsBest);
+
+// Budget picks: 6 parfums phares
+const budgetIds=['h1','f5','f2','h2','f3','h4'];
+const budgetPicks=budgetIds.map(id=>ALL.find(p=>p.id===id)).filter(Boolean);
+renderBsCarousel('budgetTrack',budgetPicks);
 
 // ══════════════ INIT GRIDS
 renderGrid('homeFemme',FE.filter(p=>p.best).concat(FE.filter(p=>!p.best)).slice(0,8),'femme');
