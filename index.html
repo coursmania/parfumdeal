@@ -438,7 +438,52 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .related-scroll::-webkit-scrollbar{height:4px}
 .related-scroll::-webkit-scrollbar-track{background:var(--bg2);border-radius:2px}
 .related-scroll::-webkit-scrollbar-thumb{background:var(--gold-d);border-radius:2px}
-.related-scroll .card{min-width:170px;max-width:170px;scroll-snap-align:start;flex-shrink:0}
+/* Tighten prod layout */
+.prod-layout{gap:32px!important}
+.prod-gallery{position:sticky;top:90px}
+.prod-meta-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.prod-price-block{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:10px;padding:14px 0;border-bottom:1px solid var(--border)}
+.pprice-old{font-size:16px;color:var(--txt3);text-decoration:line-through;font-weight:400;margin-left:8px;font-family:var(--ff-b)}
+.prod-badges-row{display:flex;gap:6px;flex-wrap:wrap;align-items:flex-end;padding-bottom:4px}
+.prod-spec-badge{display:inline-flex;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;background:var(--bg3);border:1px solid var(--border);color:var(--txt2)}
+.prod-stock-row{font-size:12px;color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.stock-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;animation:vpulse 2s infinite}
+.prod-share-mini{display:flex;gap:8px;margin-top:10px}
+/* Reviews */
+.reviews-section{margin:48px 0 40px;padding-top:40px;border-top:1px solid var(--border)}
+.section-title-sm{font-family:var(--ff-d);font-size:20px;font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rev-count-badge{font-size:11px;color:var(--txt3);font-weight:400;font-family:var(--ff-b);background:var(--bg3);border:1px solid var(--border);padding:3px 10px;border-radius:20px}
+.rev-summary{display:flex;gap:32px;padding:22px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;margin-bottom:24px;flex-wrap:wrap}
+.rev-summary-left{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:110px}
+.rev-big-num{font-family:var(--ff-d);font-size:52px;font-weight:700;color:var(--gold);line-height:1}
+.rev-big-stars{font-size:17px;color:var(--gold);letter-spacing:3px;margin:6px 0}
+.rev-big-lbl{font-size:11px;color:var(--txt3);text-align:center}
+.rev-summary-bars{flex:1;display:flex;flex-direction:column;gap:7px;justify-content:center;min-width:180px}
+.rev-bar-row{display:flex;align-items:center;gap:10px}
+.rev-bar-label{font-size:12px;color:var(--txt2);min-width:22px;text-align:right}
+.rev-bar-track{flex:1;height:7px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.rev-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-d),var(--gold));border-radius:4px}
+.rev-bar-count{font-size:11px;color:var(--txt3);min-width:28px}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.review-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px}
+.review-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.review-name{font-weight:600;font-size:13px;color:var(--txt)}
+.review-city{font-size:10px;color:var(--txt3);background:var(--bg3);padding:2px 8px;border-radius:20px}
+.review-date{font-size:10px;color:var(--txt3);margin-left:auto}
+.review-stars{color:var(--gold);font-size:13px;margin-bottom:8px;letter-spacing:2px}
+.review-text{font-size:13px;color:var(--txt2);line-height:1.7;margin-bottom:8px}
+.review-verified{font-size:11px;color:var(--green);font-weight:500}
+/* Related scroll - custom rel-cards (no stagger dependency) */
+.rel-card{width:148px;flex-shrink:0;scroll-snap-align:start;cursor:pointer;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:.3s}
+.rel-card:hover{border-color:var(--border-h);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+.rel-card-img{height:168px;background:var(--bg3);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.rel-card-img img{width:100%;height:100%;object-fit:contain}
+.rel-card-badge{position:absolute;top:6px;left:6px;background:var(--gold);color:#000;font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700}
+.rel-card-body{padding:10px 10px 12px}
+.rel-card-brand{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px}
+.rel-card-name{font-size:12px;font-weight:600;line-height:1.3;margin-bottom:5px;color:var(--txt);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.rel-card-stars{font-size:11px;color:var(--gold);margin-bottom:4px;letter-spacing:1.5px}
+.rel-card-price{font-size:14px;font-weight:700;color:var(--gold);font-family:var(--ff-d)}
 
 /* ── COMPARE BAR ─────────────────────── */
 .compare-bar{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--gold);padding:14px 24px;z-index:1500;display:flex;align-items:center;justify-content:space-between;gap:14px;transform:translateY(100%);transition:.4s cubic-bezier(.4,0,.2,1)}
@@ -593,8 +638,8 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .mega-col a{display:block;padding:6px 0;font-size:13px;color:var(--txt2);transition:.15s;border-bottom:1px solid transparent}
 .mega-col a:hover{color:var(--gold);padding-left:4px}
 /* Mega menu product previews */
-.mega-products{display:flex;gap:12px;border-left:1px solid var(--border);padding-left:24px;align-items:flex-start}
-.mega-prod-card{display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:.2s;width:90px;flex-shrink:0}
+.mega-products{display:grid;grid-template-columns:repeat(2,90px);gap:12px;border-left:1px solid var(--border);padding-left:24px}
+.mega-prod-card{display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:.2s;width:90px}
 .mega-prod-card:hover{transform:translateY(-3px)}
 .mega-prod-img{width:80px;height:90px;object-fit:contain;border-radius:8px;background:rgba(255,255,255,.03)}
 .mega-prod-label{font-size:10px;color:var(--txt3);text-align:center;margin-top:6px;line-height:1.3}
@@ -2454,159 +2499,137 @@ const PROD_IMG={
 
 // ══════════════ CARD HTML
 function cardHTML(p,g){
-const sn=p.name.replace(/'/g,"\\'").replace(/`/g,'');
-const sb=p.brand.replace(/'/g,"\\'");
-const isWished=wishlist.includes(p.id);
-const inCmp=compareList.some(c=>c.id===p.id);
-return`<article class="card stagger" onclick="goProduct('${p.id}')" data-name="${p.name.toLowerCase()}" data-brand="${p.brand.toLowerCase()}" data-family="${p.family}" data-rating="${p.rating}" data-reviews="${p.reviews}" data-default="${p.best?0:1}">
-<div class="card-light"></div>
-<div class="card-img" style="${PROD_IMG[p.id]?'background:#000':''}">
-<span class="badge ${g==='femme'?'b-f':'b-h'}">${g==='femme'?'♀':'♂'}</span>
-${PROD_IMG[p.id]
-  ?`<img src="${PROD_IMG[p.id]}" alt="${p.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain">`
-  :bottleSVG(60)}
-<div class="card-mist"></div>
-${p.best?`<span class="badge b-best" style="top:auto;bottom:${p.stock?'36px':'10px'};left:50%;transform:translateX(-50%)">⭐ Best</span>`:''}
-${p.stock?`<span class="badge b-low">⚡ Stock limité</span>`:''}
-<button class="wish-btn ${isWished?'active':''}" onclick="event.stopPropagation();toggleWishlist('${p.id}',this)" title="${isWished?'Retirer des favoris':'Ajouter aux favoris'}">${isWished?'♥':'♡'}</button>
-</div>
-<div class="card-body">
-<div class="card-brand">${p.brand}</div>
-<h3 class="card-name">${p.name}</h3>
-<div class="card-stars"><span class="stars-fill">${starsHTML(parseFloat(p.rating))}</span><span class="reviews-count">(${p.reviews})</span></div>
-<div class="card-notes">${p.notes.slice(0,3).join(' · ')}</div>
-<div class="card-bottom">
-<div class="card-price">100<small> DH</small><span class="old-price">250 DH</span></div>
-<button class="card-cta" onclick="event.stopPropagation();orderSingleWA('${sn}','${sb}');sprayBurst(this)">Commander maintenant</button>
-<button class="card-cart" id="btn-${p.id}" onclick="event.stopPropagation();addToCart('${p.id}','${sn}','${sb}')">🛒 Ajouter au panier</button>
-</div>
-</div>
-</article>`;
-}
-
-function renderGrid(id,items,g){
-const el=document.getElementById(id);
-if(!el)return;
-el.innerHTML=items.map(p=>cardHTML(p,g)).join('');
-}
-
-// ══════════════ ROUTING
-function go(page,anchor){
-if(anchor){
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-document.getElementById('page-'+page).classList.add('active');
-updateNavActive(page);
-setTimeout(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView({behavior:'smooth'})},100);
-initReveal();setTimeout(()=>{initTilt();staggerCards()},100);
-return;
-}
-curtainTransition(()=>{
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-document.getElementById('page-'+page).classList.add('active');
-updateNavActive(page);
-window.scrollTo({top:0});
-if(page==='wishlist')renderWishlistPage();
-document.title=page==='home'?'Parfum33ml.ma | Parfums 33ml au Maroc à 100 DH':page==='femme'?'Parfums Femme 33ml Maroc | 50 Fragrances à 100 DH':page==='homme'?'Parfums Homme 33ml Maroc | 50 Fragrances à 100 DH':page==='wishlist'?'Mes Favoris | Parfum33ml.ma':page==='blog'?'Blog & Conseils Parfum | Parfum33ml.ma':'Parfum33ml.ma';
-initReveal();setTimeout(()=>{initTilt();staggerCards()},100);
-});
-}
-
-function updateNavActive(page){
-document.querySelectorAll('.topnav>li>a').forEach(a=>a.classList.remove('active'));
-const nav=document.getElementById('nav-'+page);
-if(nav)nav.classList.add('active');
-}
-
-function goProduct(id){
-const p=ALL.find(x=>x.id===id);if(!p)return;
-currentProdQty=1;
-curtainTransition(()=>{
-document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active'));
-document.getElementById('page-product').classList.add('active');
-updateNavActive('');
-window.scrollTo({top:0});
-document.title=p.name+' '+p.brand+' 33ml | Parfum Maroc 100 DH';
-const rel=ALL.filter(x=>x.gender===p.gender&&x.id!==p.id).sort(()=>Math.random()-.5).slice(0,12);
-const topN=p.notes.slice(0,Math.ceil(p.notes.length/3));
-const midN=p.notes.slice(Math.ceil(p.notes.length/3),Math.ceil(p.notes.length*2/3));
-const baseN=p.notes.slice(Math.ceil(p.notes.length*2/3));
-const viewN=8+Math.floor(Math.random()*20);
-const sn=p.name.replace(/'/g,"\\'").replace(/`/g,'');
-const sb=p.brand.replace(/'/g,"\\'");
+const sn=p.name.replace(/'/g,"\'").replace(/`/g,'');
+const sb=p.brand.replace(/'/g,"\'");
+const REVS=[
+  {n:'Fatima B.',c:'Casablanca',r:5,d:3},{n:'Yasmine K.',c:'Marrakech',r:5,d:8},
+  {n:'Hamid R.',c:'Rabat',r:4,d:14},{n:'Sara M.',c:'Tanger',r:5,d:19},
+  {n:'Karim O.',c:'Fès',r:4,d:26},{n:'Nadia T.',c:'Agadir',r:5,d:33},
+  {n:'Omar L.',c:'Oujda',r:5,d:47},{n:'Imane B.',c:'Kénitra',r:4,d:62},
+  {n:'Amine S.',c:'Casablanca',r:5,d:6},{n:'Houda C.',c:'Rabat',r:5,d:15}
+];
+const RTXTS=[
+  "Sillage incroyable, tient toute la journée même sous la chaleur marocaine. Je commande déjà mon 2ème flacon !",
+  "Très proche de l'original à 800 DH. Livraison en 24h, emballage parfait. Je recommande.",
+  "Bon rapport qualité-prix. Le format 33ml est idéal pour le sac ou le voyage.",
+  "J'ai commandé pour offrir, la personne a adoré. Belle découverte à prix imbattable.",
+  "Très agréable, le parfum est enveloppant et élégant. Parfait pour les soirées.",
+  "3ème commande ! À ce prix-là, je me fais plaisir. Livraison toujours impeccable.",
+  "Le sillage est puissant et subtil à la fois. Excellent choix pour le quotidien.",
+  "Proche de l'original que j'adore. Très contente de mon achat, je reviendrai.",
+  "Notes de tête magnifiques, la tenue est excellente. Rapport qualité-prix top.",
+  "Reçu en moins de 48h à Casablanca. Le parfum est beau et le flacon très pratique."
+];
+const shuffRevs=[...REVS].sort(()=>Math.random()-.5).slice(0,6).map((rv,i)=>{
+  const d=new Date();d.setDate(d.getDate()-rv.d-Math.floor(Math.random()*7));
+  const df=d.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+  const stars='\u2605'.repeat(rv.r)+'\u2606'.repeat(5-rv.r);
+  return '<div class="review-card"><div class="review-top"><strong class="review-name">'+rv.n+'</strong><span class="review-city">'+rv.c+'</span><span class="review-date">'+df+'</span></div><div class="review-stars">'+stars+'</div><p class="review-text">'+RTXTS[i%RTXTS.length]+'</p><div class="review-verified">\u2713 Achat v\u00e9rifi\u00e9</div></div>';
+}).join('');
+const relHTML=rel.map(r=>{
+  const ri=PROD_IMG[r.id];
+  return '<div class="rel-card" onclick="goProduct(\'' +r.id+ '\')">'
+    +'<div class="rel-card-img"'+(ri?' style="background:#080808"':'')+'>'
+    +(ri?'<img src="'+ri+'" alt="'+r.name+'">'
+      :'<div style="display:flex;align-items:center;justify-content:center;height:100%;opacity:.25">'+bottleSVG(50)+'</div>')
+    +(r.best?'<span class="rel-card-badge">\u2605 Best</span>':'')
+    +'</div><div class="rel-card-body">'
+    +'<div class="rel-card-brand">'+r.brand+'</div>'
+    +'<div class="rel-card-name">'+r.name+'</div>'
+    +'<div class="rel-card-stars">'+'\u2605'.repeat(Math.round(parseFloat(r.rating)))+'</div>'
+    +'<div class="rel-card-price">'+(SPECIAL_PRICES[r.id]||100)+' DH</div>'
+    +'</div></div>';
+}).join('');
 document.getElementById('prodContent').innerHTML=`
-<div class="prod-back" onclick="go('${p.gender}')">← Retour parfums ${p.gender}</div>
+<div class="prod-back" onclick="go('${p.gender}')">\u2190 Retour parfums ${p.gender}</div>
 <div class="bread"><a onclick="go('home')">Accueil</a> / <a onclick="go('${p.gender}')">${p.gender==='femme'?'Femme':'Homme'}</a> / <span>${p.name}</span></div>
 <div class="prod-layout">
 <div class="prod-gallery">
 <div class="prod-main-img" style="background:${PROD_IMG[p.id]?'#000':'linear-gradient(160deg,var(--bg2),var(--bg3))'}">
-<span class="badge ${p.gender==='femme'?'b-f':'b-h'}">${p.gender==='femme'?'♀ Femme':'♂ Homme'}</span>
+<span class="badge ${p.gender==='femme'?'b-f':'b-h'}">${p.gender==='femme'?'\u2640 Femme':'\u2642 Homme'}</span>
 <div class="prod-mist"></div>
 ${PROD_IMG[p.id]
   ?`<img src="${PROD_IMG[p.id]}" alt="${p.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain">`
   :bottleSVG(100,'rgba(201,169,110,.35)')}
-${p.best?`<span class="badge b-best" style="top:auto;bottom:20px;left:20px;transform:none">⭐ Best-seller</span>`:''}
-${p.stock?`<span class="badge b-low" style="top:auto;bottom:20px;right:20px;left:auto">⚡ Stock limité</span>`:''}
+${p.best?`<span class="badge b-best" style="top:auto;bottom:20px;left:20px;transform:none">\u2b50 Best-seller</span>`:''}
+${p.stock?`<span class="badge b-low" style="top:auto;bottom:20px;right:20px;left:auto">\u26a1 Stock limit\u00e9</span>`:''}
+</div>
+<div class="prod-share-mini">
+<button onclick="toggleWishlist('${p.id}',this)" class="share-btn ${wishlist.includes(p.id)?'active':''}">${wishlist.includes(p.id)?'\u2665 Favoris':'\u2661 Ajouter aux favoris'}</button>
+<button class="share-btn" onclick="copyLink('${p.id}')">🔗 Partager</button>
 </div>
 </div>
 <div class="prod-info">
 <div class="pbrand">${p.brand}</div>
 <h1>${p.name}</h1>
-<div class="prod-stars-row">
+<div class="prod-meta-row">
+<div class="prod-stars-row" style="margin-bottom:0">
 <span class="prod-stars">${starsHTML(parseFloat(p.rating))}</span>
-<span style="color:var(--gold);font-size:14px;font-weight:700">${p.rating}</span>
-<a class="prod-reviews-link">${p.reviews} avis clients</a>
+<span style="color:var(--gold);font-size:13px;font-weight:700">${p.rating}</span>
+<a class="prod-reviews-link" style="color:var(--gold);opacity:.7">${p.reviews} avis</a>
 </div>
-<div class="viewing-pill"><span class="viewing-dot"></span>${viewN} personnes consultent ce parfum</div>
-<div class="pprice">100<small> DH</small></div>
-<div class="pformat">33ml · Eau de Parfum · ${p.family.charAt(0).toUpperCase()+p.family.slice(1)}</div>
-<div style="font-size:12px;color:var(--green);margin-bottom:16px">✓ En stock · Livraison 24-48h</div>
+<div class="viewing-pill"><span class="viewing-dot"></span>${viewN} en ligne</div>
+</div>
+<div class="prod-price-block">
+<div class="pprice">100<small> DH</small><span class="pprice-old">250 DH</span></div>
+<div class="prod-badges-row">
+<span class="prod-spec-badge">33ml</span>
+<span class="prod-spec-badge">Eau de Parfum</span>
+<span class="prod-spec-badge">${p.family.charAt(0).toUpperCase()+p.family.slice(1)}</span>
+</div>
+</div>
+<div class="prod-stock-row"><span class="stock-dot"></span>En stock \u00b7 Exp\u00e9dition 24-48h \u00b7 Livraison gratuite d\u00e8s 3 flacons</div>
 <div class="pyramid">
-<div class="pyramid-level top"><div class="pyramid-label">Tête</div><div class="pyramid-notes">${topN.join(', ')||'—'}</div></div>
-<div class="pyramid-level mid"><div class="pyramid-label">Cœur</div><div class="pyramid-notes">${midN.join(', ')||'—'}</div></div>
-<div class="pyramid-level base"><div class="pyramid-label">Fond</div><div class="pyramid-notes">${baseN.join(', ')||'—'}</div></div>
+<div class="pyramid-level top"><div class="pyramid-label">T\u00eate</div><div class="pyramid-notes">${topN.join(', ')||'\u2014'}</div></div>
+<div class="pyramid-level mid"><div class="pyramid-label">C\u0153ur</div><div class="pyramid-notes">${midN.join(', ')||'\u2014'}</div></div>
+<div class="pyramid-level base"><div class="pyramid-label">Fond</div><div class="pyramid-notes">${baseN.join(', ')||'\u2014'}</div></div>
 </div>
 <p class="prod-desc">${p.desc}</p>
 <div class="qty-selector">
-<span class="qty-label">Quantité :</span>
+<span class="qty-label">Quantit\u00e9 :</span>
 <div class="qty-controls">
-<div class="qty-btn" onclick="changeProdQty(-1)">−</div>
+<div class="qty-btn" onclick="changeProdQty(-1)">\u2212</div>
 <div class="qty-val" id="prodQtyVal">1</div>
 <div class="qty-btn" onclick="changeProdQty(1)">+</div>
 </div>
 </div>
 <div class="prod-actions">
-<button class="btn-p" onclick="addToCartFromProd('${p.id}','${sn}','${sb}')">🛒 Ajouter au panier</button>
+<button class="btn-p" onclick="addToCartFromProd('${p.id}','${sn}','${sb}')">\🛒 Ajouter au panier</button>
 <button class="wa-sm" onclick="orderSingleWA('${sn}','${sb}')">
 <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-WhatsApp
+Commander WhatsApp
 </button>
 </div>
-<div class="share-btns">
-<button class="share-btn wa-share" onclick="orderSingleWA('${sn}','${sb}')">💬 Partager sur WhatsApp</button>
-<button class="share-btn" onclick="copyLink('${p.id}')">🔗 Copier le lien</button>
-<button class="share-btn" onclick="toggleWishlist('${p.id}',this)">${wishlist.includes(p.id)?'♥ Dans mes favoris':'♡ Ajouter aux favoris'}</button>
-</div>
 <div class="prod-g">
-<div class="pg"><span class="pgic">🚚</span>Livraison 24-48h</div>
-<div class="pg"><span class="pgic">💬</span>Support WhatsApp 7j/7</div>
-<div class="pg"><span class="pgic">📦</span>Emballage soigné</div>
+<div class="pg"><span class="pgic">\🚚</span>Livraison 24-48h</div>
+<div class="pg"><span class="pgic">\💬</span>Support WhatsApp 7j/7</div>
+<div class="pg"><span class="pgic">\📦</span>Emballage soign\u00e9</div>
 </div>
 </div>
 </div>
-<div class="prod-seo" style="display:none" aria-hidden="true">
-<h2>Acheter ${p.name} de ${p.brand} en 33ml au Maroc — 100 DH</h2>
-<h3>Les notes olfactives de ${p.name}</h3>
-<p>${p.name} de ${p.brand} se compose de notes de ${p.notes.join(', ')}. Cette composition fait de ce parfum un choix idéal pour les amateurs de fragrances ${p.family}s au Maroc.</p>
-<h3>Pourquoi ${p.name} est-il populaire au Maroc ?</h3>
-<p>${p.name} fait partie des parfums les plus vendus au Maroc grâce à son sillage remarquable et sa tenue exceptionnelle. ${p.best?`C'est l'un de nos best-sellers, commandé chaque jour par nos clients.`:`Sa popularité ne cesse de croître auprès des amateurs de parfumerie.`} En format 33ml à 100 DH, c'est le compromis parfait entre qualité et prix accessible.</p>
-<h3>Commander ${p.name} partout au Maroc</h3>
-<p>Livraison en 24-48h à Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir et dans toutes les villes du Maroc. Livraison gratuite dès 3 flacons.</p>
+<div class="reviews-section">
+<h3 class="section-title-sm">Avis clients <span class="rev-count-badge">${p.reviews} avis \u00b7 ${p.rating}/5</span></h3>
+<div class="rev-summary">
+<div class="rev-summary-left">
+<div class="rev-big-num">${p.rating}</div>
+<div class="rev-big-stars">${starsHTML(parseFloat(p.rating))}</div>
+<div class="rev-big-lbl">${p.reviews} avis v\u00e9rifi\u00e9s</div>
+</div>
+<div class="rev-summary-bars">
+${[5,4,3,2,1].map(s=>{const pct=s===5?65:s===4?22:s===3?8:s===2?3:2;return`<div class="rev-bar-row"><span class="rev-bar-label">${s}\u2605</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:${pct}%"></div></div><span class="rev-bar-count">${Math.round(p.reviews*pct/100)}</span></div>`;}).join('')}
+</div>
+</div>
+<div class="reviews-grid">${shuffRevs}</div>
 </div>
 <div class="related">
-<h3>Vous aimerez aussi <span style="font-size:13px;color:var(--txt3);font-weight:400;font-family:var(--ff-b)">${rel.length} parfums sélectionnés</span></h3>
-<div class="related-scroll">${rel.map(r=>cardHTML(r,r.gender)).join('')}</div>
+<h3 class="section-title-sm">Vous aimerez aussi <span style="font-size:13px;color:var(--txt3);font-weight:400">${rel.length} parfums similaires</span></h3>
+<div class="related-scroll">${relHTML}</div>
+</div>
+<div class="prod-seo" style="display:none" aria-hidden="true">
+<h2>Acheter ${p.name} de ${p.brand} en 33ml au Maroc \u2014 100 DH</h2>
+<p>${p.name} de ${p.brand} \u2014 notes de ${p.notes.join(', ')}. Livraison 24-48h partout au Maroc. Livraison gratuite d\u00e8s 3 flacons.</p>
 </div>`;
-setTimeout(()=>{initReveal();initTilt();staggerCards()},100);
+setTimeout(()=>{initReveal();initTilt()},100);
 });
 }
 
