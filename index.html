@@ -603,6 +603,11 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .article-body ul{padding-left:20px;margin-bottom:16px}
 .article-body ul li{margin-bottom:6px}
 .article-body .highlight{background:rgba(201,169,110,.06);border-left:3px solid var(--gold);padding:16px 20px;border-radius:0 12px 12px 0;margin:20px 0;font-style:italic;color:var(--txt)}
+.art-prod-img{float:right;width:115px;margin:0 0 14px 18px;cursor:pointer;text-align:center;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#080808;transition:transform .2s,border-color .2s;clear:right}
+.art-prod-img:hover{transform:translateY(-2px);border-color:var(--gold)}
+.art-prod-img img{width:100%;height:128px;object-fit:contain;display:block}
+.art-prod-img figcaption{font-size:10px;color:var(--gold);padding:5px 8px 7px;font-weight:600;letter-spacing:.4px;line-height:1.3}
+.art-prod-clear{clear:both;display:block;height:0}
 .article-cta{margin-top:40px;padding:28px;background:linear-gradient(135deg,rgba(201,169,110,.06),rgba(194,112,128,.03));border:1px solid var(--border);border-radius:16px;text-align:center}
 .article-related{margin-top:48px}
 .article-related h3{font-family:var(--ff-d);font-size:22px;font-weight:700;margin-bottom:20px}
@@ -2625,25 +2630,20 @@ WhatsApp
 </div>
 </div>
 <div class="prod-seo">
-<h2>Acheter ${p.name} ${p.brand} 33ml au Maroc — 100 DH</h2>
-<p>${p.desc} Disponible en format 33ml à seulement <strong>100 DH</strong>, avec livraison rapide 24-48h partout au Maroc.</p>
-<h3>Notes olfactives — ${p.name} ${p.brand}</h3>
-<p><strong>Notes de tête</strong> (première impression) : ${topN.join(', ')||'—'}<br>
-<strong>Notes de cœur</strong> (le caractère principal) : ${midN.join(', ')||'—'}<br>
-<strong>Notes de fond</strong> (la signature durable) : ${baseN.join(', ')||'—'}<br>
-Cette composition ${p.family} offre un sillage ${['oriental','boisé','gourmand'].includes(p.family)?'puissant et enveloppant, parfait pour marquer les esprits':'frais et élégant, idéal pour une présence subtile et distinguée'}.</p>
-<h3>Pour quelle occasion porter ${p.name} ?</h3>
-<p><strong>${p.name}</strong> est une fragrance <strong>${p.family}</strong> ${p.gender==='femme'?'féminine':'masculine'} idéale pour ${p.family==='floral'?`les mariages, sorties romantiques et journées printanières`:p.family==='oriental'?`les soirées envoûtantes, dîners romantiques et événements spéciaux`:p.family==='frais'?`le quotidien, le bureau et les journées d'été au Maroc`:p.family==='fruité'?`les sorties décontractées, journées ensoleillées et le printemps`:p.family==='boisé'?`le bureau, réunions professionnelles et soirées élégantes`:p.family==='gourmand'?`les soirées romantiques, l'automne-hiver et les moments de séduction`:`toutes les occasions`}. Sa tenue de 6 à 8 heures en fait un allié idéal du matin au soir. ${p.best?`Best-seller absolu de notre catalogue — commandé chaque semaine par des centaines de clients fidèles.`:''}</p>
-<h3>Pourquoi choisir ${p.name} chez Parfum33ml.ma ?</h3>
-<p>Chez Parfum33ml.ma, <strong>${p.name} ${p.brand}</strong> est proposé à <strong>100 DH en format 33ml</strong> — plus de 60% moins cher que le flacon original, tout en capturant l'essence et le caractère de cette fragrance. Nos fragrances sont formulées avec des matières premières de qualité, sélectionnées et testées. Le format 33ml se glisse facilement dans un sac à main ou une poche, parfait pour les retouches en journée ou les voyages.</p>
-<h3>Questions fréquentes — ${p.name} au Maroc</h3>
+<h2>${p.name} ${p.brand} — Fragrance ${p.family.charAt(0).toUpperCase()+p.family.slice(1)} ${p.gender==='femme'?'Féminine':'Masculine'}</h2>
+<p>${p.desc}</p>
+<h3>Comprendre la pyramide olfactive de ${p.name}</h3>
+<p>Toute fragrance se structure en trois niveaux qui se révèlent progressivement sur la peau. Les <strong>notes de tête</strong> de ${p.name} — <em>${topN.join(', ')||'—'}</em> — constituent la première impression, vive et éphémère (15 à 30 minutes). Viennent ensuite les <strong>notes de cœur</strong> — <em>${midN.join(', ')||'—'}</em> — le vrai caractère de la fragrance, qui persistent plusieurs heures. Enfin, les <strong>notes de fond</strong> — <em>${baseN.join(', ')||'—'}</em> — s'ancrent sur la peau et composent la signature durable, parfois jusqu'au lendemain.</p>
+<h3>La famille ${p.family} : ce qu'elle dit de vous</h3>
+<p>${p.family==='floral'?`Les fragrances florales sont les plus répandues en parfumerie. Elles capturent l'essence des fleurs — rose, jasmin, pivoine, muguet — dans une palette allant du délicat au luxuriant. Porter un parfum floral, c'est affirmer une féminité douce et intemporelle, associée à la nature et à l'élégance naturelle.`:p.family==='oriental'?`Les fragrances orientales se caractérisent par des notes chaudes et enveloppantes : ambre, vanille, résines, épices. Elles évoquent les souks parfumés et les nuits étoilées. Portées en soirée ou par temps frais, elles laissent un sillage mémorable et sensuel.`:p.family==='frais'?`Les fragrances fraîches reposent sur des notes aquatiques, citronnées ou végétales qui procurent une sensation de légèreté et de propreté. Elles évoquent la mer, la montagne ou le sous-bois au matin et s'épanouissent particulièrement sous la chaleur.`:p.family==='fruité'?`Les fragrances fruitées associent des notes de fruits — agrumes, fruits rouges, pêche, poire — pour des compositions jeunes et séduisantes. Leur caractère spontané et lumineux en fait des parfums de bonne humeur, idéaux pour les beaux jours.`:p.family==='boisé'?`Les fragrances boisées s'articulent autour du santal, du cèdre, du vétiver ou du patchouli. Elles dégagent une profondeur naturelle et une élégance virile ou sophistiquée selon la composition. Associées à la nature, elles inspirent confiance et sérénité.`:p.family==='gourmand'?`Les fragrances gourmandes s'inspirent des arômes de la pâtisserie : vanille, caramel, chocolat, amande. Douces et enveloppantes, elles créent une aura chaleureuse et séduisante particulièrement appréciée en automne et en hiver.`:`Les fragrances musquées reposent sur des notes proches de la chaleur naturelle de la peau. Discrètes et sensuelles, elles s'adaptent à toutes les personnalités et s'accordent facilement avec d'autres parfums.`}</p>
+<h3>Quand et comment porter ${p.name} ?</h3>
+<p>${p.name} s'exprime particulièrement bien ${p.family==='floral'?`au printemps et dans les occasions festives — mariages, sorties romantiques, déjeuners en terrasse`:p.family==='oriental'?`en soirée et durant la saison fraîche — dîners élégants, événements, nuits d'hiver`:p.family==='frais'?`au quotidien et en été — bureau, activités sportives, journées sous le soleil marocain`:p.family==='fruité'?`lors des sorties décontractées et des journées lumineuses — weekends, promenades, printemps`:p.family==='boisé'?`en contexte professionnel et en soirée — réunions, occasions formelles, automne`:p.family==='gourmand'?`en soirée et par temps frais — rendez-vous romantiques, saison hivernale, moments intimes`:`en toutes circonstances, du matin au soir`}. Pour une diffusion optimale, appliquez sur les points de pulsation — poignets, creux du coude, nuque — sans frotter. La chaleur corporelle amplifie naturellement les molécules aromatiques et prolonge la tenue, qui peut varier de 6 à 8 heures selon la texture de peau et les conditions climatiques.</p>
+<h3>Questions sur ${p.name}</h3>
 <div class="seo-faq">
-<div class="seo-faq-item"><div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Combien de temps tient ${p.name} ${p.brand} ?</div><div class="seo-faq-a">${p.name} offre une tenue de 6 à 8 heures sur la peau. Appliquez sur les points de pulsation — poignets, nuque et creux du coude — pour maximiser la diffusion et la longévité du parfum.</div></div>
-<div class="seo-faq-item"><div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">${p.name} est-il adapté au climat chaud du Maroc ?</div><div class="seo-faq-a">${['frais','fruité','aquatique'].includes(p.family)?`${p.name} est parfaitement adapté à la chaleur marocaine. Ses notes légères s'épanouissent sous le soleil sans devenir écrasantes — idéal pour l'été à Casablanca, Marrakech, Agadir ou Tanger.`:`${p.name} est une fragrance ${p.family} qui s'adapte au Maroc. Nous conseillons de le porter en soirée ou dans un espace climatisé pour profiter pleinement de ses notes enveloppantes.`}</div></div>
-<div class="seo-faq-item"><div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Comment recevoir ${p.name} partout au Maroc ?</div><div class="seo-faq-a">Ajoutez ${p.name} à votre panier et commandez via WhatsApp. Nous livrons en 24 à 48h dans toutes les villes : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir, Oujda, Meknès, Kénitra, Tétouan, Nador, El Jadida, Safi, Béni Mellal et partout au Royaume. Livraison gratuite dès 3 flacons.</div></div>
+<div class="seo-faq-item"><div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle est la tenue de ${p.name} sur la peau ?</div><div class="seo-faq-a">La tenue d'un parfum dépend de plusieurs facteurs : type de peau (les peaux grasses retiennent mieux les molécules aromatiques), température ambiante et zone d'application. ${p.name} offre généralement une diffusion de 6 à 8 heures. Appliquer sur une peau hydratée et sur les points de pulsation prolonge significativement la persistance.</div></div>
+<div class="seo-faq-item"><div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">${p.name} convient-il au climat marocain ?</div><div class="seo-faq-a">${['frais','fruité'].includes(p.family)?`Les fragrances ${p.family}es comme ${p.name} s'épanouissent particulièrement sous la chaleur. Les molécules légères se diffusent rapidement à des températures élevées, ce qui en fait un choix judicieux pour les journées estivales à Casablanca, Marrakech, Agadir ou Tanger.`:`Les fragrances ${p.family}es comme ${p.name} révèlent toute leur profondeur par temps doux ou frais. En été au Maroc, elles se portent idéalement le soir, quand les températures baissent et permettent aux notes de fond de s'exprimer pleinement.`}</div></div>
+<div class="seo-faq-item"><div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Comment conserver correctement un parfum 33ml ?</div><div class="seo-faq-a">Un parfum se conserve à l'abri de la lumière directe et des variations de température. Évitez de le laisser en plein soleil ou dans une salle de bain humide. À température ambiante stable, à l'abri de la lumière, un parfum peut se conserver plusieurs années sans altération notable de sa composition olfactive.</div></div>
 </div>
-<h3>Livraison ${p.name} partout au Maroc</h3>
-<p>Commandez <strong>${p.name} ${p.brand} 33ml</strong> et recevez-le en 24 à 48h dans toutes les villes : <strong>Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir</strong>, Oujda, Meknès, Kénitra, Tétouan, Nador, El Jadida, Safi, Béni Mellal et partout au Royaume. <strong>Livraison gratuite dès 3 flacons commandés.</strong></p>
 </div>
 <div class="related">
 <h3>Vous aimerez aussi <span style="font-size:13px;color:var(--txt3);font-weight:400;font-family:var(--ff-b)">${rel.length} parfums similaires</span></h3>
@@ -3254,42 +3254,52 @@ const ARTICLES={
 <h2>Notre Top 10 des parfums de mariage marocain</h2>
 
 <h3>1. Black Opium — YSL · La Star des Mariages</h3>
+<figure class="art-prod-img" onclick="goProduct('f5')"><img src="dossier%20parfum/parfum/black%20opium%20600-800.jpg" alt="Black Opium - YSL" loading="lazy"><figcaption>Black Opium<br>YSL</figcaption></figure>
 <p>Sans conteste le parfum féminin le plus commandé pour les mariages sur Parfum33ml.ma. Ses notes de <strong>café noir, vanille bourbon et jasmin blanc</strong> créent une synergie addictive et irrésistible. Le café apporte une énergie festive, la vanille une sensualité enveloppante, le jasmin une féminité absolue. Tenue de 8 à 10 heures garantie. Il convient aussi bien pour la henna que pour la nuit de noces.</p>
 <p><em>Notes : Tête — café, poire · Cœur — jasmin, fleur d'oranger · Fond — vanille, patchouli, cèdre</em></p>
 
 <h3>2. Baccarat Rouge 540 — Maison Francis Kurkdjian · Le Luxe Absolu</h3>
+<figure class="art-prod-img" onclick="goProduct('f31')"><img src="dossier%20parfum/parfum/mfk%20baccarat%20rouge%20540%20600-800.jpg" alt="Baccarat Rouge 540 - MFK" loading="lazy"><figcaption>Baccarat Rouge 540<br>MFK</figcaption></figure>
 <p>La fragrance de luxe par excellence, devenue le symbole des cérémonies huppées au Maroc. Son accord unique de <strong>safran, jasmin, ambre bois et cèdre</strong> crée un sillage incomparable qui traverse les pièces et reste dans la mémoire collective. Si vous voulez être le sujet de conversation olfactif de la soirée, c'est lui. Son prix exorbitant en original (2 500 DH+) est accessible chez nous en 33ml à 100 DH.</p>
 <p><em>Notes : Tête — safran · Cœur — jasmin · Fond — ambre bois, cèdre</em></p>
 
 <h3>3. Good Girl — Carolina Herrera · La Séductrice</h3>
+<figure class="art-prod-img" onclick="goProduct('f7')"><img src="dossier%20parfum/parfum/carolina%20herrera%20good%20girl%20600-800.jpg" alt="Good Girl - C. Herrera" loading="lazy"><figcaption>Good Girl<br>C. Herrera</figcaption></figure>
 <p>Floral-oriental intense avec des notes de <strong>jasmin, cacao et vétiver</strong>. Good Girl est le parfum de la femme qui assume sa dualité — douce en façade, puissante en caractère. Son sillage est immédiat et spectaculaire. Très apprécié lors des mariages de nuit où il s'épanouit avec la chaleur des corps.</p>
 <p><em>Notes : Tête — café, amande · Cœur — jasmin · Fond — vétiver, cacao, fève tonka</em></p>
 
 <h3>4. La Vie Est Belle — Lancôme · La Romantique</h3>
+<figure class="art-prod-img" onclick="goProduct('f3')"><img src="dossier%20parfum/parfum/lancome%20la%20vie%20est%20belle%20600-800.jpg" alt="La Vie Est Belle - Lancôme" loading="lazy"><figcaption>La Vie Est Belle<br>Lancôme</figcaption></figure>
 <p>Un gourmand floral doux et lumineux qui séduit par sa légèreté trompeuse. <strong>Iris, praline rose et vanille</strong> créent une fragrance optimiste et féminine. Parfait pour les femmes qui veulent quelque chose de joyeux et accessible, sans pour autant sacrifier l'élégance. Excellent choix pour les cérémonies de jour ou la henna.</p>
 <p><em>Notes : Tête — cassis, poire · Cœur — iris, jasmin · Fond — praline, vanille, santal</em></p>
 
 <h3>5. Alien — Mugler · La Mystérieuse</h3>
+<figure class="art-prod-img" onclick="goProduct('f15')"><img src="dossier%20parfum/parfum/mugler%20alien%20600-800.jpg" alt="Alien - Mugler" loading="lazy"><figcaption>Alien<br>Mugler</figcaption></figure>
 <p>Pour la mariée qui veut marquer les esprits durablement. <strong>Jasmin sambac ambré et bois de santal chaud</strong> créent une signature olfactive unique, mystérieuse et hypnotisante. Alien est un parfum qui ne ressemble à aucun autre — il ne plaît pas à tout le monde mais ne laisse personne indifférent. Pour les personnalités affirmées.</p>
 <p><em>Notes : Tête — hespéridé blanc · Cœur — jasmin ambré · Fond — bois de cachemire</em></p>
 
 <h3>6. Chanel N°5 · La Référence Intemporelle</h3>
+<figure class="art-prod-img" onclick="goProduct('f1')"><img src="dossier%20parfum/parfum/chanel%20n5%20600-800.jpg" alt="Chanel N°5 - Chanel" loading="lazy"><figcaption>Chanel N°5<br>Chanel</figcaption></figure>
 <p>Créé en 1921 par Ernest Beaux, Chanel N°5 reste après un siècle la fragrance féminine la plus iconique du monde. Ses <strong>aldéhydes, ylang-ylang, rose absolue et jasmin de Grasse</strong> forment une composition d'une complexité inégalée. Pour la mariée élégante et sophistiquée qui veut honorer la grande tradition de la parfumerie française.</p>
 <p><em>Notes : Tête — aldéhydes, néroli, bergamote · Cœur — jasmin, rose, iris · Fond — vétiver, santal, vanille</em></p>
 
 <h3>7. J'adore — Dior · La Féminité Pure</h3>
+<figure class="art-prod-img" onclick="goProduct('f2')"><img src="dossier%20parfum/parfum/dior%20j'adore%20600-800.jpg" alt="J'adore - Dior" loading="lazy"><figcaption>J'adore<br>Dior</figcaption></figure>
 <p>Floral lumineux et solaire avec <strong>ylang-ylang de Comores, rose centifolia et jasmin indien</strong>. J'adore incarne la féminité dans toute sa grâce — léger, raffiné, enveloppant. Un choix sûr pour les cérémonies de jour ou les lendemains de mariage en plein air. Son sillage floral léger est universellement apprécié.</p>
 <p><em>Notes : Tête — melon, pêche · Cœur — ylang-ylang, rose, jasmin, violette · Fond — musc, cèdre</em></p>
 
 <h3>8. Coco Mademoiselle — Chanel · La Moderne</h3>
+<figure class="art-prod-img" onclick="goProduct('f4')"><img src="dossier%20parfum/parfum/chanel%20coco%20mademoiselle%20600-800.jpg" alt="Coco Mademoiselle - Chanel" loading="lazy"><figcaption>Coco Mademoiselle<br>Chanel</figcaption></figure>
 <p>L'équilibre parfait entre modernité et classicisme. <strong>Orange de Sicile, rose de Mai, vétiver et patchouli</strong> forment une composition énergique et sophistiquée. Coco Mademoiselle séduit par sa polyvalence — aussi à l'aise lors d'une cérémonie formelle qu'à une fête intimiste. Un incontournable de la parfumerie moderne.</p>
 <p><em>Notes : Tête — orange, bergamote, citron · Cœur — rose de mai, jasmin, ylang-ylang · Fond — vétiver, patchouli, vanille</em></p>
 
 <h3>9. Delina — Parfums de Marly · La Raffinée</h3>
+<figure class="art-prod-img" onclick="goProduct('f40')"><img src="dossier%20parfum/parfum/Parfums%20de%20Marly%20Delina%20600-800.jpg" alt="Delina - Pdm" loading="lazy"><figcaption>Delina<br>Pdm</figcaption></figure>
 <p>La révélation des mariages huppés au Maroc ces dernières années. <strong>Rose turque de Bulgarie, litchi, pivoine et musc lituanien</strong> créent une œuvre d'art olfactive d'une féminité absolue. Delina est la fragrance des mariées qui veulent quelque chose de rare et précieux, loin des sentiers battus. Son sillage roséen est inoubliable.</p>
 <p><em>Notes : Tête — litchi, rhubarbe · Cœur — rose de Damas, pivoine, musc · Fond — vanille, incens, cèdre</em></p>
 
 <h3>10. Miss Dior — Dior · La Fraîche</h3>
+<figure class="art-prod-img" onclick="goProduct('f6')"><img src="dossier%20parfum/parfum/Dior%20miss%20dior%20600-800.jpg" alt="Miss Dior - Dior" loading="lazy"><figcaption>Miss Dior<br>Dior</figcaption></figure>
 <p>Romantique et aérien, parfait pour les cérémonies de jour ou les lendemains de mariage. <strong>Pivoine, rose de mai et musc blanc</strong> créent une fragrance lumineuse et contemporaine. Miss Dior plaît à toutes les générations — les mères apprécient autant que les invitées modernes. Une valeur sûre pour les mariages en plein air ou les cérémonies de printemps.</p>
 <p><em>Notes : Tête — pamplemousse, bergamote · Cœur — pivoine, rose de mai · Fond — musc blanc, patchouli</em></p>
 
@@ -3336,6 +3346,7 @@ const ARTICLES={
 <h2>Les familles olfactives adaptées à l'été marocain</h2>
 
 <h3>🌊 Frais et Aquatiques — Les Rois de l'Été</h3>
+<figure class="art-prod-img" onclick="goProduct('h3')"><img src="dossier%20parfum/parfum/giorgio%20armani%20acqua%20di%20gio%20600-800.jpg" alt="Acqua di Giò - Armani" loading="lazy"><figcaption>Acqua di Giò<br>Armani</figcaption></figure>
 <p>Les fragrances marines et hespéridées sont conçues pour la chaleur. Leurs notes de bergamote, citron, mandarine et accord marin s'évaporent lentement à haute température et créent une sensation de fraîcheur mentale. Parfums recommandés : <strong>Acqua di Giò (Giorgio Armani)</strong> — la référence absolue — <strong>Light Blue (Dolce & Gabbana)</strong>, <strong>Invictus (Paco Rabanne)</strong>, <strong>One Million Lucky</strong>.</p>
 
 <h3>🌸 Floraux Légers — Pour les Femmes</h3>
@@ -3345,6 +3356,7 @@ const ARTICLES={
 <p>Les parfums à dominante d'agrumes sont vos meilleurs alliés du matin. Bergamote, citron de Sicile, pamplemousse rose — ces notes pétillantes réveillent les sens et tiennent 3 à 4 heures, suffisamment pour votre matinée de travail. Reappliquez après le déjeuner avec un floral plus durable.</p>
 
 <h3>🌿 Fougères Fraîches — Pour les Hommes</h3>
+<figure class="art-prod-img" onclick="goProduct('h1')"><img src="dossier%20parfum/parfum/dior%20sauvage%20600-800.jpg" alt="Sauvage - Dior" loading="lazy"><figcaption>Sauvage<br>Dior</figcaption></figure>
 <p>Les fougères (lavande, géranium, mousse de chêne) sont la famille masculine par excellence pour l'été. <strong>Sauvage (Dior)</strong> tient remarquablement bien dans la chaleur grâce à son ambroxan. <strong>Bleu de Chanel</strong> reste élégant même à 40°C. <strong>Terre d'Hermès</strong> évolue magnifiquement avec la chaleur corporelle.</p>
 
 <h2>Ce qu'il faut absolument éviter en été</h2>
@@ -3407,27 +3419,32 @@ const ARTICLES={
 <p>Nous analysons chaque mois les données de vente par ville, les recherches Google Maroc (parfum homme Maroc, parfum 100 DH Maroc), et les mentions sur les réseaux sociaux marocains. Ce top 5 reflète la réalité du terrain — pas un classement publicitaire.</p>
 
 <h2>🥇 N°1 — Sauvage · Dior · Le Roi Incontesté</h2>
+<figure class="art-prod-img" onclick="goProduct('h1')"><img src="dossier%20parfum/parfum/dior%20sauvage%20600-800.jpg" alt="Sauvage - Dior" loading="lazy"><figcaption>Sauvage<br>Dior</figcaption></figure>
 <p>Sauvage est le parfum masculin le plus vendu au Maroc depuis 5 années consécutives. Ses notes de <strong>bergamote de Calabre, poivre de Sichuan et ambroxan</strong> créent une signature à la fois fraîche et chaleureuse qui fonctionne en toute saison. Sauvage Eau de Parfum (la version la plus populaire) apporte une profondeur boisée supplémentaire avec son accord de lavande et ambre gris.</p>
 <div class="highlight">Sauvage représente 28% de nos ventes masculines — il est commandé chaque jour depuis Casablanca, Rabat, Marrakech, Tanger et toutes les grandes villes du Maroc. C'est le parfum que tous les hommes marocains reconnaissent en une seconde.</div>
 <p><strong>Quand le porter :</strong> Bureau, déjeuners formels, soirées, quotidien — Sauvage est le parfum zéro défaut par excellence.</p>
 <p><em>Notes : Bergamote · Poivre · Lavande · Ambroxan · Cèdre virginie</em></p>
 
 <h2>🥈 N°2 — Bleu de Chanel · L'Homme de Goût</h2>
+<figure class="art-prod-img" onclick="goProduct('h2')"><img src="dossier%20parfum/parfum/chanel%20bleu%20de%20channel%20600-800.jpg" alt="Bleu de Chanel - Chanel" loading="lazy"><figcaption>Bleu de Chanel<br>Chanel</figcaption></figure>
 <p>Si Sauvage est le roi populaire, Bleu de Chanel est le choix de l'homme raffiné. Sa composition <strong>boisée-aromatique</strong> avec des notes de citron sicilien, gingembre, cèdre et santal blanc dégage une élégance naturelle et intemporelle. Il ne cherche pas à impressionner — il convainc par la sophistication. Très plébiscité par les hommes d'affaires marocains, les cadres et les professions libérales.</p>
 <p><strong>Quand le porter :</strong> Réunions professionnelles, dîners formels, mariages. Le parfum de l'homme qui sait ce qu'il veut sans avoir besoin de le crier.</p>
 <p><em>Notes : Citron · Gingembre · Jasmin · Cèdre · Santal · Vétiver</em></p>
 
 <h2>🥉 N°3 — Aventus · Creed · Le Prestige</h2>
+<figure class="art-prod-img" onclick="goProduct('h8')"><img src="dossier%20parfum/parfum/creed%20aventus%20600-800.jpg" alt="Aventus - Creed" loading="lazy"><figcaption>Aventus<br>Creed</figcaption></figure>
 <p>Aventus de Creed est le parfum préféré des amateurs éclairés au Maroc. Son accord mythique d'<strong>ananas, bouleau fumé, musc et ambre</strong> crée une présence unique qui évoque le succès, le leadership et l'aventure. Son prix en original (3 000 DH+) le réservait à une élite — chez Parfum33ml.ma, il est accessible à 100 DH en 33ml. C'est la fragrance des cérémonies importantes, des mariages huppés, des moments où l'on veut laisser une impression durable.</p>
 <p><strong>Quand le porter :</strong> Mariages, événements formels, occasions importantes. Le parfum qui fait tourner les têtes.</p>
 <p><em>Notes : Ananas · Bergamote · Bouleau fumé · Rose · Musc · Ambre · Mousse de chêne</em></p>
 
 <h2>4️⃣ N°4 — Layton · Parfums de Marly · La Révélation</h2>
+<figure class="art-prod-img" onclick="goProduct('h24')"><img src="dossier%20parfum/parfum/Parfums%20de%20marly%20layton%20600-800.jpg" alt="Layton - Pdm" loading="lazy"><figcaption>Layton<br>Pdm</figcaption></figure>
 <p>Layton est la grande révélation masculine des 3 dernières années. Sa composition autour de la <strong>pomme verte, lavande, vanille et santal blanc</strong> crée un accord doux-épicé d'une sophistication rare. Il plait aux hommes qui veulent se démarquer de Sauvage et Bleu sans pour autant s'aventurer dans des territoires trop risqués. Sa progression à Casablanca et Marrakech est spectaculaire — il devient le nouveau "Sauvage des connaisseurs".</p>
 <p><strong>Quand le porter :</strong> Soirées élégantes, dîners romantiques, sorties culturelles. Le parfum de l'homme cultivé qui lit des avis avant d'acheter.</p>
 <p><em>Notes : Pomme · Genévrier · Lavande · Géranium · Vanille · Santal · Poivre de Guinée</em></p>
 
 <h2>5️⃣ N°5 — 1 Million · Paco Rabanne · La Fête</h2>
+<figure class="art-prod-img" onclick="goProduct('h4')"><img src="dossier%20parfum/parfum/paco%20rabanne%201%20million%20600-800.jpg" alt="1 Million - Paco Rabanne" loading="lazy"><figcaption>1 Million<br>Paco Rabanne</figcaption></figure>
 <p>1 Million reste le parfum des fêtes marocaines par excellence. Son accord de <strong>pamplemousse, cannelle dorée, menthe, cuir et patchouli</strong> crée une fragrance puissante, festive et irrésistiblement séductrice. Son flacon iconique en lingot d'or résume parfaitement son esprit : opulence, plaisir, excès calculé. Il cartonne particulièrement lors des mariages de nuit et des grandes fêtes de famille.</p>
 <p><strong>Quand le porter :</strong> Soirées, fêtes, nuits marocaines. Évitez au bureau — il est fait pour être remarqué.</p>
 <p><em>Notes : Pamplemousse · Menthe · Sang · Rose · Cannelle · Cuir · Ambre · Patchouli</em></p>
@@ -3481,15 +3498,19 @@ const ARTICLES={
 <h2>Pour une femme — Guide par profil</h2>
 
 <h3>La Romantique (25-40 ans)</h3>
+<figure class="art-prod-img" onclick="goProduct('f40')"><img src="dossier%20parfum/parfum/Parfums%20de%20Marly%20Delina%20600-800.jpg" alt="Delina - Pdm" loading="lazy"><figcaption>Delina<br>Pdm</figcaption></figure>
 <p><strong>Delina (Parfums de Marly)</strong> — Rose turque, litchi, pivoine. Le parfum le plus romantique et luxueux. Ou <strong>La Vie Est Belle (Lancôme)</strong> — praline, iris, vanille. Joyeux et enveloppant.<br>Budget : 100 DH le flacon 33ml chez Parfum33ml.ma.</p>
 
 <h3>La Moderne et Tendance (20-35 ans)</h3>
+<figure class="art-prod-img" onclick="goProduct('f5')"><img src="dossier%20parfum/parfum/black%20opium%20600-800.jpg" alt="Black Opium - YSL" loading="lazy"><figcaption>Black Opium<br>YSL</figcaption></figure>
 <p><strong>Black Opium (YSL)</strong> — Café, vanille, jasmin. Le parfum des femmes qui savent ce qui est tendance. Ou <strong>Good Girl (Carolina Herrera)</strong> — jasmin intense, cacao, vétiver. Puissant et séducteur.</p>
 
 <h3>La Classique Élégante (35-60 ans)</h3>
+<figure class="art-prod-img" onclick="goProduct('f1')"><img src="dossier%20parfum/parfum/chanel%20n5%20600-800.jpg" alt="Chanel N°5 - Chanel" loading="lazy"><figcaption>Chanel N°5<br>Chanel</figcaption></figure>
 <p><strong>Chanel N°5</strong> — le cadeau universel pour une femme raffinée. Ou <strong>Coco Mademoiselle</strong> — moderne mais intemporel. Ou <strong>J'adore (Dior)</strong> — féminité pure et lumineuse.</p>
 
 <h3>La Jeune Fille (15-25 ans)</h3>
+<figure class="art-prod-img" onclick="goProduct('f6')"><img src="dossier%20parfum/parfum/Dior%20miss%20dior%20600-800.jpg" alt="Miss Dior - Dior" loading="lazy"><figcaption>Miss Dior<br>Dior</figcaption></figure>
 <p><strong>Miss Dior</strong> — floral léger et romantique. Ou <strong>Daisy (Marc Jacobs)</strong> — fruité et joyeux. Ou <strong>Bright Crystal (Versace)</strong> — léger, accessible, très porté par les jeunes Marocaines.</p>
 
 <h3>La Femme Orientale (tous âges)</h3>
@@ -3498,18 +3519,22 @@ const ARTICLES={
 <h2>Pour un homme — Guide par profil</h2>
 
 <h3>L'Homme Universel</h3>
+<figure class="art-prod-img" onclick="goProduct('h1')"><img src="dossier%20parfum/parfum/dior%20sauvage%20600-800.jpg" alt="Sauvage - Dior" loading="lazy"><figcaption>Sauvage<br>Dior</figcaption></figure>
 <p><strong>Sauvage (Dior)</strong> — valeur sûre absolue. Si vous ne savez pas quoi choisir, prenez Sauvage. Frais, élégant, universel.</p>
 
 <h3>L'Homme Sophistiqué</h3>
 <p><strong>Bleu de Chanel</strong> ou <strong>Terre d'Hermès</strong> — pour l'homme qui préfère la discrétion à l'ostentation.</p>
 
 <h3>L'Homme de Prestige</h3>
+<figure class="art-prod-img" onclick="goProduct('h8')"><img src="dossier%20parfum/parfum/creed%20aventus%20600-800.jpg" alt="Aventus - Creed" loading="lazy"><figcaption>Aventus<br>Creed</figcaption></figure>
 <p><strong>Aventus (Creed)</strong> ou <strong>Layton (Parfums de Marly)</strong> — pour celui qui mérite quelque chose d'exceptionnel et rare.</p>
 
 <h3>L'Homme Sportif et Actif</h3>
+<figure class="art-prod-img" onclick="goProduct('h6')"><img src="dossier%20parfum/parfum/paco%20rabanne%20invictus%20600-800.jpg" alt="Invictus - Paco Rabanne" loading="lazy"><figcaption>Invictus<br>Paco Rabanne</figcaption></figure>
 <p><strong>Invictus (Paco Rabanne)</strong> — aquatique, énergique, masculin. Ou <strong>Acqua di Giò (Armani)</strong> — la référence des parfums frais pour homme.</p>
 
 <h3>L'Homme Festif</h3>
+<figure class="art-prod-img" onclick="goProduct('h4')"><img src="dossier%20parfum/parfum/paco%20rabanne%201%20million%20600-800.jpg" alt="1 Million - Paco Rabanne" loading="lazy"><figcaption>1 Million<br>Paco Rabanne</figcaption></figure>
 <p><strong>1 Million (Paco Rabanne)</strong> — pour les fêtes et les grandes occasions. Toujours apprécié.</p>
 
 <h2>Le format 33ml : le cadeau malin</h2>
@@ -3555,6 +3580,7 @@ const ARTICLES={
 <p>Une famille olfactive est un groupe de parfums partageant des caractéristiques communes — des ingrédients similaires, une ambiance sensorielle proche, une évolution sur la peau comparable. La roue des arômes (ou "Fragrance Wheel") de Michael Edwards, créée en 1992, est la référence mondiale. Elle divise les fragrances en 4 grandes familles avec des sous-catégories précises.</p>
 
 <h2>🌸 Famille 1 : Florale — La Plus Grande Famille</h2>
+<figure class="art-prod-img" onclick="goProduct('f2')"><img src="dossier%20parfum/parfum/dior%20j'adore%20600-800.jpg" alt="J'adore - Dior" loading="lazy"><figcaption>J'adore<br>Dior</figcaption></figure>
 <p>La famille florale représente plus de 40% des parfums féminins dans le monde. Elle est subdivisée en :</p>
 <ul>
 <li><strong>Floral pur :</strong> dominé par une seule fleur (soliflore). Rose, jasmin, iris, tubéreuse.</li>
@@ -3566,6 +3592,7 @@ const ARTICLES={
 <div class="highlight">La famille florale vous correspond si : vous aimez les jardins, les marchés de fleurs, les cadeaux de fleurs. Vous êtes attiré(e) par le romantisme et la féminité classique.</div>
 
 <h2>✨ Famille 2 : Orientale — La Chaleur du Maroc</h2>
+<figure class="art-prod-img" onclick="goProduct('f5')"><img src="dossier%20parfum/parfum/black%20opium%20600-800.jpg" alt="Black Opium - YSL" loading="lazy"><figcaption>Black Opium<br>YSL</figcaption></figure>
 <p>Les orientaux sont les parfums les plus appréciés au Maroc — ils résonnent avec notre culture du hammam, des épices et des soirées chaudes. Caractéristiques : chauds, sensuels, enveloppants, à longue tenue.</p>
 <ul>
 <li><strong>Oriental doux :</strong> vanille, ambre, musc. La Vie Est Belle, Hypnôse.</li>
@@ -3577,6 +3604,7 @@ const ARTICLES={
 <div class="highlight">Les orientaux vous correspondent si : vous aimez la chaleur des épices marocaines, le hammam, les soirées enveloppantes. Vous cherchez un parfum qui reste mémorable des heures après votre départ.</div>
 
 <h2>🌲 Famille 3 : Boisée — La Sophistication</h2>
+<figure class="art-prod-img" onclick="goProduct('h1')"><img src="dossier%20parfum/parfum/dior%20sauvage%20600-800.jpg" alt="Sauvage - Dior" loading="lazy"><figcaption>Sauvage<br>Dior</figcaption></figure>
 <p>Les boisés sont le territoire masculin par excellence, bien qu'ils séduisent de plus en plus les femmes. Ils évoquent la forêt, la terre, le cuir, la profondeur.</p>
 <ul>
 <li><strong>Boisé sec :</strong> cèdre, vétiver, oud. Terre d'Hermès, Oud Wood (Tom Ford).</li>
@@ -3587,6 +3615,7 @@ const ARTICLES={
 <p><strong>Tenue :</strong> 6-10 heures · <strong>Saison idéale :</strong> automne-hiver, toute saison pour les boisés légers</p>
 
 <h2>🌊 Famille 4 : Fraîche/Hespéridée — L'Énergie</h2>
+<figure class="art-prod-img" onclick="goProduct('h3')"><img src="dossier%20parfum/parfum/giorgio%20armani%20acqua%20di%20gio%20600-800.jpg" alt="Acqua di Giò - Armani" loading="lazy"><figcaption>Acqua di Giò<br>Armani</figcaption></figure>
 <p>Les fragrances fraîches sont les plus portées en été, au bureau et en journée. Elles évoquent la propreté, l'énergie, la vitalité.</p>
 <ul>
 <li><strong>Hespéridée :</strong> dominée par les agrumes (bergamote, citron, mandarine). Légère, éphémère, joyeuse.</li>
@@ -3596,6 +3625,7 @@ const ARTICLES={
 </ul>
 
 <h2>🍫 Famille 5 : Gourmande — Le Plaisir Sucré</h2>
+<figure class="art-prod-img" onclick="goProduct('f3')"><img src="dossier%20parfum/parfum/lancome%20la%20vie%20est%20belle%20600-800.jpg" alt="La Vie Est Belle - Lancôme" loading="lazy"><figcaption>La Vie Est Belle<br>Lancôme</figcaption></figure>
 <p>Née dans les années 90 avec Angel (Thierry Mugler), la famille gourmande est devenue incontournable. Elle évoque les desserts, les pâtisseries, les douceurs.</p>
 <ul>
 <li><strong>Notes caractéristiques :</strong> café, chocolat, caramel, praline, vanille, amande, noisette</li>
