@@ -454,6 +454,15 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .prod-seo h2{font-family:var(--ff-d);font-size:20px;font-weight:600;margin-bottom:14px;color:var(--txt)}
 .prod-seo h3{font-family:var(--ff-d);font-size:15px;font-weight:600;color:var(--gold);margin:18px 0 6px}
 .prod-seo p{font-size:13.5px;color:var(--txt2);line-height:1.8;margin-bottom:8px}
+.seo-faq{margin-top:8px;display:flex;flex-direction:column;gap:12px}
+.seo-faq-item{background:var(--bg3);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.seo-faq-q{padding:14px 16px;font-size:13px;font-weight:600;color:var(--txt);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.seo-faq-q::after{content:'+';color:var(--gold);font-size:18px;font-weight:300;flex-shrink:0}
+.seo-faq-item.open .seo-faq-q::after{content:'−'}
+.seo-faq-a{display:none;padding:0 16px 14px;font-size:13px;color:var(--txt2);line-height:1.7}
+.seo-faq-item.open .seo-faq-a{display:block}
+.seo-occasion-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.seo-occ-tag{padding:5px 12px;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.2);border-radius:20px;font-size:12px;color:var(--gold)}
 
 /* ── COMPARE BAR ─────────────────────── */
 .compare-bar{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--gold);padding:14px 24px;z-index:1500;display:flex;align-items:center;justify-content:space-between;gap:14px;transform:translateY(100%);transition:.4s cubic-bezier(.4,0,.2,1)}
@@ -2540,7 +2549,14 @@ document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active'));
 document.getElementById('page-product').classList.add('active');
 updateNavActive('');
 window.scrollTo({top:0});
-document.title=p.name+' '+p.brand+' 33ml | Parfum Maroc 100 DH';
+document.title=p.name+' '+p.brand+' 33ml au Maroc 100 DH | Parfum33ml.ma';
+// SEO: update meta description
+const _md=document.querySelector('meta[name="description"]');
+if(_md)_md.content='Achetez '+p.name+' de '+p.brand+' en 33ml au Maroc à 100 DH. '+p.desc.slice(0,120).replace(/<[^>]+>/g,'')+' ... Livraison 24-48h partout au Maroc. Gratuite dès 3 flacons.';
+// SEO: inject Product schema
+let _sc=document.getElementById('prod-schema-ld');
+if(!_sc){_sc=document.createElement('script');_sc.type='application/ld+json';_sc.id='prod-schema-ld';document.head.appendChild(_sc);}
+_sc.textContent=JSON.stringify({'@context':'https://schema.org','@type':'Product','name':p.name+' '+p.brand+' 33ml','brand':{'@type':'Brand','name':p.brand},'description':p.desc.replace(/<[^>]+>/g,''),'sku':p.id,'offers':{'@type':'Offer','price':'100','priceCurrency':'MAD','availability':'https://schema.org/InStock','url':'https://parfum33ml.ma/'+p.id,'seller':{'@type':'Organization','name':'Parfum33ml.ma'}},'aggregateRating':{'@type':'AggregateRating','ratingValue':p.rating,'reviewCount':p.reviews,'bestRating':'5','worstRating':'1'}});
 const rel=ALL.filter(x=>x.gender===p.gender&&x.id!==p.id).sort(()=>Math.random()-.5).slice(0,12);
 const topN=p.notes.slice(0,Math.ceil(p.notes.length/3));
 const midN=p.notes.slice(Math.ceil(p.notes.length/3),Math.ceil(p.notes.length*2/3));
