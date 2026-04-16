@@ -438,7 +438,22 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .related-scroll::-webkit-scrollbar{height:4px}
 .related-scroll::-webkit-scrollbar-track{background:var(--bg2);border-radius:2px}
 .related-scroll::-webkit-scrollbar-thumb{background:var(--gold-d);border-radius:2px}
-.related-scroll .card{min-width:170px;max-width:170px;scroll-snap-align:start;flex-shrink:0}
+/* Rel-cards : visibles instantanément, pas de dépendance stagger */
+.rel-card{width:160px;flex-shrink:0;scroll-snap-align:start;cursor:pointer;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .3s,transform .3s}
+.rel-card:hover{border-color:var(--border-h);transform:translateY(-3px)}
+.rel-card-img{height:180px;background:var(--bg3);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.rel-card-img img{width:100%;height:100%;object-fit:contain}
+.rel-card-badge{position:absolute;top:6px;left:6px;background:var(--gold);color:#000;font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700}
+.rel-card-body{padding:10px 12px 12px}
+.rel-card-brand{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px}
+.rel-card-name{font-size:12px;font-weight:600;line-height:1.3;margin-bottom:5px;color:var(--txt);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.rel-card-stars{font-size:11px;color:var(--gold);margin-bottom:4px}
+.rel-card-price{font-size:15px;font-weight:700;color:var(--gold);font-family:var(--ff-d)}
+/* Bloc SEO visible */
+.prod-seo{margin-top:40px;padding:32px;background:var(--bg2);border:1px solid var(--border);border-radius:20px}
+.prod-seo h2{font-family:var(--ff-d);font-size:20px;font-weight:600;margin-bottom:14px;color:var(--txt)}
+.prod-seo h3{font-family:var(--ff-d);font-size:15px;font-weight:600;color:var(--gold);margin:18px 0 6px}
+.prod-seo p{font-size:13.5px;color:var(--txt2);line-height:1.8;margin-bottom:8px}
 
 /* ── COMPARE BAR ─────────────────────── */
 .compare-bar{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--gold);padding:14px 24px;z-index:1500;display:flex;align-items:center;justify-content:space-between;gap:14px;transform:translateY(100%);transition:.4s cubic-bezier(.4,0,.2,1)}
@@ -2593,18 +2608,33 @@ WhatsApp
 </div>
 </div>
 </div>
-<div class="prod-seo" style="display:none" aria-hidden="true">
-<h2>Acheter ${p.name} de ${p.brand} en 33ml au Maroc — 100 DH</h2>
-<h3>Les notes olfactives de ${p.name}</h3>
-<p>${p.name} de ${p.brand} se compose de notes de ${p.notes.join(', ')}. Cette composition fait de ce parfum un choix idéal pour les amateurs de fragrances ${p.family}s au Maroc.</p>
-<h3>Pourquoi ${p.name} est-il populaire au Maroc ?</h3>
-<p>${p.name} fait partie des parfums les plus vendus au Maroc grâce à son sillage remarquable et sa tenue exceptionnelle. ${p.best?`C'est l'un de nos best-sellers, commandé chaque jour par nos clients.`:`Sa popularité ne cesse de croître auprès des amateurs de parfumerie.`} En format 33ml à 100 DH, c'est le compromis parfait entre qualité et prix accessible.</p>
-<h3>Commander ${p.name} partout au Maroc</h3>
-<p>Livraison en 24-48h à Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir et dans toutes les villes du Maroc. Livraison gratuite dès 3 flacons.</p>
+<div class="prod-seo">
+<h2>À propos de ${p.name} — ${p.brand}</h2>
+<p>${p.desc}</p>
+<h3>Pyramide olfactive</h3>
+<p><strong>Notes de tête :</strong> ${topN.join(', ')||'—'}<br><strong>Notes de cœur :</strong> ${midN.join(', ')||'—'}<br><strong>Notes de fond :</strong> ${baseN.join(', ')||'—'}</p>
+<h3>Pourquoi choisir ${p.name} ?</h3>
+<p>${p.name} de ${p.brand} est une fragrance ${p.family} ${p.gender==='femme'?'féminine':'masculine'} au sillage remarquable et à la tenue exceptionnelle. ${p.best?`Best-seller de notre catalogue, commandé chaque jour par nos clients fidèles.`:`Une fragrance qui séduit par son caractère unique et sa composition soignée.`} En format 33ml à 100 DH seulement, c'est la façon idéale de s'offrir un parfum de luxe au Maroc.</p>
+<h3>Livraison partout au Maroc</h3>
+<p>Expédition sous 24h · Livraison 24-48h à Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir et dans toutes les villes du Maroc · Livraison gratuite dès 3 flacons commandés.</p>
 </div>
 <div class="related">
-<h3>Vous aimerez aussi <span style="font-size:13px;color:var(--txt3);font-weight:400;font-family:var(--ff-b)">${rel.length} parfums sélectionnés</span></h3>
-<div class="related-scroll">${rel.map(r=>cardHTML(r,r.gender)).join('')}</div>
+<h3>Vous aimerez aussi <span style="font-size:13px;color:var(--txt3);font-weight:400;font-family:var(--ff-b)">${rel.length} parfums similaires</span></h3>
+<div class="related-scroll">${rel.map(r=>{
+  const ri=PROD_IMG[r.id];
+  const rs='★'.repeat(Math.round(parseFloat(r.rating)));
+  return '<div class="rel-card" onclick="goProduct(\''+r.id+'\')">'
+    +'<div class="rel-card-img"'+(ri?' style="background:#080808"':'')+'>'
+    +(ri?'<img src="'+ri+'" alt="'+r.name+'" loading="lazy">'
+      :'<div style="display:flex;align-items:center;justify-content:center;height:100%;opacity:.25">'+bottleSVG(50)+'</div>')
+    +(r.best?'<span class="rel-card-badge">⭐ Best</span>':'')
+    +'</div><div class="rel-card-body">'
+    +'<div class="rel-card-brand">'+r.brand+'</div>'
+    +'<div class="rel-card-name">'+r.name+'</div>'
+    +'<div class="rel-card-stars">'+rs+'</div>'
+    +'<div class="rel-card-price">'+(SPECIAL_PRICES[r.id]||100)+' DH</div>'
+    +'</div></div>';
+}).join('')}</div>
 </div>`;
 setTimeout(()=>{initReveal();initTilt();staggerCards()},100);
 });
