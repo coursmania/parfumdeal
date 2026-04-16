@@ -2625,14 +2625,25 @@ WhatsApp
 </div>
 </div>
 <div class="prod-seo">
-<h2>À propos de ${p.name} — ${p.brand}</h2>
-<p>${p.desc}</p>
-<h3>Pyramide olfactive</h3>
-<p><strong>Notes de tête :</strong> ${topN.join(', ')||'—'}<br><strong>Notes de cœur :</strong> ${midN.join(', ')||'—'}<br><strong>Notes de fond :</strong> ${baseN.join(', ')||'—'}</p>
-<h3>Pourquoi choisir ${p.name} ?</h3>
-<p>${p.name} de ${p.brand} est une fragrance ${p.family} ${p.gender==='femme'?'féminine':'masculine'} au sillage remarquable et à la tenue exceptionnelle. ${p.best?`Best-seller de notre catalogue, commandé chaque jour par nos clients fidèles.`:`Une fragrance qui séduit par son caractère unique et sa composition soignée.`} En format 33ml à 100 DH seulement, c'est la façon idéale de s'offrir un parfum de luxe au Maroc.</p>
-<h3>Livraison partout au Maroc</h3>
-<p>Expédition sous 24h · Livraison 24-48h à Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir et dans toutes les villes du Maroc · Livraison gratuite dès 3 flacons commandés.</p>
+<h2>Acheter ${p.name} ${p.brand} 33ml au Maroc — 100 DH</h2>
+<p>${p.desc} Disponible en format 33ml à seulement <strong>100 DH</strong>, avec livraison rapide 24-48h partout au Maroc.</p>
+<h3>Notes olfactives — ${p.name} ${p.brand}</h3>
+<p><strong>Notes de tête</strong> (première impression) : ${topN.join(', ')||'—'}<br>
+<strong>Notes de cœur</strong> (le caractère principal) : ${midN.join(', ')||'—'}<br>
+<strong>Notes de fond</strong> (la signature durable) : ${baseN.join(', ')||'—'}<br>
+Cette composition ${p.family} offre un sillage ${['oriental','boisé','gourmand'].includes(p.family)?'puissant et enveloppant, parfait pour marquer les esprits':'frais et élégant, idéal pour une présence subtile et distinguée'}.</p>
+<h3>Pour quelle occasion porter ${p.name} ?</h3>
+<p><strong>${p.name}</strong> est une fragrance <strong>${p.family}</strong> ${p.gender==='femme'?'féminine':'masculine'} idéale pour ${p.family==='floral'?`les mariages, sorties romantiques et journées printanières`:p.family==='oriental'?`les soirées envoûtantes, dîners romantiques et événements spéciaux`:p.family==='frais'?`le quotidien, le bureau et les journées d'été au Maroc`:p.family==='fruité'?`les sorties décontractées, journées ensoleillées et le printemps`:p.family==='boisé'?`le bureau, réunions professionnelles et soirées élégantes`:p.family==='gourmand'?`les soirées romantiques, l'automne-hiver et les moments de séduction`:`toutes les occasions`}. Sa tenue de 6 à 8 heures en fait un allié idéal du matin au soir. ${p.best?`Best-seller absolu de notre catalogue — commandé chaque semaine par des centaines de clients fidèles.`:''}</p>
+<h3>Pourquoi choisir ${p.name} chez Parfum33ml.ma ?</h3>
+<p>Chez Parfum33ml.ma, <strong>${p.name} ${p.brand}</strong> est proposé à <strong>100 DH en format 33ml</strong> — plus de 60% moins cher que le flacon original, tout en capturant l'essence et le caractère de cette fragrance. Nos fragrances sont formulées avec des matières premières de qualité, sélectionnées et testées. Le format 33ml se glisse facilement dans un sac à main ou une poche, parfait pour les retouches en journée ou les voyages.</p>
+<h3>Questions fréquentes — ${p.name} au Maroc</h3>
+<div class="seo-faq">
+<div class="seo-faq-item"><div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Combien de temps tient ${p.name} ${p.brand} ?</div><div class="seo-faq-a">${p.name} offre une tenue de 6 à 8 heures sur la peau. Appliquez sur les points de pulsation — poignets, nuque et creux du coude — pour maximiser la diffusion et la longévité du parfum.</div></div>
+<div class="seo-faq-item"><div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">${p.name} est-il adapté au climat chaud du Maroc ?</div><div class="seo-faq-a">${['frais','fruité','aquatique'].includes(p.family)?`${p.name} est parfaitement adapté à la chaleur marocaine. Ses notes légères s'épanouissent sous le soleil sans devenir écrasantes — idéal pour l'été à Casablanca, Marrakech, Agadir ou Tanger.`:`${p.name} est une fragrance ${p.family} qui s'adapte au Maroc. Nous conseillons de le porter en soirée ou dans un espace climatisé pour profiter pleinement de ses notes enveloppantes.`}</div></div>
+<div class="seo-faq-item"><div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Comment recevoir ${p.name} partout au Maroc ?</div><div class="seo-faq-a">Ajoutez ${p.name} à votre panier et commandez via WhatsApp. Nous livrons en 24 à 48h dans toutes les villes : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir, Oujda, Meknès, Kénitra, Tétouan, Nador, El Jadida, Safi, Béni Mellal et partout au Royaume. Livraison gratuite dès 3 flacons.</div></div>
+</div>
+<h3>Livraison ${p.name} partout au Maroc</h3>
+<p>Commandez <strong>${p.name} ${p.brand} 33ml</strong> et recevez-le en 24 à 48h dans toutes les villes : <strong>Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir</strong>, Oujda, Meknès, Kénitra, Tétouan, Nador, El Jadida, Safi, Béni Mellal et partout au Royaume. <strong>Livraison gratuite dès 3 flacons commandés.</strong></p>
 </div>
 <div class="related">
 <h3>Vous aimerez aussi <span style="font-size:13px;color:var(--txt3);font-weight:400;font-family:var(--ff-b)">${rel.length} parfums similaires</span></h3>
