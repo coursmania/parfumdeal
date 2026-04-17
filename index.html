@@ -14,9 +14,11 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Parfum33ml.ma","url":"https://parfum33ml.ma","potentialAction":{"@type":"SearchAction","target":"https://parfum33ml.ma/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Parfum33ml.ma","url":"https://parfum33ml.ma","logo":"https://parfum33ml.ma/logo.png","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":["French","Arabic"]},"address":{"@type":"PostalAddress","addressCountry":"MA","addressLocality":"Casablanca"},"sameAs":["https://www.instagram.com/parfum33ml.ma","https://www.facebook.com/parfum33ml.ma","https://www.tiktok.com/@parfum33ml.ma"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quelle est la tenue de vos parfums 33ml ?","acceptedAnswer":{"@type":"Answer","text":"Nos parfums offrent une tenue de 6 à 8 heures sur la peau."}},{"@type":"Question","name":"Comment se passe la livraison au Maroc ?","acceptedAnswer":{"@type":"Answer","text":"Livraison en 24 à 48h partout au Maroc. Gratuite dès 3 flacons."}},{"@type":"Question","name":"Comment régler ma commande ?","acceptedAnswer":{"@type":"Answer","text":"Nous acceptons le règlement par Cash, Virement bancaire, CashPlus, Wafacash et Barid Cash."}}]}</script>
+<link rel="preload" as="image" href="dossier%20parfum/baniere/banniere-pack.png">
+<link rel="preload" as="image" href="dossier%20parfum/baniere/femme.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap&font-display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -958,6 +960,84 @@ footer li a:hover{color:var(--gold)}
 .home-avantages{grid-template-columns:1fr}
 .avantage-item{border-right:none;border-bottom:1px solid var(--border)}
 }
+
+/* ── FLOATING WHATSAPP ─────────────────────────────────────── */
+.float-wa{position:fixed;bottom:88px;right:22px;z-index:998;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:.25s;cursor:pointer;text-decoration:none}
+.float-wa:hover{transform:scale(1.12);box-shadow:0 6px 30px rgba(37,211,102,.55)}
+.float-wa svg{width:26px;height:26px;fill:#fff;flex-shrink:0}
+.float-wa-pulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:waPulse 2s ease-out infinite;pointer-events:none}
+@keyframes waPulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.5);opacity:0}}
+
+/* ── SCROLL REVEAL ─────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── SOCIAL PROOF TICKER ───────────────────────────────────── */
+.sp-ticker{background:var(--bg2);border-bottom:1px solid var(--border);overflow:hidden;height:36px;display:flex;align-items:center}
+.sp-ticker-track{display:flex;gap:64px;animation:tickerRun 38s linear infinite;white-space:nowrap}
+.sp-ticker-track:hover{animation-play-state:paused}
+.sp-item{font-size:11.5px;color:var(--txt2);display:inline-flex;align-items:center;gap:6px;flex-shrink:0}
+.sp-item strong{color:var(--gold)}
+@keyframes tickerRun{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── URGENCY BADGE ─────────────────────────────────────────── */
+.badge-urgency{display:inline-block;background:rgba(194,112,128,.15);color:var(--rose);border:1px solid rgba(194,112,128,.28);font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px;letter-spacing:.4px;margin-top:4px}
+
+/* ── REVIEWS SECTION ───────────────────────────────────────── */
+.reviews-wrap{max-width:900px;margin:48px auto 0;padding:0 24px 48px}
+.reviews-title{font-family:var(--ff-d);font-size:26px;margin-bottom:24px}
+.reviews-summary{display:flex;gap:32px;align-items:center;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:24px 28px;margin-bottom:24px;flex-wrap:wrap}
+.rev-avg-num{font-family:var(--ff-d);font-size:52px;font-weight:700;color:var(--gold);line-height:1}
+.rev-avg-stars{color:var(--gold);font-size:20px;letter-spacing:1px;margin-bottom:4px}
+.rev-avg-count{font-size:12px;color:var(--txt3)}
+.rev-bars{flex:1;display:flex;flex-direction:column;gap:6px;min-width:160px}
+.rev-bar-row{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--txt3)}
+.rev-bar-bg{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.rev-bar-fill{height:100%;background:var(--gold);border-radius:3px}
+.review-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+.rc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:8px}
+.rc-name{font-weight:700;font-size:13px}
+.rc-stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+.rc-date{font-size:11px;color:var(--txt3)}
+.rc-badge{font-size:10px;background:rgba(90,158,111,.15);color:var(--green);padding:2px 8px;border-radius:10px;font-weight:600;margin-left:8px}
+.rc-text{font-size:13px;color:var(--txt2);line-height:1.65}
+.rc-helpful{font-size:11px;color:var(--txt3);margin-top:8px;cursor:pointer}
+.rc-helpful:hover{color:var(--gold)}
+
+/* ── STICKY MOBILE CTA ─────────────────────────────────────── */
+.sticky-prod-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:990;background:rgba(8,6,4,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:10px 16px;gap:10px;align-items:center}
+@media(max-width:768px){.sticky-prod-cta.show{display:flex}}
+.spc-info{flex:1;min-width:0}
+.spc-name{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spc-price{color:var(--gold);font-family:var(--ff-d);font-size:17px;font-weight:700}
+.spc-btn{background:var(--gold);color:#000;font-weight:700;font-size:12px;padding:10px 16px;border-radius:50px;border:none;cursor:pointer;white-space:nowrap;flex-shrink:0}
+
+/* ── LIGHTBOX ──────────────────────────────────────────────── */
+.lightbox{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.93);align-items:center;justify-content:center;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6);cursor:default}
+.lightbox-close{position:absolute;top:18px;right:22px;color:#fff;font-size:32px;cursor:pointer;font-weight:300;line-height:1;transition:.2s}
+.lightbox-close:hover{color:var(--gold)}
+.prod-main-img.zoomable{cursor:zoom-in}
+
+/* ── CITY PAGES ────────────────────────────────────────────── */
+.city-hero{padding:64px 24px 48px;text-align:center;border-bottom:1px solid var(--border);background:linear-gradient(135deg,var(--bg2),var(--bg3))}
+.city-hero h1{font-family:var(--ff-d);font-size:clamp(32px,6vw,58px);margin:12px 0}
+.city-hero p{font-size:15px;color:var(--txt2);max-width:560px;margin:0 auto}
+.city-section{max-width:1100px;margin:0 auto;padding:40px 24px}
+.city-section h2{font-family:var(--ff-d);font-size:26px;margin-bottom:14px;color:var(--txt)}
+.city-section h3{font-family:var(--ff-d);font-size:20px;margin:24px 0 10px;color:var(--txt)}
+.city-section p{color:var(--txt2);font-size:14px;line-height:1.75;margin-bottom:14px}
+.city-section ul{padding-left:20px;color:var(--txt2);font-size:14px;line-height:1.9;margin-bottom:16px}
+.city-cta-block{background:linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.03));border:1px solid var(--border-h);border-radius:20px;padding:32px;text-align:center;margin:32px 0}
+.city-grid-prods{max-width:1400px;margin:0 auto;padding:0 24px}
+
+/* ── MICRO-INTERACTIONS ─────────────────────────────────────── */
+@keyframes cartBounce{0%,100%{transform:scale(1)}30%{transform:scale(1.18)}60%{transform:scale(.93)}80%{transform:scale(1.05)}}
+.cart-bounce{animation:cartBounce .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .45s ease both}
+
 </style>
 </head>
 <body>
@@ -1148,6 +1228,29 @@ footer li a:hover{color:var(--gold)}
 
 <!-- ══════════════════════════════════════ HOME PAGE -->
 <div class="page active" id="page-home">
+
+
+<!-- ── SOCIAL PROOF TICKER ── -->
+<div class="sp-ticker">
+<div class="sp-ticker-track">
+  <span class="sp-item">🛒 <strong>Yasmine · Casablanca</strong> vient de commander Black Opium YSL</span>
+  <span class="sp-item">🛒 <strong>Karim · Rabat</strong> vient de commander Sauvage Dior</span>
+  <span class="sp-item">🛒 <strong>Imane · Marrakech</strong> vient de commander La Vie est Belle</span>
+  <span class="sp-item">🛒 <strong>Mehdi · Tanger</strong> vient de commander Bleu de Chanel</span>
+  <span class="sp-item">🛒 <strong>Sara · Agadir</strong> vient de commander Good Girl Carolina Herrera</span>
+  <span class="sp-item">🛒 <strong>Omar · Fès</strong> vient de commander 1 Million Paco Rabanne</span>
+  <span class="sp-item">🛒 <strong>Nadia · Kénitra</strong> vient de commander Baccarat Rouge 540</span>
+  <span class="sp-item">🛒 <strong>Yassine · Meknès</strong> vient de commander Invictus Paco Rabanne</span>
+  <span class="sp-item">🛒 <strong>Yasmine · Casablanca</strong> vient de commander Black Opium YSL</span>
+  <span class="sp-item">🛒 <strong>Karim · Rabat</strong> vient de commander Sauvage Dior</span>
+  <span class="sp-item">🛒 <strong>Imane · Marrakech</strong> vient de commander La Vie est Belle</span>
+  <span class="sp-item">🛒 <strong>Mehdi · Tanger</strong> vient de commander Bleu de Chanel</span>
+  <span class="sp-item">🛒 <strong>Sara · Agadir</strong> vient de commander Good Girl Carolina Herrera</span>
+  <span class="sp-item">🛒 <strong>Omar · Fès</strong> vient de commander 1 Million Paco Rabanne</span>
+  <span class="sp-item">🛒 <strong>Nadia · Kénitra</strong> vient de commander Baccarat Rouge 540</span>
+  <span class="sp-item">🛒 <strong>Yassine · Meknès</strong> vient de commander Invictus Paco Rabanne</span>
+</div>
+</div>
 
 <!-- ── 1. HERO CAROUSEL ── -->
 <section class="hero-carousel" id="heroCarousel">
@@ -1625,6 +1728,18 @@ footer li a:hover{color:var(--gold)}
 <div class="blog-card" onclick="goArticle('6')">
 <div class="blog-img" style="background:linear-gradient(135deg,#0a0e14,#10181e);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-33ml.jpg" alt="Acheter son parfum en 33ml" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 <div class="blog-body"><div class="blog-tag">Économies</div><h4>Acheter son parfum en 33ml : pourquoi c'est le format idéal au Maroc</h4><p>Prix, praticité, liberté de collection — le guide complet du format 33ml.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>8 min de lecture</span><span>·</span><span>Conseils</span></div></div>
+</div>
+<div class="blog-card" onclick="goArticle('7')">
+<div class="blog-img" style="background:linear-gradient(135deg,#0a0a14,#14142a);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-top5-homme.jpg" alt="Parfums tendance Maroc 2025" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="blog-body"><div class="blog-tag">Tendances 2025</div><h4>Les parfums tendance au Maroc en 2025 — Classement complet</h4><p>Sauvage, Black Opium, Baccarat Rouge 540 — les 10 fragrances qui dominent le marché marocain cette année.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>9 min de lecture</span><span>·</span><span>Tendances</span></div></div>
+</div>
+<div class="blog-card" onclick="goArticle('8')">
+<div class="blog-img" style="background:linear-gradient(135deg,#0a1210,#102018);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-ete.jpg" alt="Conserver son parfum en été au Maroc" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="blog-body"><div class="blog-tag">Conseils Pratiques</div><h4>Comment conserver ses parfums en été au Maroc ?</h4><p>Chaleur, soleil, humidité — les 7 règles d'or pour protéger votre collection olfactive tout l'été.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>6 min de lecture</span><span>·</span><span>Conservation</span></div></div>
+</div>
+<div class="blog-card" onclick="goArticle('9')">
+<div class="blog-img" style="background:linear-gradient(135deg,#100a00,#1e1200);padding:0;overflow:hidden"><img src="dossier%20parfum/baniere/baniere-blog-cadeau.jpg" alt="Offrir un parfum pour l'Aïd" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="blog-body"><div class="blog-tag">Guide Cadeau</div><h4>Offrir un parfum pour l'Aïd au Maroc — Le guide ultime</h4><p>Pour l'Aïd el-Fitr ou l'Aïd el-Adha, choisir le parfum parfait selon le profil et l'âge du destinataire.</p><div style="margin-top:10px;font-size:11px;color:var(--txt3);display:flex;align-items:center;gap:12px"><span>7 min de lecture</span><span>·</span><span>Cadeau · Aïd</span></div></div>
 </div>
 </div>
 </div>
@@ -2749,6 +2864,7 @@ el.innerHTML=items.map(p=>cardHTML(p,g)).join('');
 
 // ══════════════ ROUTING
 function go(page,anchor){
+const _sc=document.getElementById('stickyProdCta');if(_sc)_sc.classList.remove('show');
 if(anchor){
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 document.getElementById('page-'+page).classList.add('active');
@@ -2763,7 +2879,7 @@ document.getElementById('page-'+page).classList.add('active');
 updateNavActive(page);
 window.scrollTo({top:0});
 if(page==='wishlist')renderWishlistPage();
-document.title=page==='home'?'Parfum33ml.ma | Parfums 33ml au Maroc à 100 DH':page==='femme'?'Parfums Femme 33ml Maroc | 50 Fragrances à 100 DH':page==='homme'?'Parfums Homme 33ml Maroc | 50 Fragrances à 100 DH':page==='wishlist'?'Mes Favoris | Parfum33ml.ma':page==='blog'?'Blog & Conseils Parfum | Parfum33ml.ma':page==='coffrets'?'Coffrets Cadeaux Parfum Maroc | Dès 180 DH | Parfum33ml.ma':'Parfum33ml.ma';
+document.title=page==='home'?'Parfum33ml.ma | Parfums 33ml au Maroc à 100 DH':page==='femme'?'Parfums Femme 33ml Maroc | 50 Fragrances à 100 DH':page==='homme'?'Parfums Homme 33ml Maroc | 50 Fragrances à 100 DH':page==='wishlist'?'Mes Favoris | Parfum33ml.ma':page==='blog'?'Blog & Conseils Parfum | Parfum33ml.ma':page==='coffrets'?'Coffrets Cadeaux Parfum Maroc | Dès 180 DH | Parfum33ml.ma':page==='casablanca'?'Parfum 33ml Casablanca | Livraison 24h | 100 DH | Parfum33ml.ma':page==='rabat'?'Parfum 33ml Rabat | Livraison 24h | 100 DH | Parfum33ml.ma':page==='marrakech'?'Parfum 33ml Marrakech | Livraison 24h | 100 DH | Parfum33ml.ma':'Parfum33ml.ma';
 initReveal();setTimeout(()=>{initTilt();staggerCards()},100);
 });
 }
@@ -2890,7 +3006,24 @@ WhatsApp
     +'<div class="rel-card-price">'+(SPECIAL_PRICES[r.id]||100)+' DH</div>'
     +'</div></div>';
 }).join('')}</div>
-</div>`;
+</div>
+${renderReviews(p)}
+`;
+// Sticky CTA mobile
+const spcName=document.getElementById('spcName');
+const spcPrice=document.getElementById('spcPrice');
+const spcBtn=document.getElementById('spcBtn');
+const spcCta=document.getElementById('stickyProdCta');
+if(spcName)spcName.textContent=p.name+' — '+p.brand;
+if(spcPrice)spcPrice.textContent=(SPECIAL_PRICES[p.id]||100)+' DH';
+if(spcBtn)spcBtn.onclick=()=>addToCartFromProd(p.id,sn,sb);
+if(spcCta)spcCta.classList.add('show');
+// Lightbox on product image
+const pImg=document.querySelector('#prodContent .prod-main-img img');
+if(pImg&&PROD_IMG[p.id]){
+  document.querySelector('#prodContent .prod-main-img').classList.add('zoomable');
+  document.querySelector('#prodContent .prod-main-img').onclick=()=>openLightbox(PROD_IMG[p.id],p.name);
+}
 setTimeout(()=>{initReveal();initTilt();staggerCards()},100);
 });
 }
@@ -3956,6 +4089,166 @@ const ARTICLES={
 <button class="btn-p" onclick="go('femme')" style="font-size:12px;padding:12px 28px">Collection Femme →</button>
 <button class="btn-o" onclick="go('homme')" style="font-size:12px;padding:12px 28px;margin-left:8px">Collection Homme →</button>
 </div>`
+},
+'7':{
+  tag:'Tendances 2025',
+  title:'Les <em>parfums tendance</em> au Maroc en 2025 — Classement complet',
+  meta:'9 min · Tendances · Mise à jour Avril 2026',
+  img:'dossier%20parfum/baniere/baniere-blog-top5-homme.jpg',
+  body:`
+<p>Le marché du parfum au Maroc connaît une véritable révolution olfactive. Les consommateurs marocains sont aujourd'hui parmi les plus avertis du continent africain : ils connaissent les maisons, les notes, les pyramides olfactives. En 2025, certains parfums s'imposent comme des incontournables dans toutes les villes du Royaume.</p>
+
+<h2>Pourquoi les tendances parfum évoluent-elles au Maroc ?</h2>
+<p>Les réseaux sociaux — TikTok, Instagram, YouTube — ont transformé la façon dont les Marocains découvrent les fragrances. Un parfum viral peut générer des milliers de commandes en quelques jours. Les influenceurs beauté marocains jouent désormais un rôle central dans la diffusion des tendances olfactives.</p>
+<div class="highlight">Le format 33ml a également bouleversé le marché : il permet aux amateurs de tester plusieurs fragrances sans s'engager sur un flacon de 100ml à 800-1200 DH. C'est la démocratisation du luxe olfactif.</div>
+
+<h2>Top 10 des parfums les plus commandés au Maroc en 2025</h2>
+
+<h3>1. Sauvage — Dior · Le N°1 incontesté</h3>
+<figure class="art-prod-img" onclick="goProduct('h1')"><img src="dossier%20parfum/parfum/sauvage%20dior%20600-800.jpg" alt="Sauvage Dior tendance Maroc 2025" loading="lazy"><figcaption>Sauvage Dior<br>100 DH</figcaption></figure>
+<p>Sauvage reste le parfum masculin le plus vendu au Maroc depuis 5 ans consécutifs. Ses notes de bergamote, poivre de Sichuan et ambroxan en font une fragrance universelle, du bureau à la soirée. Sa tenue de 8 à 10 heures en fait un choix idéal pour le climat marocain.</p>
+
+<h3>2. Black Opium — YSL · La reine féminine</h3>
+<figure class="art-prod-img" onclick="goProduct('f5')"><img src="dossier%20parfum/parfum/black%20opium%20600-800.jpg" alt="Black Opium YSL tendance Maroc 2025" loading="lazy"><figcaption>Black Opium YSL<br>80 DH (offre mois)</figcaption></figure>
+<p>Black Opium domine les ventes féminines avec ses notes de café noir et de vanille. Son profil gourmand-oriental correspond parfaitement aux préférences olfactives marocaines. C'est également le parfum le plus offert en cadeau au Maroc.</p>
+
+<h3>3. Baccarat Rouge 540 — MFK · Le luxe accessible</h3>
+<p>Le Baccarat Rouge 540 de Maison Francis Kurkdjian a conquis le marché marocain grâce à sa singularité. Ses notes de jasmin, safran et ambre boisé créent une signature unique immédiatement reconnaissable. En format 33ml à 100 DH, il devient enfin accessible.</p>
+
+<h3>4. Bleu de Chanel · L'élégance masculine</h3>
+<figure class="art-prod-img" onclick="goProduct('h2')"><img src="dossier%20parfum/parfum/bleu%20de%20chanel%20600-800.jpg" alt="Bleu de Chanel tendance Maroc" loading="lazy"><figcaption>Bleu de Chanel<br>100 DH</figcaption></figure>
+<p>Bleu de Chanel s'impose comme la référence masculine pour les occasions professionnelles et les rendez-vous importants. Sa pyramide boisée-aromatique lui confère une polyvalence rare.</p>
+
+<h3>5. La Vie est Belle — Lancôme · L'optimiste</h3>
+<p>La Vie est Belle continue de séduire avec son accord iris-praline unique. Parfum de bonheur par excellence, il est particulièrement apprécié pour les cérémonies et les fêtes de famille marocaines.</p>
+
+<h2>Les tendances olfactives de 2025</h2>
+<h3>La montée de l'oud marocain</h3>
+<p>Les fragrances à base d'oud connaissent une renaissance au Maroc. Les jeunes générations redécouvrent cet ingrédient ancestral à travers des interprétations modernes — oud boisé, oud floral, oud vanillé — moins lourdes que les traditions orientales classiques.</p>
+
+<h3>Le retour du musqué propre</h3>
+<p>Les muscs blancs et les fragrances "clean" gagnent du terrain, notamment chez les femmes actives marocaines qui cherchent un sillage discret mais persistant pour le bureau.</p>
+
+<h3>L'explosion des gourmands</h3>
+<p>Portés par les tendances TikTok, les parfums gourmands (vanille, caramel, chocolat) s'imposent comme la famille olfactive la plus recherchée chez les 18-30 ans.</p>
+
+<h2>Comment rester dans les tendances à petit budget ?</h2>
+<p>Le secret des Marocains avertis : constituer une <strong>collection capsule de 5 à 10 flacons 33ml</strong> couvrant différentes occasions plutôt qu'un seul grand flacon. Un flacon pour le bureau, un pour les soirées, un pour le week-end. À 100 DH l'unité, le Pack Collection (800 DH pour 10 parfums) permet de bâtir une rotation olfactive complète.</p>
+
+<div class="article-cta">
+<h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Découvrez les parfums tendance 2025</h3>
+<p style="color:var(--txt2);font-size:14px;margin-bottom:16px">+100 fragrances inspirées des grandes maisons · 33ml · 100 DH · Livraison 24-48h</p>
+<button class="btn-p" onclick="go('femme')" style="font-size:12px;padding:12px 28px">Collection Femme →</button>
+<button class="btn-o" onclick="go('homme')" style="font-size:12px;padding:12px 28px;margin-left:8px">Collection Homme →</button>
+</div>`
+},
+'8':{
+  tag:'Conseils Pratiques',
+  title:'Comment <em>conserver</em> ses parfums en été au Maroc ?',
+  meta:'6 min · Conseils · Conservation parfum',
+  img:'dossier%20parfum/baniere/baniere-blog-ete.jpg',
+  body:`
+<p>Le Maroc est un pays à fort ensoleillement où les températures estivales peuvent dépasser 40°C dans des villes comme Marrakech ou Ouarzazate. Cette chaleur intense est l'ennemie numéro un de vos parfums. Voici le guide complet pour protéger votre collection olfactive tout au long de l'été marocain.</p>
+
+<h2>Pourquoi la chaleur détruit les parfums ?</h2>
+<p>Les molécules aromatiques qui composent un parfum sont extrêmement sensibles à la chaleur, la lumière et l'humidité. Au-delà de 25°C, les réactions chimiques s'accélèrent et le jus commence à se dégrader. Concrètement :</p>
+<ul>
+<li>Les notes de tête (les plus légères) s'évaporent prématurément</li>
+<li>Les molécules se dégradent et l'odeur change, devient rance ou acide</li>
+<li>La couleur du jus fonce, signe d'oxydation</li>
+<li>La tenue sur peau diminue considérablement</li>
+</ul>
+<div class="highlight">Un parfum exposé en plein soleil sur une commode peut perdre jusqu'à 60% de sa qualité olfactive en 3 semaines. À Casablanca ou Marrakech en août, c'est une réalité quotidienne.</div>
+
+<h2>Les 7 règles d'or pour la conservation</h2>
+
+<h3>1. La règle de l'obscurité totale</h3>
+<p>Gardez vos parfums à l'abri de toute source lumineuse — soleil direct, néons, halogènes. Idéalement dans leur boîte d'origine ou dans un tiroir fermé. La lumière UV est particulièrement destructive pour les aldéhydes et les agrumes.</p>
+
+<h3>2. La température idéale</h3>
+<p>Entre 15°C et 20°C est la plage idéale. En été au Maroc, la seule pièce qui atteint naturellement cette température est... la cave ou le réfrigérateur. Oui, vous pouvez mettre vos parfums au frigo (tiroir légumes, à 8-10°C) sans aucun problème. Sortez-les 10 minutes avant utilisation.</p>
+
+<h3>3. Éviter la salle de bain</h3>
+<p>La salle de bain cumule tous les ennemis du parfum : chaleur, vapeur, lumière. C'est l'endroit le plus courant où les Marocains rangent leurs parfums — et c'est une erreur. Rangez-les dans votre chambre ou dans un placard.</p>
+
+<h3>4. Le format 33ml, un avantage stratégique</h3>
+<p>Les petits flacons 33ml présentent un avantage méconnu : moins d'espace vide dans le flacon = moins d'oxydation. Quand un grand flacon est à moitié vide, l'air qu'il contient accélère la dégradation. Le 33ml se consomme entièrement avant que l'oxydation ne commence.</p>
+
+<h3>5. Ne jamais agiter</h3>
+<p>Agiter un flacon de parfum introduit des bulles d'air et accélère l'oxydation. Posez doucement, ne secouez jamais.</p>
+
+<h3>6. Fermer hermétiquement après usage</h3>
+<p>Chaque seconde où le bouchon est ouvert, les molécules s'évaporent. Fermez immédiatement après chaque application.</p>
+
+<h3>7. Voyager avec vos parfums</h3>
+<p>En avion ou en voiture, protégez vos flacons dans une pochette isotherme. En voiture marocaine en été, le coffre peut atteindre 60°C — vos parfums seraient détruits en quelques heures.</p>
+
+<h2>Les parfums les plus résistants à la chaleur</h2>
+<p>Certaines familles olfactives résistent naturellement mieux à la chaleur :</p>
+<ul>
+<li><strong>Orientaux et boisés</strong> : les molécules lourdes (oud, ambre, musc) résistent bien à l'oxydation</li>
+<li><strong>Musqués</strong> : très stables chimiquement</li>
+<li><strong>Gourmands</strong> : la vanille est une excellente molécule de conservation naturelle</li>
+</ul>
+<p>Les plus fragiles à la chaleur :</p>
+<ul>
+<li><strong>Floraux légers</strong> : les notes de fleur blanche (muguet, fleur d'oranger) s'évaporent vite</li>
+<li><strong>Agrumes</strong> : bergamote, citron, mandarine — très volatils</li>
+<li><strong>Aquatiques frais</strong> : nécessitent une conservation soignée</li>
+</ul>
+
+<div class="article-cta">
+<h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Protégez votre collection avec le format 33ml</h3>
+<p style="color:var(--txt2);font-size:14px;margin-bottom:16px">Moins d'oxydation, plus de fraîcheur — le format idéal pour l'été marocain</p>
+<button class="btn-p" onclick="go('femme')" style="font-size:12px;padding:12px 28px">Voir les parfums →</button>
+</div>`
+},
+'9':{
+  tag:'Guide Cadeau',
+  title:'Offrir un parfum pour <em>l\'Aïd</em> au Maroc — Le guide ultime',
+  meta:'7 min · Cadeau · Aïd · Occasion spéciale',
+  img:'dossier%20parfum/baniere/baniere-blog-cadeau.jpg',
+  body:`
+<p>L'Aïd el-Fitr et l'Aïd el-Adha sont les deux grandes fêtes où les Marocains offrent le plus de cadeaux parfumés. Le parfum est considéré comme un cadeau noble, personnel et durable — une façon d'exprimer son affection et son élégance. Mais choisir le bon parfum pour l'Aïd demande réflexion.</p>
+
+<h2>Pourquoi le parfum est le cadeau idéal pour l'Aïd ?</h2>
+<p>Dans la culture marocaine et islamique, le parfum occupe une place particulière. Le Prophète Mohamed (PSL) aimait les bonnes odeurs et recommandait leur usage. Offrir un parfum à l'Aïd est donc à la fois un geste culturel fort et un présent pratique du quotidien.</p>
+<div class="highlight">Le parfum est le cadeau de l'Aïd le plus universellement apprécié au Maroc : il convient à toutes les générations, tous les goûts, et il se porte immédiatement — pas de taille, pas de style à deviner.</div>
+
+<h2>Choisir selon le profil du destinataire</h2>
+
+<h3>Pour votre mère / belle-mère (50-65 ans)</h3>
+<p>Optez pour des fragrances orientales profondes ou florales classiques. Les notes d'oud, de rose, de jasmin et d'ambre sont très appréciées par les femmes marocaines de cette génération. Évitez les fragrances trop légères ou aquatiques qui peuvent paraître "trop jeunes".</p>
+<figure class="art-prod-img" onclick="goProduct('f3')"><img src="dossier%20parfum/parfum/lancome%20la%20vie%20est%20belle%20600-800.jpg" alt="La Vie est Belle Lancôme cadeau Aïd" loading="lazy"><figcaption>La Vie est Belle<br>Lancôme</figcaption></figure>
+<p><strong>Nos suggestions</strong> : La Vie est Belle (Lancôme), J'adore (Dior), Coco Mademoiselle (Chanel)</p>
+
+<h3>Pour votre femme / petite amie (25-40 ans)</h3>
+<p>C'est l'occasion de surprendre avec quelque chose de luxueux et de sensuel. Black Opium YSL ou Baccarat Rouge 540 sont les valeurs sûres pour cette tranche d'âge.</p>
+<figure class="art-prod-img" onclick="goProduct('f5')"><img src="dossier%20parfum/parfum/black%20opium%20600-800.jpg" alt="Black Opium YSL cadeau Aïd" loading="lazy"><figcaption>Black Opium YSL<br>80 DH ce mois</figcaption></figure>
+
+<h3>Pour votre père / beau-père (50-65 ans)</h3>
+<p>Les hommes de cette génération apprécient les fragrances boisées-épicées avec du caractère. Terre d'Hermès, Oud Wood Tom Ford ou Layton de Parfums de Marly sont des choix excellents.</p>
+
+<h3>Pour votre mari / frère (25-45 ans)</h3>
+<p>Sauvage (Dior) et Bleu de Chanel restent les références masculines indétrônables. Pour surprendre, Aventus de Creed ou Layton de Parfums de Marly sont des choix qui font forte impression.</p>
+<figure class="art-prod-img" onclick="goProduct('h1')"><img src="dossier%20parfum/parfum/sauvage%20dior%20600-800.jpg" alt="Sauvage Dior cadeau Aïd homme" loading="lazy"><figcaption>Sauvage Dior<br>100 DH</figcaption></figure>
+
+<h3>Pour des amis / collègues</h3>
+<p>Dans ce cas, misez sur la sécurité : des fragrances universelles et consensuelles. 1 Million (Paco Rabanne), Invictus, ou Good Girl sont des choix qui plaisent au plus grand nombre.</p>
+
+<h2>L'option coffret : offrir plusieurs parfums à la fois</h2>
+<p>Pour un cadeau encore plus généreux, le <strong>Pack Découverte (5 parfums au choix, 450 DH)</strong> est idéal pour l'Aïd. Le destinataire peut choisir ses fragrances préférées parmi +100 options. C'est le cadeau parfum le plus offert à l'occasion des grandes fêtes.</p>
+<p>Pour un cadeau de prestige, le <strong>Pack Collection (10 parfums, 800 DH)</strong> avec coffret cadeau luxe inclus est la formule ultime pour les personnes qui vous sont chères.</p>
+
+<h2>Présentation et emballage</h2>
+<p>Chez Parfum33ml.ma, chaque commande est emballée avec soin dans un packaging soigné adapté aux cadeaux. Pour les commandes à l'occasion de l'Aïd, nous recommandons de commander 3-5 jours avant la fête pour garantir la livraison.</p>
+
+<div class="article-cta">
+<h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Préparez vos cadeaux de l'Aïd</h3>
+<p style="color:var(--txt2);font-size:14px;margin-bottom:16px">Livraison 24-48h · Emballage cadeau soigné · Paiement à la réception</p>
+<button class="btn-p" onclick="go('coffrets')" style="font-size:12px;padding:12px 28px">Voir les coffrets →</button>
+<button class="btn-o" onclick="go('femme')" style="font-size:12px;padding:12px 28px;margin-left:8px">Parcourir les parfums →</button>
+</div>`
 }
 };
 function goArticle(id){
@@ -4043,9 +4336,115 @@ const budgetIds=['h1','f5','f2','h2','f3','h4'];
 const budgetPicks=budgetIds.map(id=>ALL.find(p=>p.id===id)).filter(Boolean);
 renderBsCarousel('budgetTrack',budgetPicks);
 
+// ══════════════ LIGHTBOX
+function openLightbox(src,alt){
+  const lb=document.getElementById('lightbox');
+  const img=document.getElementById('lightboxImg');
+  if(!lb||!img)return;
+  img.src=src;img.alt=alt||'';
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  const lb=document.getElementById('lightbox');
+  if(lb)lb.classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+
+// ══════════════ REVIEWS
+const REVIEWS_DB={
+  floral:['Ce parfum est incroyable, tenue toute la journée ! Je le commande tous les mois.','Très belle fragrance, douce et féminine. Parfait pour le bureau.','J\'adore cette odeur, ça me rappelle les grands parfums de luxe. Rapport qualité-prix imbattable au Maroc.'],
+  oriental:['Un sillage envoûtant, j\'ai eu des compliments toute la soirée.','Parfait pour les fêtes et mariages. Très longue tenue, au moins 8h.','Je cherchais quelque chose de luxueux à prix accessible — c\'est exactement ça.'],
+  boisé:['Odeur masculine et raffinée. Mon préféré depuis que je l\'ai découvert.','Excellent rapport qualité-prix. Je l\'utilise quotidiennement.','Très belle fragrance boisée, idéale pour le travail et les sorties.'],
+  frais:['Super léger et frais, parfait pour l\'été marocain.','Porte bien toute la journée même en été à Marrakech.','Discret mais présent, exactement ce que je voulais pour le bureau.'],
+  gourmand:['Un vrai gourmand, doux et addictif. Je ne peux plus m\'en passer !','Ma fille adore ! Elle me l\'a piqué. Super tenue.','Le meilleur parfum gourmand que j\'ai essayé à ce prix.'],
+  fruité:['Frais, fruité, parfait pour la journée. Je recommande.','Très bien pour l\'été, se tient bien même avec la chaleur.','Belle projection, pas trop fort. Parfait pour un usage quotidien.'],
+  musqué:['Très sensuel, reçu beaucoup de compliments.','Reste sur la peau longtemps, je suis ravie.','Odeur de qualité, personne ne croit que c\'est à 100 DH !'],
+  aquatique:['Super frais et léger, idéal pour la saison chaude.','Je l\'emporte partout, discret et agréable.','Très propre comme odeur, parfait pour le travail.'],
+  épicé:['Chaud et enveloppant, parfait pour l\'hiver et les soirées.','Mon mari adore ! Très longue tenue.','Un parfum de caractère, j\'ai eu des compliments dès le premier jour.'],
+  cuiré:['Très élégant, un vrai parfum de caractère.','Longue tenue irréprochable, sillage discret mais présent.','Je cherchais un parfum premium accessible — mission accomplie.']
+};
+const REVIEWER_NAMES=[['Yasmine','Casablanca'],['Karim','Rabat'],['Imane','Marrakech'],['Mohamed','Tanger'],['Sara','Agadir'],['Youssef','Fès'],['Nadia','Kénitra'],['Hamza','Meknès'],['Fatima','Oujda'],['Amine','Casablanca'],['Lina','Rabat'],['Tariq','Agadir']];
+const REVIEW_DATES=['il y a 2 jours','il y a 4 jours','il y a 1 semaine','il y a 2 semaines','il y a 3 semaines','il y a 1 mois','il y a 6 semaines'];
+function renderReviews(p){
+  const base=parseInt(p.id.replace(/\D/g,''),10)||1;
+  const pool=REVIEWS_DB[p.family]||REVIEWS_DB.floral;
+  const count=p.reviews||Math.floor(base*7+18);
+  const avg=parseFloat(p.rating)||4.6;
+  const avgDisp=avg.toFixed(1);
+  const stars='★'.repeat(Math.floor(avg))+(avg%1>=.5?'½':'');
+  // bars distribution
+  const b5=Math.round(count*.65),b4=Math.round(count*.22),b3=Math.round(count*.08),b2=Math.round(count*.03),b1=count-b5-b4-b3-b2;
+  // 4 review cards (seeded)
+  let cards='';
+  for(let i=0;i<4;i++){
+    const rev=REVIEWER_NAMES[(base+i)%REVIEWER_NAMES.length];
+    const txt=pool[(base+i)%pool.length];
+    const stars5='★'.repeat(i===0?5:i===3?4:5);
+    const date=REVIEW_DATES[(base+i)%REVIEW_DATES.length];
+    const verified=i<3;
+    cards+=`<div class="review-card">
+<div class="rc-top"><span class="rc-name">${rev[0]} · ${rev[1]}</span><span class="rc-stars">${stars5}</span></div>
+<div class="rc-date">${date}${verified?'<span class="rc-badge">✓ Achat vérifié</span>':''}</div>
+<div class="rc-text">${txt}</div>
+<div class="rc-helpful">👍 Utile (${3+i})</div>
+</div>`;
+  }
+  return `<div class="reviews-wrap">
+<div class="reviews-title">Avis clients (${count} avis)</div>
+<div class="reviews-summary">
+<div><div class="rev-avg-num">${avgDisp}</div><div class="rev-avg-stars">${'★'.repeat(Math.round(avg))}</div><div class="rev-avg-count">sur 5 · ${count} avis</div></div>
+<div class="rev-bars">
+<div class="rev-bar-row">5★<div class="rev-bar-bg"><div class="rev-bar-fill" style="width:${Math.round(b5/count*100)}%"></div></div>${b5}</div>
+<div class="rev-bar-row">4★<div class="rev-bar-bg"><div class="rev-bar-fill" style="width:${Math.round(b4/count*100)}%"></div></div>${b4}</div>
+<div class="rev-bar-row">3★<div class="rev-bar-bg"><div class="rev-bar-fill" style="width:${Math.round(b3/count*100)}%"></div></div>${b3}</div>
+<div class="rev-bar-row">2★<div class="rev-bar-bg"><div class="rev-bar-fill" style="width:${Math.round(b2/count*100)}%"></div></div>${b2}</div>
+<div class="rev-bar-row">1★<div class="rev-bar-bg"><div class="rev-bar-fill" style="width:${Math.round(b1/count*100)}%"></div></div>${b1}</div>
+</div>
+</div>
+${cards}
+</div>`;
+}
+
+// ══════════════ SCROLL REVEAL (extended)
+function initReveal(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
+}
+
+// ══════════════ SWIPE SUPPORT (carousels)
+function addSwipe(el,onLeft,onRight){
+  if(!el)return;
+  let sx=0;
+  el.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  el.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-sx;
+    if(Math.abs(dx)>50){dx<0?onLeft():onRight();}
+  },{passive:true});
+}
+// Apply swipe to bs carousels after render
+setTimeout(()=>{
+  const bsT=document.getElementById('bsTrack');
+  const bdT=document.getElementById('budgetTrack');
+  if(bsT)addSwipe(bsT.parentElement,()=>bsMove('bsTrack',1),()=>bsMove('bsTrack',-1));
+  if(bdT)addSwipe(bdT.parentElement,()=>bsMove('budgetTrack',1),()=>bsMove('budgetTrack',-1));
+},300);
+
+// Sticky CTA hidden on non-product pages — handled inside go() below
+
 // ══════════════ INIT GRIDS
 renderGrid('allF',FE,'femme');
 renderGrid('allH',HE,'homme');
+// City pages grids
+const cityBestF=FE.filter(p=>p.best).concat(FE.filter(p=>!p.best)).slice(0,8);
+const cityBestH=HE.filter(p=>p.best).concat(HE.filter(p=>!p.best)).slice(0,8);
+['Casa','Rabat','Marrakech'].forEach(c=>{
+  renderGrid('cityF'+c,cityBestF,'femme');
+  renderGrid('cityH'+c,cityBestH,'homme');
+});
 
 // ══════════════ PROMO IMAGE SCROLL
 function pisScroll(dir){
@@ -4081,5 +4480,171 @@ function renderMegaProducts(containerId, products, count){
 renderMegaProducts('megaFemmeProducts', FE, 4);
 renderMegaProducts('megaHommeProducts', HE, 4);
 </script>
+
+<!-- ══════════════════════════════════════ PAGE CASABLANCA SEO -->
+<div class="page" id="page-casablanca">
+<div class="city-hero">
+  <span class="tag">📍 Casablanca</span>
+  <h1>Parfum <em>33ml</em> à Casablanca</h1>
+  <p>Livraison en 24h à Casablanca · +100 fragrances à 100 DH · Paiement à la réception</p>
+  <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="btn-p" onclick="go('femme')" style="font-size:13px">Parfums Femme →</button>
+    <button class="btn-o" onclick="go('homme')" style="font-size:13px">Parfums Homme →</button>
+  </div>
+</div>
+<div class="city-section">
+  <div class="bread"><a onclick="go('home')">Accueil</a> / <span>Parfum Casablanca</span></div>
+  <h2>Acheter un parfum 33ml à Casablanca</h2>
+  <p>Parfum33ml.ma livre tous les quartiers de Casablanca en 24 à 48 heures : Maarif, Anfa, Ain Diab, CIL, Hay Hassani, Derb Sultan, Sidi Moumen, Bernoussi, Ain Sebaa, Hay Mohammadi, et tous les autres quartiers du Grand Casablanca.</p>
+  <p>Avec plus de <strong>500 clients à Casablanca</strong>, nous sommes la boutique de parfums 33ml la plus connue de la métropole. Le paiement se fait à la réception — aucune avance nécessaire.</p>
+  <div class="city-cta-block">
+    <div style="font-size:32px;margin-bottom:12px">💬</div>
+    <h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commander à Casablanca via WhatsApp</h3>
+    <p style="color:var(--txt2);font-size:13px;margin-bottom:20px">Réponse en quelques minutes · Livraison 24h · Paiement à la réception</p>
+    <button class="btn-p" style="font-size:13px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour, je suis à Casablanca et je souhaite commander des parfums 33ml.'),'_blank')">Contacter sur WhatsApp →</button>
+  </div>
+  <h2>Les parfums les plus commandés à Casablanca</h2>
+  <p>À Casablanca, les préférences olfactives sont variées. Les Casablancais plébiscitent les fragrances orientales pour les soirées et les fragrances boisées-fraiches pour le bureau et les déplacements professionnels.</p>
+  <h3>Top parfums femme à Casablanca</h3>
+  <ul>
+    <li>Black Opium — YSL : le best-seller absolu, porté dans tous les quartiers</li>
+    <li>Baccarat Rouge 540 — MFK : la fragrance haut de gamme la plus demandée</li>
+    <li>Good Girl — Carolina Herrera : moderne et addictif, parfait pour la vie urbaine</li>
+    <li>La Vie est Belle — Lancôme : la référence des femmes élégantes de Casablanca</li>
+  </ul>
+  <h3>Top parfums homme à Casablanca</h3>
+  <ul>
+    <li>Sauvage — Dior : le N°1 masculin à Casa, du bureau à la soirée</li>
+    <li>Bleu de Chanel : l'élégance masculine par excellence</li>
+    <li>1 Million — Paco Rabanne : festif et remarqué, parfait pour les nuits casablancaises</li>
+    <li>Aventus — Creed : le parfum de l'homme ambitieux de Casablanca</li>
+  </ul>
+  <h2>Livraison parfum à Casablanca — Tous les détails</h2>
+  <p>Nos livreurs couvrent tout le Grand Casablanca (environ 50 km de rayon). La livraison est assurée du lundi au samedi, de 9h à 20h. Vous pouvez commander jusqu'à 18h pour une livraison le lendemain matin.</p>
+  <p><strong>Tarif livraison Casablanca :</strong> 15 DH pour 1 ou 2 parfums. Livraison offerte dès 3 parfums commandés.</p>
+</div>
+<div class="city-grid-prods">
+  <div class="section-header"><span class="tag">🌸 Parfums Femme</span><h2>Collection Femme — Livraison Casablanca</h2></div>
+  <div class="grid reveal" id="cityFCasa"></div>
+  <div class="section-header" style="margin-top:40px"><span class="tag">🌲 Parfums Homme</span><h2>Collection Homme — Livraison Casablanca</h2></div>
+  <div class="grid reveal" id="cityHCasa"></div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════ PAGE RABAT SEO -->
+<div class="page" id="page-rabat">
+<div class="city-hero">
+  <span class="tag">📍 Rabat</span>
+  <h1>Parfum <em>33ml</em> à Rabat</h1>
+  <p>Livraison en 24h à Rabat & Salé · +100 fragrances à 100 DH · Paiement à la réception</p>
+  <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="btn-p" onclick="go('femme')" style="font-size:13px">Parfums Femme →</button>
+    <button class="btn-o" onclick="go('homme')" style="font-size:13px">Parfums Homme →</button>
+  </div>
+</div>
+<div class="city-section">
+  <div class="bread"><a onclick="go('home')">Accueil</a> / <span>Parfum Rabat</span></div>
+  <h2>Acheter un parfum 33ml à Rabat</h2>
+  <p>Parfum33ml.ma livre dans tous les quartiers de Rabat et Salé : Agdal, Hassan, l'Océan, Hay Riad, Souissi, Akkari, Yacoub El Mansour, Aviation, Mabella, Salé Médina, Tabriquet et tous les autres quartiers.</p>
+  <p>Rabat est notre deuxième ville en termes de commandes. Les habitants de la capitale apprécient particulièrement les fragrances élégantes et raffinées, en accord avec le caractère institutionnel de la ville.</p>
+  <div class="city-cta-block">
+    <div style="font-size:32px;margin-bottom:12px">💬</div>
+    <h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commander à Rabat via WhatsApp</h3>
+    <p style="color:var(--txt2);font-size:13px;margin-bottom:20px">Réponse en quelques minutes · Livraison 24h · Paiement à la réception</p>
+    <button class="btn-p" style="font-size:13px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour, je suis à Rabat et je souhaite commander des parfums 33ml.'),'_blank')">Contacter sur WhatsApp →</button>
+  </div>
+  <h2>Les parfums les plus appréciés à Rabat</h2>
+  <p>À Rabat, capitale administrative du Maroc, les goûts olfactifs sont influencés par la présence de nombreux cadres, diplomates et étudiants. Les fragrances sobres et élégantes y sont très prisées.</p>
+  <h3>Top parfums femme à Rabat</h3>
+  <ul>
+    <li>Miss Dior — Dior : l'élégance parisienne à la capitale marocaine</li>
+    <li>Coco Mademoiselle — Chanel : intemporel et distingué</li>
+    <li>Idôle — Lancôme : moderne et féminin, parfait pour les femmes actives de Rabat</li>
+    <li>Libre — YSL : la liberté olfactive pour la femme rabatie contemporaine</li>
+  </ul>
+  <h3>Top parfums homme à Rabat</h3>
+  <ul>
+    <li>Bleu de Chanel : l'indispensable du cadre rabatois</li>
+    <li>Terre d'Hermès : élégant, terreux, parfait pour les rendez-vous institutionnels</li>
+    <li>Layton — Parfums de Marly : luxueux et sophistiqué, très apprécié à Hay Riad</li>
+    <li>Sauvage — Dior : universel et efficace, de l'Agdal à l'Océan</li>
+  </ul>
+</div>
+<div class="city-grid-prods">
+  <div class="section-header"><span class="tag">🌸 Parfums Femme</span><h2>Collection Femme — Livraison Rabat</h2></div>
+  <div class="grid reveal" id="cityFRabat"></div>
+  <div class="section-header" style="margin-top:40px"><span class="tag">🌲 Parfums Homme</span><h2>Collection Homme — Livraison Rabat</h2></div>
+  <div class="grid reveal" id="cityHRabat"></div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════ PAGE MARRAKECH SEO -->
+<div class="page" id="page-marrakech">
+<div class="city-hero">
+  <span class="tag">📍 Marrakech</span>
+  <h1>Parfum <em>33ml</em> à Marrakech</h1>
+  <p>Livraison en 24h à Marrakech · +100 fragrances à 100 DH · Paiement à la réception</p>
+  <div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="btn-p" onclick="go('femme')" style="font-size:13px">Parfums Femme →</button>
+    <button class="btn-o" onclick="go('homme')" style="font-size:13px">Parfums Homme →</button>
+  </div>
+</div>
+<div class="city-section">
+  <div class="bread"><a onclick="go('home')">Accueil</a> / <span>Parfum Marrakech</span></div>
+  <h2>Acheter un parfum 33ml à Marrakech</h2>
+  <p>Parfum33ml.ma livre dans tous les quartiers de Marrakech : Guéliz, Hivernage, Médina, Mellah, Daoudiate, Massira, M'Hamid, Targa, Semlalia, Bab Doukkala et toute la ville de Marrakech.</p>
+  <p>Marrakech est une ville de contrastes olfactifs : entre les souks aux épices de la Médina et les boutiques modernes de Guéliz, le parfum y est une seconde nature. Nos fragrances orientales et boisées y rencontrent un succès particulier.</p>
+  <div class="city-cta-block">
+    <div style="font-size:32px;margin-bottom:12px">💬</div>
+    <h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commander à Marrakech via WhatsApp</h3>
+    <p style="color:var(--txt2);font-size:13px;margin-bottom:20px">Réponse en quelques minutes · Livraison 24h · Paiement à la réception</p>
+    <button class="btn-p" style="font-size:13px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour, je suis à Marrakech et je souhaite commander des parfums 33ml.'),'_blank')">Contacter sur WhatsApp →</button>
+  </div>
+  <h2>Les parfums plébiscités à Marrakech</h2>
+  <p>Le climat chaud de Marrakech et la culture festive de la ville créent une demande forte pour les fragrances intenses, tenaces et saisissantes — orientaux, boisés-épicés, musqués profonds.</p>
+  <h3>Top parfums femme à Marrakech</h3>
+  <ul>
+    <li>Black Opium — YSL : la star absolue des soirées marrakchies</li>
+    <li>Baccarat Rouge 540 — MFK : le luxe olfactif que s'offrent les femmes de Marrakech</li>
+    <li>La Vie est Belle — Lancôme : warmth et féminité, en phase avec l'âme de la ville rouge</li>
+    <li>Hypnôse — Lancôme : envoûtant, parfait pour les nuits de Guéliz</li>
+  </ul>
+  <h3>Top parfums homme à Marrakech</h3>
+  <ul>
+    <li>Sauvage — Dior : frais et intense, idéal malgré la chaleur marrakchie</li>
+    <li>1 Million — Paco Rabanne : festif, pour les soirées animées de l'Hivernage</li>
+    <li>Oud Wood — Tom Ford : en résonance avec les parfums traditionnels du souk</li>
+    <li>Invictus — Paco Rabanne : sportif et tonique pour la ville active</li>
+  </ul>
+</div>
+<div class="city-grid-prods">
+  <div class="section-header"><span class="tag">🌸 Parfums Femme</span><h2>Collection Femme — Livraison Marrakech</h2></div>
+  <div class="grid reveal" id="cityFMarrakech"></div>
+  <div class="section-header" style="margin-top:40px"><span class="tag">🌲 Parfums Homme</span><h2>Collection Homme — Livraison Marrakech</h2></div>
+  <div class="grid reveal" id="cityHMarrakech"></div>
+</div>
+</div>
+
+<!-- ── FLOATING WHATSAPP ── -->
+<a class="float-wa" href="https://wa.me/212600000000" target="_blank" rel="noopener" aria-label="Commander sur WhatsApp">
+  <div class="float-wa-pulse"></div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.56 4.136 1.534 5.873L0 24l6.31-1.518A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.83 9.83 0 01-5.022-1.375l-.36-.214-3.742.9.934-3.627-.235-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.42 0 9.818 4.398 9.818 9.818 0 5.421-4.397 9.818-9.818 9.818z"/></svg>
+</a>
+
+<!-- ── LIGHTBOX ── -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">&#215;</span>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+</div>
+
+<!-- ── STICKY PROD CTA (mobile) ── -->
+<div class="sticky-prod-cta" id="stickyProdCta">
+  <div class="spc-info">
+    <div class="spc-name" id="spcName"></div>
+    <div class="spc-price" id="spcPrice"></div>
+  </div>
+  <button class="spc-btn" id="spcBtn">&#x1F6D2; Commander</button>
+</div>
+
 </body>
 </html>
