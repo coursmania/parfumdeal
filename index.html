@@ -86,11 +86,54 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .menu-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .menu-toggle.open span:nth-child(2){opacity:0}
 .menu-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mobile-nav{display:none;position:absolute;top:62px;left:0;right:0;background:rgba(8,6,4,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);max-height:85vh;overflow-y:auto;z-index:999}
-.mobile-nav.open{display:block}
+/* Mobile nav — full-screen drawer */
+.mn-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;opacity:0;transition:opacity .35s}
+.mn-overlay.open{display:block;opacity:1}
+.mobile-nav{display:none;position:fixed;top:0;right:0;bottom:0;width:85%;max-width:340px;background:rgba(8,6,4,.98);backdrop-filter:blur(20px);border-left:1px solid var(--border);z-index:1000;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-nav.open{display:block;transform:translateX(0)}
+.mn-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(8,6,4,.98);backdrop-filter:blur(20px);z-index:2}
+.mn-logo{font-family:var(--ff-d);font-size:15px;color:var(--gold)}
+.mn-close{width:36px;height:36px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;transition:.2s;line-height:1}
+.mn-close:hover{border-color:var(--gold);color:var(--gold)}
 .mobile-nav a{display:block;padding:13px 24px;font-size:14px;color:var(--txt2);border-bottom:1px solid var(--border);cursor:pointer;transition:.2s}
 .mobile-nav a:hover{color:var(--gold);background:rgba(201,169,110,.04)}
 .mobile-nav .mn-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding:14px 24px 6px;border-bottom:none}
+.mn-section{border-top:1px solid var(--border);margin-top:4px}
+.mn-wa{display:block;margin:16px 24px;padding:13px 20px;background:#25D366;color:#fff;border-radius:50px;text-align:center;font-size:13px;font-weight:700;letter-spacing:.5px;cursor:pointer;transition:.2s;text-decoration:none}
+.mn-wa:hover{background:#1FAD54;color:#fff}
+
+/* Filter drawer — bottom sheet */
+.filter-drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:980;opacity:0;transition:opacity .3s}
+.filter-drawer-overlay.open{display:block;opacity:1}
+.filter-drawer{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-radius:20px 20px 0 0;border:1px solid var(--border);border-bottom:none;z-index:985;padding:0 0 env(safe-area-inset-bottom,16px);transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:block;max-height:80vh;overflow-y:auto}
+.filter-drawer.open{transform:translateY(0)}
+.fd-handle-wrap{padding:12px 0 0;text-align:center;cursor:pointer}
+.fd-handle{width:36px;height:4px;background:var(--border);border-radius:2px;display:inline-block}
+.fd-header{display:flex;align-items:center;justify-content:space-between;padding:0 24px 14px;border-bottom:1px solid var(--border)}
+.fd-title{font-family:var(--ff-d);font-size:18px;font-weight:700}
+.fd-close{width:32px;height:32px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px}
+.fd-section{padding:16px 24px;border-bottom:1px solid var(--border)}
+.fd-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.fd-chips{display:flex;gap:8px;flex-wrap:wrap}
+.fd-chip{padding:7px 14px;border-radius:50px;font-size:12px;font-weight:600;border:1px solid var(--border);color:var(--txt2);cursor:pointer;transition:.2s;background:transparent}
+.fd-chip:hover{border-color:var(--gold);color:var(--gold)}
+.fd-chip.active{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.fd-actions{padding:16px 24px;display:flex;gap:10px}
+.fd-apply{flex:1;padding:13px;background:var(--gold);color:var(--bg);border-radius:50px;font-size:13px;font-weight:700;cursor:pointer;text-align:center;transition:.2s}
+.fd-apply:hover{background:var(--gold-d)}
+.fd-reset{padding:13px 20px;border:1px solid var(--border);color:var(--txt2);border-radius:50px;font-size:13px;cursor:pointer;transition:.2s}
+.fd-reset:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Mobile filter toggle button */
+.mobile-filter-btn{display:none;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:1px solid var(--border);color:var(--txt2);font-size:12px;font-weight:600;cursor:pointer;transition:.2s;background:transparent;margin:0 0 12px}
+.mobile-filter-btn:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:768px){.mobile-filter-btn{display:flex}}
+
+/* WhatsApp CTA button */
+.btn-wa{background:#25D366;color:#fff;padding:16px 38px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:.4s;display:inline-block;position:relative;overflow:hidden;cursor:pointer;border:none}
+.btn-wa::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(255,255,255,.15);border-radius:50%;transition:.6s;transform:translate(-50%,-50%)}
+.btn-wa:hover::after{width:300px;height:300px}
+.btn-wa:hover{background:#1FAD54;transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,211,102,.3)}
 
 /* ── SEARCH OVERLAY ──────────────────── */
 .search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);backdrop-filter:blur(20px);z-index:4000;opacity:0;visibility:hidden;transition:.3s;display:flex;flex-direction:column;align-items:center;padding-top:80px}
@@ -319,7 +362,7 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .badge{position:absolute;top:10px;left:10px;padding:4px 11px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;z-index:3}
 .b-f{background:rgba(194,112,128,.18);color:var(--rose);border:1px solid rgba(194,112,128,.25)}
 .b-h{background:rgba(90,122,148,.18);color:var(--navy);border:1px solid rgba(90,122,148,.25)}
-.b-best{background:rgba(201,169,110,.12);color:var(--gold);border:1px solid rgba(201,169,110,.25)}
+.b-best{background:rgba(201,169,110,.22);color:var(--gold);border:1px solid rgba(201,169,110,.55);box-shadow:0 0 12px rgba(201,169,110,.18);font-weight:800}
 .b-low{background:rgba(90,158,111,.12);color:var(--green);border:1px solid rgba(90,158,111,.25);top:auto;bottom:10px;left:10px}
 /* Wishlist btn */
 .wish-btn{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:rgba(8,6,4,.7);backdrop-filter:blur(10px);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;z-index:5;transition:.3s;color:var(--txt3)}
@@ -330,7 +373,7 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .card-brand{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
 .card-name{font-family:var(--ff-d);font-size:15px;font-weight:600;line-height:1.3;margin-bottom:auto;min-height:38px}
 .card-stars{display:flex;align-items:center;gap:4px;margin:4px 0}
-.stars-fill{color:var(--gold);font-size:10px;letter-spacing:.5px}
+.stars-fill{color:var(--gold);font-size:13px;letter-spacing:1px}
 .reviews-count{font-size:10px;color:var(--txt3)}
 .card-notes{font-size:10px;color:var(--txt3);margin:4px 0;line-height:1.4}
 .card-bottom{margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
@@ -1200,30 +1243,48 @@ footer li a:hover{color:var(--gold)}
 </button>
 </div>
 </div>
-<!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobileNav">
-<div class="mn-title">Parfum Femme</div>
-<a onclick="go('femme');toggleMenu()">Tous les parfums femme</a>
-<a onclick="go('femme');toggleMenu()">🌸 Floral</a>
-<a onclick="go('femme');toggleMenu()">✨ Oriental</a>
-<a onclick="go('femme');toggleMenu()">🍫 Gourmand</a>
-<div class="mn-title">Parfum Homme</div>
-<a onclick="go('homme');toggleMenu()">Tous les parfums homme</a>
-<a onclick="go('homme');toggleMenu()">🌲 Boisé</a>
-<a onclick="go('homme');toggleMenu()">✨ Oriental</a>
-<a onclick="go('homme');toggleMenu()">🌶 Épicé</a>
-<div class="mn-title">Offres & Plus</div>
-<a onclick="go('coffrets');toggleMenu()">🎁 Coffrets & Packs</a>
-<a onclick="go('pack-couple');toggleMenu()">💑 Pack Couple — 180 DH</a>
-<a onclick="go('pack-decouverte');toggleMenu()">✨ Pack Découverte — 450 DH</a>
-<a onclick="go('pack-collection');toggleMenu()">💎 Pack Collection — 800 DH</a>
-<a onclick="go('potm');toggleMenu()">🔥 Parfum du Mois -20%</a>
-<a onclick="go('livraison-gratuite');toggleMenu()">🚚 Livraison gratuite dès 3 parfums</a>
-<a onclick="go('home','quiz-section');toggleMenu()">🧪 Quiz — Quel parfum ?</a>
-<a onclick="go('home','blog-section');toggleMenu()">📖 Blog & Conseils</a>
-<a onclick="go('wishlist');toggleMenu()">♡ Mes Favoris (<span id="wishCountMobile">0</span>)</a>
-<a href="https://wa.me/212600000000" target="_blank">💬 Commander via WhatsApp</a>
+<!-- MOBILE NAV OVERLAY -->
+<div class="mn-overlay" id="mnOverlay" onclick="toggleMenu()"></div>
+<!-- MOBILE NAV DRAWER -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+<div class="mn-header">
+  <span class="mn-logo">Parfum33ml</span>
+  <div class="mn-close" onclick="toggleMenu()">✕</div>
 </div>
+<div class="mn-section">
+  <div class="mn-title">Parfum Femme</div>
+  <a onclick="go('femme');toggleMenu()">🌸 Tous les parfums femme</a>
+  <a onclick="go('femme');filterFamily('allF','floral',document.createElement('button'));toggleMenu()">🌸 Floral</a>
+  <a onclick="go('femme');filterFamily('allF','oriental',document.createElement('button'));toggleMenu()">✨ Oriental</a>
+  <a onclick="go('femme');filterFamily('allF','gourmand',document.createElement('button'));toggleMenu()">🍫 Gourmand</a>
+  <a onclick="go('femme');filterFamily('allF','boisé',document.createElement('button'));toggleMenu()">🌲 Boisé</a>
+</div>
+<div class="mn-section">
+  <div class="mn-title">Parfum Homme</div>
+  <a onclick="go('homme');toggleMenu()">♂ Tous les parfums homme</a>
+  <a onclick="go('homme');filterFamily('allH','boisé',document.createElement('button'));toggleMenu()">🌲 Boisé</a>
+  <a onclick="go('homme');filterFamily('allH','oriental',document.createElement('button'));toggleMenu()">✨ Oriental</a>
+  <a onclick="go('homme');filterFamily('allH','frais',document.createElement('button'));toggleMenu()">💧 Frais</a>
+  <a onclick="go('homme');filterFamily('allH','épicé',document.createElement('button'));toggleMenu()">🌶 Épicé</a>
+</div>
+<div class="mn-section">
+  <div class="mn-title">Coffrets & Offres</div>
+  <a onclick="go('coffrets');toggleMenu()">🎁 Coffrets & Packs</a>
+  <a onclick="go('pack-couple');toggleMenu()">💑 Pack Couple — 180 DH</a>
+  <a onclick="go('pack-decouverte');toggleMenu()">✨ Pack Découverte — 450 DH</a>
+  <a onclick="go('pack-collection');toggleMenu()">💎 Pack Collection — 800 DH</a>
+  <a onclick="go('potm');toggleMenu()">🔥 Parfum du Mois −20%</a>
+  <a onclick="go('livraison-gratuite');toggleMenu()">🚚 Livraison gratuite dès 3 parfums</a>
+</div>
+<div class="mn-section">
+  <div class="mn-title">Découvrir</div>
+  <a onclick="go('home','quiz-section');toggleMenu()">🧪 Quiz — Quel parfum ?</a>
+  <a onclick="go('blog');toggleMenu()">📖 Blog & Conseils</a>
+  <a onclick="go('wishlist');toggleMenu()">♡ Mes Favoris (<span id="wishCountMobile">0</span>)</a>
+</div>
+<a class="mn-wa" href="https://wa.me/212600000000" target="_blank">💬 Commander via WhatsApp</a>
+<div style="height:16px"></div>
+</nav>
 </header>
 
 <!-- ══════════════════════════════════════ HOME PAGE -->
@@ -1632,6 +1693,7 @@ footer li a:hover{color:var(--gold)}
 <div class="sort-bar">
 <span class="sort-label" id="countF">50 parfums femme</span>
 <div class="sort-right">
+<button class="mobile-filter-btn" onclick="openFilterDrawer('femme')">⚙ Filtres &amp; tri</button>
 <div class="search-box" style="margin:0;padding:0;background:none;border:none"><span>🔍</span><input type="text" placeholder="Rechercher..." onkeyup="filterCards('allF',this.value)" style="background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:7px 14px;font-size:12px;color:var(--txt);outline:none;width:180px"></div>
 <select class="sort-select" onchange="sortCards('allF',this.value)">
 <option value="default">Popularité</option>
@@ -1709,6 +1771,7 @@ footer li a:hover{color:var(--gold)}
 <div class="sort-bar">
 <span class="sort-label" id="countH">50 parfums homme</span>
 <div class="sort-right">
+<button class="mobile-filter-btn" onclick="openFilterDrawer('homme')">⚙ Filtres &amp; tri</button>
 <div class="search-box" style="margin:0;padding:0;background:none;border:none"><span>🔍</span><input type="text" placeholder="Rechercher..." onkeyup="filterCards('allH',this.value)" style="background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:7px 14px;font-size:12px;color:var(--txt);outline:none;width:180px"></div>
 <select class="sort-select" onchange="sortCards('allH',this.value)">
 <option value="default">Popularité</option>
@@ -1847,7 +1910,7 @@ footer li a:hover{color:var(--gold)}
 <p style="font-size:11px;color:var(--txt3);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Modes de paiement acceptés</p>
 <img src="dossier%20parfum/logo%20bancaire/banniere%20bancaire.jpg" alt="Barid Cash · Virement Bancaire · CMI · Paiement à la livraison · Wafacash" style="max-width:100%;width:460px;border-radius:10px;background:#fff;padding:10px 20px">
 </div>
-<button class="btn-p" style="font-size:13px;padding:14px 40px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour 👋\nJe souhaite le Pack Couple à 180 DH.\n\n👩 Parfum Femme choisi :\n👨 Parfum Homme choisi :\n\n📍 Ville :\n📱 Téléphone :'),'_blank')">💬 Commander ce pack via WhatsApp</button>
+<button class="btn-wa" style="font-size:13px;padding:14px 40px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour 👋\nJe souhaite le Pack Couple à 180 DH.\n\n👩 Parfum Femme choisi :\n👨 Parfum Homme choisi :\n\n📍 Ville :\n📱 Téléphone :'),'_blank')">💬 Commander ce pack via WhatsApp</button>
 </div>
 <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px">
 <h4 style="font-family:var(--ff-d);margin-bottom:16px">Comment ça marche ?</h4>
@@ -1885,7 +1948,7 @@ footer li a:hover{color:var(--gold)}
 <p style="font-size:11px;color:var(--txt3);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Modes de paiement acceptés</p>
 <img src="dossier%20parfum/logo%20bancaire/banniere%20bancaire.jpg" alt="Barid Cash · Virement Bancaire · CMI · Paiement à la livraison · Wafacash" style="max-width:100%;width:460px;border-radius:10px;background:#fff;padding:10px 20px">
 </div>
-<button class="btn-p" style="font-size:13px;padding:14px 40px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour 👋\nJe souhaite le Pack Découverte (5 parfums) à 450 DH + livraison gratuite.\n\n1. \n2. \n3. \n4. \n5. \n\n📍 Ville :\n📱 Téléphone :'),'_blank')">💬 Commander ce pack via WhatsApp</button>
+<button class="btn-wa" style="font-size:13px;padding:14px 40px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour 👋\nJe souhaite le Pack Découverte (5 parfums) à 450 DH + livraison gratuite.\n\n1. \n2. \n3. \n4. \n5. \n\n📍 Ville :\n📱 Téléphone :'),'_blank')">💬 Commander ce pack via WhatsApp</button>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:32px 0">
 <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center">
@@ -1943,7 +2006,7 @@ footer li a:hover{color:var(--gold)}
 <p style="font-size:11px;color:var(--txt3);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Modes de paiement acceptés</p>
 <img src="dossier%20parfum/logo%20bancaire/banniere%20bancaire.jpg" alt="Barid Cash · Virement Bancaire · CMI · Paiement à la livraison · Wafacash" style="max-width:100%;width:460px;border-radius:10px;background:#fff;padding:10px 20px">
 </div>
-<button class="btn-p" style="font-size:13px;padding:14px 40px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour 👋\nJe souhaite le Pack Collection (10 parfums) à 800 DH + livraison express gratuite.\n\n1. \n2. \n3. \n4. \n5. \n6. \n7. \n8. \n9. \n10. \n\n📍 Ville :\n📱 Téléphone :'),'_blank')">💬 Commander ce pack via WhatsApp</button>
+<button class="btn-wa" style="font-size:13px;padding:14px 40px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour 👋\nJe souhaite le Pack Collection (10 parfums) à 800 DH + livraison express gratuite.\n\n1. \n2. \n3. \n4. \n5. \n6. \n7. \n8. \n9. \n10. \n\n📍 Ville :\n📱 Téléphone :'),'_blank')">💬 Commander ce pack via WhatsApp</button>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:32px 0">
 <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center"><div style="font-size:11px;color:var(--txt3);margin-bottom:4px">1 parfum</div><div style="font-family:var(--ff-d);font-size:18px;color:var(--txt3)">100 DH</div><div style="font-size:11px;color:var(--txt3)">+ 15 DH livr.</div></div>
@@ -2103,7 +2166,7 @@ footer li a:hover{color:var(--gold)}
 <div style="font-size:36px;margin-bottom:12px">💬</div>
 <h3 style="font-family:var(--ff-d);font-size:24px;margin-bottom:8px">Commander via WhatsApp</h3>
 <p style="color:var(--txt2);font-size:14px;max-width:480px;margin:0 auto 24px">Réponse en quelques minutes · Paiement à la réception · Livraison 24-48h partout au Maroc</p>
-<button class="btn-p" style="font-size:13px;padding:14px 40px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour 👋\nJe souhaite commander un coffret parfum.\n\n🎁 Coffret choisi :\n\n📍 Ville :\n📱 Téléphone :'),'_blank')">Contacter sur WhatsApp →</button>
+<button class="btn-wa" style="font-size:13px;padding:14px 40px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour 👋\nJe souhaite commander un coffret parfum.\n\n🎁 Coffret choisi :\n\n📍 Ville :\n📱 Téléphone :'),'_blank')">💬 Contacter sur WhatsApp →</button>
 </div>
 
 </div>
@@ -2140,7 +2203,7 @@ footer li a:hover{color:var(--gold)}
 <span style="background:rgba(201,169,110,.15);color:var(--gold);border-radius:20px;padding:4px 10px;font-size:12px;font-weight:700">-20%</span>
 </div>
 <div style="display:flex;flex-direction:column;gap:10px">
-<button class="btn-p" style="font-size:13px;padding:14px 30px" onclick="orderSingleWA('Black Opium','YSL',80)">💬 Commander à 80 DH</button>
+<button class="btn-wa" style="font-size:13px;padding:14px 30px" onclick="orderSingleWA('Black Opium','YSL',80)">💬 Commander à 80 DH</button>
 <button class="btn-o" style="font-size:13px;padding:14px 30px" onclick="addToCart('f5','Black Opium','YSL');showToast('Black Opium ajouté au panier à 80 DH ✨')">🛒 Ajouter au panier (80 DH)</button>
 </div>
 <p style="font-size:11px;color:var(--txt3);margin-top:12px">⚡ Offre valable ce mois-ci uniquement · 33ml · Livraison 24-48h</p>
@@ -2516,16 +2579,16 @@ cuiré:['soirée','bureau','hiver']
 
 // ══════════════ DATA
 const F=[
-{id:'f1',name:"Chanel N°5",brand:"Chanel",notes:["Aldéhydes","Ylang-Ylang","Jasmin","Rose","Santal"],best:1,family:"floral",desc:"Le parfum le plus iconique au monde. Un bouquet floral aldéhydé intemporel."},
-{id:'f2',name:"J'adore",brand:"Dior",notes:["Ylang-Ylang","Rose","Jasmin","Tubéreuse"],best:1,family:"floral",desc:"Un bouquet floral lumineux et sensuel. La féminité moderne incarnée."},
-{id:'f3',name:"La Vie Est Belle",brand:"Lancôme",notes:["Iris","Patchouli","Praline","Gourmand"],best:1,family:"gourmand",desc:"Un iris gourmand addictif. Le parfum féminin le plus vendu au Maroc."},
-{id:'f4',name:"Coco Mademoiselle",brand:"Chanel",notes:["Orange","Jasmin","Rose","Patchouli"],best:1,family:"oriental",desc:"Un oriental frais et moderne. Élégance classique et séduction contemporaine."},
-{id:'f5',name:"Black Opium",brand:"YSL",notes:["Café","Vanille","Fleur d'Oranger"],best:1,family:"gourmand",desc:"Un gourmand rock et addictif. L'accord café-vanille le plus célèbre."},
-{id:'f6',name:"Miss Dior",brand:"Dior",notes:["Rose","Pivoine","Iris","Musc"],family:"floral",desc:"Un floral frais et romantique, hommage à l'amour."},
-{id:'f7',name:"Good Girl",brand:"Carolina Herrera",notes:["Tubéreuse","Jasmin","Cacao","Tonka"],family:"oriental",desc:"Sensuel et audacieux dans un flacon stiletto."},
-{id:'f8',name:"Flowerbomb",brand:"Viktor & Rolf",notes:["Rose","Jasmin","Orchidée","Patchouli"],family:"floral",desc:"Une explosion florale addictive et opulente."},
+{id:'f1',name:"Chanel N°5",brand:"Chanel",notes:["Aldéhydes","Ylang-Ylang","Jasmin","Rose","Santal"],best:1,family:"floral",desc:"Le parfum le plus iconique au monde, créé en 1921 par Ernest Beaux pour Gabrielle Chanel. Un accord floral aldéhydé d'une élégance intemporelle : aldéhydes pétillants, jasmin de Grasse, rose de Mai et ylang-ylang, ancrés sur un fond poudreux de santal, iris et vétiver. Porter Chanel N°5, c'est traverser un siècle d'élégance féminine — de Marilyn Monroe aux femmes d'aujourd'hui."},
+{id:'f2',name:"J'adore",brand:"Dior",notes:["Ylang-Ylang","Rose","Jasmin","Tubéreuse"],best:1,family:"floral",desc:"Une symphonie florale somptueuse imaginée par Calice Becker pour la maison Dior. L'ylang-ylang de Madagascar, la rose centifolia de Grasse et le jasmin de Grasse se fondent dans un sillage lumineux et solaire. La tubéreuse apporte une sensualité opulente, tandis que le fond vanillé laisse une empreinte délicate et addictive. La féminité moderne dans toute sa plénitude."},
+{id:'f3',name:"La Vie Est Belle",brand:"Lancôme",notes:["Iris","Patchouli","Praline","Gourmand"],best:1,family:"gourmand",desc:"L'iris de Florence rencontre la praline d'Orient et le patchouli dans un accord gourmand d'une douceur irrésistible. Créé par trois nez iconiques — Dominique Ropion, Anne Flipo et Loc Dong — ce parfum incarne la joie de vivre. Un sourire olfactif que des millions de femmes au Maroc et dans le monde ont adopté comme signature quotidienne."},
+{id:'f4',name:"Coco Mademoiselle",brand:"Chanel",notes:["Orange","Jasmin","Rose","Patchouli"],best:1,family:"oriental",desc:"Un oriental frais et moderne signé Jacques Polge pour Chanel. L'orange fraîche de Sicile s'ouvre sur un cœur vibrant de rose centifolia et de jasmin de Grasse, avant de s'installer sur un fond boisé-patchouli d'une élégance insolente. Le parfum de la parisienne — et de la Marocaine — confiante, libre et contemporaine."},
+{id:'f5',name:"Black Opium",brand:"YSL",notes:["Café","Vanille","Fleur d'Oranger"],best:1,family:"gourmand",desc:"L'accord café-vanille le plus iconique de la parfumerie moderne. Des grains de café torréfiés s'entremêlent à la fleur d'oranger addictive sur un lit de vanille chaude, de cèdre blanc et de patchouli velouté. Un sillage rock, glamour et envoûtant qui dure toute la nuit — le best-seller absolu au Maroc, porté par des générations de femmes audacieuses."},
+{id:'f6',name:"Miss Dior",brand:"Dior",notes:["Rose","Pivoine","Iris","Musc"],family:"floral",desc:"Un hommage poétique à l'amour imaginé par François Demachy. La pivoine de printemps, la rose sauvage et l'iris s'entrelacent dans un floral cristallin et romantique, porté par un musc blanc de soie. Léger, frais et infiniment élégant, Miss Dior s'impose comme la signature olfactive de la femme Dior — romantique et indépendante."},
+{id:'f7',name:"Good Girl",brand:"Carolina Herrera",notes:["Tubéreuse","Jasmin","Cacao","Tonka"],family:"oriental",desc:"Sensuel et provocateur dans son flacon en forme de stiletto — un pied féminin laqué de noir. La tubéreuse crémeuse et le jasmin s'allient au cacao amer et à la fève tonka chaude pour créer une fragrance duale : angélique en surface, irrésistiblement obscure en fond. Le parfum de la femme qui joue avec les codes."},
+{id:'f8',name:"Flowerbomb",brand:"Viktor & Rolf",notes:["Rose","Jasmin","Orchidée","Patchouli"],family:"floral",desc:"Une explosion florale baroque et addictive signée par les nez les plus créatifs de la parfumerie. La rose, le jasmin, l'orchidée et le patchouli se fondent dans un accord floral opulent et sensuel qui laisse un sillage flamboyant. Flowerbomb transforme chaque femme en une force de la nature — douce, mais impossible à ignorer."},
 {id:'f9',name:"Light Blue",brand:"Dolce & Gabbana",notes:["Cèdre","Pomme","Muguet","Jasmin"],family:"frais",desc:"La fraîcheur méditerranéenne. Parfait pour les étés marocains."},
-{id:'f10',name:"Chance Eau Tendre",brand:"Chanel",notes:["Pamplemousse","Jasmin","Musc Blanc"],family:"floral",desc:"Un floral fruité délicat et joyeux par Chanel."},
+{id:'f10',name:"Chance Eau Tendre",brand:"Chanel",notes:["Pamplemousse","Jasmin","Musc Blanc"],family:"floral",desc:"La légèreté et la joie encapsulées dans un flacon rond et coloré. Le pamplemousse de Floride et le jasmin blanc s'entrelacent sur un fond délicat de musc blanc poudré. Chance Eau Tendre est le parfum des matins lumineux, du bureau et des premières rencontres — frais, joyeux et universellement apprécié."},
 {id:'f11',name:"Mon Paris",brand:"YSL",notes:["Fraise","Pivoine","Patchouli","Ambre"],family:"fruité",desc:"Fruité, floral et intensément romantique."},
 {id:'f12',name:"Libre",brand:"YSL",notes:["Lavande","Fleur d'Oranger","Vanille"],family:"oriental",desc:"Lavande fraîche et vanille chaude. La liberté en flacon."},
 {id:'f13',name:"Idôle",brand:"Lancôme",notes:["Rose","Jasmin","Musc Blanc","Cèdre"],family:"floral",desc:"Le parfum de la nouvelle génération."},
@@ -2546,7 +2609,7 @@ const F=[
 {id:'f28',name:"Crystal Noir",brand:"Versace",notes:["Gingembre","Gardénia","Ambre"],family:"oriental",desc:"Le mystère nocturne."},
 {id:'f29',name:"Bright Crystal",brand:"Versace",notes:["Grenade","Pivoine","Magnolia","Musc"],family:"fruité",desc:"Lumineux et rafraîchissant."},
 {id:'f30',name:"Poison Girl",brand:"Dior",notes:["Rose","Amande Amère","Tonka","Vanille"],family:"gourmand",desc:"Rose-amande amère addictif."},
-{id:'f31',name:"Baccarat Rouge 540",brand:"MFK",notes:["Jasmin","Safran","Ambre","Cèdre"],best:1,family:"oriental",desc:"Le phénomène mondial. Safran-ambre cristallin."},
+{id:'f31',name:"Baccarat Rouge 540",brand:"MFK",notes:["Jasmin","Safran","Ambre","Cèdre"],best:1,family:"oriental",desc:"Le phénomène olfactif mondial qui a bouleversé la parfumerie en 2015. Le jasmin sambac et le safran de Francis Kurkdjian se marient dans un accord ambre-cèdre cristallin absolument unique. Cette fragrance unisexe laisse sur la peau une luminosité dorée et boisée qui dure des heures — un luxe accessible uniquement en format 33ml."},
 {id:'f32',name:"Sì Passione",brand:"Giorgio Armani",notes:["Rose","Jasmin","Vanille","Cèdre"],family:"floral",desc:"La passion incarnée."},
 {id:'f33',name:"Fame",brand:"Paco Rabanne",notes:["Mangue","Jasmin","Encens","Vanille"],family:"gourmand",desc:"Mangue-encens inédit."},
 {id:'f34',name:"Scandal",brand:"Jean Paul Gaultier",notes:["Miel","Gardénia","Caramel","Patchouli"],family:"gourmand",desc:"Miel-gardénia provocant."},
@@ -2555,7 +2618,7 @@ const F=[
 {id:'f37',name:"Very Good Girl",brand:"Carolina Herrera",notes:["Litchi","Rose","Vétiver","Vanille"],family:"fruité",desc:"Litchi-rose-vanille gourmand."},
 {id:'f38',name:"L'Interdit",brand:"Givenchy",notes:["Tubéreuse","Fleur d'Oranger","Vétiver"],family:"floral",desc:"Un floral sombre."},
 {id:'f39',name:"Irresistible",brand:"Givenchy",notes:["Rose","Iris","Musc","Ambre"],family:"floral",desc:"Rose-iris lumineux."},
-{id:'f40',name:"Delina",brand:"Parfums de Marly",notes:["Litchi","Rose","Pivoine","Musc","Vanille"],best:1,family:"floral",desc:"Rose-litchi royal et envoûtant."},
+{id:'f40',name:"Delina",brand:"Parfums de Marly",notes:["Litchi","Rose","Pivoine","Musc","Vanille"],best:1,family:"floral",desc:"La princesse des parfums niche, créée par Hamid Merati-Kashani. Le litchi juteux et la pivoine fraîche s'ouvrent sur un cœur de rose absolue de Turquie, posé sur un fond de musc blanc et de vanille de Madagascar. Delina est une déclaration d'élégance royale — féminité pure, précieuse et infiniment raffinée."},
 {id:'f41',name:"Chance EDP",brand:"Chanel",notes:["Patchouli","Jasmin","Vanille"],family:"oriental",desc:"La version la plus intense de Chance."},
 {id:'f42',name:"Gabrielle",brand:"Chanel",notes:["Jasmin","Ylang","Tubéreuse","Oranger"],family:"floral",desc:"Bouquet de fleurs blanches lumineux."},
 {id:'f43',name:"The Scent For Her",brand:"Hugo Boss",notes:["Pêche","Freesia","Cacao","Vanille"],family:"gourmand",desc:"Pêche-cacao gourmand."},
@@ -2568,18 +2631,18 @@ const F=[
 {id:'f50',name:"Classique",brand:"Jean Paul Gaultier",notes:["Rose","Fleur d'Oranger","Vanille","Ambre"],family:"oriental",desc:"Oriental floral intemporel."}
 ];
 const H=[
-{id:'h1',name:"Sauvage",brand:"Dior",notes:["Bergamote","Poivre","Ambroxan","Cèdre"],best:1,family:"boisé",desc:"Le n°1 mondial. Boisé magnétique."},
-{id:'h2',name:"Bleu de Chanel",brand:"Chanel",notes:["Menthe","Citron","Cèdre","Santal"],best:1,family:"boisé",desc:"L'élégance masculine absolue."},
-{id:'h3',name:"Acqua di Giò",brand:"Giorgio Armani",notes:["Bergamote","Néroli","Calone","Jasmin"],best:1,family:"aquatique",desc:"La fraîcheur marine iconique."},
-{id:'h4',name:"1 Million",brand:"Paco Rabanne",notes:["Pamplemousse","Rose","Cannelle","Cuir"],best:1,family:"épicé",desc:"Le luxe provocant."},
+{id:'h1',name:"Sauvage",brand:"Dior",notes:["Bergamote","Poivre","Ambroxan","Cèdre"],best:1,family:"boisé",desc:"Le n°1 mondial des parfums masculins, créé par François Demachy pour la maison Dior. La bergamote de Calabre explose en tête avec une fraîcheur intense, puis l'ambroxan magnétique et le poivre de Sichuan installent un sillage boisé désertique ample et viril. Un accord unique qui évoque les espaces sauvages — porté par des milliers d'hommes au Maroc."},
+{id:'h2',name:"Bleu de Chanel",brand:"Chanel",notes:["Menthe","Citron","Cèdre","Santal"],best:1,family:"boisé",desc:"L'élégance masculine absolue imaginée par Jacques Polge pour Chanel. La menthe fraîche et le citron s'ouvrent sur un cœur labdanum chaud et résonnant, avant un fond de cèdre blanc et de santal du Mysore d'une profondeur remarquable. Boisé aromatique et intemporel, Bleu de Chanel est la signature de l'homme moderne, ambitieux et raffiné."},
+{id:'h3',name:"Acqua di Giò",brand:"Giorgio Armani",notes:["Bergamote","Néroli","Calone","Jasmin"],best:1,family:"aquatique",desc:"La fraîcheur marine iconique signée Alberto Morillas pour Giorgio Armani. La bergamote de Calabre et le néroli sicilien s'allient aux notes aquatiques de calone pour évoquer les côtes méditerranéennes. Un parfum qui capte l'essence de la mer en été — frais, léger, universel et parfaitement adapté à la chaleur marocaine."},
+{id:'h4',name:"1 Million",brand:"Paco Rabanne",notes:["Pamplemousse","Rose","Cannelle","Cuir"],best:1,family:"épicé",desc:"L'or et l'audace en flacon — l'épicé boisé provocant créé par trois nez de génie. Le pamplemousse et la rose ouvrent sur la cannelle chaude et le cuir doré. 1 Million est le parfum de l'homme qui revendique son succès, qui attire les regards et qui assume son charisme. Le sillage est puissant, mémorable, inoubliable."},
 {id:'h5',name:"Le Mâle",brand:"Jean Paul Gaultier",notes:["Menthe","Lavande","Vanille","Tonka"],family:"oriental",desc:"Le marin séducteur."},
-{id:'h6',name:"Invictus",brand:"Paco Rabanne",notes:["Pamplemousse","Laurier","Ambre"],best:1,family:"frais",desc:"Le champion invaincu."},
+{id:'h6',name:"Invictus",brand:"Paco Rabanne",notes:["Pamplemousse","Laurier","Ambre"],best:1,family:"frais",desc:"Le champion invaincu, l'athlète qui ne s'arrête jamais. Un accord frais-aquatique musclé et solaire : pamplemousse de Floride, laurier méditerranéen, gingembre frais sur un fond d'ambre boisé et musqué. Invictus est l'énergie, la victoire, le dynamisme — le parfum de l'homme marocain actif et confiant en lui."},
 {id:'h7',name:"Dior Homme",brand:"Dior",notes:["Iris","Bois","Musc","Vétiver"],family:"boisé",desc:"L'iris au masculin."},
-{id:'h8',name:"Aventus",brand:"Creed",notes:["Ananas","Bouleau","Patchouli","Musc"],best:1,family:"fruité",desc:"Le roi des parfums."},
+{id:'h8',name:"Aventus",brand:"Creed",notes:["Ananas","Bouleau","Patchouli","Musc"],best:1,family:"fruité",desc:"Le roi des parfums, la fragrance de référence du monde niche. L'ananas juteux et la bergamote explosive s'ouvrent sur un cœur de bouleau fumé et de jasmin, avant un fond de patchouli, de musc blanc et d'oakmoss d'une richesse extraordinaire. Aventus de Creed est porté par des leaders, des hommes d'exception — et maintenant accessible à 100 DH."},
 {id:'h9',name:"Allure Homme Sport",brand:"Chanel",notes:["Mandarine","Cèdre","Poivre","Tonka"],family:"frais",desc:"Le sportif élégant."},
 {id:'h10',name:"Y EDP",brand:"YSL",notes:["Pomme","Gingembre","Sauge","Ambre"],family:"boisé",desc:"Frais et intense."},
 {id:'h11',name:"Boss Bottled",brand:"Hugo Boss",notes:["Pomme","Cannelle","Santal","Cèdre"],family:"boisé",desc:"Le parfum du succès."},
-{id:'h12',name:"Terre d'Hermès",brand:"Hermès",notes:["Orange","Pamplemousse","Poivre","Vétiver"],family:"boisé",desc:"Boisé minéral sophistiqué."},
+{id:'h12',name:"Terre d'Hermès",brand:"Hermès",notes:["Orange","Pamplemousse","Poivre","Vétiver"],family:"boisé",desc:"Boisé minéral et sophistiqué, imaginé par Jean-Claude Ellena pour Hermès. Le pamplemousse acidulé et l'orange sanguine s'ouvrent sur un cœur poivré vif, avant un fond de vétiver terreux et de silex — une note minérale unique qui évoque la terre après la pluie. Terre d'Hermès incarne le lien entre l'homme et la nature."},
 {id:'h13',name:"Eros",brand:"Versace",notes:["Menthe","Pomme Verte","Vanille","Tonka"],family:"oriental",desc:"Menthe-vanille puissant."},
 {id:'h14',name:"Armani Code",brand:"Giorgio Armani",notes:["Bergamote","Olive","Tonka","Guaiac"],family:"oriental",desc:"Le code de la séduction."},
 {id:'h15',name:"Gentleman",brand:"Givenchy",notes:["Iris","Lavande","Patchouli","Cèdre"],family:"boisé",desc:"Élégant et raffiné."},
@@ -2591,7 +2654,7 @@ const H=[
 {id:'h21',name:"La Nuit de L'Homme",brand:"YSL",notes:["Cardamome","Cèdre","Lavande","Vétiver"],family:"épicé",desc:"Cardamome-lavande sensuel."},
 {id:'h22',name:"Spicebomb",brand:"Viktor & Rolf",notes:["Poivre","Safran","Tabac","Cuir"],family:"épicé",desc:"Cocktail explosif."},
 {id:'h23',name:"Luna Rossa Carbon",brand:"Prada",notes:["Bergamote","Poivre","Lavande","Ambroxan"],family:"boisé",desc:"Minéral et moderne."},
-{id:'h24',name:"Layton",brand:"Parfums de Marly",notes:["Pomme","Lavande","Vanille","Cardamome"],best:1,family:"oriental",desc:"Le roi du niche."},
+{id:'h24',name:"Layton",brand:"Parfums de Marly",notes:["Pomme","Lavande","Vanille","Cardamome"],best:1,family:"oriental",desc:"Le roi du parfum niche oriental, créé par Quentin Bisch pour Parfums de Marly. La pomme juteuse et la lavande aromatique s'ouvrent sur un cœur de cardamome et de géranium, avant un fond de vanille Bourbon crémeuse et de santal du Mysore. Layton est l'accord ultime entre fraîcheur et chaleur — élégant, opulent, inoubliable."},
 {id:'h25',name:"L'Homme",brand:"YSL",notes:["Gingembre","Bergamote","Vétiver","Cèdre"],family:"boisé",desc:"Élégant et équilibré."},
 {id:'h26',name:"Guilty Pour Homme",brand:"Gucci",notes:["Lavande","Cèdre","Patchouli","Ambre"],family:"oriental",desc:"Fougère aromatique moderne."},
 {id:'h27',name:"Wanted",brand:"Azzaro",notes:["Citron","Gingembre","Tonka","Vétiver"],family:"épicé",desc:"Épicé et charismatique."},
@@ -2608,7 +2671,7 @@ const H=[
 {id:'h38',name:"Invictus Victory",brand:"Paco Rabanne",notes:["Encens","Laurier","Ambre","Gaïac"],family:"oriental",desc:"Plus intense que l'original."},
 {id:'h39',name:"K by D&G",brand:"Dolce & Gabbana",notes:["Orange","Cèdre","Piment","Lavande"],family:"boisé",desc:"Le roi méditerranéen."},
 {id:'h40',name:"Kenzo Homme",brand:"Kenzo",notes:["Bois Aquatique","Yuzu","Poivre"],family:"aquatique",desc:"Aquatique boisé frais."},
-{id:'h41',name:"Sauvage Elixir",brand:"Dior",notes:["Grapefruit","Cannelle","Lavande","Ambre"],best:1,family:"épicé",desc:"La version la plus puissante de Sauvage."},
+{id:'h41',name:"Sauvage Elixir",brand:"Dior",notes:["Grapefruit","Cannelle","Lavande","Ambre"],best:1,family:"épicé",desc:"La version la plus intense et concentrée de Sauvage — une formule elixir d'une puissance rare. La bergamote de Calabre et la cannelle de Ceylan s'ouvrent sur la lavande provençale, avant un fond d'ambre franc et de santal chaud d'une profondeur exceptionnelle. Pour l'homme qui veut laisser une empreinte olfactive impossible à oublier."},
 {id:'h42',name:"Tobacco Vanille",brand:"Tom Ford",notes:["Tabac","Vanille","Cacao","Fruits Secs"],family:"oriental",desc:"Tabac-vanille opulent."},
 {id:'h43',name:"Percival",brand:"Parfums de Marly",notes:["Lavande","Néroli","Musc","Ambroxan"],family:"frais",desc:"Lavande-musc clean."},
 {id:'h44',name:"The Scent",brand:"Hugo Boss",notes:["Gingembre","Maninka","Cuir","Lavande"],family:"cuiré",desc:"Gingembre-cuir sophistiqué."},
@@ -2892,10 +2955,16 @@ ${p.stock?`<span class="badge b-low">⚡ Stock limité</span>`:''}
 </article>`;
 }
 
-function renderGrid(id,items,g){
+const _skelCard='<div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line w80"></div><div class="skeleton-line w60"></div><div class="skeleton-line w40"></div></div></div>';
+function renderGrid(id,items,g,withSkeleton){
 const el=document.getElementById(id);
 if(!el)return;
-el.innerHTML=items.map(p=>cardHTML(p,g)).join('');
+if(withSkeleton){
+  el.innerHTML=Array(Math.min(items.length,8)).fill(_skelCard).join('');
+  setTimeout(()=>{el.innerHTML=items.map(p=>cardHTML(p,g)).join('');setTimeout(()=>{initTilt();staggerCards()},50)},240);
+}else{
+  el.innerHTML=items.map(p=>cardHTML(p,g)).join('');
+}
 }
 
 // ══════════════ ROUTING
@@ -3480,9 +3549,90 @@ setTimeout(initExitPopup,5000);
 
 // ══════════════ MOBILE MENU
 function toggleMenu(){
-const nav=document.getElementById('mobileNav');const tog=document.querySelector('.menu-toggle');
-nav.classList.toggle('open');tog.classList.toggle('open');
+const nav=document.getElementById('mobileNav');const tog=document.querySelector('.menu-toggle');const ov=document.getElementById('mnOverlay');
+const isOpen=nav.classList.toggle('open');
+tog.classList.toggle('open');
+if(ov)ov.classList.toggle('open',isOpen);
+document.body.style.overflow=isOpen?'hidden':'';
 }
+
+// ══════════════ FILTER DRAWER
+let _fdGender='femme';
+let _fdFamily='';
+let _fdSort='';
+function openFilterDrawer(gender){
+_fdGender=gender;
+const draw=document.getElementById('filterDrawer');
+const ov=document.getElementById('filterDrawerOverlay');
+if(!draw||!ov)return;
+// Build family chips
+const families=gender==='femme'
+  ?['floral','oriental','gourmand','fruité','frais','musqué','boisé']
+  :['boisé','oriental','frais','épicé','gourmand','cuiré','aquatique','fruité','musqué'];
+const chipsEl=document.getElementById('fdFamilyChips');
+if(chipsEl){
+  chipsEl.innerHTML='<div class="fd-chip active" data-fam="" onclick="fdSelectFamily(this,\'\')">Toutes</div>'
+    +families.map(f=>`<div class="fd-chip${_fdFamily===f?' active':''}" data-fam="${f}" onclick="fdSelectFamily(this,'${f}')">${f.charAt(0).toUpperCase()+f.slice(1)}</div>`).join('');
+}
+// Update sort chips state
+document.querySelectorAll('#fdSortChips .fd-chip').forEach(c=>{c.classList.toggle('active',c.dataset.sort===_fdSort)});
+ov.classList.add('open');
+draw.classList.add('open');
+document.body.style.overflow='hidden';
+}
+function closeFilterDrawer(){
+const draw=document.getElementById('filterDrawer');
+const ov=document.getElementById('filterDrawerOverlay');
+if(draw)draw.classList.remove('open');
+if(ov)ov.classList.remove('open');
+document.body.style.overflow='';
+}
+function fdSelectFamily(el,fam){
+document.querySelectorAll('#fdFamilyChips .fd-chip').forEach(c=>c.classList.remove('active'));
+el.classList.add('active');_fdFamily=fam;
+}
+function fdSelectSort(el,sort){
+document.querySelectorAll('#fdSortChips .fd-chip').forEach(c=>c.classList.remove('active'));
+el.classList.add('active');_fdSort=sort;
+}
+function fdApply(){
+if(_fdGender==='femme'){
+  if(_fdFamily){
+    document.querySelectorAll('#allF .card').forEach(c=>{c.style.display=c.dataset.family===_fdFamily?'':'none'});
+  }else{
+    document.querySelectorAll('#allF .card').forEach(c=>c.style.display='');
+  }
+  if(_fdSort)sortCards('allF',_fdSort);
+}else{
+  if(_fdFamily){
+    document.querySelectorAll('#allH .card').forEach(c=>{c.style.display=c.dataset.family===_fdFamily?'':'none'});
+  }else{
+    document.querySelectorAll('#allH .card').forEach(c=>c.style.display='');
+  }
+  if(_fdSort)sortCards('allH',_fdSort);
+}
+closeFilterDrawer();
+}
+function fdReset(){
+_fdFamily='';_fdSort='';
+document.querySelectorAll('#fdFamilyChips .fd-chip').forEach((c,i)=>{c.classList.toggle('active',i===0)});
+document.querySelectorAll('#fdSortChips .fd-chip').forEach((c,i)=>{c.classList.toggle('active',i===0)});
+}
+
+// ══════════════ HERO PARALLAX
+(function initHeroParallax(){
+const hc=document.getElementById('heroCarousel');
+if(!hc)return;
+window.addEventListener('scroll',()=>{
+  const page=document.querySelector('.page.active');
+  if(!page||page.id!=='page-home')return;
+  const sy=window.scrollY;
+  if(sy>600)return;
+  hc.querySelectorAll('.hc-slide-ph').forEach(el=>{
+    el.style.transform='translateY('+sy*.3+'px)';
+  });
+},{passive:true});
+})();
 
 // ══════════════ TOAST
 function showToast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
@@ -3599,22 +3749,20 @@ function applySbF(){
   if(sbFamilleF!=='all')items=items.filter(p=>p.family===sbFamilleF);
   if(sbBrandF)items=items.filter(p=>p.brand===sbBrandF);
   if(sbOccF)items=items.filter(p=>p.occasions&&p.occasions.includes(sbOccF));
-  renderGrid('allF',items,'femme');
+  renderGrid('allF',items,'femme',true);
   const cnt=document.getElementById('countF');
   if(cnt)cnt.textContent=items.length+' parfum'+(items.length>1?'s':'')+' femme';
   updateActiveTagsF();
-  setTimeout(()=>{initTilt();staggerCards()},100);
 }
 function applySbH(){
   let items=HE;
   if(sbFamilleH!=='all')items=items.filter(p=>p.family===sbFamilleH);
   if(sbBrandH)items=items.filter(p=>p.brand===sbBrandH);
   if(sbOccH)items=items.filter(p=>p.occasions&&p.occasions.includes(sbOccH));
-  renderGrid('allH',items,'homme');
+  renderGrid('allH',items,'homme',true);
   const cnt=document.getElementById('countH');
   if(cnt)cnt.textContent=items.length+' parfum'+(items.length>1?'s':'')+' homme';
   updateActiveTagsH();
-  setTimeout(()=>{initTilt();staggerCards()},100);
 }
 function updateActiveTagsF(){
   const el=document.getElementById('activeTagsF');if(!el)return;
@@ -4557,7 +4705,7 @@ renderMegaProducts('megaHommeProducts', HE, 4);
     <div style="font-size:32px;margin-bottom:12px">💬</div>
     <h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commander à Casablanca via WhatsApp</h3>
     <p style="color:var(--txt2);font-size:13px;margin-bottom:20px">Réponse en quelques minutes · Livraison 24h · Paiement à la réception</p>
-    <button class="btn-p" style="font-size:13px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour, je suis à Casablanca et je souhaite commander des parfums 33ml.'),'_blank')">Contacter sur WhatsApp →</button>
+    <button class="btn-wa" style="font-size:13px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour, je suis à Casablanca et je souhaite commander des parfums 33ml.'),'_blank')">💬 Contacter sur WhatsApp →</button>
   </div>
   <h2>Les parfums les plus commandés à Casablanca</h2>
   <p>À Casablanca, les préférences olfactives sont variées. Les Casablancais plébiscitent les fragrances orientales pour les soirées et les fragrances boisées-fraiches pour le bureau et les déplacements professionnels.</p>
@@ -4607,7 +4755,7 @@ renderMegaProducts('megaHommeProducts', HE, 4);
     <div style="font-size:32px;margin-bottom:12px">💬</div>
     <h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commander à Rabat via WhatsApp</h3>
     <p style="color:var(--txt2);font-size:13px;margin-bottom:20px">Réponse en quelques minutes · Livraison 24h · Paiement à la réception</p>
-    <button class="btn-p" style="font-size:13px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour, je suis à Rabat et je souhaite commander des parfums 33ml.'),'_blank')">Contacter sur WhatsApp →</button>
+    <button class="btn-wa" style="font-size:13px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour, je suis à Rabat et je souhaite commander des parfums 33ml.'),'_blank')">💬 Contacter sur WhatsApp →</button>
   </div>
   <h2>Les parfums les plus appréciés à Rabat</h2>
   <p>À Rabat, capitale administrative du Maroc, les goûts olfactifs sont influencés par la présence de nombreux cadres, diplomates et étudiants. Les fragrances sobres et élégantes y sont très prisées.</p>
@@ -4654,7 +4802,7 @@ renderMegaProducts('megaHommeProducts', HE, 4);
     <div style="font-size:32px;margin-bottom:12px">💬</div>
     <h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commander à Marrakech via WhatsApp</h3>
     <p style="color:var(--txt2);font-size:13px;margin-bottom:20px">Réponse en quelques minutes · Livraison 24h · Paiement à la réception</p>
-    <button class="btn-p" style="font-size:13px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour, je suis à Marrakech et je souhaite commander des parfums 33ml.'),'_blank')">Contacter sur WhatsApp →</button>
+    <button class="btn-wa" style="font-size:13px" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour, je suis à Marrakech et je souhaite commander des parfums 33ml.'),'_blank')">💬 Contacter sur WhatsApp →</button>
   </div>
   <h2>Les parfums plébiscités à Marrakech</h2>
   <p>Le climat chaud de Marrakech et la culture festive de la ville créent une demande forte pour les fragrances intenses, tenaces et saisissantes — orientaux, boisés-épicés, musqués profonds.</p>
@@ -4700,6 +4848,32 @@ renderMegaProducts('megaHommeProducts', HE, 4);
     <div class="spc-price" id="spcPrice"></div>
   </div>
   <button class="spc-btn" id="spcBtn">&#x1F6D2; Commander</button>
+</div>
+
+<!-- ── FILTER DRAWER (mobile) ── -->
+<div class="filter-drawer-overlay" id="filterDrawerOverlay" onclick="closeFilterDrawer()"></div>
+<div class="filter-drawer" id="filterDrawer">
+  <div class="fd-handle-wrap" onclick="closeFilterDrawer()"><span class="fd-handle"></span></div>
+  <div class="fd-header">
+    <div class="fd-title">Filtres</div>
+    <div class="fd-close" onclick="closeFilterDrawer()">✕</div>
+  </div>
+  <div class="fd-section">
+    <div class="fd-label">Famille olfactive</div>
+    <div class="fd-chips" id="fdFamilyChips"></div>
+  </div>
+  <div class="fd-section">
+    <div class="fd-label">Trier par</div>
+    <div class="fd-chips" id="fdSortChips">
+      <div class="fd-chip active" data-sort="" onclick="fdSelectSort(this,'')">Popularité</div>
+      <div class="fd-chip" data-sort="rating" onclick="fdSelectSort(this,'rating')">Meilleures notes</div>
+      <div class="fd-chip" data-sort="reviews" onclick="fdSelectSort(this,'reviews')">Plus d'avis</div>
+    </div>
+  </div>
+  <div class="fd-actions">
+    <div class="fd-apply" onclick="fdApply()">Appliquer les filtres</div>
+    <div class="fd-reset" onclick="fdReset()">Réinitialiser</div>
+  </div>
 </div>
 
 </body>
