@@ -887,25 +887,16 @@ footer li a:hover{color:var(--gold)}
 .av-label{font-size:13px;font-weight:700;color:var(--txt);margin-bottom:4px;letter-spacing:.3px}
 .av-sub{font-size:11px;color:var(--txt3);line-height:1.5}
 
-/* ── Payment strip ── */
-.payment-strip{padding:28px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
-.payment-strip-inner{max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:14px}
-.payment-strip-label{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--txt3)}
-.payment-methods{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.pm-pill{display:flex;align-items:center;gap:7px;padding:8px 16px;border-radius:30px;border:1px solid var(--border);background:var(--bg3);font-size:12px;font-weight:600;color:var(--txt2);transition:.3s;opacity:0;transform:translateY(10px)}
-.pm-pill.visible{opacity:1;transform:none}
-.pm-pill:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 12px rgba(201,169,110,.1)}
-.pm-pill-icon{font-size:16px;line-height:1}
+/* ── Brand grid — vraies images ── */
+.brand-logo-tile{height:80px;display:flex;align-items:center;justify-content:center;padding:12px 16px;border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.35s;background:var(--card);overflow:hidden}
+.brand-logo-tile img{max-width:100%;max-height:46px;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(0.42);transition:.4s}
+.brand-logo-tile:hover{border-color:rgba(201,169,110,.4);transform:translateY(-3px);box-shadow:0 4px 18px rgba(201,169,110,.08)}
+.brand-logo-tile:hover img{filter:brightness(0) invert(0.85) sepia(0.25) saturate(2) hue-rotate(4deg)}
 
-/* ── Brand marquee ── */
-.brands-logo-grid{overflow:hidden;padding:0}
-.brands-marquee{display:flex;gap:0;animation:marqueeScroll 30s linear infinite}
-.brands-marquee:hover{animation-play-state:paused}
-.brands-marquee-inner{display:flex;gap:0;flex-shrink:0}
-.brand-logo-tile{min-width:140px;height:80px;display:flex;align-items:center;justify-content:center;padding:12px 20px;border-right:1px solid var(--border);cursor:pointer;transition:.4s;flex-shrink:0}
-.brand-logo-tile img{max-width:100px;max-height:44px;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(0.45);transition:.4s}
-.brand-logo-tile:hover img{filter:brightness(0) invert(0.85) sepia(0.3) saturate(2) hue-rotate(5deg);transform:scale(1.08)}
-@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* ── Section Niche-style headers ── */
+.home-collections,.home-bestsellers{position:relative;overflow:hidden}
+.home-collections::before,.home-bestsellers::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 0%,var(--gold) 30%,rgba(201,169,110,.6) 50%,var(--gold) 70%,transparent 100%);animation:nicheLineDeploy 1.4s ease forwards;transform-origin:left}
+.home-collections.visible::before,.home-bestsellers.visible::before{animation:nicheLineDeploy 1.4s ease forwards}
 
 /* ── Newsletter — ambiance ── */
 .home-newsletter{position:relative;overflow:hidden}
@@ -1084,11 +1075,7 @@ footer li a:hover{color:var(--gold)}
 
 /* ── MARQUES ─────────────────────────────────── */
 .home-brands-sec{padding:56px 24px;border-top:1px solid var(--border);background:var(--bg2)}
-.brands-logo-grid{overflow:hidden;margin-top:28px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.brand-logo-tile{border-right:1px solid var(--border);background:var(--bg2)}
-.brand-logo-tile:hover{border-color:var(--gold)}
-.brand-logo-tile img{width:100%;height:100%;object-fit:contain;padding:10px}
-.brand-logo-tile .ph-img{font-size:10px;color:rgba(255,255,255,.25);font-family:var(--ff-d);font-weight:600;letter-spacing:1px}
+.brands-logo-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;max-width:1400px;margin:28px auto 0}
 
 /* ── AVANTAGES ──────────────────────────────── */
 .home-avantages{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -1110,7 +1097,7 @@ footer li a:hover{color:var(--gold)}
 .collections-grid{grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto}
 .collections-grid .col-tile:nth-child(1){grid-row:auto}
 .collections-grid .col-tile:nth-child(3){grid-column:auto}
-.brands-logo-grid{grid-template-columns:repeat(4,1fr)}
+.brands-logo-grid{grid-template-columns:repeat(4,1fr);gap:8px}
 }
 @media(max-width:768px){
 .hc-slide{height:380px}
@@ -1126,14 +1113,14 @@ footer li a:hover{color:var(--gold)}
 .home-avantages{grid-template-columns:repeat(2,1fr)}
 .avantage-item:nth-child(2){border-right:none}
 .avantage-item:last-child{grid-column:1/-1;border-right:none}
-.brands-logo-grid{grid-template-columns:repeat(4,1fr)}
+.brands-logo-grid{grid-template-columns:repeat(4,1fr);gap:8px}
 .payment-methods{gap:8px}
 .pm-pill{font-size:11px;padding:7px 12px}
 }
 @media(max-width:480px){
 .hc-content h1{font-size:24px}
 .collections-grid{grid-template-columns:repeat(2,1fr)}
-.brands-logo-grid{grid-template-columns:repeat(3,1fr)}
+.brands-logo-grid{grid-template-columns:repeat(3,1fr);gap:6px}
 .home-avantages{grid-template-columns:1fr}
 .avantage-item{border-right:none;border-bottom:1px solid var(--border)}
 }
@@ -1530,9 +1517,13 @@ footer li a:hover{color:var(--gold)}
 
 <!-- ── 3. NOS COLLECTIONS ── -->
 <section class="reveal home-collections">
-<div class="home-sec-header reveal">
-  <div><h2>Nos <em>Collections</em></h2></div>
-  <a class="see-all" onclick="go('femme')">Voir tout →</a>
+<div class="niche-header">
+  <div class="niche-atmo">
+    <div class="niche-eyebrow">Familles Olfactives</div>
+    <h2 class="niche-title">Nos <em>Collections</em></h2>
+    <div class="niche-stars"><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span></div>
+  </div>
+  <a class="see-all" onclick="go('femme')" style="color:var(--gold);opacity:.7">Voir tout →</a>
 </div>
 <div class="collections-grid">
   <!-- Floral : grande tuile 2 lignes -->
@@ -1588,9 +1579,13 @@ footer li a:hover{color:var(--gold)}
 
 <!-- ── 4. MEILLEURES VENTES ── -->
 <section class="reveal home-bestsellers">
-<div class="home-sec-header reveal">
-  <div><h2>Les <em>Meilleures Ventes</em></h2><p>Les parfums les plus commandés au Maroc</p></div>
-  <a class="see-all" onclick="go('femme')">Voir tous les parfums →</a>
+<div class="niche-header">
+  <div class="niche-atmo">
+    <div class="niche-eyebrow">Les plus commandés au Maroc</div>
+    <h2 class="niche-title">Meilleures <em>Ventes</em></h2>
+    <div class="niche-stars"><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span></div>
+  </div>
+  <a class="see-all" onclick="go('femme')" style="color:var(--gold);opacity:.7">Voir tous les parfums →</a>
 </div>
 <div class="bs-carousel-wrap">
   <button class="bs-btn bs-prev" onclick="bsMove('bsTrack',-1)">&#8249;</button>
@@ -1680,68 +1675,34 @@ footer li a:hover{color:var(--gold)}
   <p>28 maisons de parfumerie mondiales · 100 DH le flacon 33ml</p>
 </div>
 <div class="brands-logo-grid" id="brandsLogoGrid">
-  <div class="brands-marquee" id="brandsMarquee">
-    <div class="brands-marquee-inner">
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/dior-logo-png_seeklogo-41696.png" alt="Dior"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/chanel-logo-png_seeklogo-29026.png" alt="Chanel"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/yves-saint-laurent-original-logo-png_seeklogo-155537.png" alt="YSL"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/lancome-paris-logo-png_seeklogo-195564.png" alt="Lancôme"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/thierry-mugler-logo-png_seeklogo-319217.png" alt="Mugler"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/giorgio-armani-logo-png_seeklogo-168420.png" alt="Armani"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/paco-rabanne-logo-png_seeklogo-105259.png" alt="Paco Rabanne"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/creed-1760-logo-png_seeklogo-290764.png" alt="Creed"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/versace-logo-png_seeklogo-148374.png" alt="Versace"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/hermes-logo-png_seeklogo-321332.png" alt="Hermès"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/maison-francis-kurkdjian-logo-png_seeklogo-625488.png" alt="MFK"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/carolina-herrera-logo-png_seeklogo-330307.png" alt="Carolina Herrera"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/gucci-logo-png_seeklogo-64070.png" alt="Gucci"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/valentino-logo-png_seeklogo-147149.png" alt="Valentino"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/parfums-de-marly-logo-png_seeklogo-297710.png" alt="Parfums de Marly"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/tom-ford-logo-png_seeklogo-188943.png" alt="Tom Ford"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/prada-logo-png_seeklogo-111420.png" alt="Prada"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/chloe-logo-png_seeklogo-29892.png" alt="Chloé"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/givenchy-logo-png_seeklogo-337500.png" alt="Givenchy"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/guerlain-logo-png_seeklogo-64086.png" alt="Guerlain"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/hugo-boss-logo-png_seeklogo-68622.png" alt="Hugo Boss"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/jean-paul-gaultier-logo-png_seeklogo-75250.png" alt="Jean Paul Gaultier"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/kenzo-logo-png_seeklogo-78028.png" alt="Kenzo"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/montblanc-logo-png_seeklogo-617929.png" alt="Montblanc"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/narciso-rodriguez-logo-png_seeklogo-625199.png" alt="Narciso Rodriguez"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/azzaro-logo-png_seeklogo-15043.png" alt="Azzaro"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/burberry-logo-png_seeklogo-337698.png" alt="Burberry"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/viktor-rolf-logo-png_seeklogo-242776.png" alt="Viktor&Rolf"></div>
-    </div>
-    <div class="brands-marquee-inner" aria-hidden="true">
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/dior-logo-png_seeklogo-41696.png" alt="Dior"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/chanel-logo-png_seeklogo-29026.png" alt="Chanel"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/yves-saint-laurent-original-logo-png_seeklogo-155537.png" alt="YSL"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/lancome-paris-logo-png_seeklogo-195564.png" alt="Lancôme"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/thierry-mugler-logo-png_seeklogo-319217.png" alt="Mugler"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/giorgio-armani-logo-png_seeklogo-168420.png" alt="Armani"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/paco-rabanne-logo-png_seeklogo-105259.png" alt="Paco Rabanne"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/creed-1760-logo-png_seeklogo-290764.png" alt="Creed"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/versace-logo-png_seeklogo-148374.png" alt="Versace"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/hermes-logo-png_seeklogo-321332.png" alt="Hermès"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/maison-francis-kurkdjian-logo-png_seeklogo-625488.png" alt="MFK"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/carolina-herrera-logo-png_seeklogo-330307.png" alt="Carolina Herrera"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/gucci-logo-png_seeklogo-64070.png" alt="Gucci"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/valentino-logo-png_seeklogo-147149.png" alt="Valentino"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/parfums-de-marly-logo-png_seeklogo-297710.png" alt="Parfums de Marly"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/tom-ford-logo-png_seeklogo-188943.png" alt="Tom Ford"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/prada-logo-png_seeklogo-111420.png" alt="Prada"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/chloe-logo-png_seeklogo-29892.png" alt="Chloé"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/givenchy-logo-png_seeklogo-337500.png" alt="Givenchy"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/guerlain-logo-png_seeklogo-64086.png" alt="Guerlain"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/hugo-boss-logo-png_seeklogo-68622.png" alt="Hugo Boss"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/jean-paul-gaultier-logo-png_seeklogo-75250.png" alt="Jean Paul Gaultier"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/kenzo-logo-png_seeklogo-78028.png" alt="Kenzo"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/montblanc-logo-png_seeklogo-617929.png" alt="Montblanc"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/narciso-rodriguez-logo-png_seeklogo-625199.png" alt="Narciso Rodriguez"></div>
-      <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/azzaro-logo-png_seeklogo-15043.png" alt="Azzaro"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/burberry-logo-png_seeklogo-337698.png" alt="Burberry"></div>
-      <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/viktor-rolf-logo-png_seeklogo-242776.png" alt="Viktor&Rolf"></div>
-    </div>
-  </div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/dior-logo-png_seeklogo-41696.png" alt="Dior"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/chanel-logo-png_seeklogo-29026.png" alt="Chanel"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/yves-saint-laurent-original-logo-png_seeklogo-155537.png" alt="YSL"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/lancome-paris-logo-png_seeklogo-195564.png" alt="Lancôme"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/thierry-mugler-logo-png_seeklogo-319217.png" alt="Mugler"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/giorgio-armani-logo-png_seeklogo-168420.png" alt="Armani"></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/paco-rabanne-logo-png_seeklogo-105259.png" alt="Paco Rabanne"></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/creed-1760-logo-png_seeklogo-290764.png" alt="Creed"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/versace-logo-png_seeklogo-148374.png" alt="Versace"></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/hermes-logo-png_seeklogo-321332.png" alt="Hermès"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/maison-francis-kurkdjian-logo-png_seeklogo-625488.png" alt="MFK"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/carolina-herrera-logo-png_seeklogo-330307.png" alt="Carolina Herrera"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/gucci-logo-png_seeklogo-64070.png" alt="Gucci"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/valentino-logo-png_seeklogo-147149.png" alt="Valentino"></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/parfums-de-marly-logo-png_seeklogo-297710.png" alt="Parfums de Marly"></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/tom-ford-logo-png_seeklogo-188943.png" alt="Tom Ford"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/prada-logo-png_seeklogo-111420.png" alt="Prada"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/chloe-logo-png_seeklogo-29892.png" alt="Chloé"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/givenchy-logo-png_seeklogo-337500.png" alt="Givenchy"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/guerlain-logo-png_seeklogo-64086.png" alt="Guerlain"></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/hugo-boss-logo-png_seeklogo-68622.png" alt="Hugo Boss"></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/jean-paul-gaultier-logo-png_seeklogo-75250.png" alt="Jean Paul Gaultier"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/kenzo-logo-png_seeklogo-78028.png" alt="Kenzo"></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/montblanc-logo-png_seeklogo-617929.png" alt="Montblanc"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/narciso-rodriguez-logo-png_seeklogo-625199.png" alt="Narciso Rodriguez"></div>
+  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/azzaro-logo-png_seeklogo-15043.png" alt="Azzaro"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/burberry-logo-png_seeklogo-337698.png" alt="Burberry"></div>
+  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/viktor-rolf-logo-png_seeklogo-242776.png" alt="Viktor&Rolf"></div>
 </div>
 </section>
 
@@ -1775,20 +1736,6 @@ footer li a:hover{color:var(--gold)}
 </section>
 
 
-
-<!-- ── MODES DE PAIEMENT ── -->
-<section class="payment-strip">
-  <div class="payment-strip-inner">
-    <div class="payment-strip-label">Modes de paiement acceptés</div>
-    <div class="payment-methods" id="paymentMethods">
-      <div class="pm-pill"><span class="pm-pill-icon">💵</span>Cash à la livraison</div>
-      <div class="pm-pill"><span class="pm-pill-icon">🟠</span>CashPlus</div>
-      <div class="pm-pill"><span class="pm-pill-icon">🟡</span>Wafacash</div>
-      <div class="pm-pill"><span class="pm-pill-icon">🟤</span>Barid Cash</div>
-      <div class="pm-pill"><span class="pm-pill-icon">🏦</span>Virement Bancaire</div>
-    </div>
-  </div>
-</section>
 
 <!-- ── 11. NEWSLETTER WHATSAPP ── -->
 <section class="reveal home-newsletter">
@@ -4795,20 +4742,6 @@ function renderReviews(p){
 ${cards}
 </div>`;
 }
-
-// ══════════════ PAYMENT STRIP STAGGER
-(function initPaymentStrip(){
-  const strip=document.getElementById('paymentMethods');
-  if(!strip)return;
-  const pills=strip.querySelectorAll('.pm-pill');
-  const obs=new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting){
-      pills.forEach((p,i)=>setTimeout(()=>p.classList.add('visible'),i*100));
-      obs.disconnect();
-    }
-  },{threshold:.3});
-  obs.observe(strip);
-})();
 
 // ══════════════ SCROLL REVEAL (extended)
 function initReveal(){
