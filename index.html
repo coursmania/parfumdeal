@@ -1332,8 +1332,8 @@ footer li a:hover{color:var(--gold)}
 </section>
 
 <!-- ── 3. NOS COLLECTIONS ── -->
-<section class="home-collections">
-<div class="home-sec-header">
+<section class="reveal home-collections">
+<div class="home-sec-header reveal">
   <div><h2>Nos <em>Collections</em></h2></div>
   <a class="see-all" onclick="go('femme')">Voir tout →</a>
 </div>
@@ -1366,8 +1366,8 @@ footer li a:hover{color:var(--gold)}
 </section>
 
 <!-- ── 4. MEILLEURES VENTES ── -->
-<section class="home-bestsellers">
-<div class="home-sec-header">
+<section class="reveal home-bestsellers">
+<div class="home-sec-header reveal">
   <div><h2>Les <em>Meilleures Ventes</em></h2><p>Les parfums les plus commandés au Maroc</p></div>
   <a class="see-all" onclick="go('femme')">Voir tous les parfums →</a>
 </div>
@@ -1379,7 +1379,7 @@ footer li a:hover{color:var(--gold)}
 </section>
 
 <!-- ── 5. NOS CORNERS ── -->
-<section class="home-corners">
+<section class="reveal home-corners">
   <div class="corner-card" onclick="go('femme')">
     <div class="ph-img" style="position:absolute;inset:0">[ PHOTO AMBIANCE FEMME CORNER · 400 × 340 px ]</div>
     <div class="corner-overlay">
@@ -1407,7 +1407,7 @@ footer li a:hover{color:var(--gold)}
 </section>
 
 <!-- ── 6. FAMILLES OLFACTIVES ── -->
-<section class="home-families">
+<section class="reveal home-families">
 <div class="home-sec-header center">
   <h2>Nos <em>Familles Olfactives</em></h2>
   <p>Trouvez le parfum qui vous correspond</p>
@@ -1435,8 +1435,8 @@ footer li a:hover{color:var(--gold)}
 </section>
 
 <!-- ── 7. 100 DH MAXI PARFUM ── -->
-<section class="home-budget">
-<div class="home-sec-header">
+<section class="reveal home-budget">
+<div class="home-sec-header reveal">
   <div><h2>100 DH · <em>Maxi Parfum</em></h2><p>Le luxe olfactif à votre portée</p></div>
   <a class="see-all" onclick="go('femme')">Voir toutes les offres →</a>
 </div>
@@ -1451,7 +1451,7 @@ footer li a:hover{color:var(--gold)}
 </section>
 
 <!-- ── 8. COUPS DE CŒUR ── -->
-<section class="home-crush">
+<section class="reveal home-crush">
   <div class="crush-card" onclick="goProduct('f41')">
     <div class="ph-img" style="position:absolute;inset:0">[ PHOTO COUP DE CŒUR FEMME · 800 × 420 px ]</div>
     <div class="crush-overlay"></div>
@@ -1473,7 +1473,7 @@ footer li a:hover{color:var(--gold)}
 </section>
 
 <!-- ── 9. NOS MARQUES ── -->
-<section class="home-brands-sec">
+<section class="reveal home-brands-sec">
 <div class="home-sec-header center">
   <h2>Nos <em>Grandes Marques</em></h2>
   <p>16 maisons de parfumerie mondiales · 100 DH le flacon 33ml</p>
@@ -1499,7 +1499,7 @@ footer li a:hover{color:var(--gold)}
 </section>
 
 <!-- ── 10. AVANTAGES ── -->
-<section class="home-avantages">
+<section class="reveal home-avantages">
   <div class="avantage-item">
     <div class="av-icon">✨</div>
     <div class="av-label">Qualité Premium</div>
@@ -1527,8 +1527,43 @@ footer li a:hover{color:var(--gold)}
   </div>
 </section>
 
+
+<!-- ── 12. FAQ ── -->
+<section class="reveal" style="max-width:900px;margin:0 auto;padding:60px 24px">
+<div class="home-sec-header center" style="margin-bottom:32px">
+  <h2>Questions <em>Fréquentes</em></h2>
+  <p>Tout ce que vous devez savoir sur nos parfums 33ml</p>
+</div>
+<div class="seo-faq">
+  <div class="seo-faq-item">
+    <div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle est la tenue de vos parfums 33ml ? <span>+</span></div>
+    <div class="seo-faq-a">Nos parfums offrent une tenue de 6 à 8 heures sur la peau. Les familles orientales et boisées tiennent jusqu'à 10-12h. Pour maximiser la tenue, appliquez sur les points de chaleur (poignets, cou, creux du coude) et hydratez bien la peau avant.</div>
+  </div>
+  <div class="seo-faq-item">
+    <div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Comment se passe la livraison au Maroc ? <span>+</span></div>
+    <div class="seo-faq-a">Nous livrons partout au Maroc en 24 à 48h via des transporteurs fiables. La livraison coûte 15 DH pour 1 ou 2 flacons. Elle est gratuite à partir de 3 flacons commandés. Le paiement se fait à la réception — aucune avance nécessaire.</div>
+  </div>
+  <div class="seo-faq-item">
+    <div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Vos parfums sont-ils des copies ou des originaux ? <span>+</span></div>
+    <div class="seo-faq-a">Nos parfums sont des fragrances inspirées des grandes maisons de parfumerie. Ils utilisent des matières premières de haute qualité et sont fabriqués par des parfumeurs professionnels. Ils ne sont pas des contrefaçons — ce sont des créations originales inspirées de profils olfactifs iconiques, vendues légalement en tant que telles.</div>
+  </div>
+  <div class="seo-faq-item">
+    <div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Comment passer commande ? <span>+</span></div>
+    <div class="seo-faq-a">Deux façons de commander : (1) Ajoutez vos parfums au panier et cliquez "Commander via WhatsApp" — votre sélection est transmise automatiquement. (2) Contactez-nous directement sur WhatsApp en précisant les parfums souhaités, votre ville et votre numéro. Réponse garantie en quelques minutes.</div>
+  </div>
+  <div class="seo-faq-item">
+    <div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Quels sont les modes de paiement acceptés ? <span>+</span></div>
+    <div class="seo-faq-a">Nous acceptons le paiement à la réception (cash au livreur), le virement bancaire, CashPlus, Wafacash et Barid Cash. Aucun paiement en ligne n'est requis. Vous payez uniquement à la réception de votre commande.</div>
+  </div>
+  <div class="seo-faq-item">
+    <div class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">Peut-on retourner un parfum ? <span>+</span></div>
+    <div class="seo-faq-a">Si votre commande arrive endommagée ou ne correspond pas à ce que vous avez commandé, nous remplaçons immédiatement le produit. Contactez-nous via WhatsApp dans les 24h suivant la réception avec une photo du produit concerné.</div>
+  </div>
+</div>
+</section>
+
 <!-- ── 11. NEWSLETTER WHATSAPP ── -->
-<section class="home-newsletter">
+<section class="reveal home-newsletter">
   <div class="nl-icon">💬</div>
   <h2>Offres Exclusives sur <em>WhatsApp</em></h2>
   <p>Rejoignez notre liste et recevez nos promotions et nouveautés en avant-première. Réponse garantie en quelques minutes.</p>
@@ -2383,13 +2418,14 @@ Commander via WhatsApp
 <div class="exit-popup" id="exitPopup">
 <div class="exit-box">
 <button class="exit-close-btn" onclick="closeExitPopup()">✕</button>
-<p style="font-size:32px;margin-bottom:10px">🎁</p>
-<h3>Avant de <em>partir</em>...</h3>
-<p>Un cadeau spécial pour votre première commande. Mentionnez ce code sur WhatsApp !</p>
+<p style="font-size:32px;margin-bottom:10px">⚡</p>
+<h3>Offre <em>exclusive</em> — 10 min restantes</h3>
+<p style="color:var(--txt2);font-size:13px;margin-bottom:14px">Rejoignez <strong>+1 200 clients</strong> qui ont déjà commandé. Code valable uniquement aujourd'hui :</p>
 <div class="promo-code-box">
 <div class="code">MAROC10</div>
-<div class="code-desc">-10 DH sur votre première commande dès 2 flacons</div>
+<div class="code-desc">🎁 -10 DH dès 2 flacons · Livraison offerte dès 3 flacons</div>
 </div>
+<p style="font-size:11px;color:var(--txt3);margin-bottom:14px">✓ Paiement à la réception · ✓ Livraison 24-48h · ✓ Sans engagement</p>
 <button class="btn-p" onclick="window.open('https://wa.me/212600000000?text='+encodeURIComponent('Bonjour ! Je voudrais utiliser le code MAROC10 pour ma commande.'),'_blank');closeExitPopup()" style="width:100%">Commander avec le code →</button>
 <div class="exit-no" onclick="closeExitPopup()">Non merci, je renonce à l'offre</div>
 </div>
@@ -2863,6 +2899,7 @@ el.innerHTML=items.map(p=>cardHTML(p,g)).join('');
 }
 
 // ══════════════ ROUTING
+const _canonMap={home:'https://parfum33ml.ma',femme:'https://parfum33ml.ma/parfums-femme',homme:'https://parfum33ml.ma/parfums-homme',blog:'https://parfum33ml.ma/blog',coffrets:'https://parfum33ml.ma/coffrets',casablanca:'https://parfum33ml.ma/parfum-casablanca',rabat:'https://parfum33ml.ma/parfum-rabat',marrakech:'https://parfum33ml.ma/parfum-marrakech'};
 function go(page,anchor){
 const _sc=document.getElementById('stickyProdCta');if(_sc)_sc.classList.remove('show');
 if(anchor){
@@ -2879,6 +2916,7 @@ document.getElementById('page-'+page).classList.add('active');
 updateNavActive(page);
 window.scrollTo({top:0});
 if(page==='wishlist')renderWishlistPage();
+const _cl=document.querySelector('link[rel="canonical"]');if(_cl&&_canonMap[page])_cl.href=_canonMap[page];
 document.title=page==='home'?'Parfum33ml.ma | Parfums 33ml au Maroc à 100 DH':page==='femme'?'Parfums Femme 33ml Maroc | 50 Fragrances à 100 DH':page==='homme'?'Parfums Homme 33ml Maroc | 50 Fragrances à 100 DH':page==='wishlist'?'Mes Favoris | Parfum33ml.ma':page==='blog'?'Blog & Conseils Parfum | Parfum33ml.ma':page==='coffrets'?'Coffrets Cadeaux Parfum Maroc | Dès 180 DH | Parfum33ml.ma':page==='casablanca'?'Parfum 33ml Casablanca | Livraison 24h | 100 DH | Parfum33ml.ma':page==='rabat'?'Parfum 33ml Rabat | Livraison 24h | 100 DH | Parfum33ml.ma':page==='marrakech'?'Parfum 33ml Marrakech | Livraison 24h | 100 DH | Parfum33ml.ma':'Parfum33ml.ma';
 initReveal();setTimeout(()=>{initTilt();staggerCards()},100);
 });
@@ -2903,6 +2941,9 @@ document.title=p.name+' '+p.brand+' 33ml au Maroc 100 DH | Parfum33ml.ma';
 const _md=document.querySelector('meta[name="description"]');
 if(_md)_md.content='Achetez '+p.name+' de '+p.brand+' en 33ml au Maroc à 100 DH. '+p.desc.slice(0,120).replace(/<[^>]+>/g,'')+' ... Livraison 24-48h partout au Maroc. Gratuite dès 3 flacons.';
 // SEO: inject Product schema
+let _bc=document.getElementById('bc-schema-ld');
+if(!_bc){_bc=document.createElement('script');_bc.type='application/ld+json';_bc.id='bc-schema-ld';document.head.appendChild(_bc);}
+_bc.textContent=JSON.stringify({'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Accueil','item':'https://parfum33ml.ma'},{'@type':'ListItem','position':2,'name':p.gender==='femme'?'Parfums Femme':'Parfums Homme','item':'https://parfum33ml.ma/'+p.gender},{'@type':'ListItem','position':3,'name':p.name+' '+p.brand,'item':'https://parfum33ml.ma/'+p.id}]});
 let _sc=document.getElementById('prod-schema-ld');
 if(!_sc){_sc=document.createElement('script');_sc.type='application/ld+json';_sc.id='prod-schema-ld';document.head.appendChild(_sc);}
 _sc.textContent=JSON.stringify({'@context':'https://schema.org','@type':'Product','name':p.name+' '+p.brand+' 33ml','brand':{'@type':'Brand','name':p.brand},'description':p.desc.replace(/<[^>]+>/g,''),'sku':p.id,'offers':{'@type':'Offer','price':'100','priceCurrency':'MAD','availability':'https://schema.org/InStock','url':'https://parfum33ml.ma/'+p.id,'seller':{'@type':'Organization','name':'Parfum33ml.ma'}},'aggregateRating':{'@type':'AggregateRating','ratingValue':p.rating,'reviewCount':p.reviews,'bestRating':'5','worstRating':'1'}});
@@ -3008,6 +3049,19 @@ WhatsApp
 }).join('')}</div>
 </div>
 ${renderReviews(p)}
+
+
+<div style="max-width:900px;margin:32px auto 0;padding:0 24px">
+<div style="background:linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.04));border:1px solid var(--border-h);border-radius:20px;padding:28px;text-align:center">
+<p style="font-size:12px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px">💡 BON PLAN</p>
+<h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commandez 5 parfums et économisez</h3>
+<p style="color:var(--txt2);font-size:13px;margin-bottom:16px">Pack Découverte : 5 parfums au choix pour <strong style="color:var(--gold)">450 DH</strong> au lieu de 500 DH — Livraison offerte incluse</p>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+<button class="btn-p" onclick="go('coffrets')" style="font-size:12px;padding:10px 24px">Voir les coffrets →</button>
+<button class="btn-o" onclick="go('femme')" style="font-size:12px;padding:10px 24px">Explorer le catalogue →</button>
+</div>
+</div>
+</div>
 `;
 // Sticky CTA mobile
 const spcName=document.getElementById('spcName');
@@ -3041,6 +3095,8 @@ const ex=cart.find(c=>c.id===id);
 if(ex)ex.qty+=currentProdQty;else cart.push({id,name,brand,qty:currentProdQty,price});
 updateCart();saveState();
 showToast(name+' × '+currentProdQty+(price<100?' ('+price+' DH -20%)':'')+' ajouté au panier ✓');
+const cartBtn=document.querySelector('.cart-btn');
+if(cartBtn){cartBtn.classList.remove('cart-bounce');void cartBtn.offsetWidth;cartBtn.classList.add('cart-bounce');setTimeout(()=>cartBtn.classList.remove('cart-bounce'),400);}
 }
 
 function copyLink(id){
