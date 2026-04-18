@@ -51,7 +51,7 @@ a{color:inherit;text-decoration:none}button{cursor:pointer;font-family:inherit;b
 header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .h-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:16px;height:62px;padding:0 24px}
 .logo{cursor:pointer;flex-shrink:0;position:relative;display:flex;align-items:center}
-.logo img{height:44px;width:auto;mix-blend-mode:lighten;transition:.3s}
+.logo img{height:50px;width:auto;mix-blend-mode:lighten;transition:.3s}
 .logo:hover img{transform:scale(1.04);filter:brightness(1.1)}
 .h-search{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:8px 16px;font-size:12px;color:var(--txt3);cursor:pointer;transition:.3s;flex:1;max-width:280px}
 .h-search:hover{border-color:var(--gold)}
@@ -1231,7 +1231,7 @@ footer li a:hover{color:var(--gold)}
 <!-- HEADER -->
 <header>
 <div class="h-inner">
-<span class="logo" onclick="go('home')"><img src="dossier%20parfum/logo.jpg" alt="Parfum33ml.ma — L'Art du Parfum"></span>
+<span class="logo" onclick="go('home')"><img src="dossier%20parfum/logo-h.png" alt="Parfum33ml.ma — L'Art du Parfum"></span>
 <div class="h-search" onclick="openSearch()">🔍 <span>Rechercher un parfum...</span></div>
 <ul class="topnav">
 <li><a onclick="go('home')" id="nav-home" class="active">Accueil</a></li>
@@ -1369,7 +1369,7 @@ footer li a:hover{color:var(--gold)}
 <!-- MOBILE NAV DRAWER -->
 <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
 <div class="mn-header">
-  <span class="mn-logo">Parfum33ml</span>
+  <img src="dossier%20parfum/logo-h.png" alt="Parfum33ml.ma" style="height:40px;width:auto;mix-blend-mode:lighten">
   <div class="mn-close" onclick="toggleMenu()">✕</div>
 </div>
 <div class="mn-section">
@@ -2458,7 +2458,7 @@ footer li a:hover{color:var(--gold)}
 <footer id="contact">
 <div class="footer-grid">
 <div class="footer-brand">
-<span class="logo" onclick="go('home')"><img src="dossier%20parfum/logo.jpg" alt="Parfum33ml.ma — L'Art du Parfum"></span>
+<span class="logo" onclick="go('home')"><img src="dossier%20parfum/logo-h.png" alt="Parfum33ml.ma — L'Art du Parfum" style="height:70px"></span>
 <p>+100 fragrances inspirées en 33ml à 100 DH. Livraison rapide partout au Maroc.</p>
 <div class="social-links">
 <a href="https://www.instagram.com/parfum33ml.ma" target="_blank" class="social-link social-ig" title="Instagram">
