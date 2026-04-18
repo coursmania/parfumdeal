@@ -560,20 +560,6 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .wishlist-empty h3{font-family:var(--ff-d);font-size:24px;font-weight:600;margin-bottom:10px}
 .wishlist-empty p{color:var(--txt2);margin-bottom:24px}
 
-/* ── QUIZ ────────────────────────────── */
-.quiz-wrap{max-width:700px;margin:0 auto;padding:0 24px}
-.quiz-box{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px 36px;text-align:center}
-.quiz-step{display:none}.quiz-step.active{display:block;animation:pageIn .4s ease}
-.quiz-q{font-family:var(--ff-d);font-size:24px;font-weight:700;margin-bottom:24px}
-.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.quiz-opt{padding:16px;border:1px solid var(--border);border-radius:14px;font-size:13px;font-weight:500;cursor:pointer;transition:.3s;text-align:center}
-.quiz-opt:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,.04)}
-.quiz-opt.selected{border-color:var(--gold);background:rgba(201,169,110,.08);color:var(--gold)}
-.quiz-progress{display:flex;gap:6px;justify-content:center;margin-bottom:24px}
-.quiz-dot{width:10px;height:10px;border-radius:50%;background:var(--border);transition:.3s}
-.quiz-dot.active{background:var(--gold);transform:scale(1.2)}
-.quiz-dot.done{background:var(--gold-d)}
-.quiz-result h3{font-family:var(--ff-d);font-size:22px;font-weight:700;margin-bottom:16px}
 
 /* ── TESTIMONIALS ────────────────────── */
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1100px;margin:0 auto}
@@ -939,7 +925,6 @@ footer li a:hover{color:var(--gold)}
 .newsletter-form{flex-direction:column;align-items:stretch}
 .apply-points{grid-template-columns:1fr 1fr}
 .potm-card{grid-template-columns:1fr}
-.quiz-opts{grid-template-columns:1fr}
 .packs-grid{grid-template-columns:1fr}
 .pack-detail-grid{grid-template-columns:1fr !important}
 .potm-detail-grid{grid-template-columns:1fr !important}
@@ -1399,7 +1384,6 @@ footer li a:hover{color:var(--gold)}
 </div>
 <div class="mn-section">
   <div class="mn-title">Découvrir</div>
-  <a onclick="go('home','quiz-section');toggleMenu()">🧪 Quiz — Quel parfum ?</a>
   <a onclick="go('blog');toggleMenu()">📖 Blog & Conseils</a>
   <a onclick="go('wishlist');toggleMenu()">♡ Mes Favoris (<span id="wishCountMobile">0</span>)</a>
 </div>
@@ -1532,7 +1516,7 @@ footer li a:hover{color:var(--gold)}
     <h2 class="niche-title">Nos <em>Collections</em></h2>
     <div class="niche-stars"><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span></div>
   </div>
-  <a class="see-all" onclick="go('femme')" style="color:var(--gold);opacity:.7">Voir tout →</a>
+  <a class="see-all" onclick="go('femme');setTimeout(()=>sbFilterF('all','famille',document.getElementById('sbF-all')),600)" style="color:var(--gold);opacity:.7">Voir tout →</a>
 </div>
 <div class="collections-grid">
   <!-- Floral : grande tuile 2 lignes -->
@@ -1594,7 +1578,7 @@ footer li a:hover{color:var(--gold)}
     <h2 class="niche-title">Meilleures <em>Ventes</em></h2>
     <div class="niche-stars"><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span></div>
   </div>
-  <a class="see-all" onclick="go('femme')" style="color:var(--gold);opacity:.7">Voir tous les parfums →</a>
+  <a class="see-all" onclick="go('femme');setTimeout(()=>sbFilterF('all','famille',document.getElementById('sbF-all')),600)" style="color:var(--gold);opacity:.7">Voir tous les parfums →</a>
 </div>
 <div class="bs-carousel-wrap">
   <button class="bs-btn bs-prev" onclick="bsMove('bsTrack',-1)">&#8249;</button>
@@ -1643,7 +1627,7 @@ footer li a:hover{color:var(--gold)}
     <h2 class="niche-title">Parfums de <em>Niche</em></h2>
     <div class="niche-stars"><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span></div>
   </div>
-  <a class="see-all" onclick="go('femme')" style="color:var(--gold);opacity:.7">Voir toute la collection →</a>
+  <a class="see-all" onclick="go('femme');setTimeout(()=>sbFilterF('all','famille',document.getElementById('sbF-all')),600)" style="color:var(--gold);opacity:.7">Voir toute la collection →</a>
 </div>
 <div class="bs-carousel-wrap">
   <button class="bs-btn bs-prev" onclick="bsMove('nicheTrack',-1)">&#8249;</button>
@@ -1684,34 +1668,34 @@ footer li a:hover{color:var(--gold)}
   <p>Fragrances inspirées de 28 grandes maisons · 100 DH le flacon 33ml</p>
 </div>
 <div class="brands-logo-grid" id="brandsLogoGrid">
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/dior-logo-png_seeklogo-41696.png" alt="Dior"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/chanel-logo-png_seeklogo-29026.png" alt="Chanel"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/yves-saint-laurent-original-logo-png_seeklogo-155537.png" alt="YSL"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/lancome-paris-logo-png_seeklogo-195564.png" alt="Lancôme"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/thierry-mugler-logo-png_seeklogo-319217.png" alt="Mugler"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/giorgio-armani-logo-png_seeklogo-168420.png" alt="Armani"></div>
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/paco-rabanne-logo-png_seeklogo-105259.png" alt="Paco Rabanne"></div>
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/creed-1760-logo-png_seeklogo-290764.png" alt="Creed"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/versace-logo-png_seeklogo-148374.png" alt="Versace"></div>
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/hermes-logo-png_seeklogo-321332.png" alt="Hermès"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/maison-francis-kurkdjian-logo-png_seeklogo-625488.png" alt="MFK"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/carolina-herrera-logo-png_seeklogo-330307.png" alt="Carolina Herrera"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/gucci-logo-png_seeklogo-64070.png" alt="Gucci"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/valentino-logo-png_seeklogo-147149.png" alt="Valentino"></div>
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/parfums-de-marly-logo-png_seeklogo-297710.png" alt="Parfums de Marly"></div>
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/tom-ford-logo-png_seeklogo-188943.png" alt="Tom Ford"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/prada-logo-png_seeklogo-111420.png" alt="Prada"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/chloe-logo-png_seeklogo-29892.png" alt="Chloé"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/givenchy-logo-png_seeklogo-337500.png" alt="Givenchy"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/guerlain-logo-png_seeklogo-64086.png" alt="Guerlain"></div>
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/hugo-boss-logo-png_seeklogo-68622.png" alt="Hugo Boss"></div>
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/jean-paul-gaultier-logo-png_seeklogo-75250.png" alt="Jean Paul Gaultier"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/kenzo-logo-png_seeklogo-78028.png" alt="Kenzo"></div>
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/montblanc-logo-png_seeklogo-617929.png" alt="Montblanc"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/narciso-rodriguez-logo-png_seeklogo-625199.png" alt="Narciso Rodriguez"></div>
-  <div class="brand-logo-tile" onclick="go('homme')"><img src="logos/azzaro-logo-png_seeklogo-15043.png" alt="Azzaro"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><img src="logos/burberry-logo-png_seeklogo-337698.png" alt="Burberry"></div>
-  <div class="brand-logo-tile" onclick="go('femme')"><span style="font-family:var(--ff-d);font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.82);text-align:center;text-transform:uppercase;line-height:1.4">Viktor<br>&amp;<br>Rolf</span></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Dior'),600)"><img src="logos/dior-logo-png_seeklogo-41696.png" alt="Dior"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Chanel'),600)"><img src="logos/chanel-logo-png_seeklogo-29026.png" alt="Chanel"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','YSL'),600)"><img src="logos/yves-saint-laurent-original-logo-png_seeklogo-155537.png" alt="YSL"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Lancôme'),600)"><img src="logos/lancome-paris-logo-png_seeklogo-195564.png" alt="Lancôme"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Mugler'),600)"><img src="logos/thierry-mugler-logo-png_seeklogo-319217.png" alt="Mugler"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Giorgio Armani'),600)"><img src="logos/giorgio-armani-logo-png_seeklogo-168420.png" alt="Armani"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Paco Rabanne'),600)"><img src="logos/paco-rabanne-logo-png_seeklogo-105259.png" alt="Paco Rabanne"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Creed'),600)"><img src="logos/creed-1760-logo-png_seeklogo-290764.png" alt="Creed"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Versace'),600)"><img src="logos/versace-logo-png_seeklogo-148374.png" alt="Versace"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Hermès'),600)"><img src="logos/hermes-logo-png_seeklogo-321332.png" alt="Hermès"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','MFK'),600)"><img src="logos/maison-francis-kurkdjian-logo-png_seeklogo-625488.png" alt="MFK"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Carolina Herrera'),600)"><img src="logos/carolina-herrera-logo-png_seeklogo-330307.png" alt="Carolina Herrera"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Gucci'),600)"><img src="logos/gucci-logo-png_seeklogo-64070.png" alt="Gucci"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Valentino'),600)"><img src="logos/valentino-logo-png_seeklogo-147149.png" alt="Valentino"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Parfums de Marly'),600)"><img src="logos/parfums-de-marly-logo-png_seeklogo-297710.png" alt="Parfums de Marly"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Tom Ford'),600)"><img src="logos/tom-ford-logo-png_seeklogo-188943.png" alt="Tom Ford"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Prada'),600)"><img src="logos/prada-logo-png_seeklogo-111420.png" alt="Prada"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Chloé'),600)"><img src="logos/chloe-logo-png_seeklogo-29892.png" alt="Chloé"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Givenchy'),600)"><img src="logos/givenchy-logo-png_seeklogo-337500.png" alt="Givenchy"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Guerlain'),600)"><img src="logos/guerlain-logo-png_seeklogo-64086.png" alt="Guerlain"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Hugo Boss'),600)"><img src="logos/hugo-boss-logo-png_seeklogo-68622.png" alt="Hugo Boss"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Jean Paul Gaultier'),600)"><img src="logos/jean-paul-gaultier-logo-png_seeklogo-75250.png" alt="Jean Paul Gaultier"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Kenzo'),600)"><img src="logos/kenzo-logo-png_seeklogo-78028.png" alt="Kenzo"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Montblanc'),600)"><img src="logos/montblanc-logo-png_seeklogo-617929.png" alt="Montblanc"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Narciso Rodriguez'),600)"><img src="logos/narciso-rodriguez-logo-png_seeklogo-625199.png" alt="Narciso Rodriguez"></div>
+  <div class="brand-logo-tile" onclick="go('homme');setTimeout(()=>filterByBrand('allH','Azzaro'),600)"><img src="logos/azzaro-logo-png_seeklogo-15043.png" alt="Azzaro"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Burberry'),600)"><img src="logos/burberry-logo-png_seeklogo-337698.png" alt="Burberry"></div>
+  <div class="brand-logo-tile" onclick="go('femme');setTimeout(()=>filterByBrand('allF','Viktor&Rolf'),600)"><span style="font-family:var(--ff-d);font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.82);text-align:center;text-transform:uppercase;line-height:1.4">Viktor<br>&amp;<br>Rolf</span></div>
 </div>
 <p style="text-align:center;font-size:11px;color:var(--txt3);margin:16px auto 0;max-width:600px;line-height:1.6;opacity:.7">Nos fragrances sont inspirées de ces grandes maisons de parfumerie.</p>
 </section>
@@ -2086,12 +2070,6 @@ footer li a:hover{color:var(--gold)}
 <h4 style="font-size:14px;margin-bottom:6px">Parfums Homme</h4>
 <p style="color:var(--txt2);font-size:12px">50 fragrances disponibles</p>
 <button class="btn-o" style="font-size:11px;padding:8px 14px;margin-top:12px;width:100%" onclick="go('homme')">Explorer →</button>
-</div>
-<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center">
-<div style="font-size:32px;margin-bottom:8px">🧪</div>
-<h4 style="font-size:14px;margin-bottom:6px">Quiz Parfum</h4>
-<p style="color:var(--txt2);font-size:12px">Trouvez vos 5 parfums idéaux</p>
-<button class="btn-o" style="font-size:11px;padding:8px 14px;margin-top:12px;width:100%" onclick="go('home','quiz-section')">Faire le quiz →</button>
 </div>
 </div>
 <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px">
@@ -2493,7 +2471,6 @@ footer li a:hover{color:var(--gold)}
 <li><a onclick="go('pack-collection')">Pack Collection 800 DH</a></li>
 <li><a onclick="go('potm')">🔥 Parfum du Mois</a></li>
 <li><a onclick="go('livraison-gratuite')">🚚 Livraison gratuite dès 3</a></li>
-<li><a onclick="go('home','quiz-section')">Quiz Parfum</a></li>
 <li><a onclick="go('wishlist')">Mes Favoris</a></li>
 <li><a onclick="go('home','faq')">FAQ</a></li>
 </ul>
@@ -3103,6 +3080,7 @@ setTimeout(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView
 initReveal();setTimeout(()=>{initTilt();staggerCards()},100);
 return;
 }
+history.pushState({page},'','#'+page);
 curtainTransition(()=>{
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 document.getElementById('page-'+page).classList.add('active');
@@ -3115,6 +3093,7 @@ initReveal();setTimeout(()=>{initTilt();staggerCards()},100);
 });
 }
 
+window.addEventListener('popstate',e=>{const p=(e.state&&e.state.page)||'home';document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active'));document.getElementById('page-'+p).classList.add('active');updateNavActive(p);window.scrollTo({top:0});initReveal();setTimeout(()=>{initTilt();staggerCards()},100);});
 function updateNavActive(page){
 document.querySelectorAll('.topnav>li>a').forEach(a=>a.classList.remove('active'));
 const nav=document.getElementById('nav-'+page);
@@ -3571,53 +3550,6 @@ document.querySelectorAll('.occ-card').forEach(c=>c.classList.remove('active'));
 document.getElementById('occResultSection').style.display='none';
 }
 
-// ══════════════ QUIZ
-const quizAnswers={};let quizStep=0;
-function initQuizDots(){
-const pr=document.getElementById('quizProgress');if(!pr)return;
-pr.innerHTML='';
-for(let i=0;i<5;i++){const d=document.createElement('div');d.className='quiz-dot'+(i===0?' active':'');pr.appendChild(d)}
-}
-initQuizDots();
-
-function quizAnswer(step,val){
-quizAnswers[step]=val;
-const opts=document.querySelectorAll(`.quiz-step[data-step="${step}"] .quiz-opt`);
-opts.forEach(o=>{o.classList.remove('selected');if(o.getAttribute('onclick').includes("'"+val+"'"))o.classList.add('selected')});
-setTimeout(()=>{
-quizStep=step+1;
-document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
-if(quizStep>=4){showQuizResults();document.querySelector('.quiz-step[data-step="result"]').classList.add('active')}
-else document.querySelector(`.quiz-step[data-step="${quizStep}"]`).classList.add('active');
-const dots=document.querySelectorAll('.quiz-dot');
-dots.forEach((d,i)=>{d.className='quiz-dot'+(i<quizStep?' done':'')+(i===quizStep?' active':'')});
-},400);
-}
-
-function showQuizResults(){
-const g=quizAnswers[2]||'femme';
-const pool=g==='homme'?HE:FE;
-let results=pool;
-const amb=quizAnswers[1];
-if(amb==='frais')results=results.filter(p=>['frais','aquatique','fruité'].includes(p.family));
-else if(amb==='sensuel')results=results.filter(p=>['oriental','musqué','cuiré'].includes(p.family));
-else if(amb==='sucré')results=results.filter(p=>['gourmand','fruité'].includes(p.family));
-else if(amb==='puissant')results=results.filter(p=>['boisé','épicé','cuiré','oriental'].includes(p.family));
-if(quizAnswers[3]==='été')results=results.filter(p=>['frais','aquatique','fruité','floral'].includes(p.family));
-if(results.length<3)results=pool;
-results=results.sort(()=>Math.random()-.5).slice(0,4);
-document.getElementById('quizResults').innerHTML=results.map(p=>cardHTML(p,g)).join('');
-document.querySelectorAll('.quiz-dot').forEach(d=>d.className='quiz-dot done');
-setTimeout(()=>{initTilt();staggerCards()},100);
-}
-
-function resetQuiz(){
-quizStep=0;Object.keys(quizAnswers).forEach(k=>delete quizAnswers[k]);
-document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
-document.querySelector('.quiz-step[data-step="0"]').classList.add('active');
-document.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('selected'));
-initQuizDots();
-}
 
 // ══════════════ LIVE COUNTERS
 const liveCities=["Casablanca","Rabat","Marrakech","Tanger","Fès","Agadir","Oujda","Meknès","Kénitra","Tétouan"];
