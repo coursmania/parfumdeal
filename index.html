@@ -1501,16 +1501,25 @@ footer li a:hover{color:var(--gold)}
   <!-- Droite : Offre du Mois -->
   <div class="vedette-card" onclick="go('potm')">
     <div class="vedette-img-wrap">
-      <img src="dossier%20parfum/parfum/black%20opium%20600-800.jpg" alt="Offre du Mois Parfum33ml.ma">
-      <div style="position:absolute;top:16px;left:16px;background:var(--rose);color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:.5px">⚡ OFFRE DU MOIS</div>
+      <img src="dossier%20parfum/baniere/banniere-offre-final.png" alt="Offre du Mois Parfum33ml.ma" style="object-position:center top">
+      <!-- Overlay OFFRE DU MOIS -->
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;padding-right:32px;background:linear-gradient(90deg,transparent 40%,rgba(0,0,0,.55) 100%);pointer-events:none">
+        <div style="text-align:right">
+          <div style="font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:rgba(201,169,110,.8);margin-bottom:6px">Sélection Exclusive</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,38px);font-weight:700;color:#fff;line-height:1;letter-spacing:1px">OFFRE</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,38px);font-weight:700;color:var(--gold);line-height:1;letter-spacing:1px">DU MOIS</div>
+          <div style="width:40px;height:1px;background:var(--gold);margin:10px 0 10px auto;opacity:.7"></div>
+          <div style="font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1px">Prix réduit · Limité</div>
+        </div>
+      </div>
     </div>
     <div class="vedette-info">
       <div class="vedette-text">
-        <div class="vedette-brand">Offre Exclusive</div>
+        <div class="vedette-brand">⚡ Offre Exclusive</div>
         <div class="vedette-name">Offre du Mois</div>
-        <div class="vedette-sub">Parfum sélectionné ce mois · Prix réduit · Limité</div>
+        <div class="vedette-sub">Parfum sélectionné · Prix réduit · Stock limité</div>
       </div>
-      <span class="vedette-cta">Découvrir l'offre →</span>
+      <span class="vedette-cta">Découvrir →</span>
     </div>
   </div>
 </section>
