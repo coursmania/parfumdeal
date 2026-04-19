@@ -3138,9 +3138,18 @@ if(page==='femme'||page==='homme'){
   const _arts=Object.entries(ARTICLES||{});
   _setSchema('cat-schema-ld',{'@context':'https://schema.org','@type':'ItemList','name':'Blog & Conseils Parfum Maroc','url':_canonBase+'/blog','numberOfItems':_arts.length,'itemListElement':_arts.map(([,v],i)=>({'@type':'ListItem','position':i+1,'name':v.title.replace(/<[^>]+>/g,''),'url':_canonBase+'/blog/'+slugify(v.title.replace(/<[^>]+>/g,''))}))});
 }else if(page==='pack-couple'||page==='pack-decouverte'||page==='pack-collection'){
-  const _pd={'pack-couple':['Pack Couple – 2 Parfums 33ml',_pageDesc['pack-couple'],'180'],'pack-decouverte':['Pack Découverte – 5 Parfums 33ml',_pageDesc['pack-decouverte'],'450'],'pack-collection':['Pack Collection – 10 Parfums 33ml',_pageDesc['pack-collection'],'800']};
-  const [_pn,_pd2,_pp]=_pd[page];
+  const _pd={'pack-couple':['Pack Couple – 2 Parfums 33ml',_pageDesc['pack-couple'],'180','Pack Couple'],'pack-decouverte':['Pack Découverte – 5 Parfums 33ml',_pageDesc['pack-decouverte'],'450','Pack Découverte'],'pack-collection':['Pack Collection – 10 Parfums 33ml',_pageDesc['pack-collection'],'800','Pack Collection']};
+  const [_pn,_pd2,_pp,_pshort]=_pd[page];
   _setSchema('cat-schema-ld',{'@context':'https://schema.org','@type':'Product','name':_pn,'description':_pd2,'brand':{'@type':'Brand','name':'Parfum33ml.ma'},'offers':{'@type':'Offer','price':_pp,'priceCurrency':'MAD','availability':'https://schema.org/InStock','url':_canonBase+_pageUrl,'seller':{'@type':'Organization','name':'Parfum33ml.ma'}}});
+  _setSchema('bc-schema-ld',{'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Accueil','item':_canonBase},{'@type':'ListItem','position':2,'name':'Coffrets','item':_canonBase+'/coffrets'},{'@type':'ListItem','position':3,'name':_pshort,'item':_canonBase+_pageUrl}]});
+}else if(page==='casablanca'||page==='rabat'||page==='marrakech'){
+  const _cities={casablanca:{name:'Casablanca',region:'Grand Casablanca-Settat'},rabat:{name:'Rabat',region:'Rabat-Salé-Kénitra'},marrakech:{name:'Marrakech',region:'Marrakech-Safi'}};
+  const _c=_cities[page];
+  _setSchema('cat-schema-ld',{'@context':'https://schema.org','@type':'LocalBusiness','name':'Parfum33ml.ma – '+_c.name,'url':_canonBase+'/'+page,'description':_pageDesc[page],'priceRange':'100 DH','currenciesAccepted':'MAD','paymentAccepted':'Cash, Virement, CashPlus, Wafacash, Barid Cash','contactPoint':{'@type':'ContactPoint','contactType':'customer service','availableLanguage':['French','Arabic']},'address':{'@type':'PostalAddress','addressCountry':'MA','addressLocality':_c.name,'addressRegion':_c.region},'areaServed':{'@type':'City','name':_c.name},'sameAs':['https://www.instagram.com/parfum33ml.ma','https://www.tiktok.com/@parfum33ml.ma']});
+}else if(page==='potm'){
+  _setSchema('cat-schema-ld',{'@context':'https://schema.org','@type':'Offer','name':'Parfum du Mois −20%','description':_pageDesc.potm,'priceCurrency':'MAD','availability':'https://schema.org/InStock','url':_canonBase+'/parfum-du-mois','seller':{'@type':'Organization','name':'Parfum33ml.ma'}});
+}else if(page==='livraison-gratuite'){
+  _setSchema('cat-schema-ld',{'@context':'https://schema.org','@type':'Service','name':'Livraison Gratuite dès 3 Parfums','description':_pageDesc['livraison-gratuite'],'provider':{'@type':'Organization','name':'Parfum33ml.ma','url':_canonBase},'areaServed':{'@type':'Country','name':'Maroc'},'serviceType':'Delivery','offers':{'@type':'Offer','price':'0','priceCurrency':'MAD','description':'Gratuite dès 3 flacons commandés'}});
 }
 initReveal();setTimeout(()=>{initTilt();staggerCards()},100);
 });
@@ -3943,6 +3952,7 @@ function clearSidebarH(){sbFamilleH='all';sbBrandH=null;sbOccH=null;
   applySbH();}
 
 // ══════════════ ARTICLE SYSTEM
+const _artDates={'1':'2026-01-15','2':'2026-02-10','3':'2026-02-20','4':'2026-03-05','5':'2026-03-15','6':'2026-04-01'};
 const ARTICLES={
 '1':{
   tag:'Guide Parfum Femme',
@@ -4612,7 +4622,8 @@ function goArticle(id,noHistory){
   const artImgAbs=art.img?(_canonBase+'/'+art.img):(_canonBase+'/android-chrome-512x512.png');
   if(!noHistory)history.pushState({page:'article',id},'','/blog/'+artSlug);
   _clearDynSchemas();
-  _setSchema('art-schema-ld',{'@context':'https://schema.org','@type':'Article','headline':artTitle,'description':artDesc,'image':artImgAbs,'author':{'@type':'Organization','name':'Parfum33ml.ma','url':_canonBase},'publisher':{'@type':'Organization','name':'Parfum33ml.ma','logo':{'@type':'ImageObject','url':_canonBase+'/android-chrome-512x512.png'}},'datePublished':'2026-01-01','dateModified':'2026-04-19','mainEntityOfPage':{'@type':'WebPage','@id':_canonBase+'/blog/'+artSlug}});
+  const _artDate=_artDates[id]||'2026-01-01';
+  _setSchema('art-schema-ld',{'@context':'https://schema.org','@type':'Article','headline':artTitle,'description':artDesc,'image':artImgAbs,'author':{'@type':'Organization','name':'Parfum33ml.ma','url':_canonBase},'publisher':{'@type':'Organization','name':'Parfum33ml.ma','logo':{'@type':'ImageObject','url':_canonBase+'/android-chrome-512x512.png'}},'datePublished':_artDate,'dateModified':_artDate,'mainEntityOfPage':{'@type':'WebPage','@id':_canonBase+'/blog/'+artSlug}});
   curtainTransition(()=>{
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
     document.getElementById('articleContent').innerHTML=`
