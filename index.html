@@ -3126,7 +3126,7 @@ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 document.getElementById('page-'+page).classList.add('active');
 updateNavActive(page);
 window.scrollTo({top:0});
-if(page==='wishlist')renderWishlistPage();
+if(page==='wishlist'){renderWishlistPage();const _rob=document.querySelector('meta[name="robots"]');if(_rob)_rob.content='noindex,follow';}else{const _rob=document.querySelector('meta[name="robots"]');if(_rob)_rob.content='index,follow';}
 _updateSEO(_pageTitle[page]||'Parfum33ml.ma',_pageDesc[page]||_pageDesc.home,_pageUrl);
 _clearDynSchemas();
 if(page==='femme'||page==='homme'){
