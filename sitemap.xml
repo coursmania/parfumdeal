@@ -1,705 +1,796 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Pages principales -->
   <url>
     <loc>https://parfum33ml.ma</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://parfum33ml.ma/parfums-femme</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://parfum33ml.ma/parfums-homme</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://parfum33ml.ma/coffrets</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://parfum33ml.ma/coffrets/pack-couple</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/coffrets/pack-decouverte</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/coffrets/pack-collection</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://parfum33ml.ma/blog</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum-casablanca</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfum-du-mois</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum-rabat</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/livraison-gratuite</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Pages villes -->
+  <url>
+    <loc>https://parfum33ml.ma/casablanca</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum-marrakech</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/rabat</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/blog/article-1</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/marrakech</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Pages marques -->
+  <url>
+    <loc>https://parfum33ml.ma/parfums-inspires-chanel</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/parfums-inspires-dior</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/parfums-inspires-ysl</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/parfums-inspires-armani</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/parfums-inspires-paco-rabanne</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Pages familles olfactives -->
+  <url>
+    <loc>https://parfum33ml.ma/parfums-floraux-maroc</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/parfums-orientaux-maroc</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/parfums-frais-maroc</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/parfums-boises-maroc</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Articles blog -->
+  <url>
+    <loc>https://parfum33ml.ma/blog/top-10-parfums-femme-pour-un-mariage-marocain</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/blog/comment-bien-porter-son-parfum-au-maroc-en-ete</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/blog/les-5-parfums-homme-les-plus-portes-au-maroc-en-2025</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/blog/quel-parfum-offrir-en-cadeau-au-maroc-guide-complet-2025</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/blog/floral-oriental-ou-boise-quelle-famille-olfactive-vous-correspond</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/blog/acheter-son-parfum-en-33ml-pourquoi-cest-le-format-ideal-au-maroc</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/blog/les-parfums-tendance-au-maroc-en-2025-classement-complet</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/blog/comment-conserver-ses-parfums-en-ete-au-maroc</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://parfum33ml.ma/blog/offrir-un-parfum-pour-laid-au-maroc-le-guide-ultime</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Fiches produit femme (50) -->
+  <url>
+    <loc>https://parfum33ml.ma/parfums-femme/chanel-n5</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/blog/article-2</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/jadore</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/blog/article-3</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/la-vie-est-belle</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/blog/article-4</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/coco-mademoiselle</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/blog/article-5</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/black-opium</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/blog/article-6</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/miss-dior</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/blog/article-7</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/good-girl</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/blog/article-8</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/flowerbomb</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/blog/article-9</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/light-blue</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f1</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/chance-eau-tendre</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f2</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/mon-paris</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f3</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/libre</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f4</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/idole</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f5</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/si</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f6</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/alien</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f7</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/angel</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f8</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/gucci-bloom</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f9</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/daisy</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f10</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/for-her</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f11</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/my-way</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f12</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/olympea</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f13</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/burberry-her</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f14</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/paradoxe</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f15</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/donna-born-in-roma</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f16</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/twilly-dhermes</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f17</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/joy</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f18</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/chloe-edp</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f19</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/crystal-noir</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f20</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/bright-crystal</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f21</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/poison-girl</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f22</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/baccarat-rouge-540</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f23</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/si-passione</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f24</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/fame</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f25</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/scandal</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f26</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/good-girl-supreme</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f27</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/lady-million</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f28</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/very-good-girl</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f29</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/linterdit</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f30</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/irresistible</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f31</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/delina</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f32</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/chance-edp</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f33</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/gabrielle</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f34</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/the-scent-for-her</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f35</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/212-vip</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f36</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/tresor</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f37</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/la-nuit-tresor</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f38</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/because-its-you</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f39</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/mon-guerlain</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f40</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/flower</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f41</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-femme/classique</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
+  <!-- Fiches produit homme (50) -->
   <url>
-    <loc>https://parfum33ml.ma/parfum/f42</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/sauvage</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f43</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/bleu-de-chanel</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f44</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/acqua-di-gio</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f45</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/1-million</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f46</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/le-male</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f47</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/invictus</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f48</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/dior-homme</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f49</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/aventus</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/f50</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/allure-homme-sport</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h1</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/y-edp</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h2</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/boss-bottled</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h3</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/terre-dhermes</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h4</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/eros</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h5</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/armani-code</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h6</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/gentleman</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h7</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/light-blue-pour-homme</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h8</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/the-one</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h9</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/stronger-with-you</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h10</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/phantom</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h11</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/bad-boy</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h12</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/la-nuit-de-lhomme</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h13</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/spicebomb</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h14</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/luna-rossa-carbon</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h15</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/layton</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h16</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/lhomme</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h17</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/guilty-pour-homme</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h18</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/wanted</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h19</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/explorer</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h20</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/ombre-leather</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h21</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/baccarat-rouge-540</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h22</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/dylan-blue</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h23</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/uomo-born-in-roma</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h24</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/scandal-pour-homme</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h25</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/encre-noire</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h26</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/pegasus</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h27</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/ch-men</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h28</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/cedrat-boise</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h29</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/invictus-victory</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h30</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/k-by-dg</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h31</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/kenzo-homme</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h32</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/sauvage-elixir</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h33</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/tobacco-vanille</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h34</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/percival</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h35</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/the-scent</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h36</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/ultra-male</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h37</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/jimmy-choo-man</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h38</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/lhomme-ideal</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h39</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/legend</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h40</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/the-most-wanted</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://parfum33ml.ma/parfum/h41</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://parfum33ml.ma/parfums-homme/gris-charnel</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfum/h42</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfum/h43</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfum/h44</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfum/h45</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfum/h46</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfum/h47</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfum/h48</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfum/h49</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfum/h50</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 </urlset>
