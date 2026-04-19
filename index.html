@@ -3091,6 +3091,8 @@ function slugify(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u0
 const _canonBase='https://parfum33ml.ma';
 const _pageTitle={home:'Parfum33ml.ma – Fragrances Inspirées 33ml à 100 DH | Maroc',femme:'Parfums Femme 33ml Maroc – 50 Fragrances à 100 DH',homme:'Parfums Homme 33ml Maroc – 50 Fragrances à 100 DH',coffrets:'Coffrets Cadeaux Parfum Maroc – Dès 180 DH',blog:'Blog & Conseils Parfum Maroc | Parfum33ml.ma','pack-couple':'Pack Couple 180 DH – 2 Parfums 33ml | Parfum33ml.ma','pack-decouverte':'Pack Découverte 450 DH – 5 Parfums | Parfum33ml.ma','pack-collection':'Pack Collection 800 DH – 10 Parfums | Parfum33ml.ma',potm:'Parfum du Mois −20% – Offre Flash | Parfum33ml.ma','livraison-gratuite':'Livraison Gratuite dès 3 Parfums | Parfum33ml.ma',casablanca:'Parfum 33ml Casablanca – Livraison 24h | 100 DH',rabat:'Parfum 33ml Rabat – Livraison 24h | 100 DH',marrakech:'Parfum 33ml Marrakech – Livraison 24h | 100 DH',wishlist:'Mes Favoris | Parfum33ml.ma'};
 const _pageDesc={home:'+100 fragrances inspirées en 33ml à 100 DH. Inspiré de Chanel, Dior, YSL, Armani, Paco Rabanne. Livraison 24-48h partout au Maroc. Casablanca, Rabat, Marrakech.',femme:'50 fragrances femme inspirées en 33ml à 100 DH. Chanel, Dior, YSL, Lancôme, Mugler et plus. Livraison 24-48h partout au Maroc.',homme:'50 fragrances homme inspirées en 33ml à 100 DH. Sauvage Dior, Bleu de Chanel, Armani Code, Creed et plus. Livraison 24-48h au Maroc.',coffrets:'Coffrets cadeaux parfums 33ml dès 180 DH. Pack Couple, Pack Découverte, Pack Collection. Livraison gratuite incluse partout au Maroc.',blog:'Blog parfum Maroc — conseils, guides et sélections pour choisir votre fragrance. Mariage, saison, famille olfactive, top ventes.','pack-couple':'Pack Couple 180 DH — 2 fragrances 33ml au choix. Homme + Femme. Livraison gratuite partout au Maroc.','pack-decouverte':'Pack Découverte 450 DH — 5 fragrances 33ml au choix parmi +100 références. Livraison gratuite incluse. Maroc.','pack-collection':'Pack Collection 800 DH — 10 fragrances 33ml. La meilleure valeur pour constituer une collection. Livraison offerte.',potm:'Parfum du mois en promotion — fragrance inspirée 33ml à prix exceptionnel. Offre limitée. Livraison 24-48h Maroc.','livraison-gratuite':'Livraison gratuite dès 3 parfums commandés. Partout au Maroc en 24-48h — Casablanca, Rabat, Marrakech et toutes les villes.',casablanca:'Parfum 33ml à Casablanca — livraison 24h. +100 fragrances inspirées à 100 DH. Commandez en ligne, recevez chez vous.',rabat:'Parfum 33ml à Rabat — livraison 24h. +100 fragrances inspirées à 100 DH. Commandez en ligne, recevez chez vous.',marrakech:'Parfum 33ml à Marrakech — livraison 24-48h. +100 fragrances inspirées à 100 DH. Commandez en ligne, recevez chez vous.'};
+const _pageUrlMap={home:'/',femme:'/parfums-femme',homme:'/parfums-homme',coffrets:'/coffrets',blog:'/blog','pack-couple':'/coffrets/pack-couple','pack-decouverte':'/coffrets/pack-decouverte','pack-collection':'/coffrets/pack-collection',potm:'/parfum-du-mois','livraison-gratuite':'/livraison-gratuite',casablanca:'/casablanca',rabat:'/rabat',marrakech:'/marrakech',wishlist:'/wishlist'};
+const _urlPageMap={};Object.entries(_pageUrlMap).forEach(([k,v])=>{_urlPageMap[v]=k;});
 function _updateSEO(title,desc,url){
   document.title=title;
   const md=document.querySelector('meta[name="description"]');if(md)md.content=desc;
@@ -3109,7 +3111,7 @@ setTimeout(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView
 initReveal();setTimeout(()=>{initTilt();staggerCards()},100);
 return;
 }
-const _pageUrl=page==='home'?'/':'/'+page;
+const _pageUrl=_pageUrlMap[page]||('/'+page);
 history.pushState({page},'',_pageUrl);
 curtainTransition(()=>{
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -3130,14 +3132,20 @@ window.addEventListener('popstate',e=>{
   document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active'));
   const el=document.getElementById('page-'+p);if(el)el.classList.add('active');
   updateNavActive(p);window.scrollTo({top:0});
-  _updateSEO(_pageTitle[p]||'Parfum33ml.ma',_pageDesc[p]||_pageDesc.home,p==='home'?'/':'/'+p);
+  const pu=_pageUrlMap[p]||('/'+p);
+  _updateSEO(_pageTitle[p]||'Parfum33ml.ma',_pageDesc[p]||_pageDesc.home,pu);
   initReveal();setTimeout(()=>{initTilt();staggerCards()},100);
 });
 (()=>{
   const path=location.pathname;
-  if(path.startsWith('/parfum/')){
-    const slug=path.slice(8);
-    const prod=ALL.find(x=>slugify(x.name)===slug||slugify(x.name+'-'+x.brand)===slug);
+  if(path.startsWith('/parfums-femme/')){
+    const slug=path.slice(15);
+    const prod=ALL.find(x=>x.gender==='femme'&&slugify(x.name)===slug);
+    if(prod){goProduct(prod.id,true);return;}
+  }
+  if(path.startsWith('/parfums-homme/')){
+    const slug=path.slice(15);
+    const prod=ALL.find(x=>x.gender==='homme'&&slugify(x.name)===slug);
     if(prod){goProduct(prod.id,true);return;}
   }
   if(path.startsWith('/blog/')){
@@ -3145,11 +3153,15 @@ window.addEventListener('popstate',e=>{
     const art=Object.entries(ARTICLES||{}).find(([,v])=>slugify(v.title.replace(/<[^>]+>/g,''))===slug);
     if(art){goArticle(art[0],true);return;}
   }
-  const p=path.slice(1)||'home';
-  const el=document.getElementById('page-'+p);
-  if(el&&p!=='home'){document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active'));el.classList.add('active');updateNavActive(p);}
-  history.replaceState({page:p},'',path||'/');
-  _updateSEO(_pageTitle[p]||'Parfum33ml.ma',_pageDesc[p]||_pageDesc.home,path||'/');
+  const page=_urlPageMap[path]||_urlPageMap[path.replace(/\/$/,'')]||null;
+  if(page){
+    if(page!=='home'){document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active'));const el=document.getElementById('page-'+page);if(el)el.classList.add('active');updateNavActive(page);}
+    history.replaceState({page},'',path||'/');
+    _updateSEO(_pageTitle[page]||'Parfum33ml.ma',_pageDesc[page]||_pageDesc.home,path||'/');
+    return;
+  }
+  history.replaceState({page:'home'},'','/');
+  _updateSEO(_pageTitle.home,_pageDesc.home,'/');
 })();
 function updateNavActive(page){
 document.querySelectorAll('.topnav>li>a').forEach(a=>a.classList.remove('active'));
@@ -3160,21 +3172,22 @@ if(nav)nav.classList.add('active');
 function goProduct(id,noHistory){
 const p=ALL.find(x=>x.id===id);if(!p)return;
 const slug=slugify(p.name);
-if(!noHistory)history.pushState({page:'product',id},'','/parfum/'+slug);
+const prodUrl=(p.gender==='femme'?'/parfums-femme/':'/parfums-homme/')+slug;
+if(!noHistory)history.pushState({page:'product',id},'',prodUrl);
 currentProdQty=1;
 curtainTransition(()=>{
 document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active'));
 document.getElementById('page-product').classList.add('active');
 updateNavActive('');
 window.scrollTo({top:0});
-_updateSEO(p.name+' '+p.brand+' 33ml au Maroc 100 DH | Parfum33ml.ma','Achetez '+p.name+' de '+p.brand+' en 33ml au Maroc à 100 DH. '+p.desc.slice(0,120).replace(/<[^>]+>/g,'')+' ... Livraison 24-48h partout au Maroc. Gratuite dès 3 flacons.','/parfum/'+slug);
+_updateSEO(p.name+' '+p.brand+' 33ml au Maroc 100 DH | Parfum33ml.ma','Achetez '+p.name+' de '+p.brand+' en 33ml au Maroc à 100 DH. '+p.desc.slice(0,120).replace(/<[^>]+>/g,'')+' ... Livraison 24-48h partout au Maroc. Gratuite dès 3 flacons.',prodUrl);
 // SEO: inject Product schema
 let _bc=document.getElementById('bc-schema-ld');
 if(!_bc){_bc=document.createElement('script');_bc.type='application/ld+json';_bc.id='bc-schema-ld';document.head.appendChild(_bc);}
-_bc.textContent=JSON.stringify({'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Accueil','item':'https://parfum33ml.ma'},{'@type':'ListItem','position':2,'name':p.gender==='femme'?'Parfums Femme':'Parfums Homme','item':'https://parfum33ml.ma/'+p.gender},{'@type':'ListItem','position':3,'name':p.name+' '+p.brand,'item':'https://parfum33ml.ma/parfum/'+slug}]});
+_bc.textContent=JSON.stringify({'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Accueil','item':'https://parfum33ml.ma'},{'@type':'ListItem','position':2,'name':p.gender==='femme'?'Parfums Femme':'Parfums Homme','item':'https://parfum33ml.ma/'+p.gender},{'@type':'ListItem','position':3,'name':p.name+' '+p.brand,'item':'https://parfum33ml.ma'+prodUrl}]});
 let _sc=document.getElementById('prod-schema-ld');
 if(!_sc){_sc=document.createElement('script');_sc.type='application/ld+json';_sc.id='prod-schema-ld';document.head.appendChild(_sc);}
-_sc.textContent=JSON.stringify({'@context':'https://schema.org','@type':'Product','name':p.name+' '+p.brand+' 33ml','brand':{'@type':'Brand','name':p.brand},'description':p.desc.replace(/<[^>]+>/g,''),'sku':p.id,'offers':{'@type':'Offer','price':'100','priceCurrency':'MAD','availability':'https://schema.org/InStock','url':'https://parfum33ml.ma/parfum/'+slug,'seller':{'@type':'Organization','name':'Parfum33ml.ma'}},'aggregateRating':{'@type':'AggregateRating','ratingValue':p.rating,'reviewCount':p.reviews,'bestRating':'5','worstRating':'1'}});
+_sc.textContent=JSON.stringify({'@context':'https://schema.org','@type':'Product','name':p.name+' '+p.brand+' 33ml','brand':{'@type':'Brand','name':p.brand},'description':p.desc.replace(/<[^>]+>/g,''),'sku':p.id,'offers':{'@type':'Offer','price':'100','priceCurrency':'MAD','availability':'https://schema.org/InStock','url':'https://parfum33ml.ma'+prodUrl,'seller':{'@type':'Organization','name':'Parfum33ml.ma'}},'aggregateRating':{'@type':'AggregateRating','ratingValue':p.rating,'reviewCount':p.reviews,'bestRating':'5','worstRating':'1'}});
 const rel=ALL.filter(x=>x.gender===p.gender&&x.id!==p.id).sort(()=>Math.random()-.5).slice(0,12);
 const topN=p.notes.slice(0,Math.ceil(p.notes.length/3));
 const midN=p.notes.slice(Math.ceil(p.notes.length/3),Math.ceil(p.notes.length*2/3));
