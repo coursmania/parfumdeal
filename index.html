@@ -1240,9 +1240,9 @@ footer li a:hover{color:var(--gold)}
 <span class="logo" onclick="go('home')"><img src="dossier%20parfum/logo-h.png" alt="Parfum33ml.ma — L'Art du Parfum"></span>
 <div class="h-search" onclick="openSearch()">🔍 <span>Rechercher un parfum...</span></div>
 <ul class="topnav">
-<li><a onclick="go('home')" id="nav-home" class="active">Accueil</a></li>
+<li><a href="/" onclick="go('home');return false;" id="nav-home" class="active">Accueil</a></li>
 <li>
-<a onclick="go('femme')" id="nav-femme">Parfum Femme</a>
+<a href="/parfums-femme" onclick="go('femme');return false;" id="nav-femme">Parfum Femme</a>
 <div class="mega" style="min-width:580px;gap:32px">
 <div class="mega-col">
 <h5>PAR FAMILLE</h5>
@@ -1279,7 +1279,7 @@ footer li a:hover{color:var(--gold)}
 </div>
 </li>
 <li>
-<a onclick="go('homme')" id="nav-homme">Parfum Homme</a>
+<a href="/parfums-homme" onclick="go('homme');return false;" id="nav-homme">Parfum Homme</a>
 <div class="mega" style="min-width:580px;gap:32px">
 <div class="mega-col">
 <h5>PAR FAMILLE</h5>
@@ -1315,7 +1315,7 @@ footer li a:hover{color:var(--gold)}
 </div>
 </li>
 <li>
-<a onclick="go('coffrets')">Coffrets</a>
+<a href="/coffrets" onclick="go('coffrets');return false;">Coffrets</a>
 <div class="mega" style="min-width:480px;gap:32px">
 <div class="mega-col">
 <h5>NOS PACKS</h5>
@@ -1341,7 +1341,7 @@ footer li a:hover{color:var(--gold)}
 </div>
 </li>
 <li>
-<a onclick="go('blog')" id="nav-blog">Blog</a>
+<a href="/blog" onclick="go('blog');return false;" id="nav-blog">Blog</a>
 <div class="mega" style="min-width:360px">
 <div class="mega-col">
 <h5>GUIDES & CONSEILS</h5>
@@ -2483,35 +2483,35 @@ footer li a:hover{color:var(--gold)}
 <div>
 <h4>Navigation</h4>
 <ul>
-<li><a onclick="go('home')">Accueil</a></li>
-<li><a onclick="go('femme')">Parfums Femme</a></li>
-<li><a onclick="go('homme')">Parfums Homme</a></li>
-<li><a onclick="go('coffrets')">Coffrets & Packs</a></li>
-<li><a onclick="go('pack-couple')">Pack Couple 180 DH</a></li>
-<li><a onclick="go('pack-decouverte')">Pack Découverte 450 DH</a></li>
-<li><a onclick="go('pack-collection')">Pack Collection 800 DH</a></li>
-<li><a onclick="go('potm')">🔥 Parfum du Mois</a></li>
-<li><a onclick="go('livraison-gratuite')">🚚 Livraison gratuite dès 3</a></li>
-<li><a onclick="go('wishlist')">Mes Favoris</a></li>
-<li><a onclick="go('home','faq')">FAQ</a></li>
+<li><a href="/" onclick="go('home');return false;">Accueil</a></li>
+<li><a href="/parfums-femme" onclick="go('femme');return false;">Parfums Femme</a></li>
+<li><a href="/parfums-homme" onclick="go('homme');return false;">Parfums Homme</a></li>
+<li><a href="/coffrets" onclick="go('coffrets');return false;">Coffrets & Packs</a></li>
+<li><a href="/coffrets/pack-couple" onclick="go('pack-couple');return false;">Pack Couple 180 DH</a></li>
+<li><a href="/coffrets/pack-decouverte" onclick="go('pack-decouverte');return false;">Pack Découverte 450 DH</a></li>
+<li><a href="/coffrets/pack-collection" onclick="go('pack-collection');return false;">Pack Collection 800 DH</a></li>
+<li><a href="/parfum-du-mois" onclick="go('potm');return false;">🔥 Parfum du Mois</a></li>
+<li><a href="/livraison-gratuite" onclick="go('livraison-gratuite');return false;">🚚 Livraison gratuite dès 3</a></li>
+<li><a href="/" onclick="go('wishlist');return false;">Mes Favoris</a></li>
+<li><a href="/#faq" onclick="go('home','faq');return false;">FAQ</a></li>
 </ul>
 </div>
 <div>
 <h4>Marques</h4>
 <ul>
-<li><a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Dior'),500)">Dior</a></li>
-<li><a onclick="go('femme');setTimeout(()=>filterByBrand('allF','Chanel'),500)">Chanel</a></li>
-<li><a onclick="go('femme');setTimeout(()=>filterByBrand('allF','YSL'),500)">YSL</a></li>
-<li><a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Tom Ford'),500)">Tom Ford</a></li>
-<li><a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Creed'),500)">Creed</a></li>
-<li><a onclick="go('homme');setTimeout(()=>filterByBrand('allH','Parfums de Marly'),500)">Parfums de Marly</a></li>
-<li><a onclick="go('femme');setTimeout(()=>filterByBrand('allF','MFK'),500)">MFK</a></li>
+<li><a href="/parfums-inspires-dior">Dior</a></li>
+<li><a href="/parfums-inspires-chanel">Chanel</a></li>
+<li><a href="/parfums-inspires-ysl">YSL</a></li>
+<li><a href="/parfums-inspires-tom-ford">Tom Ford</a></li>
+<li><a href="/parfums-inspires-creed">Creed</a></li>
+<li><a href="/parfums-inspires-parfums-de-marly">Parfums de Marly</a></li>
+<li><a href="/parfums-inspires-maison-francis-kurkdjian">MFK</a></li>
 </ul>
 </div>
 <div>
 <h4>Villes</h4>
 <div class="footer-cities">
-<a>Casablanca</a><a>Rabat</a><a>Marrakech</a><a>Tanger</a>
+<a href="/casablanca">Casablanca</a><a href="/rabat">Rabat</a><a href="/marrakech">Marrakech</a><a>Tanger</a>
 <a>Fès</a><a>Agadir</a><a>Oujda</a><a>Meknès</a>
 <a>Kénitra</a><a>Tétouan</a><a>Nador</a><a>El Jadida</a>
 <a>Safi</a><a>Béni Mellal</a><a>Settat</a><a>Larache</a>
