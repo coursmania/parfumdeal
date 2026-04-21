@@ -1,39 +1,39 @@
 // Vercel Edge Middleware — Dynamic Rendering
-// Bots (Googlebot, etc.) get the static HTML pages.
-// Real users are redirected to the SPA.
+// Bots get the static HTML pages.
+// Real users are redirected to the SPA's native URLs.
 
 const BOT_UA = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|applebot|semrushbot|ahrefsbot|rogerbot|dotbot|msnbot|ia_archiver|sogou|exabot|alexa/i;
 
-// Gender hints for brand pages → better UX redirect
+// Brand pages → redirect to SPA collection URL (SPA handles /parfums-femme and /parfums-homme natively)
 const BRAND_REDIRECT = {
-  'parfums-inspires-dior':             '/?go=homme',
-  'parfums-inspires-chanel':           '/?go=femme',
-  'parfums-inspires-ysl':              '/?go=femme',
-  'parfums-inspires-armani':           '/?go=homme',
-  'parfums-inspires-paco-rabanne':     '/?go=homme',
-  'parfums-inspires-lancome':          '/?go=femme',
-  'parfums-inspires-mugler':           '/?go=femme',
-  'parfums-inspires-creed':            '/?go=homme',
-  'parfums-inspires-versace':          '/?go=homme',
-  'parfums-inspires-hermes':           '/',
-  'parfums-inspires-maison-francis-kurkdjian': '/?go=femme',
-  'parfums-inspires-carolina-herrera': '/?go=femme',
-  'parfums-inspires-gucci':            '/?go=femme',
-  'parfums-inspires-valentino':        '/?go=femme',
-  'parfums-inspires-parfums-de-marly': '/?go=homme',
-  'parfums-inspires-tom-ford':         '/',
-  'parfums-inspires-prada':            '/?go=femme',
-  'parfums-inspires-chloe':            '/?go=femme',
-  'parfums-inspires-givenchy':         '/',
-  'parfums-inspires-guerlain':         '/?go=femme',
-  'parfums-inspires-hugo-boss':        '/?go=homme',
-  'parfums-inspires-jean-paul-gaultier':'/?go=homme',
-  'parfums-inspires-kenzo':            '/',
-  'parfums-inspires-montblanc':        '/?go=homme',
-  'parfums-inspires-narciso-rodriguez':'/?go=femme',
-  'parfums-inspires-azzaro':           '/?go=homme',
-  'parfums-inspires-burberry':         '/',
-  'parfums-inspires-viktor-rolf':      '/?go=femme',
+  'parfums-inspires-dior':             '/parfums-homme',
+  'parfums-inspires-chanel':           '/parfums-femme',
+  'parfums-inspires-ysl':              '/parfums-femme',
+  'parfums-inspires-armani':           '/parfums-homme',
+  'parfums-inspires-paco-rabanne':     '/parfums-homme',
+  'parfums-inspires-lancome':          '/parfums-femme',
+  'parfums-inspires-mugler':           '/parfums-femme',
+  'parfums-inspires-creed':            '/parfums-homme',
+  'parfums-inspires-versace':          '/parfums-homme',
+  'parfums-inspires-hermes':           '/parfums-homme',
+  'parfums-inspires-maison-francis-kurkdjian': '/parfums-femme',
+  'parfums-inspires-carolina-herrera': '/parfums-femme',
+  'parfums-inspires-gucci':            '/parfums-femme',
+  'parfums-inspires-valentino':        '/parfums-femme',
+  'parfums-inspires-parfums-de-marly': '/parfums-homme',
+  'parfums-inspires-tom-ford':         '/parfums-homme',
+  'parfums-inspires-prada':            '/parfums-femme',
+  'parfums-inspires-chloe':            '/parfums-femme',
+  'parfums-inspires-givenchy':         '/parfums-homme',
+  'parfums-inspires-guerlain':         '/parfums-femme',
+  'parfums-inspires-hugo-boss':        '/parfums-homme',
+  'parfums-inspires-jean-paul-gaultier':'/parfums-homme',
+  'parfums-inspires-kenzo':            '/parfums-femme',
+  'parfums-inspires-montblanc':        '/parfums-homme',
+  'parfums-inspires-narciso-rodriguez':'/parfums-femme',
+  'parfums-inspires-azzaro':           '/parfums-homme',
+  'parfums-inspires-burberry':         '/parfums-homme',
+  'parfums-inspires-viktor-rolf':      '/parfums-femme',
 };
 
 export default function middleware(request) {
@@ -45,18 +45,20 @@ export default function middleware(request) {
   const pathname = new URL(request.url).pathname.replace(/\/$/, '');
   const slug = pathname.slice(1); // remove leading /
 
-  // Determine redirect target
-  const dest = BRAND_REDIRECT[slug] || '/';
+  // Brand pages → SPA collection
+  if (BRAND_REDIRECT[slug]) {
+    return Response.redirect(new URL(BRAND_REDIRECT[slug], request.url), 302);
+  }
 
-  return Response.redirect(new URL(dest, request.url), 302);
+  // City pages not handled by SPA natively → SPA homepage
+  return Response.redirect(new URL('/', request.url), 302);
 }
 
 export const config = {
   matcher: [
-    '/parfums-inspires-(.*)',
-    '/casablanca',
-    '/rabat',
-    '/marrakech',
+    // Brand pages (regex syntax for Vercel)
+    '/(parfums-inspires-.*)',
+    // City pages NOT in SPA (SPA only has casablanca/rabat/marrakech natively)
     '/tanger',
     '/fes',
     '/agadir',
@@ -70,5 +72,7 @@ export const config = {
     '/beni-mellal',
     '/settat',
     '/larache',
+    // casablanca/rabat/marrakech are NOT in matcher:
+    // the SPA handles them natively, and the HTML page is a good fallback
   ],
 };
