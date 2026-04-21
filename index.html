@@ -3180,9 +3180,9 @@ window.addEventListener('popstate',e=>{
     if(prod){goProduct(prod.id,true);return;}
   }
   if(path.startsWith('/blog/')){
-    const slug=path.slice(6);
-    const art=Object.entries(ARTICLES||{}).find(([,v])=>slugify(v.title.replace(/<[^>]+>/g,''))===slug);
-    if(art){goArticle(art[0],true);return;}
+    // ARTICLES n'est pas encore défini ici — géré après sa définition ci-dessous
+    window._pendingBlogSlug=path.slice(6);
+    return;
   }
   const _famRoutes={'/parfums-floraux-maroc':['femme','floral','sbF-floral'],'/parfums-orientaux-maroc':['femme','oriental','sbF-oriental'],'/parfums-boises-maroc':['homme','boisé','sbH-boisé'],'/parfums-frais-maroc':['homme','frais','sbH-frais']};
   if(_famRoutes[path]){
@@ -4623,6 +4623,12 @@ const ARTICLES={
 </div>`
 }
 };
+if(window._pendingBlogSlug){
+  const _bslug=window._pendingBlogSlug;
+  const _bart=Object.entries(ARTICLES).find(([,v])=>slugify(v.title.replace(/<[^>]+>/g,''))===_bslug);
+  if(_bart){goArticle(_bart[0],true);}else{history.replaceState({page:'home'},'','/');_updateSEO(_pageTitle.home,_pageDesc.home,'/');}
+  delete window._pendingBlogSlug;
+}
 function goArticle(id,noHistory){
   const art=ARTICLES[id];if(!art)return;
   const artTitle=art.title.replace(/<[^>]+>/g,'');
