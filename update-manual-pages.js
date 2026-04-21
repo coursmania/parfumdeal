@@ -1,41 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
-<head>
-<base href="/">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parfums inspirés Creed au Maroc — 33ml à 100 DH | Parfum33ml.ma</title>
-<meta name="description" content="Notre fragrance inspirée de Creed Aventus : ananas, bouleau, patchouli, musc. Format 33ml à 100 DH. Livraison 24-48h partout au Maroc.">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Parfum33ml.ma">
-<meta property="og:title" content="Parfums inspirés Creed au Maroc — 33ml à 100 DH | Parfum33ml.ma">
-<meta property="og:description" content="Notre fragrance inspirée de Creed Aventus : ananas, bouleau, patchouli, musc. Format 33ml à 100 DH. Livraison 24-48h partout au Maroc.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://parfum33ml.ma/parfums-inspires-creed">
-<meta property="og:locale" content="fr_MA">
-<meta property="og:image" content="https://parfum33ml.ma/android-chrome-512x512.png">
-<meta property="og:site_name" content="Parfum33ml.ma">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Parfums inspirés Creed au Maroc — 33ml à 100 DH | Parfum33ml.ma">
-<meta name="twitter:description" content="Notre fragrance inspirée de Creed Aventus : ananas, bouleau, patchouli, musc. Format 33ml à 100 DH. Livraison 24-48h partout au Maroc.">
-<meta name="twitter:image" content="https://parfum33ml.ma/android-chrome-512x512.png">
-<link rel="canonical" href="https://parfum33ml.ma/parfums-inspires-creed">
-<link rel="alternate" hreflang="fr-MA" href="https://parfum33ml.ma/parfums-inspires-creed">
-<link rel="alternate" hreflang="fr" href="https://parfum33ml.ma/parfums-inspires-creed">
-<link rel="alternate" hreflang="x-default" href="https://parfum33ml.ma/parfums-inspires-creed">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#080604">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Parfums inspirés Creed au Maroc","description":"Notre fragrance inspirée de Creed Aventus : ananas, bouleau, patchouli, musc. Format 33ml à 100 DH. Livraison 24-48h partout au Maroc.","url":"https://parfum33ml.ma/parfums-inspires-creed","provider":{"@type":"Organization","name":"Parfum33ml.ma","url":"https://parfum33ml.ma"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://parfum33ml.ma"},{"@type":"ListItem","position":2,"name":"Parfums inspirés Creed","item":"https://parfum33ml.ma/parfums-inspires-creed"}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static.css">
-</head>
-<body>
-<div class="announce-bar">✦ Livraison gratuite à partir de 3 parfums — Partout au Maroc 🇲🇦 · Commandez sur WhatsApp →</div>
+const fs = require('fs');
+const path = require('path');
+
+const NEW_NAV = `<div class="announce-bar">✦ Livraison gratuite à partir de 3 parfums — Partout au Maroc 🇲🇦 · Commandez sur WhatsApp →</div>
 <nav class="static-nav">
   <a href="/" class="static-logo"><img src="/dossier%20parfum/logo-h.png" alt="Parfum33ml.ma — L'Art du Parfum" loading="eager"></a>
   <div class="static-nav-links">
@@ -45,58 +11,9 @@
     <a href="/blog">Blog</a>
   </div>
   <a href="https://wa.me/212600000000" class="static-nav-cta" target="_blank" rel="noopener">Commander →</a>
-</nav>
+</nav>`;
 
-<div class="breadcrumb">
-  <a href="/">Accueil</a><span class="sep">›</span>
-  <span>Parfums inspirés Creed</span>
-</div>
-
-<div class="static-hero">
-  <span class="article-tag">Marque</span>
-  <h1>Parfums inspirés <em>Creed</em></h1>
-  <p>Notre fragrance inspirée de Creed Aventus : ananas, bouleau, patchouli, musc. Format 33ml à 100 DH. Livraison 24-48h partout au Maroc.</p>
-  <a href="/parfums-homme" class="btn-p" style="margin-top:4px">Voir la collection Homme →</a>
-</div>
-
-<div class="static-content">
-
-<div class="static-section">
-  <h2>Nos 1 fragrance inspirée de Creed</h2>
-  <p>Creed est la maison parfumée la plus prestigieuse du monde — fondée en 1760, fournisseur officiel de cours royales européennes pendant deux siècles. Aventus, lancé en 2010, est devenu la fragrance masculine de référence mondiale. Un ananas-bouleau-patchouli d'une complexité rare, porté par des leaders d'opinion du monde entier. Désormais accessible en 33ml à 100 DH.</p>
-  <div class="static-card-grid">
-    <a href="/parfums-homme/aventus" class="static-card">
-      <img class="static-card-img" src="dossier%20parfum/parfum/creed%20aventus%20600-800.jpg" alt="Inspiré Aventus Creed 33ml Maroc" loading="lazy">
-      <div class="static-card-body">
-        <div class="static-card-brand">Creed · Homme</div>
-        <div class="static-card-name">Aventus</div>
-        <div class="static-card-price">100 DH · 33ml</div>
-      </div>
-    </a>
-  </div>
-</div>
-
-<div class="static-section">
-  <h2>Quel parfum Creed choisir ?</h2>
-  <p><strong>Aventus :</strong> La fragrance du leader. Ananas juteux, bouleau fumé, jasmin et patchouli dans un accord sophistiqué et masculin. Pour l'homme ambitieux, professionnel ou lors des occasions importantes.</p>
-</div>
-
-<div class="static-section">
-  <h2>FAQ — Parfums inspirés Creed au Maroc</h2>
-  <p><strong>Q : Pourquoi Aventus coûte-t-il si cher en original ?</strong><br>Creed utilise des matières premières rares (iris de Florence, musc blanc naturel) et une fabrication artisanale en petites séries. Un flacon 50ml original coûte 1 500 à 2 500 DH. Notre inspiré à 100 DH capture l'essence de cet accord exceptionnel.</p>
-  <p><strong>Q : Aventus est-il adapté à toutes les occasions ?</strong><br>Oui, Aventus est polyvalent. Frais en tête, boisé-musqué en fond — il convient au bureau, aux réunions importantes, aux soirées et aux rendez-vous.</p>
-  <p><strong>Q : Livraison à Casablanca, Rabat, Marrakech ?</strong><br>Livraison en 24h à Casablanca et Rabat, 24-48h dans toutes les autres villes du Maroc. Gratuite dès 3 flacons commandés.</p>
-</div>
-
-<div class="article-cta">
-  <h3 style="font-family:var(--ff-d);font-size:22px;margin-bottom:8px">Commandez votre fragrance inspirée de Creed</h3>
-  <p style="color:var(--txt2);font-size:14px;margin-bottom:16px">1 fragrance disponible · 33ml à 100 DH · Livraison 24-48h partout au Maroc</p>
-  <a href="/parfums-homme" class="btn-p">Voir tous nos parfums Homme →</a>
-</div>
-
-</div>
-
-<footer class="static-footer">
+const NEW_FOOTER = `<footer class="static-footer">
 <div class="footer-grid">
   <div class="footer-brand">
     <a href="/"><img src="/dossier%20parfum/logo-h.png" alt="Parfum33ml.ma — L'Art du Parfum" style="height:70px;mix-blend-mode:lighten;display:block;margin-bottom:12px"></a>
@@ -178,6 +95,34 @@
     <a href="/">Cookies</a>
   </div>
 </div>
-</footer>
-</body>
-</html>
+</footer>`;
+
+const PAGES = [
+  'parfums-inspires-dior.html',
+  'parfums-inspires-chanel.html',
+  'parfums-inspires-ysl.html',
+  'parfums-inspires-armani.html',
+  'parfums-inspires-paco-rabanne.html',
+];
+
+for (const page of PAGES) {
+  const filePath = path.join(__dirname, page);
+  let html = fs.readFileSync(filePath, 'utf8');
+
+  // Replace old nav (without announce bar) with new nav + announce bar
+  html = html.replace(
+    /<nav class="static-nav">[\s\S]*?<\/nav>/,
+    NEW_NAV
+  );
+
+  // Replace old footer entirely
+  html = html.replace(
+    /<footer class="static-footer">[\s\S]*?<\/footer>/,
+    NEW_FOOTER
+  );
+
+  fs.writeFileSync(filePath, html, 'utf8');
+  console.log(`✓ ${page}`);
+}
+
+console.log('\n✅ 5 manual pages updated.');
