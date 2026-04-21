@@ -1541,37 +1541,37 @@ footer li a:hover{color:var(--gold)}
 </div>
 <div class="collections-grid">
   <!-- Floral : grande tuile 2 lignes -->
-  <a class="col-tile" href="/parfums-floraux-maroc" style="--fam-g:linear-gradient(135deg,rgba(194,80,120,.18),rgba(120,30,60,.12));--fam-c:#e8809a">
+  <div class="col-tile" style="--fam-g:linear-gradient(135deg,rgba(194,80,120,.18),rgba(120,30,60,.12));--fam-c:#e8809a;cursor:pointer" onclick="go('femme');setTimeout(()=>sbFilterF('floral','famille',document.getElementById('sbF-floral')),600)">
     <div class="col-tile-img">
       <img src="dossier%20parfum/baniere/bento/bento-floral.png" alt="Famille Olfactive Florale" style="width:100%;height:100%;object-fit:cover;transition:transform .4s">
       <div class="col-tile-badge">Floral</div>
     </div>
     <div class="col-tile-cap"><div class="col-tile-label">Floral</div><div class="col-tile-sub">Rose · Jasmin · Pivoine</div></div>
-  </a>
+  </div>
   <!-- Oriental : 1×1 -->
-  <a class="col-tile" href="/parfums-orientaux-maroc" style="--fam-g:linear-gradient(135deg,rgba(201,150,60,.18),rgba(140,90,20,.12));--fam-c:var(--gold)">
+  <div class="col-tile" style="--fam-g:linear-gradient(135deg,rgba(201,150,60,.18),rgba(140,90,20,.12));--fam-c:var(--gold);cursor:pointer" onclick="go('femme');setTimeout(()=>sbFilterF('oriental','famille',document.getElementById('sbF-oriental')),600)">
     <div class="col-tile-img">
       <img src="dossier%20parfum/baniere/bento/bento-oriental.png" alt="Famille Olfactive Orientale" style="width:100%;height:100%;object-fit:cover;transition:transform .4s">
       <div class="col-tile-badge">Oriental</div>
     </div>
     <div class="col-tile-cap"><div class="col-tile-label">Oriental</div><div class="col-tile-sub">Ambre · Vanille · Oud</div></div>
-  </a>
+  </div>
   <!-- Boisé : large 2 colonnes -->
-  <a class="col-tile" href="/parfums-boises-maroc" style="--fam-g:linear-gradient(135deg,rgba(60,110,70,.18),rgba(30,70,40,.12));--fam-c:#7ac98a">
+  <div class="col-tile" style="--fam-g:linear-gradient(135deg,rgba(60,110,70,.18),rgba(30,70,40,.12));--fam-c:#7ac98a;cursor:pointer" onclick="go('homme');setTimeout(()=>sbFilterH('boisé','famille',document.getElementById('sbH-boisé')),600)">
     <div class="col-tile-img">
       <img src="dossier%20parfum/baniere/bento/bento-boise.png" alt="Famille Olfactive Boisée" style="width:100%;height:100%;object-fit:cover;transition:transform .4s">
       <div class="col-tile-badge">Boisé · Homme</div>
     </div>
     <div class="col-tile-cap"><div class="col-tile-label">Boisé · Homme</div><div class="col-tile-sub">Cèdre · Santal · Vétiver</div></div>
-  </a>
+  </div>
   <!-- Frais : 1×1 -->
-  <a class="col-tile" href="/parfums-frais-maroc" style="--fam-g:linear-gradient(135deg,rgba(60,120,180,.18),rgba(30,70,140,.12));--fam-c:#7ab4e8">
+  <div class="col-tile" style="--fam-g:linear-gradient(135deg,rgba(60,120,180,.18),rgba(30,70,140,.12));--fam-c:#7ab4e8;cursor:pointer" onclick="go('homme');setTimeout(()=>sbFilterH('frais','famille',document.getElementById('sbH-frais')),600)">
     <div class="col-tile-img">
       <img src="dossier%20parfum/baniere/bento/bento-frais.png" alt="Famille Olfactive Fraîche" style="width:100%;height:100%;object-fit:cover;transition:transform .4s">
       <div class="col-tile-badge">Frais · Homme</div>
     </div>
     <div class="col-tile-cap"><div class="col-tile-label">Frais · Homme</div><div class="col-tile-sub">Aquatique · Agrumes · Marine</div></div>
-  </a>
+  </div>
   <!-- Gourmand : 1×1 -->
   <div class="col-tile" style="--fam-g:linear-gradient(135deg,rgba(120,70,30,.18),rgba(80,40,10,.12));--fam-c:#c89060" onclick="go('femme');setTimeout(()=>sbFilterF('gourmand','famille',document.getElementById('sbF-gourmand')),600)">
     <div class="col-tile-img">
@@ -3183,6 +3183,15 @@ window.addEventListener('popstate',e=>{
     const slug=path.slice(6);
     const art=Object.entries(ARTICLES||{}).find(([,v])=>slugify(v.title.replace(/<[^>]+>/g,''))===slug);
     if(art){goArticle(art[0],true);return;}
+  }
+  const _famRoutes={'/parfums-floraux-maroc':['femme','floral','sbF-floral'],'/parfums-orientaux-maroc':['femme','oriental','sbF-oriental'],'/parfums-boises-maroc':['homme','boisé','sbH-boisé'],'/parfums-frais-maroc':['homme','frais','sbH-frais']};
+  if(_famRoutes[path]){
+    const[gender,fam,btnId]=_famRoutes[path];
+    document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active'));
+    const pg=document.getElementById('page-'+gender);if(pg)pg.classList.add('active');
+    updateNavActive(gender);
+    setTimeout(()=>{const btn=document.getElementById(btnId);if(btn){if(gender==='femme')sbFilterF(fam,'famille',btn);else sbFilterH(fam,'famille',btn);}},300);
+    return;
   }
   const page=_urlPageMap[path]||_urlPageMap[path.replace(/\/$/,'')]||null;
   if(page){
