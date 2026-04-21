@@ -1,7 +1,7 @@
-// Vercel Edge Middleware — Dynamic Rendering (brand pages only)
-// - Bots → static HTML (for SEO indexing)
-// - Real users → SPA collection page
-// City pages are NOT intercepted: users land directly on the HTML city page (intended behavior)
+// Vercel Edge Middleware
+// 1. Brand pages (/parfums-inspires-*): bots → static HTML, users → SPA collection
+// 2. SPA routes (/parfums-femme, /coffrets, /blog, etc.): serve index.html directly
+//    (cleanUrls:true + missing .html file causes 404, so middleware handles it)
 
 const BOT_UA = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|applebot|semrushbot|ahrefsbot|rogerbot|dotbot|msnbot|ia_archiver|sogou|exabot|alexa/i;
 
@@ -36,22 +36,45 @@ const BRAND_REDIRECT = {
   'parfums-inspires-viktor-rolf':       '/parfums-femme',
 };
 
-export default function middleware(request) {
+export default async function middleware(request) {
+  const url = new URL(request.url);
+  const slug = url.pathname.replace(/^\/|\/$/g, '');
   const ua = request.headers.get('user-agent') || '';
 
-  // Bots: pass through → Vercel serves the static HTML brand page
-  if (BOT_UA.test(ua)) return;
-
-  const slug = new URL(request.url).pathname.replace(/^\/|\/$/g, '');
-
-  // Real users on a brand page → redirect to the matching SPA collection
-  const dest = BRAND_REDIRECT[slug];
-  if (dest) {
-    return Response.redirect(new URL(dest, request.url), 302);
+  // ── Brand pages ──────────────────────────────────────────────────────────
+  if (slug.startsWith('parfums-inspires-')) {
+    if (BOT_UA.test(ua)) return; // bots: pass through to static HTML
+    const dest = BRAND_REDIRECT[slug];
+    if (dest) return Response.redirect(new URL(dest, request.url), 302);
+    return;
   }
+
+  // ── SPA routes: serve index.html while keeping the URL ───────────────────
+  // Vercel's cleanUrls:true returns 404 when .html file is missing.
+  // Fetching index.html here bypasses that and lets the SPA handle routing.
+  const indexUrl = new URL('/index.html', request.url);
+  return fetch(indexUrl.toString());
 }
 
 export const config = {
-  // Only intercept brand pages — city pages are intentionally NOT listed
-  matcher: ['/(parfums-inspires-.*)'],
+  matcher: [
+    // Brand pages
+    '/(parfums-inspires-.*)',
+    // SPA routes that have no static .html file
+    '/parfums-femme',
+    '/parfums-femme/:path*',
+    '/parfums-homme',
+    '/parfums-homme/:path*',
+    '/coffrets',
+    '/coffrets/:path*',
+    '/blog',
+    '/blog/:path*',
+    '/parfum-du-mois',
+    '/livraison-gratuite',
+    '/wishlist',
+    '/parfums-boises-maroc',
+    '/parfums-floraux-maroc',
+    '/parfums-frais-maroc',
+    '/parfums-orientaux-maroc',
+  ],
 };
