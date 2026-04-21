@@ -20,7 +20,6 @@ export const config = {
     '/coffrets',
     '/coffrets/:path*',
     '/blog',
-    '/blog/:path*',
     '/parfum-du-mois',
     '/livraison-gratuite',
     '/wishlist',

@@ -8,7 +8,6 @@
     { "source": "/coffrets",                "destination": "/index.html" },
     { "source": "/coffrets/:path*",         "destination": "/index.html" },
     { "source": "/blog",                    "destination": "/index.html" },
-    { "source": "/blog/:path*",             "destination": "/index.html" },
     { "source": "/parfum-du-mois",          "destination": "/index.html" },
     { "source": "/livraison-gratuite",      "destination": "/index.html" },
     { "source": "/wishlist",                "destination": "/index.html" },
