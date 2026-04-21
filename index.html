@@ -3190,7 +3190,12 @@ window.addEventListener('popstate',e=>{
     document.querySelectorAll('.page').forEach(pg=>pg.classList.remove('active'));
     const pg=document.getElementById('page-'+gender);if(pg)pg.classList.add('active');
     updateNavActive(gender);
-    setTimeout(()=>{const btn=document.getElementById(btnId);if(btn){if(gender==='femme')sbFilterF(fam,'famille',btn);else sbFilterH(fam,'famille',btn);}},300);
+    initReveal();
+    setTimeout(()=>{
+      const btn=document.getElementById(btnId);
+      if(btn){if(gender==='femme')sbFilterF(fam,'famille',btn);else sbFilterH(fam,'famille',btn);}
+      window.scrollTo({top:0});
+    },600);
     return;
   }
   const page=_urlPageMap[path]||_urlPageMap[path.replace(/\/$/,'')]||null;
