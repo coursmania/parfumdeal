@@ -14,9 +14,7 @@ export default async function middleware(request) {
 export const config = {
   matcher: [
     '/parfums-femme',
-    '/parfums-femme/:path*',
     '/parfums-homme',
-    '/parfums-homme/:path*',
     '/coffrets',
     '/coffrets/:path*',
     '/blog',

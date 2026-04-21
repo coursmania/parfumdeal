@@ -2,9 +2,7 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/parfums-femme",           "destination": "/index.html" },
-    { "source": "/parfums-femme/:path*",    "destination": "/index.html" },
     { "source": "/parfums-homme",           "destination": "/index.html" },
-    { "source": "/parfums-homme/:path*",    "destination": "/index.html" },
     { "source": "/coffrets",                "destination": "/index.html" },
     { "source": "/coffrets/:path*",         "destination": "/index.html" },
     { "source": "/blog",                    "destination": "/index.html" },
