@@ -1,5 +1,13 @@
 {
   "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(parfums-inspires-.*|casablanca|rabat|marrakech|tanger|fes|meknes|agadir|oujda|kenitra|el-jadida|beni-mellal|safi|settat|larache|nador|tetouan|parfums-femme/.*|parfums-homme/.*|blog/.*)",
+      "headers": [
+        { "key": "Link", "value": "</>; rel=prefetch" }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/parfums-femme",           "destination": "/index.html" },
     { "source": "/parfums-homme",           "destination": "/index.html" },
