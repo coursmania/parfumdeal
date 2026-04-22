@@ -230,5 +230,19 @@ footer ul li a:hover{color:var(--gold)}
 @media(max-width:480px){
   .footer-grid{grid-template-columns:1fr}
   .static-nav-links a{font-size:9px;padding:0 3px;letter-spacing:0}
-  .static-nav-cta{font-size:9px;padding:0 8px}
+  .static-nav-cta{display:none!important}
+}
+
+/* ── FLOATING WHATSAPP (pages statiques) ── */
+.static-float-wa{
+  position:fixed;bottom:24px;right:20px;z-index:999;
+  width:52px;height:52px;background:#25D366;border-radius:50%;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.45);
+  text-decoration:none;transition:.25s;
+}
+.static-float-wa:hover{transform:scale(1.1)}
+.static-float-wa svg{width:28px;height:28px;fill:#fff;flex-shrink:0}
+@media(max-width:640px){
+  .static-float-wa{display:flex}
 }
