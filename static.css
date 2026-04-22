@@ -196,6 +196,7 @@ footer ul li a:hover{color:var(--gold)}
 /* ── RESPONSIVE ──────────────────────────── */
 @media(max-width:1200px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:900px){.static-nav-links a{padding:0 10px;font-size:11px}}
+@media(max-width:768px){.static-nav{gap:10px}.static-nav-links a{padding:0 8px;font-size:10px}.static-logo img{height:46px}}
 @media(max-width:768px){
   .footer-grid{grid-template-columns:1fr 1fr}
   .article-banner{height:220px}
@@ -228,6 +229,6 @@ footer ul li a:hover{color:var(--gold)}
 }
 @media(max-width:480px){
   .footer-grid{grid-template-columns:1fr}
-  .static-nav-links a{font-size:9px;padding:0 4px}
-  .static-nav-cta{font-size:9px;padding:0 10px}
+  .static-nav-links a{font-size:9px;padding:0 3px;letter-spacing:0}
+  .static-nav-cta{font-size:9px;padding:0 8px}
 }

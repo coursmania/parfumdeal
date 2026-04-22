@@ -108,10 +108,10 @@ header{position:sticky;top:0;z-index:1000;background:rgba(8,6,4,.96);backdrop-fi
 .menu-toggle.open span:nth-child(2){opacity:0}
 .menu-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 /* Mobile nav — full-screen drawer */
-.mn-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;opacity:0;transition:opacity .35s}
-.mn-overlay.open{display:block;opacity:1}
-.mobile-nav{display:none;position:fixed;top:0;right:0;bottom:0;width:85%;max-width:340px;background:rgba(8,6,4,.98);backdrop-filter:blur(20px);border-left:1px solid var(--border);z-index:1000;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
-.mobile-nav.open{display:block;transform:translateX(0)}
+.mn-overlay{visibility:hidden;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9998;opacity:0;transition:opacity .35s,visibility 0s .35s}
+.mn-overlay.open{visibility:visible;opacity:1;transition:opacity .35s,visibility 0s 0s}
+.mobile-nav{visibility:hidden;position:fixed;top:0;right:0;bottom:0;width:85%;max-width:340px;background:rgba(8,6,4,.98);backdrop-filter:blur(20px);border-left:1px solid var(--border);z-index:9999;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1),visibility 0s .35s}
+.mobile-nav.open{visibility:visible;transform:translateX(0);transition:transform .35s cubic-bezier(.4,0,.2,1),visibility 0s 0s}
 .mn-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(8,6,4,.98);backdrop-filter:blur(20px);z-index:2}
 .mn-logo{font-family:var(--ff-d);font-size:15px;color:var(--gold)}
 .mn-close{width:36px;height:36px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;transition:.2s;line-height:1}
@@ -1425,6 +1425,7 @@ footer li a:hover{color:var(--gold)}
 </button>
 </div>
 </div>
+</header>
 <!-- MOBILE NAV OVERLAY -->
 <div class="mn-overlay" id="mnOverlay" onclick="toggleMenu()"></div>
 <!-- MOBILE NAV DRAWER -->
@@ -1466,7 +1467,6 @@ footer li a:hover{color:var(--gold)}
 <a class="mn-wa" href="https://wa.me/212600000000" target="_blank">💬 Commander via WhatsApp</a>
 <div style="height:16px"></div>
 </nav>
-</header>
 
 <!-- ══════════════════════════════════════ HOME PAGE -->
 <div class="page active" id="page-home">
