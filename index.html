@@ -1281,7 +1281,13 @@ footer li a:hover{color:var(--gold)}
 .bs-card{min-width:160px}
 /* Banner catégorie : recentrer image */
 .cat-banner img{object-position:60% center!important}
-@media(max-width:768px){.cat-banner img{object-position:left center!important}}
+@media(max-width:768px){
+.cat-banner img{object-position:left center!important}
+/* Cartes carousel : image cover (plus de fond noir) */
+.bs-card-img img{object-fit:cover!important}
+/* Bouton Commander : marge à droite pour éviter WA flottant */
+.bs-add-btn{padding-right:14px!important;text-align:left!important}
+}
 @media(max-width:768px){.cat-banner{height:180px!important}}
 }
 @media(max-width:480px){
