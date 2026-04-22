@@ -3273,6 +3273,7 @@ if(nav)nav.classList.add('active');
 }
 
 function goProduct(id,noHistory){
+closeSearch();
 const p=ALL.find(x=>x.id===id);if(!p)return;
 const slug=slugify(p.name);
 const prodUrl=(p.gender==='femme'?'/parfums-femme/':'/parfums-homme/')+slug;
