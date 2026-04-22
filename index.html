@@ -1285,11 +1285,16 @@ footer li a:hover{color:var(--gold)}
 @media(max-width:480px){
 /* BS card bouton Commander full-width */
 .bs-add-btn{width:100%!important;box-sizing:border-box}
-/* Vedette : barre inférieure compacte + fond opaque sur petit écran */
-.vedette-card{height:300px!important}
-.vedette-info{padding:10px 16px!important;background:rgba(0,0,0,.82)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;gap:8px!important}
+/* Vedette COFFRETS (première carte) : layout colonne, pas d'espace noir */
+.home-vedettes .vedette-card:first-child{height:auto!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+.home-vedettes .vedette-card:first-child .vedette-img-wrap{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;flex-shrink:0}
+.home-vedettes .vedette-card:first-child .vedette-img-wrap img{width:100%!important;height:auto!important;object-fit:unset!important;display:block!important}
+.home-vedettes .vedette-card:first-child .vedette-info{position:relative!important;bottom:auto!important;left:auto!important;right:auto!important;width:100%!important;background:rgba(0,0,0,.88)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;padding:10px 14px!important;gap:6px!important}
+/* Vedette OFFRE DU MOIS (deuxième carte) : hauteur normale */
+.home-vedettes .vedette-card:last-child{height:240px!important}
+/* Texte compact sur toutes les vedettes */
 .vedette-text .vedette-brand{font-size:9px!important;margin-bottom:2px!important}
-.vedette-text .vedette-name{font-size:16px!important}
+.vedette-text .vedette-name{font-size:15px!important}
 .vedette-text .vedette-sub{font-size:11px!important;margin-top:2px!important;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 .vedette-cta{font-size:11px!important;padding:6px 12px!important}
 }
@@ -1588,7 +1593,7 @@ footer li a:hover{color:var(--gold)}
     <div class="vedette-img-wrap">
       <picture>
         <source media="(max-width:480px)" srcset="dossier%20parfum/baniere/banniere-pack-mobile.png">
-        <img src="dossier%20parfum/baniere/banniere-pack-final.png" alt="Coffrets Cadeaux Parfum Maroc" style="object-position:center top">
+        <img src="dossier%20parfum/baniere/banniere-pack-final.png" alt="Coffrets Cadeaux Parfum Maroc" style="object-position:center center">
       </picture>
     </div>
     <div class="vedette-info">
