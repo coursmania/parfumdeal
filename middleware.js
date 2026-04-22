@@ -1,12 +1,13 @@
-// Vercel Edge Middleware
-// Unique rôle : servir index.html pour les routes SPA qui n'ont pas de .html statique
-// (cleanUrls:true retourne 404 quand le .html est absent au lieu de tomber sur le rewrite)
-//
-// Les pages marques (/parfums-inspires-*) et villes (/casablanca etc.)
-// ne sont PAS interceptées — l'utilisateur atterrit directement sur le HTML statique,
-// exactement comme un visiteur Google.
+// Vercel Edge Middleware — Bot detection
+// Bots (Googlebot, Bingbot...) → laissés passer → HTML statique servi par cleanUrls → SEO parfait
+// Vrais utilisateurs → reçoivent index.html (SPA) → refresh reste dans l'app
 
 export default async function middleware(request) {
+  const ua = request.headers.get('user-agent') || '';
+  const isBot = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebot|crawler|spider|bot/i.test(ua);
+
+  if (isBot) return; // laisse passer → Vercel sert le HTML statique
+
   const indexUrl = new URL('/index.html', request.url);
   return fetch(indexUrl.toString());
 }
@@ -14,10 +15,13 @@ export default async function middleware(request) {
 export const config = {
   matcher: [
     '/parfums-femme',
+    '/parfums-femme/:path*',
     '/parfums-homme',
+    '/parfums-homme/:path*',
     '/coffrets',
     '/coffrets/:path*',
     '/blog',
+    '/blog/:path*',
     '/parfum-du-mois',
     '/livraison-gratuite',
     '/wishlist',
