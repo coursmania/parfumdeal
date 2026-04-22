@@ -4805,7 +4805,7 @@ ${art.img?`<div style="width:100%;height:340px;border-radius:16px;overflow:hidde
     if(!s)return;
     s.src=lowEnd ? s.dataset.mobile : s.dataset.hd;
     v.load();
-    if(i===0)v.play().catch(function(){});
+    v.play().then(function(){if(i!==0)v.pause();}).catch(function(){});
   });
 })();
 
