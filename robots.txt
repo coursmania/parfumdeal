@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://parfum33ml.ma/sitemap.xml
+Sitemap: https://www.parfum33ml.ma/sitemap.xml
