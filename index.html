@@ -1290,8 +1290,11 @@ footer li a:hover{color:var(--gold)}
 .home-vedettes .vedette-card:first-child .vedette-img-wrap{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;flex-shrink:0}
 .home-vedettes .vedette-card:first-child .vedette-img-wrap img{width:100%!important;height:auto!important;object-fit:unset!important;display:block!important}
 .home-vedettes .vedette-card:first-child .vedette-info{position:relative!important;bottom:auto!important;left:auto!important;right:auto!important;width:100%!important;background:rgba(0,0,0,.88)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;padding:10px 14px!important;gap:6px!important}
-/* Vedette OFFRE DU MOIS (deuxième carte) : hauteur normale */
-.home-vedettes .vedette-card:last-child{height:240px!important}
+/* Vedette OFFRE DU MOIS : même layout colonne que coffrets */
+.home-vedettes .vedette-card:last-child{height:auto!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+.home-vedettes .vedette-card:last-child .vedette-img-wrap{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;flex-shrink:0}
+.home-vedettes .vedette-card:last-child .vedette-img-wrap img{width:100%!important;height:auto!important;object-fit:unset!important;display:block!important}
+.home-vedettes .vedette-card:last-child .vedette-info{position:relative!important;bottom:auto!important;left:auto!important;right:auto!important;width:100%!important;background:rgba(0,0,0,.88)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;padding:10px 14px!important;gap:6px!important}
 /* Texte compact sur toutes les vedettes */
 .vedette-text .vedette-brand{font-size:9px!important;margin-bottom:2px!important}
 .vedette-text .vedette-name{font-size:15px!important}
@@ -1608,7 +1611,10 @@ footer li a:hover{color:var(--gold)}
   <!-- Droite : Offre du Mois -->
   <div class="vedette-card" onclick="go('potm')">
     <div class="vedette-img-wrap">
-      <img src="dossier%20parfum/baniere/banniere-offre-final.png" alt="Offre du Mois Parfum33ml.ma" style="object-position:center top">
+      <picture>
+        <source media="(max-width:480px)" srcset="dossier%20parfum/baniere/banniere-offre-mobile.png">
+        <img src="dossier%20parfum/baniere/banniere-offre-final.png" alt="Offre du Mois Parfum33ml.ma" style="object-position:center top">
+      </picture>
       <!-- Overlay OFFRE DU MOIS -->
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;padding-right:32px;background:linear-gradient(90deg,transparent 40%,rgba(0,0,0,.55) 100%);pointer-events:none">
         <div style="text-align:right">
