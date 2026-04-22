@@ -960,22 +960,8 @@ footer li a:hover{color:var(--gold)}
 .home-budget{padding:40px 0}
 .budget-banner-wrap{padding:0 16px}
 .budget-banner{height:200px}
-/* Filter bar mobile */
-.sort-select{display:none}
-.sort-right{gap:8px;flex:1}
-.sort-right .search-box{flex:1}
-.sort-right .search-box input{width:100%!important}
-/* Vedettes mobile */
-.vedette-card{height:240px}
-.vedette-info{background:rgba(0,0,0,.75);backdrop-filter:none;-webkit-backdrop-filter:none}
-/* BS carousel mobile — swipe tactile, cacher boutons */
-.bs-btn{display:none}
-.bs-carousel-wrap{padding:0 12px}
-.bs-card{min-width:160px}
-.bs-add-btn{width:100%;box-sizing:border-box;white-space:nowrap}
-/* Cat banner mobile */
-.cat-banner img{object-position:60% center}
 }
+
 
 /* ── MOBILE 480px ─────────────────────── */
 @media(max-width:480px){
@@ -1278,6 +1264,28 @@ footer li a:hover{color:var(--gold)}
 .cart-bounce{animation:cartBounce .4s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{animation:fadeUp .45s ease both}
+
+/* ══ MOBILE FIXES — placés après tout le CSS de base ══ */
+@media(max-width:768px){
+/* Filter bar : cacher le select, search flexible */
+.sort-select{display:none!important}
+.sort-right{gap:8px;flex:1}
+.sort-right .search-box{flex:1;min-width:0}
+.sort-right .search-box input{width:100%!important;min-width:0!important}
+/* Vedettes : fond opaque, supprimer blur */
+.vedette-card{height:240px!important}
+.vedette-info{background:rgba(0,0,0,.8)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+/* Carousel BS : swipe tactile, boutons cachés */
+.bs-btn{display:none!important}
+.bs-carousel-wrap{padding:0 12px!important}
+.bs-card{min-width:160px}
+/* Banner catégorie : recentrer image */
+.cat-banner img{object-position:60% center!important}
+}
+@media(max-width:480px){
+/* BS card bouton Commander full-width */
+.bs-add-btn{width:100%!important;box-sizing:border-box}
+}
 
 </style>
 </head>
