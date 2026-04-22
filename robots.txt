@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://parfum33ml.ma/sitemap.xml
