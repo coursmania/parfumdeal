@@ -1,15 +1,14 @@
-// Vercel Edge Middleware — Bot detection
-// Bots (Googlebot, Bingbot...) → laissés passer → HTML statique servi par cleanUrls → SEO parfait
-// Vrais utilisateurs → reçoivent index.html (SPA) → refresh reste dans l'app
-
 export default async function middleware(request) {
   const ua = request.headers.get('user-agent') || '';
-  const isBot = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebot|crawler|spider|bot/i.test(ua);
+  const isBot = /googlebot|bingbot|yandex|baidu|duckduck|crawler|spider/i.test(ua);
+  const pathname = new URL(request.url).pathname;
+  const hasStaticHtml = /^\/(parfums-femme|parfums-homme|blog)\/.+/.test(pathname);
 
-  if (isBot) return; // laisse passer → Vercel sert le HTML statique
+  if (isBot && hasStaticHtml) {
+    return fetch(new URL(pathname + '.html', request.url));
+  }
 
-  const indexUrl = new URL('/index.html', request.url);
-  return fetch(indexUrl.toString());
+  return fetch(new URL('/index.html', request.url));
 }
 
 export const config = {
