@@ -189,31 +189,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Pages familles olfactives -->
-  <url>
-    <loc>https://parfum33ml.ma/parfums-floraux-maroc</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfums-orientaux-maroc</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfums-frais-maroc</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://parfum33ml.ma/parfums-boises-maroc</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <!-- Articles blog -->
   <url>
     <loc>https://parfum33ml.ma/blog/top-10-parfums-femme-pour-un-mariage-marocain</loc>
