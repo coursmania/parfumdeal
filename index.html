@@ -1281,6 +1281,7 @@ footer li a:hover{color:var(--gold)}
 .bs-card{min-width:160px}
 /* Banner catégorie : recentrer image */
 .cat-banner img{object-position:60% center!important}
+@media(max-width:768px){.cat-banner{height:180px!important}}
 }
 @media(max-width:480px){
 /* BS card bouton Commander full-width */
@@ -1883,7 +1884,10 @@ footer li a:hover{color:var(--gold)}
 <div class="page" id="page-femme">
 <!-- CATEGORY BANNER -->
 <div class="cat-banner" style="padding:0;overflow:hidden">
-<img src="dossier%20parfum/baniere/femme.jpg" alt="Parfums Femme" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+<picture>
+  <source media="(max-width:768px)" srcset="dossier%20parfum/baniere/femme-mobile.jpg">
+  <img src="dossier%20parfum/baniere/femme.jpg" alt="Parfums Femme" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center">
+</picture>
 </div>
 <div style="max-width:1520px;margin:0 auto;padding:6px 24px 0"><div class="bread"><a onclick="go('home')">Accueil</a> / <span>Parfums Femme</span></div></div>
 <!-- LAYOUT SIDEBAR + GRID -->
@@ -1961,7 +1965,10 @@ footer li a:hover{color:var(--gold)}
 <div class="page" id="page-homme">
 <!-- CATEGORY BANNER -->
 <div class="cat-banner" style="padding:0;overflow:hidden">
-<img src="dossier%20parfum/baniere/homme.jpg" alt="Parfums Homme" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+<picture>
+  <source media="(max-width:768px)" srcset="dossier%20parfum/baniere/homme-mobile.jpg">
+  <img src="dossier%20parfum/baniere/homme.jpg" alt="Parfums Homme" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center">
+</picture>
 </div>
 <div style="max-width:1520px;margin:0 auto;padding:6px 24px 0"><div class="bread"><a onclick="go('home')">Accueil</a> / <span>Parfums Homme</span></div></div>
 <!-- LAYOUT SIDEBAR + GRID -->
