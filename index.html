@@ -1283,10 +1283,14 @@ footer li a:hover{color:var(--gold)}
 .cat-banner img{object-position:60% center!important}
 @media(max-width:768px){
 .cat-banner img{object-position:left center!important}
-/* Cartes carousel : image cover (plus de fond noir) */
-.bs-card-img img{object-fit:cover!important}
-/* Bouton Commander : marge à droite pour éviter WA flottant */
-.bs-add-btn{padding-right:14px!important;text-align:left!important}
+/* Cartes carousel : petites cartes, plusieurs visibles à la fois */
+.bs-card{min-width:130px!important;max-width:130px!important}
+.bs-card-img{height:150px!important}
+.bs-card-body{padding:8px 10px 10px!important}
+.bs-brand{font-size:8px!important}
+.bs-name{font-size:11px!important;-webkit-line-clamp:2}
+.bs-price{font-size:13px!important;margin-bottom:7px!important}
+.bs-add-btn{font-size:10px!important;padding:6px 8px!important;width:100%!important}
 }
 @media(max-width:768px){.cat-banner{height:180px!important}}
 }
