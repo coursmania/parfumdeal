@@ -960,15 +960,31 @@ footer li a:hover{color:var(--gold)}
 .home-budget{padding:40px 0}
 .budget-banner-wrap{padding:0 16px}
 .budget-banner{height:200px}
+/* Filter bar mobile */
+.sort-select{display:none}
+.sort-right{gap:8px;flex:1}
+.sort-right .search-box{flex:1}
+.sort-right .search-box input{width:100%!important}
+/* Vedettes mobile */
+.vedette-card{height:240px}
+.vedette-info{background:rgba(0,0,0,.75);backdrop-filter:none;-webkit-backdrop-filter:none}
+/* BS carousel mobile — swipe tactile, cacher boutons */
+.bs-btn{display:none}
+.bs-carousel-wrap{padding:0 12px}
+.bs-card{min-width:160px}
+.bs-add-btn{width:100%;box-sizing:border-box;white-space:nowrap}
+/* Cat banner mobile */
+.cat-banner img{object-position:60% center}
 }
 
 /* ── MOBILE 480px ─────────────────────── */
 @media(max-width:480px){
-/* Header : logo + icônes uniquement, pas de cart */
+/* Header */
 .h-inner{padding:0 14px;gap:10px}
 .logo img{height:52px}
-.cart-btn{display:none}
-.h-right{gap:2px}
+.cart-btn{min-width:40px;min-height:40px;padding:0 10px;gap:0;font-size:11px}
+.cart-btn>span:first-of-type{display:none}
+.h-right{gap:4px}
 /* Carousel */
 .hc-content h1{font-size:22px}
 .hc-content{padding:0 18px}
@@ -1886,7 +1902,7 @@ footer li a:hover{color:var(--gold)}
 <span class="sort-label" id="countF">50 parfums femme</span>
 <div class="sort-right">
 <button class="mobile-filter-btn" onclick="openFilterDrawer('femme')">⚙ Filtres &amp; tri</button>
-<div class="search-box" style="margin:0;padding:0;background:none;border:none"><span>🔍</span><input type="text" placeholder="Rechercher..." onkeyup="filterCards('allF',this.value)" style="background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:7px 14px;font-size:12px;color:var(--txt);outline:none;width:180px"></div>
+<div class="search-box" style="margin:0;padding:0;background:none;border:none"><span>🔍</span><input type="text" placeholder="Rechercher..." onkeyup="filterCards('allF',this.value)" style="background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:7px 14px;font-size:12px;color:var(--txt);outline:none;width:180px;max-width:100%"></div>
 <select class="sort-select" onchange="sortCards('allF',this.value)">
 <option value="default">Popularité</option>
 <option value="name">Nom A-Z</option>
@@ -1964,7 +1980,7 @@ footer li a:hover{color:var(--gold)}
 <span class="sort-label" id="countH">50 parfums homme</span>
 <div class="sort-right">
 <button class="mobile-filter-btn" onclick="openFilterDrawer('homme')">⚙ Filtres &amp; tri</button>
-<div class="search-box" style="margin:0;padding:0;background:none;border:none"><span>🔍</span><input type="text" placeholder="Rechercher..." onkeyup="filterCards('allH',this.value)" style="background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:7px 14px;font-size:12px;color:var(--txt);outline:none;width:180px"></div>
+<div class="search-box" style="margin:0;padding:0;background:none;border:none"><span>🔍</span><input type="text" placeholder="Rechercher..." onkeyup="filterCards('allH',this.value)" style="background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:7px 14px;font-size:12px;color:var(--txt);outline:none;width:180px;max-width:100%"></div>
 <select class="sort-select" onchange="sortCards('allH',this.value)">
 <option value="default">Popularité</option>
 <option value="name">Nom A-Z</option>
