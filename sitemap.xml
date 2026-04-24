@@ -61,6 +61,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Page niche -->
+  <url>
+    <loc>https://www.parfum33ml.ma/parfums-niche-maroc</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- Pages villes -->
   <url>
     <loc>https://www.parfum33ml.ma/casablanca</loc>
