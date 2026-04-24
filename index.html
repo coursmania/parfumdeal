@@ -1777,7 +1777,7 @@ footer li a:hover{color:var(--gold)}
     <h2 class="niche-title">Parfums de <em>Niche</em></h2>
     <div class="niche-stars"><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span><span class="niche-star"></span></div>
   </div>
-  <a class="see-all" onclick="go('femme');setTimeout(()=>sbFilterF('all','famille',document.getElementById('sbF-all')),600)" style="color:var(--gold);opacity:.7">Voir toute la collection →</a>
+  <a class="see-all" href="/parfums-niche-maroc" style="color:var(--gold);opacity:.7">Voir toute la collection →</a>
 </div>
 <div class="bs-carousel-wrap">
   <button class="bs-btn bs-prev" onclick="bsMove('nicheTrack',-1)">&#8249;</button>
@@ -4869,7 +4869,7 @@ function renderBsCarousel(trackId,products,isNiche){
     html+='<div class="bs-name">'+safeName+'</div>';
     html+='<div class="bs-stars">'+stars+'</div>';
     html+='<div class="bs-price">'+price+' DH</div>';
-    html+='<button class="bs-add-btn" onclick="event.stopPropagation();addToCart(&quot;'+safeId+'&quot;,&quot;'+safeName+'&quot;,&quot;'+safeBrand+'&quot;)">Commander</button>';
+    if(!isNiche)html+='<button class="bs-add-btn" onclick="event.stopPropagation();addToCart(&quot;'+safeId+'&quot;,&quot;'+safeName+'&quot;,&quot;'+safeBrand+'&quot;)">Commander</button>';
     html+='</div></div>';
     return html;
   }).join('');
@@ -4887,7 +4887,7 @@ const bsBest=[...ALL].sort((a,b)=>parseFloat(b.rating)-parseFloat(a.rating)).sli
 renderBsCarousel('bsTrack',bsBest);
 
 // Parfums de Niche : Tom Ford, MFK, Parfums de Marly
-const nicheIds=['h29','h42','h30','f31','f40','h24','h35','h43'];
+const nicheIds=['h29','h42','h30','f31','f40','h24','h35','h43','h8','h37','h50'];
 const nichePicks=nicheIds.map(id=>ALL.find(p=>p.id===id)).filter(Boolean);
 renderBsCarousel('nicheTrack',nichePicks,true);
 
